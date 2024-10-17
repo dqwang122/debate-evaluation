@@ -1,21 +1,22 @@
 {% extends "base.html.jinja2" %}
 {% block heading %}
-    <h1 class="display-4">MOS 實驗</h1>
-    <p class="lead">合成語音品質評估</p>
+    <h1 class="display-4">Debate Performance Evaluation</h1>
+    <p class="lead">Evaluate the Performance of the debater</p>
     <hr class="my-4">
     <p>
-        感謝您參與本次實驗！
+        Thanks for participating!
     </p>
     <p>
-        在這個實驗中，我們使用電腦合成人類語音。
-        以下的音檔中，包含了真實的錄音以及合成的聲音，並且每句話都有附上文字稿。
-        請受試者使用耳機聆聽，並根據每個音檔的品質，給予以下幾種評分：
+        You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. 
+        You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. 
+        There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side. 
+        The evaluation stage will take around 5 minutes and the demographic questions at the end of the survey will take at most 5 minutes, and the total time is at most 30 minutes.
         <ul>
-            <li>１（非常不好）</li>
-            <li>２（不好）</li>
-            <li>３（普通）</li>
-            <li>４（好）</li>
-            <li>５（非常好）</li>
+            <li>5: Excellent </li>
+            <li>4: Good </li>
+            <li>3: Neutral </li>
+            <li>2: Bad </li>
+            <li>1: Terrible</li>
         </ul>
     </p>
 {% endblock %}
@@ -31,23 +32,23 @@
                 </p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_1" value="5" required>
-                    <label class="form-check-label" for="{{ question.name }}_1">５（非常好）</label>
+                    <label class="form-check-label" for="{{ question.name }}_1">5 Excellent</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_2" value="4" required>
-                    <label class="form-check-label" for="{{ question.name }}_2">４（好）</label>
+                    <label class="form-check-label" for="{{ question.name }}_2">4 Good </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_3" value="3" required>
-                    <label class="form-check-label" for="{{ question.name }}_3">３（普通）</label>
+                    <label class="form-check-label" for="{{ question.name }}_3">3 Neutral</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_4" value="2" required>
-                    <label class="form-check-label" for="{{ question.name }}_4">２（不好）</label>
+                    <label class="form-check-label" for="{{ question.name }}_4">2 Bad</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_5" value="1" required>
-                    <label class="form-check-label" for="{{ question.name }}_5">１（非常不好）</label>
+                    <label class="form-check-label" for="{{ question.name }}_5">1 Terrible</label>
                 </div>
             </div>
         </div>
