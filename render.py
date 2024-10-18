@@ -97,12 +97,13 @@ def main():
     for c in cases:
         motion = c["name"].replace("_", " ").title()
         if args.mode == "scalar":
-            qid = 0
+            qid = 1
             questions = [{
                 "title": f"Question {qid}: Pre-Vote Stage. Which Side Do You Support?",
                 "audio_paths": [],
                 "name": f"q{qid}"
             }]
+            qid += 1
 
             for stage in ["opening", "rebuttal", "closing"]:
                 for side in ["for", "against"]:
@@ -139,13 +140,14 @@ def main():
                                                  questions=questions, 
                                                  addition_questions=addition_questions)
         else:
-            qid = 0
+            qid = 1
             questions = [{
                 "title": f"Question {qid}: Pre-Vote Stage. Which Side Do You Support?",
                 "audio_paths": [],
                 "name": f"q{qid}"
             }]
             qid += 1
+
             for stage in ["opening", "rebuttal", "closing"]:
                 questions.append({
                     "title": f"Question {qid}: {stage.capitalize()} Stage",
