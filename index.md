@@ -3,9 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: An Online Human Evaluation Platform for Debate Performance
 ---
-
-# An Online Human Evaluation Platform for Debate Performance
 
 ## Debate Performance Evaluation
 
@@ -32,7 +31,7 @@ Finally, you will rate the performance of each side in the entire debate process
 <ul>
   {% for file in site.static_files %}
     {% if file.path contains "forms/1007/pair" and file.extname == ".html" %}
-      <li><a href="{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
+      <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
