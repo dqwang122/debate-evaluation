@@ -20,3 +20,10 @@ Please feel free to use this as a template to create your own online human evalu
     - Take a look at **templates** directory and several rendered HTMLs there as example.
     - Modify **render_mos.py** or **render_pair_comparison.py** and generate HTMLs.
     - Commit and push all the modifications back to GitHub.
+
+### Add new debate cases:
+1. Upload the debate audio to AWS S3.
+2. Upload the debate transcript to *assets/transcripts*
+3. Update *assets/metadata.json* with new case information.
+4. run `python render.py` to generate new HTMLs under *forms* directory.
+5. Update the index.md to the latest case list.

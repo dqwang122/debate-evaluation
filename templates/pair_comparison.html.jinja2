@@ -9,8 +9,8 @@
     <p>
         You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. 
         You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. 
-        There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side. 
-        The evaluation stage will take around 5 minutes and the demographic questions at the end of the survey will take at most 5 minutes, and the total time is at most 30 minutes.
+        There are three stages (openining, rebuttal, and closing) in the debate process. You need to compare the performance of each side in each stage.
+        Finally, you will rate the performance of each side in the entire debate process and provide some optional feedback.
     </p>
     <p>
         <strong>Instructions:</strong>
@@ -22,17 +22,38 @@
     </p>
 {% endblock %}
 {% block form_questions %}
+    <input type="hidden" id="mode" name="mode" value="pair" >
+    <input type="hidden" id="mode" name="version" value="{{ version }}" >
+
     {% for question in questions %}
         <div class="card form-group">
-            <div class="card-header">{{ question.title }}</div>
+            <div class="card-header"><b>{{ question.title }}</b></div>
             <div class="card-body">
                 {% for audio_path in question.audio_paths %}
+                    <p> <strong> {{ audio_path[0] }} </strong> </p>
                     <p>
-                        <audio controls src="{{ audio_path }}">
+                        <audio controls src="{{ audio_path[1] }}">
                             Your browser does not support the audio element.
                         </audio>
                     </p>
                 {% endfor %}
+                {% if question.transcript_for %}
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) For - Transcript </summary>
+                    <div>
+                        {{ question.transcript_for }}
+                    </div>
+                </details>
+                {% endif %}
+                {% if question.transcript_against %}
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Against - Transcript </summary>
+                    <div>
+                        {{ question.transcript_against }}
+                    </div>
+                </details>
+                <br>
+                {% endif %}
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_1" value="1" required>
                     <label class="form-check-label" for="{{ question.name }}_1">For win</label>
@@ -45,6 +66,33 @@
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_3" value="3" required>
                     <label class="form-check-label" for="{{ question.name }}_3">Tie</label>
                 </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for question in addition_questions %}
+        <div class="card form-group">
+            <div class="card-header"><b>{{ question.title }}</b></div>
+            <div class="card-body">
+                {% if question.type == 'checkbox'  %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_1" value="1" required>
+                        <label class="form-check-label" for="{{ question.name }}_1">For win</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_2" value="2" required>
+                        <label class="form-check-label" for="{{ question.name }}_2">Against win</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_3" value="3" required>
+                        <label class="form-check-label" for="{{ question.name }}_3">Tie</label>
+                    </div>
+                {% else %}
+                    <div class="form-group">
+                        <label for="{{ question.name }}"></label>
+                        <input class="form-control" type="text" inputmode="text" name="{{ question.name }}">
+                    </div>
+                {% endif %}
             </div>
         </div>
     {% endfor %}
