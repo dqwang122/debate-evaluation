@@ -109,7 +109,7 @@ def main():
                 for side in ["for", "against"]:
                     questions.append({
                         "title": f"Question {qid}: {stage.capitalize()} Stage - {side.capitalize()}",
-                        "audio_paths": [side, f"{DEFAULT_S3_BUCKET}/audio_{args.version}/{c['name']}/{stage}_{side}.mp3"],
+                        "audio_paths": [side, f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_{side}.mp3"],
                         "transcript": c["transcript"][stage][side],
                         "name": f"q{qid}"
                     })
@@ -152,8 +152,8 @@ def main():
                 questions.append({
                     "title": f"Question {qid}: {stage.capitalize()} Stage",
                     "audio_paths": [
-                        ["For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/{c['name']}/{stage}_for.mp3"],
-                        ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/{c['name']}/{stage}_against.mp3"],
+                        ["For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_for.mp3"],
+                        ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against.mp3"],
                     ],
                     "transcript_for": c["transcript"][stage]["for"],
                     "transcript_against": c["transcript"][stage]["against"],

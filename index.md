@@ -15,7 +15,7 @@ Finally, you will rate the performance of each side in the entire debate process
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/1007/scalar" and file.extname == ".html" %}
+    {% if file.path contains "forms/1020/scalar" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
@@ -30,7 +30,7 @@ Finally, you will rate the performance of each side in the entire debate process
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/1007/pair" and file.extname == ".html" %}
+    {% if file.path contains "forms/1020/pair" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}

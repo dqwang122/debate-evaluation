@@ -1,0 +1,466 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Performance Evaluation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <style>
+        /* Reusable block class */
+        .collapsible-block {
+            margin-top: 5px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            width: 100%;
+            max-width: 80%; /* Control maximum width for readability */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for better visual effect */
+        }
+
+        .collapsible-block summary {
+            font-size: 1.1em;
+        }
+
+        .collapsible-block[open] summary {
+            color: #007bff; /* Highlighted color when expanded */
+        }
+
+        .collapsible-content {
+            margin-top: 3px;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <h1 class="display-4">Debate Performance Evaluation</h1>
+    <p class="lead">Evaluate Fine-grained Performance of the debater</p>
+    <hr class="my-4">
+    <p>
+        Thanks for participating!
+    </p>
+    <p>
+        You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. 
+        You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. 
+        There are three stages (openining, rebuttal, and closing) in the debate process. There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side.
+        Finally, you will rate the performance of each side in the entire debate process and provide some optional feedback.
+        <ul>
+            <li>5: Excellent </li>
+            <li>4: Good </li>
+            <li>3: Neutral </li>
+            <li>2: Bad </li>
+            <li>1: Terrible</li>
+        </ul>
+    </p>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>Debate Motion: If Health Care Is A Scarce Resource Government Should Step In To Ration Care Deciding Whose Life Is Worth Saving </h4>
+    </div>
+    <br><br>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbzNNrODHITmNl-PjLB9kXtyRm4st1MlvHvkaM7ACvSlFoQ2DN9RXywE8rUtkdBkKuIkRQ/exec" method="GET" onsubmit="return preventRepeatedSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email: </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            
+    <input type="hidden" id="mode" name="mode" value="scalar" >
+    <input type="hidden" id="mode" name="version" value="1020">
+
+    <div class="card form-group">
+        
+        <div class="card-header"><b>Question 1: Pre-Vote Stage. Which Side Do You Support?</b></div>
+        <div class="card-body">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_1" value="1" required>
+                <label class="form-check-label" for="q1_1">For win</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_2" value="2" required>
+                <label class="form-check-label" for="q1_2">Against win</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_3" value="3" required>
+                <label class="form-check-label" for="q1_3">Tie</label>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 2: Opening Stage - For</b></div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_1/opening_for.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Transcript </summary>
+                    <div>
+                        Ladies and gentlemen, esteemed judges, and respected opponents, today we engage in a critical discussion on the motion: "If health care is a scarce resource, the government should step in to ration care, deciding whose life is worth saving." As the affirmative side, we assert that government intervention in rationing healthcare is not only necessary but paramount to ensuring equitable access to medical care in times of scarcity.<br><br>First and foremost, government intervention can ensure equitable care access during crises such as pandemics. The COVID-19 pandemic provided a stark illustration of the importance of a centralized approach to healthcare distribution. Countries with centralized healthcare systems, such as Germany and South Korea, demonstrated a significant advantage in managing resource distribution efficiently and effectively. These nations, armed with government-regulated healthcare frameworks, were able to allocate resources where they were most needed, thereby avoiding the dire shortages and inequities seen elsewhere. The World Health Organization (WHO) reports that, in several countries, equitable access to care reduced mortality rates by an impressive 25% during health emergencies. This evidence bolsters the argument that government intervention in resource allocation is vital for protecting public health during times of crisis.<br><br>Secondly, centralized rationing of healthcare can prioritize care for patients with the most to gain in terms of quality-adjusted life years, or QALY. This metric provides a standardized approach to assessing the value of medical interventions, prioritizing those that offer the most significant benefits in terms of improved quality and duration of life. The United Kingdom, for instance, has used QALY assessments to improve health outcomes by efficiently allocating resources to treatments that offer substantial benefits. Evidence suggests that by prioritizing treatments with high QALY gains, countries can enhance overall public health outcomes by as much as 15%. This approach not only maximizes the potential benefits of scarce resources but also ensures that they are used where they can do the most good, which is a rational and ethical use of limited healthcare provisions.<br><br>Furthermore, government rationing can mitigate the risk of systemic discrimination that often plagues private market allocations. Studies consistently show that racial minorities receive less healthcare spending compared to their white counterparts. A study conducted in 2016 found that racial minorities receive 19% less spending on healthcare in the private sector. This disparity leads to significant differences in health outcomes, perpetuating a cycle of inequality. Moreover, income-based disparities in healthcare access lead to a shocking 15-year gap in life expectancy. Such inequities are exacerbated in a market-driven system, where those with more financial means can secure better care, often at the expense of marginalized groups. Government intervention in healthcare distribution is crucial to dismantling these systemic inequalities and ensuring that all individuals, irrespective of race or socioeconomic status, receive equitable care.<br><br>In conclusion, government rationing of healthcare is imperative when resources are scarce. It promotes equitable care access during emergencies, utilizes QALY frameworks to prioritize the most beneficial treatments, and addresses systemic inequalities present in the private healthcare sector. By stepping in to ration care, the government can ensure that healthcare resources are allocated justly, efficiently, and ethically, safeguarding the well-being of all citizens during critical times. Thank you.
+                    </div>
+                </details>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_1" value="5" required>
+                    <label class="form-check-label" for="q2_1">5 Excellent</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_2" value="4" required>
+                    <label class="form-check-label" for="q2_2">4 Good </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_3" value="3" required>
+                    <label class="form-check-label" for="q2_3">3 Neutral</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_4" value="2" required>
+                    <label class="form-check-label" for="q2_4">2 Bad</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_5" value="1" required>
+                    <label class="form-check-label" for="q2_5">1 Terrible</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 3: Opening Stage - Against</b></div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_1/opening_against.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Transcript </summary>
+                    <div>
+                        Ladies and gentlemen, esteemed judges, and worthy opponents, today we gather to debate a deeply profound and ethically charged issue: whether government should ration health care, deciding whose life is worth saving when health care is scarce. I stand before you to oppose this motion, for the proposition is fraught with ethical dilemmas, practical challenges, and adverse consequences that undermine the principles of equality, autonomy, and individual dignity.<br><br>Firstly, consider the ethical implications inherent in governmental rationing. Fundamentally, deciding whose life is worth saving amounts to a utilitarian calculus that devalues individual life, reducing human beings to mere numbers on a ledger. This approach contradicts the moral ethos of valuing every life equally. Our societies are based on principles of justice and the inherent worth of all individuals, regardless of their age, socio-economic status, or health condition. A government-sanctioned rationing system risks establishing a dangerous precedent where certain lives are deemed less worthy or inherently dispensable, eroding the very fabric of our ethical landscape. Studies have demonstrated that implicit biases can seep into decision-making processes, further exacerbating inequities and leading to discriminatory practices. Embracing a system that enforces governmental determination of individuals' worth contradicts the universal human rights enshrined in international covenants—the right to life being among the most sacred.<br><br>Secondly, the practicality of government-led rationing is deeply flawed due to bureaucracy and inefficiency. Governments are notoriously cumbersome and slow-moving entities. Introducing central control over life-or-death medical decisions could result in delays and oversized administrative systems that often compound inefficiencies and errors. Evidence from countries with highly centralized health systems shows challenges in access, timeliness, and transparency, areas that can gravely suffer under rationing policies. In contrast, decentralized institutions or market-driven forces could drive innovation, enhance efficiency, and better allocate resources even under scarcity. Localized systems, informed by professional expertise and patient-doctor relationships, will always better accommodate nuanced and personalized care than sprawling bureaucratic oversight.<br><br>Lastly, rationing of healthcare by the government curtails personal autonomy and undermines the doctor-patient relationship. These decisions should not be displaced by impersonal bureaucrats working within the confines of governmental policies. Patients have the right to engage directly with their healthcare providers, maintaining autonomy over their health care decisions. Empowering patients to make decisions together with their doctors leads to more satisfactory health outcomes and is vital for ensuring trust and cooperation in the healthcare system. Institutionalized rationing breeds a range of systemic risks like moral hazard, corruption, and the loss of human agency in making consequential decisions regarding one's health.<br><br>In conclusion, while the scarcity of healthcare resources presents undeniable challenges, government rationing is not the solution. We must strive for systemic reforms that address scarcity through innovation, improved efficiency, and equitable distribution without sacrificing our cherished ethical values or practical effectiveness. Let us reject a framework that implies some lives are worth more than others, and instead work towards a society where access to healthcare is based on principles of justice, equity, and respect for all individuals’ autonomy. Thank you.
+                    </div>
+                </details>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_1" value="5" required>
+                    <label class="form-check-label" for="q3_1">5 Excellent</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_2" value="4" required>
+                    <label class="form-check-label" for="q3_2">4 Good </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_3" value="3" required>
+                    <label class="form-check-label" for="q3_3">3 Neutral</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_4" value="2" required>
+                    <label class="form-check-label" for="q3_4">2 Bad</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_5" value="1" required>
+                    <label class="form-check-label" for="q3_5">1 Terrible</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 4: Rebuttal Stage - For</b></div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_1/rebuttal_for.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Transcript </summary>
+                    <div>
+                        Ladies and gentlemen, esteemed judges, and respected opponents, I stand to rebut the points posed against the notion of government-led rationing of healthcare during times of scarcity. While my opponent presents certain ethical, practical, and autonomy-related concerns, let's delve into why a structured and balanced approach to healthcare rationing not only addresses these concerns but also enhances overall health outcomes.<br><br>To begin with ethical considerations: While it is true that government rationing involves utilitarian calculations, we must recognize that the sole aim is to maximize health benefits for the greatest number of people. Ethical rationing can indeed coexist with valuing each life, as it is designed to maximize overall health outcomes by ensuring fair access to care. Health policies can be molded to reflect equity and justice by prioritizing treatments with tangible benefits across populations. Just as governments establish frameworks to ensure fair resource distribution, rationing can be conducted ethically, with transparency and accountability to prevent any devaluation of individual lives.<br><br>Turning to the claim that government intervention falters due to bureaucracy and inefficiency, this perspective overlooks the successful strategies that centralized healthcare systems have implemented worldwide. Countries with centralized frameworks, such as Germany, exhibit efficiency through streamlined management of medical resources, particularly during crises. Notably, a centralized system benefits from a unified approach, eliminating redundancies and focusing on equitable medical access. This is evident during the COVID-19 pandemic, where centralized approaches significantly improved outcomes, contradicting assumptions of inherent inefficiency.<br><br>Furthermore, the concern over personal autonomy and the doctor-patient relationship, while valid, can be addressed through collaborative guidelines facilitated by the government. Government frameworks can serve to complement, rather than contravene, personal healthcare decisions. By providing standardized guidelines, governments empower healthcare providers and patients to make informed decisions within a fair, equitable system. This balanced approach preserves autonomy while ensuring equitable access to care, creating an environment where both individual needs and the common good are harmonized.<br><br>Now, addressing the systemic discrimination present in decentralized, market-driven healthcare allocations: Recent studies have demonstrated that racial minorities suffer from a 19% lower healthcare spending in private systems. Such figures are significant and reveal structural inequalities entrenched in these systems. Government-led rationing has the potential to mitigate these disparities by adopting objective measures for resource allocation. Through structured policies, a government can ensure fair distribution to underprivileged communities, bridging the gap between different socio-economic groups and promoting equality within healthcare access.<br><br>Centralized systems during emergencies have showcased their ability to manage crises effectively. The focus on quality-adjusted life years (QALY) is a testament to their success. QALY prioritizes treatments that maximize life quality and spans often-overlooked areas like mental health and chronic conditions. This prioritization enables efficient use of resources, reducing overall mortality rates and enhancing public health, particularly crucial during pandemics or other medical emergencies.<br><br>In conclusion, through a structured approach that considers ethical standards, efficiency, and equity, government-led rationing presents a viable solution to healthcare scarcity. It offers an opportunity to solve systemic issues within healthcare allocation without sacrificing personal dignity or creating bureaucracy. In times of healthcare scarcity, it is imperative that we adopt systems designed to benefit the broader public most effectively and equitably. Thank you.
+                    </div>
+                </details>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_1" value="5" required>
+                    <label class="form-check-label" for="q4_1">5 Excellent</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_2" value="4" required>
+                    <label class="form-check-label" for="q4_2">4 Good </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_3" value="3" required>
+                    <label class="form-check-label" for="q4_3">3 Neutral</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_4" value="2" required>
+                    <label class="form-check-label" for="q4_4">2 Bad</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_5" value="1" required>
+                    <label class="form-check-label" for="q4_5">1 Terrible</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 5: Rebuttal Stage - Against</b></div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_1/rebuttal_against.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Transcript </summary>
+                    <div>
+                        Ladies and gentlemen, esteemed judges, and respected opponents, as we delve into the rebuttal phase, it's crucial to expose the inherent vulnerabilities within the argument advanced by the proponents of government-led healthcare rationing. While our opponents claim to offer a vision of equitable and efficient healthcare distribution through governmental intervention, their argument betrays several destructive assumptions and overlooks critical realities.<br><br>Firstly, the notion that governmental rationing can maximize health benefits equitably is built on a fundamentally flawed premise. Our opponents assert that ethical frameworks can mitigate biases and ensure fair distribution—a premise that dangerously oversimplifies the deep complexities involved. In reality, governmental systems are riddled with bureaucratic inertia and political influence, making it near impossible to maintain the so-called transparency and accountability they promise. Historical examples abound where governments, when tasked with similar redistribution mandates, ended up perpetuating existing inequalities rather than resolving them. The human propensity for error and bias, particularly within large bureaucratic systems, means that implementing a fair and just rationing system is more illusion than plausible policy.<br><br>In addressing our opponents' praise of centralized systems, it's critical to underline that these very systems often struggle with resource allocation and access inequalities. While proponents point to global examples like Germany, they overlook the inefficiencies and bottlenecks these systems experience, even in crisis management. The COVID-19 pandemic is a testament to this—numerous centralized systems buckled under pressure, struggling to meet the demand due to logistical constraints and the sheer weight of bureaucratic oversight. Decentralized, community-focused healthcare initiatives, by contrast, often thrive on rapid response capabilities, flexibility, and innovation, filling gaps where cumbersome governmental systems falter.<br><br>Turning to personal autonomy, our opponents offer a vision of government frameworks as supporting doctor-patient relations. However, the imposition of "standardized guidelines" risks homogenizing care and sterilizing the nuanced, individualized decision-making that lies at the heart of healthcare. The supervision of doctor-patient decisions under a government-determined rubric diminishes the very autonomy they claim to respect, reducing healthcare to a paint-by-numbers exercise devoid of personal context and flexibility.<br><br>Our opponents casually dismiss the structural discrimination in decentralized systems, pointing to healthcare spending discrepancies for minorities. Yet they fail to appreciate that government interventions have historically been no safer shelter from bias—often, they perpetuate institutional discrimination under the guise of objectivity. Indeed, whereas market-driven systems have their failings, they offer more opportunities for innovation and targeted solutions addressing these inequities, far more nimbly than bureaucratic juggernauts.<br><br>In conclusion, let us not be seduced by the enticing yet hollow rhetoric suggesting governmental rationing could ever be the beacon of equity and efficiency it purports to be. Our opponents envision theoretical frameworks that crumble under the weight of real-world complexities. Instead of placing life-and-death decisions in the hands of a mother-of-all-bureaucracies, let us continue to invest in solutions that embrace flexibility, innovation, and respect for every individual's right to life and healthcare. We must work towards empowering communities and healthcare providers with the tools to expand access and quality without succumbing to the false promises of a one-size-fits-all, government-driven rationing scheme. Thank you.
+                    </div>
+                </details>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_1" value="5" required>
+                    <label class="form-check-label" for="q5_1">5 Excellent</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_2" value="4" required>
+                    <label class="form-check-label" for="q5_2">4 Good </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_3" value="3" required>
+                    <label class="form-check-label" for="q5_3">3 Neutral</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_4" value="2" required>
+                    <label class="form-check-label" for="q5_4">2 Bad</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_5" value="1" required>
+                    <label class="form-check-label" for="q5_5">1 Terrible</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 6: Closing Stage - For</b></div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_1/closing_for.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Transcript </summary>
+                    <div>
+                        Ladies and gentlemen, esteemed judges, and respected opponents, as we reach the crux of our debate, I must address the argument that government-led rationing poses ethical dilemmas and inefficiencies. It is important to recognize that ethical frameworks guiding governmental rationing are designed to prioritize health outcomes equitably and transparently. While opponents fear bureaucratic inefficiencies, evidence shows that centralized systems have managed healthcare crises such as COVID-19 effectively, swiftly reducing mortality rates where equitable policies were implemented. Claims regarding the erosion of personal autonomy overlook how government guidelines have actually supported healthcare providers in making fair, impactful decisions.<br><br>Turning to our core arguments, we highlighted how centralized rationing ensures equitable care during crises, effectively prioritizing patients based on quality-adjusted life years (QALY). Such systems have demonstrated success globally, particularly by improving resource allocation and public health outcomes. Furthermore, government intervention provides a remedy against systemic discrimination in private markets, which often leaves minorities at a disadvantage. By distributing resources equitably, government rationing addresses income-based disparities that a market-driven system perpetuates.<br><br>In closing, the opposition's arguments fail to undermine the clear advantages of government-led rationing. Our approach not only ensures equitable healthcare distribution in emergencies but also improves outcomes through structured, ethical frameworks. Thus, embracing government intervention during resource scarcity is not just a necessity but a moral imperative for enhancing public health equity and efficacy. Thank you.
+                    </div>
+                </details>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_1" value="5" required>
+                    <label class="form-check-label" for="q6_1">5 Excellent</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_2" value="4" required>
+                    <label class="form-check-label" for="q6_2">4 Good </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_3" value="3" required>
+                    <label class="form-check-label" for="q6_3">3 Neutral</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_4" value="2" required>
+                    <label class="form-check-label" for="q6_4">2 Bad</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_5" value="1" required>
+                    <label class="form-check-label" for="q6_5">1 Terrible</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 7: Closing Stage - Against</b></div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_1/closing_against.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Transcript </summary>
+                    <div>
+                        Ladies and gentlemen, esteemed judges, and worthy opponents, as we arrive at the conclusion of this meaningful debate, it is imperative to reaffirm the core reasons why government-led rationing cannot be justified as a solution to healthcare scarcity.<br><br>First, the ethical foundation of government rationing is profoundly flawed. It inherently involves making life-and-death decisions that risk devaluing individual lives based on arbitrary criteria, contradicting the principles of justice and equality that underpin our societies. Such a system is susceptible to biases and is unlikely to achieve the fairness it promises.<br><br>Second, the argument for the efficiency of centralized systems is inconsistent with reality. History has shown that bureaucratic entities are plagued by inertia and inefficiencies, often being too slow to adapt and cumbersome under pressure. In contrast, more decentralized, community-focused systems can nimbly address healthcare needs, allowing for innovation and rapid responses that centralized systems simply cannot match.<br><br>Furthermore, personal autonomy, a cornerstone of individual rights and dignified healthcare, is significantly threatened under a government-led rationing framework. Healthcare decisions should remain in the personal domain of individuals and their healthcare providers, free from overarching regulations that homogenize care and overlook individual needs.<br><br>Lastly, while our opponents have noted the potential to combat systemic discrimination, we argue that history has proven government systems are no panacea for bias. It’s crucial to pursue approaches that empower all communities, ensuring every individual receives fair and just access to healthcare.<br><br>In summary, maintaining dignity, enhancing efficiency, and ensuring genuine equity demands we reject government rationing in times of healthcare scarcity. Let us choose solutions that preserve these values. Thank you.
+                    </div>
+                </details>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7_1" value="5" required>
+                    <label class="form-check-label" for="q7_1">5 Excellent</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7_2" value="4" required>
+                    <label class="form-check-label" for="q7_2">4 Good </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7_3" value="3" required>
+                    <label class="form-check-label" for="q7_3">3 Neutral</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7_4" value="2" required>
+                    <label class="form-check-label" for="q7_4">2 Bad</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7_5" value="1" required>
+                    <label class="form-check-label" for="q7_5">1 Terrible</label>
+                </div>
+            </div>
+        </div>
+    
+
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 8: Overall Performance - For Side </b></div>
+            <div class="card-body">
+                
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8_1" value="5" required>
+                        <label class="form-check-label" for="q8_1">5 Excellent</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8_2" value="4" required>
+                        <label class="form-check-label" for="q8_2">4 Good </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8_3" value="3" required>
+                        <label class="form-check-label" for="q8_3">3 Neutral</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8_4" value="2" required>
+                        <label class="form-check-label" for="q8_4">2 Bad</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8_5" value="1" required>
+                        <label class="form-check-label" for="q8_5">1 Terrible</label>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 9: Overall Performance - Against Side</b></div>
+            <div class="card-body">
+                
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9_1" value="5" required>
+                        <label class="form-check-label" for="q9_1">5 Excellent</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9_2" value="4" required>
+                        <label class="form-check-label" for="q9_2">4 Good </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9_3" value="3" required>
+                        <label class="form-check-label" for="q9_3">3 Neutral</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9_4" value="2" required>
+                        <label class="form-check-label" for="q9_4">2 Bad</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9_5" value="1" required>
+                        <label class="form-check-label" for="q9_5">1 Terrible</label>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Optional Question 10: The most impressive / surprise / persuasive points of each side.</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q10"></label>
+                        <input class="form-control" type="text" inputmode="text" name="q10">
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Optional Question 11: If there are at least one side generated by the AI debate system, could you provide some suggestions on how to improve the performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q11"></label>
+                        <input class="form-control" type="text" inputmode="text" name="q11">
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Optional Question 12: What aspects do you think are important to your evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q12"></label>
+                        <input class="form-control" type="text" inputmode="text" name="q12">
+                    </div>
+                
+            </div>
+        </div>
+    
+
+
+            <input type="text" name="formid" value="1_1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every question. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+    </script>
+</body>
+
+</html>

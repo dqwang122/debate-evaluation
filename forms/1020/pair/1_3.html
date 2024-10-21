@@ -1,0 +1,353 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <style>
+        /* Reusable block class */
+        .collapsible-block {
+            margin-top: 5px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            width: 100%;
+            max-width: 80%; /* Control maximum width for readability */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for better visual effect */
+        }
+
+        .collapsible-block summary {
+            font-size: 1.1em;
+        }
+
+        .collapsible-block[open] summary {
+            color: #007bff; /* Highlighted color when expanded */
+        }
+
+        .collapsible-content {
+            margin-top: 3px;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <h1 class="display-4">Debate Pairwise Comparison</h1>
+    <p class="lead">Determine which side wins the debate game. </p>
+    <hr class="my-4">
+    <p>
+        Thanks for participating!
+    </p>
+    <p>
+        You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. 
+        You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. 
+        There are three stages (openining, rebuttal, and closing) in the debate process. You need to compare the performance of each side in each stage.
+        Finally, you will rate the performance of each side in the entire debate process and provide some optional feedback.
+    </p>
+    <p>
+        <strong>Instructions:</strong>
+        <ul>
+            <li>For: for side win the game </li>
+            <li>Against: against side win the game </li>
+            <li>Tie: Two sides have similar performance  </li>
+        </ul>
+    </p>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>Debate Motion: If Health Care Is A Scarce Resource Government Should Step In To Ration Care Deciding Whose Life Is Worth Saving </h4>
+    </div>
+    <br><br>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbzNNrODHITmNl-PjLB9kXtyRm4st1MlvHvkaM7ACvSlFoQ2DN9RXywE8rUtkdBkKuIkRQ/exec" method="GET" onsubmit="return preventRepeatedSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email: </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            
+    <input type="hidden" id="mode" name="mode" value="pair" >
+    <input type="hidden" id="mode" name="version" value="1020" >
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage. Which Side Do You Support?</b></div>
+            <div class="card-body">
+                
+                
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_1" value="1" required>
+                    <label class="form-check-label" for="q1_1">For win</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_2" value="2" required>
+                    <label class="form-check-label" for="q1_2">Against win</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_3" value="3" required>
+                    <label class="form-check-label" for="q1_3">Tie</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <p> <strong> For </strong> </p>
+                    <p>
+                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_3/opening_for.mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p> <strong> Against </strong> </p>
+                    <p>
+                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_3/opening_against.mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) For - Transcript </summary>
+                    <div>
+                        Ladies and gentlemen, esteemed judges, we stand before you today facing a difficult truth: healthcare resources are finite.  While we strive for a world where everyone receives unlimited care, the reality is that difficult choices must be made. This is not a reality we can afford to shy away from, but one we must address head-on. Therefore, we stand firmly in support of the motion: If healthcare is a scarce resource, government should step in to ration care, deciding whose life is worth saving.<br><br>At its core, this motion is about responsible stewardship. When resources are scarce, equitable distribution is not a matter of simply saying “yes” to everyone, but rather making strategic decisions that benefit society as a whole. This is where the crucial role of government comes in.<br><br>Firstly, government-led rationing can act as a powerful incentive for personal responsibility. By prioritizing preventative care and discouraging unnecessary healthcare utilization, we empower individuals to become active participants in their own well-being. Take, for example, the success of the Singaporean healthcare system. By combining government subsidies with individual medical savings accounts, individuals are incentivized to make responsible healthcare choices, promoting a culture of prevention and ultimately contributing to a healthier population. This approach is further supported by a 2017 study in the Journal of Health Economics, which found a direct correlation between higher patient cost-sharing and decreased utilization of low-value healthcare services. This clearly demonstrates how a structured approach to resource allocation can drive positive behavioral changes.<br><br>Secondly, government intervention through rationing is essential to curb the unsustainable rise of healthcare costs. The current trajectory, particularly in nations without universal healthcare like the United States, is a case in point. The United States spends significantly more per capita on healthcare than other developed nations, yet struggles with poorer health outcomes. This unsustainable model, as highlighted by a 2019 report from the Kaiser Family Foundation, sees healthcare costs skyrocketing faster than wages and inflation, placing a crippling financial burden on individuals and families. Government-led rationing, therefore, becomes not just an economic necessity, but a moral imperative to protect citizens from financial ruin in the pursuit of health. <br><br>Finally, and perhaps most importantly, a centralized rationing system enables strategic investment in public health initiatives. This focus on preventative care and community health, rather than solely on expensive individual treatments, creates a healthier population in the long run. We need only look at the example of Cuba. Despite limited resources, Cuba's healthcare system, renowned for its emphasis on preventative care and community health, boasts impressive health outcomes. This success story is corroborated by a 2016 study published in the Lancet, which found that investing in public health interventions such as vaccination and disease prevention programs significantly reduces mortality and morbidity rates. Thus, government-led rationing, by freeing up resources for such initiatives, becomes a powerful tool to elevate the health of the entire population.<br><br>In conclusion, while the idea of rationing healthcare is undoubtedly challenging, it is a necessary conversation we must have.  By entrusting the government to manage this scarce resource, we open the door to a more equitable, sustainable, and ultimately healthier future for all. We urge you to support this motion, not because it is easy, but because it is the responsible path forward in a world with finite resources and infinite healthcare needs. <br>
+                    </div>
+                </details>
+                
+                
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Against - Transcript </summary>
+                    <div>
+                        Honorable judges, esteemed colleagues, and attentive audience, we stand before you today to resolutely oppose the motion that government should assume the chilling responsibility of rationing healthcare and determining the worth of human life. This proposition rests upon a foundation of fear and expediency, sacrificing individual liberty and ethical responsibility at the altar of bureaucratic control. We contend that such a system is not only morally reprehensible but also practically unsound, ultimately harming the very people it purports to serve.<br><br>Firstly, the very notion of government deciding whose life is "worth saving" is morally abhorrent and fundamentally antithetical to the principles of a free and compassionate society.  Every human life holds intrinsic value, a value that cannot be quantified, ranked, or extinguished by government decree.  To suggest that bureaucrats, however well-intentioned, can make such life-and-death decisions for individuals is to embrace a dangerous and slippery slope, potentially leading to discrimination, abuse, and the erosion of individual rights.  Would we stand idly by as algorithms, fueled by cold calculations, determined who receives life-saving treatment and who is left to face their mortality?  We must never allow the value of human life to be reduced to a mere line item in a cost-benefit analysis.<br><br>Secondly, the proposed system of government rationing would inevitably be plagued by inefficiency, corruption, and unintended consequences.  History stands as a stark reminder of the dangers inherent in centralized control of essential resources.  Government-run healthcare systems, often burdened by bureaucracy and political interference, struggle to allocate resources efficiently and equitably.  The introduction of rationing, a system inherently reliant on subjective judgments and vulnerable to political pressure, would only exacerbate these challenges.  Furthermore, such a system risks disincentivizing innovation and investment in the healthcare sector, as private actors become wary of operating under the shadow of government dictates. <br><br>Instead of embracing a future where bureaucrats hold the power of life and death, we must focus on fostering a healthcare system that values individual liberty, promotes innovation, and ensures access to quality care for all.  Let us not forget that every life is precious, every individual deserving of dignity and respect. We must reject this motion, for it represents a dangerous and unethical path, one that undermines the very fabric of our humanity. <br>
+                    </div>
+                </details>
+                <br>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_1" value="1" required>
+                    <label class="form-check-label" for="q2_1">For win</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_2" value="2" required>
+                    <label class="form-check-label" for="q2_2">Against win</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_3" value="3" required>
+                    <label class="form-check-label" for="q2_3">Tie</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <p> <strong> For </strong> </p>
+                    <p>
+                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_3/rebuttal_for.mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p> <strong> Against </strong> </p>
+                    <p>
+                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_3/rebuttal_against.mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) For - Transcript </summary>
+                    <div>
+                        The opposition paints a dramatic picture of government tyranny, invoking fear and emotion to distract from the very real issue at hand: how do we ethically and effectively allocate limited healthcare resources? Their arguments, while appealing on the surface, crumble under scrutiny.<br><br>They claim that government rationing of healthcare is morally abhorrent, suggesting it reduces human life to mere numbers.  Yet, this conveniently ignores the stark reality that every healthcare system, whether public or private, engages in some form of rationing. When insurance companies deny coverage or set high deductibles, isn’t that a form of rationing by cost, often leaving the most vulnerable without access to life-saving treatments? Is it morally superior to have a system where the wealthy can buy their way to the front of the line, while others are left to fate? We believe that a transparent, publicly accountable system, guided by ethical principles and medical expertise, is far more just and compassionate than one driven by profit margins and the ability to pay. <br><br>Furthermore, the opposition decries government inefficiency while simultaneously advocating for a market-driven approach. Have they forgotten the rampant inefficiencies and glaring inequities plaguing healthcare systems like the United States, where exorbitant costs and administrative burdens are the norm?  The evidence is clear:  unchecked market forces in healthcare lead to skyrocketing costs, inaccessible care for many, and ultimately, poorer health outcomes. Conversely, numerous countries with government-run healthcare systems, including Canada and those in Western Europe, consistently demonstrate that efficiency, innovation, and high-quality care are not mutually exclusive to private systems. In fact, these systems often outperform market-driven models on key metrics such as life expectancy and infant mortality.<br><br>The assertion that government rationing stifles innovation also misses the mark.  By controlling costs and prioritizing preventative care, government rationing frees up resources for strategic investments in public health initiatives. This includes funding groundbreaking medical research, developing innovative treatment programs, and expanding access to preventative care for everyone. A 2021 study published in the Journal of the American Medical Association found that countries with universal healthcare systems tend to have higher rates of innovation in healthcare delivery and technology, directly contradicting the opposition's claim.  <br><br>Ultimately, our position is not about devaluing human life. It is about maximizing the health and well-being of the entire population within the constraints of finite resources. It is about ensuring that everyone, regardless of their socioeconomic background, has a fair chance at a healthy life.  <br><br>We cannot afford to be swayed by emotional arguments that ignore the complexities of this issue.  The evidence is clear:  a carefully designed, publicly accountable system of healthcare rationing, far from being morally reprehensible, offers the most ethical and effective path forward. We urge you to support this motion, not as an act of surrender to bureaucratic control, but as a courageous step towards a more just and equitable healthcare future for all. <br>
+                    </div>
+                </details>
+                
+                
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Against - Transcript </summary>
+                    <div>
+                        The opposition attempts to paint our stance as fear-mongering, but what’s more fear-inducing than a government empowered to choose who lives and who dies? They argue that rationing already exists in private insurance, attempting to equate necessary limitations with a system where the government holds ultimate power over life and death. This is a false equivalency.  Individuals choosing insurance plans based on their needs and resources is fundamentally different from a government bureaucrat, operating from a detached, utilitarian framework, deciding who receives treatment and who is condemned to their fate.  Such a system is not about ethics; it’s about expediently eliminating costs, regardless of the human cost.<br><br>Furthermore, the opposition’s romanticized view of government-run healthcare ignores the elephant in the room: the inefficiency inherent in centralized systems.  While they point to successes in other countries, they conveniently omit the long wait times, limited treatment options, and stifled innovation that often plague these very systems.  The evidence is not as clear-cut as they would have you believe. In fact, a 2023 study by the Fraser Institute found that patients in universal healthcare systems face significantly longer wait times for specialist appointments and elective surgeries compared to those in countries with more market-oriented systems.  This delay in care can have devastating consequences, potentially turning manageable conditions into life-threatening situations. Are we to accept such a trade-off - exchanging timely access to potentially life-saving treatment for the promise of a more “equitable” system? <br><br>Moreover, their assertion that government rationing fosters innovation is demonstrably false. History has repeatedly shown that innovation flourishes in environments where competition drives progress, not where government dictates solutions. The private sector, with its inherent drive for efficiency and patient satisfaction, has consistently been the engine of medical breakthroughs. Would we have seen the rapid development of life-saving vaccines during the COVID-19 pandemic under a system bogged down by bureaucratic red tape and centralized decision-making?  It’s highly doubtful. The reality is, government rationing would stifle the very incentives that drive medical advancements, ultimately harming the very people it purports to help.<br><br>The opposition may try to dress up their arguments in the language of compassion and fairness, but their solution is nothing short of a Faustian bargain: sacrificing individual liberty and innovation on the altar of a utopian ideal.  We must not be fooled by this dangerous rhetoric.  True compassion lies in empowering individuals, fostering a dynamic healthcare system that rewards innovation and provides quality care for all, not in handing over the reins of our lives to the cold, calculating hand of government. <br>
+                    </div>
+                </details>
+                <br>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_1" value="1" required>
+                    <label class="form-check-label" for="q3_1">For win</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_2" value="2" required>
+                    <label class="form-check-label" for="q3_2">Against win</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_3" value="3" required>
+                    <label class="form-check-label" for="q3_3">Tie</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <p> <strong> For </strong> </p>
+                    <p>
+                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_3/closing_for.mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p> <strong> Against </strong> </p>
+                    <p>
+                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_3/closing_against.mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) For - Transcript </summary>
+                    <div>
+                        The opposition continues to frame this complex issue as a binary choice between unfettered individual liberty and tyrannical government overreach.  They cherry-pick examples of inefficiency in government-run healthcare systems while conveniently ignoring the well-documented failings of market-driven models, like the exorbitant costs and unequal access plaguing the United States.  Their claim that government rationing stifles innovation ignores the reality of robust public research funding that fuels medical advancements worldwide.  The flawed premise of their argument is that somehow individual choice exists in a vacuum, separate from the harsh financial realities of healthcare. <br><br>This debate is not about stripping individuals of their agency; it is about creating a system that responsibly manages finite resources to deliver the greatest good for the greatest number of people.  We've demonstrated how government-led rationing, far from being a draconian measure, can actually incentivize personal responsibility for health, curb rising healthcare costs, and enable strategic investment in public health initiatives that benefit everyone. While no system is perfect, the evidence clearly demonstrates that a well-designed, publicly accountable system of healthcare rationing offers a more sustainable and equitable path forward than clinging to an unsustainable status quo that prioritizes profit over people.  We urge you to support this motion for a healthier, more just future for all. <br>
+                    </div>
+                </details>
+                
+                
+                <details class="collapsible-block">
+                    <summary class="collapsible-content"> (Optional) Against - Transcript </summary>
+                    <div>
+                        In closing, we urge you to reject the dangerous premise of this motion. Our opponents have attempted to frame government rationing as a necessary evil, a pragmatic solution to resource scarcity. Yet, their arguments rest on a faulty foundation, ignoring the inherent immorality of granting the state the power to choose who lives and who dies. <br><br>The fundamental flaw in their reasoning lies in their attempt to quantify the value of human life.  They speak of “the greatest good for the greatest number,” reducing individuals to mere data points in a utilitarian calculation.  This approach disregards the inherent dignity and worth of every human being, regardless of their health status or economic background. <br><br>We believe that true compassion lies not in handing over life-and-death decisions to bureaucrats, but in empowering individuals, fostering innovation, and striving for a healthcare system that values every life.  We must reject this motion and its chilling implications, for it leads us down a dangerous path – one where the value of human life is determined by government decree. <br>
+                    </div>
+                </details>
+                <br>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_1" value="1" required>
+                    <label class="form-check-label" for="q4_1">For win</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_2" value="2" required>
+                    <label class="form-check-label" for="q4_2">Against win</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_3" value="3" required>
+                    <label class="form-check-label" for="q4_3">Tie</label>
+                </div>
+            </div>
+        </div>
+    
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 5: Overall Performance</b></div>
+            <div class="card-body">
+                
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5_1" value="1" required>
+                        <label class="form-check-label" for="q5_1">For win</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5_2" value="2" required>
+                        <label class="form-check-label" for="q5_2">Against win</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5_3" value="3" required>
+                        <label class="form-check-label" for="q5_3">Tie</label>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Optional Question 6: The most impressive / surprise / persuasive points of each side.</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <input class="form-control" type="text" inputmode="text" name="q6">
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Optional Question 7: If there are at least one side generated by the AI debate system, could you provide some suggestions on how to improve the performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <input class="form-control" type="text" inputmode="text" name="q7">
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Optional Question 8: What aspects do you think are important to your evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q8"></label>
+                        <input class="form-control" type="text" inputmode="text" name="q8">
+                    </div>
+                
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="1_3" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every question. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+    </script>
+</body>
+
+</html>
