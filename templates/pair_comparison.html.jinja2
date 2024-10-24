@@ -32,8 +32,8 @@
                 <div class="audio-section">
                     {% for audio_path in question.audio_paths %}
                         <div class="row align-items-center mb-2">
-                            <div class="col-1 text-left">
-                                <strong>{{ audio_path[0] }}</strong>
+                            <div class="col-2 text-left">
+                                <strong><strong> {{ audio_path[0] }} </strong></strong>
                             </div>
                             <div class="col-3">
                                 <audio controls src="{{ audio_path[1] }}" class="w-100">
@@ -49,7 +49,7 @@
                         <details class="transcript-details mb-3">
                             <summary class="transcript-summary p-2 bg-light rounded">
                                 <i class="fas fa-file-alt mr-2"></i>
-                                (Optional) {{ audio_path[0] }} - Transcript
+                                (Optional) <strong> {{ audio_path[0] }} </strong> - Transcript
                             </summary>
                             <div class="transcript-content p-3 bg-white border rounded mt-2">
                                 {{ question.transcript[loop.index0] }}
@@ -62,15 +62,22 @@
                     {% for audio_path in question.audio_paths %}
                         <div class="form-group">
                             <label for="{{ question.name }}_{{ loop.index }}">
-                                Rate the performance of {{ audio_path[0] }} side:
+                                How persuasive these arguments are in changing your perspective to support <strong>{{ audio_path[0] }}</strong> side. Rate the performance in the following scale:
+                                <ul>
+                                    <li><strong>Fair(1)</strong>: Arguments provide <u>basic support</u> but <u>lack compelling evidence or reasoning</u> to significantly influence your perspective. </li>
+                                    <li><strong>Below Average (2)</strong>: Arguments <u>have some evidence or reasoning</u> but they are <u>off-topic or not well-organized</u> that limit their persuasive impact</li>
+                                    <li><strong>Average(3)</strong>: Arguments present <u>on-topic evidence and logical reasoning</u> that moderately sway your thinking toward the {{ audio_path[0] }} position. </li>
+                                    <li><strong>Above Average (4)</strong>: Arguments deliver <u>strong evidence and clear logic</u> that substantially shift your perspective, though minor gaps remain</li>
+                                    <li><strong>Excellent(5)</strong>: Arguments deliver <u>compelling evidence, address counterpoints, and use powerful reasoning</u> that strongly convinces you to support the {{ audio_path[0] }} position</li>
+                                </ul>
                             </label>
                             <div class="row align-items-center">
                                 <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
                                     <input type="range" class="form-control-range w-80" id="{{ question.name }}_{{ loop.index }}" name="{{ question.name }}_{{ loop.index }}" min="1" max="5" value="3" step="1" required>
                                     <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
-                                        <span style="width: 33%; text-align: left;">Fair(1)</span>
-                                        <span style="width: 34%; text-align: center;">Good(3)</span>
-                                        <span style="width: 33%; text-align: right;">Excellent(5)</span>
+                                        <span style="width: 33%; text-align: left;">Fair(1):</span>
+                                        <span style="width: 34%; text-align: center;">Good(3): </span>
+                                        <span style="width: 33%; text-align: right;">Excellent(5): </span>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +91,7 @@
                             }
                         </script>
                         <div class="form-group mt-3">
-                            <label for="{{ question.name }}_{{ loop.index }}_comment"> (Optional) Additional comments for {{ audio_path[0] }} side:</label>
+                            <label for="{{ question.name }}_{{ loop.index }}_comment"> (Optional) Additional comments for <strong> {{ audio_path[0] }} </strong> side:</label>
                             <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment" name="{{ question.name }}_{{ loop.index }}_comment" rows="1"></textarea>
                         </div>
                     {% endfor %}
