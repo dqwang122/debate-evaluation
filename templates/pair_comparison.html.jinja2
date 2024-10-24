@@ -1,4 +1,5 @@
 {% extends "base.html.jinja2" %}
+
 {% block heading %}
     <div class="container">
    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
@@ -11,11 +12,11 @@
    <div class="mb-4">
        <h4>What to Expect:</h4>
        <ul class="list-group">
-           <li class="list-group-item">Watch a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+           <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
            <li class="list-group-item">Share your initial opinion before listening.</li>
            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
            <li class="list-group-item">Cast your final vote after listening.</li>
-           <li class="list-group-item">The process will take about 1 hour and a $30 Amazon gift card will be sent via email as a gift for your participation.</li>
+           <li class="list-group-item">The process will take about1 hour and a $30 Amazon gift card will be sent via email as a gift for your participation.</li>
        </ul>
    </div>
 
@@ -34,37 +35,98 @@
            <div class="card">
                <div class="card-body">
                    <h5 class="card-title">Limited (1)</h5>
-                   <p class="card-text">Basic support is provided, but the arguments lack compelling evidence or clear reasoning to influence your view.</p>
+                   <p class="card-text" style="font-size: 16px;">Basic claims are provided, but there is no evidence or reasoning to influence your view. Or, the evidence provided is off-topic or contradicts the claims.</p>
                </div>
            </div>
            <div class="card">
                <div class="card-body">
-                   <h5 class="card-title">Developing (2)</h5>
-                   <p class="card-text">Some evidence or reasoning is present, but the arguments are off-topic or poorly organized, limiting their persuasive impact.</p>
+                   <h5 class="card-title">Weak (2)</h5>
+                   <p class="card-text" style="font-size: 16px;">Some evidence or reasoning is present, but the arguments are not sufficient or poorly organized, limiting their persuasive impact.</p>
                </div>
            </div>
            <div class="card">
                <div class="card-body">
                    <h5 class="card-title">Moderate (3)</h5>
-                   <p class="card-text">On-topic evidence and logical reasoning are used, moderately swaying your opinion toward the given position.</p>
+                   <p class="card-text" style="font-size: 16px;">On-topic evidence and logical reasoning are used, moderately swaying your opinion toward the given position.</p>
                </div>
            </div>
            <div class="card">
                <div class="card-body">
                    <h5 class="card-title">Strong (4)</h5>
-                   <p class="card-text">Strong evidence and clear logic substantially shift your perspective, though minor gaps may remain.</p>
+                   <p class="card-text" style="font-size: 16px;">Strong evidence and clear logic substantially shift your perspective, though minor gaps may remain.</p>
                </div>
            </div>
            <div class="card">
                <div class="card-body">
                    <h5 class="card-title">Compelling (5)</h5>
-                   <p class="card-text">Compelling evidence, effective counterpoints, and powerful reasoning strongly convince you to support the given position.</p>
+                   <p class="card-text" style="font-size: 16px;">Compelling evidence, effective counterpoints, and powerful reasoning strongly convince you to support the given position.</p>
                </div>
            </div>
        </div>
    </div>
 
 </div>
+{% endblock %}
+
+
+{% block styles %}
+<style>
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px; /* Smaller thumb size */
+        height: 15px; /* Smaller thumb size */
+        background: #0000FF; /* Deep blue color for the thumb */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        margin-top: -5px; /* Adjust this value to move the thumb higher */
+    }
+    input[type="range"]::-moz-range-thumb {
+        width: 15px; /* Smaller thumb size */
+        height: 15px; /* Smaller thumb size */
+        background: #0000FF; /* Deep blue color for the thumb */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        margin-top: -5px; /* Adjust this value to move the thumb higher */
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: linear-gradient(to right, #0000FF 0%, #0000FF var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+        border-radius: 1.3px;
+    }
+    input[type="range"]::-moz-range-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: linear-gradient(to right, #0000FF 0%, #0000FF var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+        border-radius: 1.3px;
+    }
+    input[type="range"]:focus {
+        outline: none;
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.querySelectorAll('input[type="range"]').forEach(function(slider) {
+        slider.addEventListener('input', function() {
+            var value = (this.value - this.min) / (this.max - this.min) * 100;
+            this.style.setProperty('--value', value + '%');
+        });
+    });
+</script>
 {% endblock %}
 
 {% block form_questions %}
@@ -97,9 +159,7 @@
                                 <i class="fas fa-file-alt mr-2"></i>
                                 (Optional) <strong> {{ audio_path[0] }} </strong> - Transcript
                             </summary>
-                            <div class="transcript-content p-3 bg-white border rounded mt-2">
-                                {{ question.transcript[loop.index0] }}
-                            </div>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">{{ question.transcript[loop.index0] }}</div>
                         </details>
                     {% endfor %}
                 </div>
@@ -108,10 +168,10 @@
                     {% for audio_path in question.audio_paths %}
                         <div class="form-group">
                             <label for="{{ question.name }}_{{ loop.index }}">
-                                How persuasive these arguments are in changing your perspective to support <strong>{{ audio_path[0] }}</strong> side. Rate the performance in the following scale:
+                                How persuasive these arguments are in supporting <strong>{{ audio_path[0] }}</strong> side? Rate the performance in the following scale:
                                 <ul>
-                                    <li><strong>Limited(1)</strong>: Basic support is provided, but the arguments <u>lack compelling evidence or clear reasoning</u> to influence your view. </li>
-                                    <li><strong>Developing(2)</strong>: Some evidence or reasoning is present, but <u>the arguments are off-topic or poorly organized</u>, limiting their persuasive impact. </li>
+                                    <li><strong>Limited(1)</strong>: Basic claims are made, but <u>there is no supporting evidence or reasoning</u> to influence your view. Or, the evidence provided is <u>off-topic or contradicts the claims.</u></li>
+                                    <li><strong>Weak(2)</strong>: Some evidence or reasoning is present, but <u>the arguments are not sufficient or poorly organized</u>, limiting their persuasive impact. </li>
                                     <li><strong>Moderate(3)</strong>: <u>On-topic evidence and logical reasoning</u> are used, moderately swaying your opinion toward the {{ audio_path[0] }} position. </li>
                                     <li><strong>Strong(4)</strong>: <u>Strong evidence and clear logic</u> substantially shift your perspective, though minor gaps may remain.</li>
                                     <li><strong>Compelling(5)</strong>: <u>Compelling evidence, effective counterpoints, and powerful reasoning</u> strongly convince you to support the {{ audio_path[0] }} position.</li>
@@ -120,10 +180,12 @@
                             <div class="row align-items-center">
                                 <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
                                     <input type="range" class="form-control-range w-80" id="{{ question.name }}_{{ loop.index }}" name="{{ question.name }}_{{ loop.index }}" min="1" max="5" value="3" step="1" required>
-                                    <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
-                                        <span style="width: 33%; text-align: left;">Limited(1):</span>
-                                        <span style="width: 34%; text-align: center;">Moderate(3): </span>
-                                        <span style="width: 33%; text-align: right;">Compelling(5): </span>
+                                    <div class="d-flex justify-content-between position-relative" style="width: 120%; margin-left: -10%;">
+                                        <span style="width: 20%; text-align: left;">Limited(1)</span>
+                                        <span style="width: 20%; text-align: center;">Weak(2) </span>
+                                        <span style="width: 20%; text-align: center;">Moderate(3) </span>
+                                        <span style="width: 20%; text-align: center;">Strong(4) </span>
+                                        <span style="width: 20%; text-align: right;">Compelling(5) </span>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +200,7 @@
                         </script>
                         <div class="form-group mt-3">
                             <label for="{{ question.name }}_{{ loop.index }}_comment"> (Optional) Additional comments for <strong> {{ audio_path[0] }} </strong> side:</label>
-                            <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment" name="{{ question.name }}_{{ loop.index }}_comment" rows="1"></textarea>
+                            <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment" name="{{ question.name }}_{{ loop.index }}_comment" rows="2"></textarea>
                         </div>
                     {% endfor %}
                 </div>
@@ -221,6 +283,8 @@
         </div>
     {% endfor %}
 {% endblock %}
+
+
 
 
 

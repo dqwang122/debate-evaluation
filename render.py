@@ -168,14 +168,15 @@ def main():
                 })
                 qid += 1
 
-            addition_questions = [
-                {
-                    "title": f"Question {qid}: Post-Vote Stage",
-                    "description": f"Please select the side you support after the debate.",
-                    "name": f"q{qid}",
-                    "type": "checkbox",
-                },]
-            qid += 1
+            # addition_questions = [
+            #     {
+            #         "title": f"Question {qid}: Post-Vote Stage",
+            #         "description": f"Please select the side you support after the debate.",
+            #         "name": f"q{qid}",
+            #         "type": "checkbox",
+            #     },]
+            # qid += 1
+            addition_questions = []
             for q in QLIST:
                 addition_questions.append({
                     "title": f"(Optional) Question {qid}: {q}",
