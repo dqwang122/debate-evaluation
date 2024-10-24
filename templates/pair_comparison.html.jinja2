@@ -29,43 +29,97 @@
         <div class="card form-group">
             <div class="card-header"><b>{{ question.title }}</b></div>
             <div class="card-body">
-                {% for audio_path in question.audio_paths %}
-                    <p> <strong> {{ audio_path[0] }} </strong> </p>
-                    <p>
-                        <audio controls src="{{ audio_path[1] }}">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </p>
-                {% endfor %}
-                {% if question.transcript_for %}
-                <details class="collapsible-block">
-                    <summary class="collapsible-content"> (Optional) For - Transcript </summary>
-                    <div>
-                        {{ question.transcript_for }}
+                <div class="audio-section">
+                    {% for audio_path in question.audio_paths %}
+                        <div class="row align-items-center mb-2">
+                            <div class="col-1 text-left">
+                                <strong>{{ audio_path[0] }}</strong>
+                            </div>
+                            <div class="col-3">
+                                <audio controls src="{{ audio_path[1] }}" class="w-100">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="transcript-section mt-4">
+                    {% for audio_path in question.audio_paths %}
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) {{ audio_path[0] }} - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">
+                                {{ question.transcript[loop.index0] }}
+                            </div>
+                        </details>
+                    {% endfor %}
+                </div>
+
+                <div class="rating-section">
+                    {% for audio_path in question.audio_paths %}
+                        <div class="form-group">
+                            <label for="{{ question.name }}_{{ loop.index }}">
+                                Rate the performance of {{ audio_path[0] }} side:
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                    <input type="range" class="form-control-range w-80" id="{{ question.name }}_{{ loop.index }}" name="{{ question.name }}_{{ loop.index }}" min="1" max="5" value="3" step="1" required>
+                                    <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                        <span style="width: 33%; text-align: left;">Poor(1)</span>
+                                        <span style="width: 34%; text-align: center;">Average(3)</span>
+                                        <span style="width: 33%; text-align: right;">Excellent(5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="{{ question.name }}_{{ loop.index }}_value"></div>
+                        <script>
+                            document.getElementById('{{ question.name }}_{{ loop.index }}').oninput = function() {
+                                var value = this.value;
+                                var output = document.getElementById('{{ question.name }}_{{ loop.index }}_value');
+                                output.innerHTML = 'Current rating: ' + value;
+                            }
+                        </script>
+                        <div class="form-group mt-3">
+                            <label for="{{ question.name }}_{{ loop.index }}_comment"> (Optional) Additional comments for {{ audio_path[0] }} side:</label>
+                            <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment" name="{{ question.name }}_{{ loop.index }}_comment" rows="1"></textarea>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;">
+                        {{ question.description }}
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="{{ question.name }}" name="{{ question.name }}" min="-5" max="5" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-5)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(5)</span>
+                            </div>
+                        </div>
                     </div>
-                </details>
-                {% endif %}
-                {% if question.transcript_against %}
-                <details class="collapsible-block">
-                    <summary class="collapsible-content"> (Optional) Against - Transcript </summary>
-                    <div>
-                        {{ question.transcript_against }}
-                    </div>
-                </details>
-                <br>
-                {% endif %}
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_1" value="1" required>
-                    <label class="form-check-label" for="{{ question.name }}_1">For win</label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_2" value="2" required>
-                    <label class="form-check-label" for="{{ question.name }}_2">Against win</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_3" value="3" required>
-                    <label class="form-check-label" for="{{ question.name }}_3">Tie</label>
-                </div>
+                <div id="{{ question.name }}_value"></div>
+                <script>
+                    document.getElementById('{{ question.name }}').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('{{ question.name }}_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
             </div>
         </div>
     {% endfor %}
@@ -75,25 +129,45 @@
             <div class="card-header"><b>{{ question.title }}</b></div>
             <div class="card-body">
                 {% if question.type == 'checkbox'  %}
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_1" value="1" required>
-                        <label class="form-check-label" for="{{ question.name }}_1">For win</label>
+                    <div class="form-group">
+                        <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;">
+                            {{ question.description }}
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-100" id="{{ question.name }}" name="{{ question.name }}" min="-5" max="5" value="0" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 33%; text-align: left;">Against(-5)</span>
+                                    <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                    <span style="width: 33%; text-align: right;">For(5)</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_2" value="2" required>
-                        <label class="form-check-label" for="{{ question.name }}_2">Against win</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_3" value="3" required>
-                        <label class="form-check-label" for="{{ question.name }}_3">Tie</label>
-                    </div>
+                    <div id="{{ question.name }}_value"></div>
+                    <script>
+                        document.getElementById('{{ question.name }}').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('{{ question.name }}_value');
+                            if (value < 0) {
+                                output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                            } else if (value > 0) {
+                                output.innerHTML = 'Current selection: ' + value + ' towards For';
+                            } else {
+                                output.innerHTML = 'Current selection: Tie';
+                            }
+                        }
+                    </script>
                 {% else %}
                     <div class="form-group">
                         <label for="{{ question.name }}"></label>
-                        <input class="form-control" type="text" inputmode="text" name="{{ question.name }}">
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="{{ question.name }}"></textarea>
                     </div>
                 {% endif %}
             </div>
         </div>
     {% endfor %}
 {% endblock %}
+
+
+

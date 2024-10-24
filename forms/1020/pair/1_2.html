@@ -7,34 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
-
-    <style>
-        /* Reusable block class */
-        .collapsible-block {
-            margin-top: 5px;
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            background-color: #f1f1f1;
-            cursor: pointer;
-            width: 100%;
-            max-width: 80%; /* Control maximum width for readability */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for better visual effect */
-        }
-
-        .collapsible-block summary {
-            font-size: 1.1em;
-        }
-
-        .collapsible-block[open] summary {
-            color: #007bff; /* Highlighted color when expanded */
-        }
-
-        .collapsible-content {
-            margin-top: 3px;
-            font-size: 0.95em;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/static/css/base.css">
 </head>
 
 <body>
@@ -71,7 +44,7 @@
     <br><br>
 
     <div class="container" id="form_container">
-        <form id="theForm" action="https://script.google.com/macros/s/AKfycbzNNrODHITmNl-PjLB9kXtyRm4st1MlvHvkaM7ACvSlFoQ2DN9RXywE8rUtkdBkKuIkRQ/exec" method="GET" onsubmit="return preventRepeatedSubmission() && addTimestamp();;">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbzZk4nyCtHSBsj9fcHu2TITJgL3PwNRGEBez6UAElAqQsO0fAiBqU_pp4e7n9vr2OODrw/exec" method="GET" onsubmit="return preventRepeatedSubmission() && addTimestamp();;">
         <input type="hidden" name="timestamp" id="timestamp">
             <div class="form-group">
                 <label for="name">Name: </label>
@@ -89,241 +62,549 @@
 
     
         <div class="card form-group">
-            <div class="card-header"><b>Question 1: Pre-Vote Stage. Which Side Do You Support?</b></div>
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
             <div class="card-body">
-                
-                
-                
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1_1" value="1" required>
-                    <label class="form-check-label" for="q1_1">For win</label>
+                <div class="audio-section">
+                    
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1_2" value="2" required>
-                    <label class="form-check-label" for="q1_2">Against win</label>
+
+                <div class="transcript-section mt-4">
+                    
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1_3" value="3" required>
-                    <label class="form-check-label" for="q1_3">Tie</label>
+
+                <div class="rating-section">
+                    
                 </div>
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please select the side you support before the debate starts.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q1" name="q1" min="-5" max="5" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-5)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(5)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q1_value"></div>
+                <script>
+                    document.getElementById('q1').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q1_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
             </div>
         </div>
     
         <div class="card form-group">
             <div class="card-header"><b>Question 2: Opening Stage</b></div>
             <div class="card-body">
-                
-                    <p> <strong> For </strong> </p>
-                    <p>
-                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/opening_for.mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </p>
-                
-                    <p> <strong> Against </strong> </p>
-                    <p>
-                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/opening_against.mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </p>
-                
-                
-                <details class="collapsible-block">
-                    <summary class="collapsible-content"> (Optional) For - Transcript </summary>
-                    <div>
-                        Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>Today, we stand at a critical juncture in the discourse on healthcare, where the scarcity of resources demands a pragmatic and ethical approach to ensure the greatest good for the greatest number. The motion before us—that if healthcare is a scarce resource, the government should step in to ration care, deciding whose life is worth saving—is not merely a call for bureaucratic intervention but a necessary measure to address the profound challenges posed by limited medical resources. I will present three compelling claims to support this motion: the ethical imperative of distributive justice, the efficacy of centralized decision-making, and the potential for equitable outcomes.<br><br>First, the ethical imperative of distributive justice demands that the government step in to ration healthcare. In a society where resources are finite, the principle of distributive justice requires that we allocate these resources in a manner that is fair and just. The free market, left unchecked, often prioritizes profit over patient care, leading to disparities in access and quality of treatment. By contrast, a government-led rationing system can ensure that healthcare is distributed based on need rather than ability to pay. This approach aligns with the moral obligation to protect the most vulnerable and uphold the principle that all lives have equal value. For instance, in countries like the United Kingdom, the National Health Service (NHS) employs a needs-based system that has been instrumental in providing equitable care, demonstrating that government intervention can lead to more just outcomes.<br><br>Second, centralized decision-making in healthcare rationing is more effective than decentralized, market-driven approaches. When healthcare is a scarce resource, the complexity of decision-making increases exponentially. A decentralized system, where decisions are made by individual providers or insurers, can lead to inconsistent and often arbitrary outcomes. In contrast, a centralized system allows for a comprehensive assessment of the entire healthcare landscape, enabling more informed and strategic allocation of resources. This approach can prevent the waste of scarce resources on less effective treatments and ensure that the most promising interventions are available to those who need them most. For example, the Swiss healthcare system, which employs a centralized approach to rationing, has been praised for its efficiency and effectiveness in managing limited resources.<br><br>Finally, a government-led rationing system has the potential to achieve more equitable outcomes. In a market-driven system, socioeconomic status often determines access to healthcare, exacerbating existing inequalities. A government-led system, guided by principles of equity and fairness, can mitigate these disparities by ensuring that healthcare resources are distributed in a manner that is not influenced by wealth or social standing. This approach can lead to a more inclusive and compassionate society, where the benefits of healthcare are shared more broadly. For instance, the Veterans Health Administration (VHA) in the United States, which operates under a government-led model, has been successful in providing high-quality care to veterans, regardless of their financial situation, illustrating the potential for equitable outcomes in a government-led system.<br><br>In conclusion, the government's role in rationing healthcare is not only justified but essential in the face of scarce resources. By upholding the ethical principle of distributive justice, enhancing the efficacy of decision-making, and promoting equitable outcomes, a government-led rationing system can ensure that healthcare is allocated in a manner that is fair, just, and compassionate. Thank you.
+                <div class="audio-section">
+                    
+                        <div class="row align-items-center mb-2">
+                            <div class="col-1 text-left">
+                                <strong>For</strong>
+                            </div>
+                            <div class="col-3">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/opening_for.mp3" class="w-100">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    
+                        <div class="row align-items-center mb-2">
+                            <div class="col-1 text-left">
+                                <strong>Against</strong>
+                            </div>
+                            <div class="col-3">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/opening_against.mp3" class="w-100">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    
+                </div>
+
+                <div class="transcript-section mt-4">
+                    
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) For - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">
+                                Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>Today, we stand at a critical juncture in the discourse on healthcare, where the scarcity of resources demands a pragmatic and ethical approach to ensure the greatest good for the greatest number. The motion before us—that if healthcare is a scarce resource, the government should step in to ration care, deciding whose life is worth saving—is not merely a call for bureaucratic intervention but a necessary measure to address the profound challenges posed by limited medical resources. I will present three compelling claims to support this motion: the ethical imperative of distributive justice, the efficacy of centralized decision-making, and the potential for equitable outcomes.<br><br>First, the ethical imperative of distributive justice demands that the government step in to ration healthcare. In a society where resources are finite, the principle of distributive justice requires that we allocate these resources in a manner that is fair and just. The free market, left unchecked, often prioritizes profit over patient care, leading to disparities in access and quality of treatment. By contrast, a government-led rationing system can ensure that healthcare is distributed based on need rather than ability to pay. This approach aligns with the moral obligation to protect the most vulnerable and uphold the principle that all lives have equal value. For instance, in countries like the United Kingdom, the National Health Service (NHS) employs a needs-based system that has been instrumental in providing equitable care, demonstrating that government intervention can lead to more just outcomes.<br><br>Second, centralized decision-making in healthcare rationing is more effective than decentralized, market-driven approaches. When healthcare is a scarce resource, the complexity of decision-making increases exponentially. A decentralized system, where decisions are made by individual providers or insurers, can lead to inconsistent and often arbitrary outcomes. In contrast, a centralized system allows for a comprehensive assessment of the entire healthcare landscape, enabling more informed and strategic allocation of resources. This approach can prevent the waste of scarce resources on less effective treatments and ensure that the most promising interventions are available to those who need them most. For example, the Swiss healthcare system, which employs a centralized approach to rationing, has been praised for its efficiency and effectiveness in managing limited resources.<br><br>Finally, a government-led rationing system has the potential to achieve more equitable outcomes. In a market-driven system, socioeconomic status often determines access to healthcare, exacerbating existing inequalities. A government-led system, guided by principles of equity and fairness, can mitigate these disparities by ensuring that healthcare resources are distributed in a manner that is not influenced by wealth or social standing. This approach can lead to a more inclusive and compassionate society, where the benefits of healthcare are shared more broadly. For instance, the Veterans Health Administration (VHA) in the United States, which operates under a government-led model, has been successful in providing high-quality care to veterans, regardless of their financial situation, illustrating the potential for equitable outcomes in a government-led system.<br><br>In conclusion, the government's role in rationing healthcare is not only justified but essential in the face of scarce resources. By upholding the ethical principle of distributive justice, enhancing the efficacy of decision-making, and promoting equitable outcomes, a government-led rationing system can ensure that healthcare is allocated in a manner that is fair, just, and compassionate. Thank you.
+                            </div>
+                        </details>
+                    
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) Against - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">
+                                Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>Today, we stand against the motion that if healthcare is a scarce resource, the government should step in to ration care, deciding whose life is worth saving. We argue that such a system not only leads to inefficiencies and delays in treatment but also fosters discrimination and a lack of accountability and transparency.<br><br>First and foremost, government rationing of healthcare leads to inefficiencies and delays in treatment. A study by the National Bureau of Economic Research has found that government-controlled healthcare systems often experience longer wait times for critical procedures. This is not merely an inconvenience; it is a matter of life and death. When patients are forced to wait for extended periods, their conditions can deteriorate, leading to poorer outcomes and, in some cases, irreversible damage. For instance, in Canada, a report by the Fraser Institute revealed that patients often wait over four months for essential surgeries due to government rationing. This delay can be catastrophic for those suffering from acute conditions such as heart disease, cancer, or severe trauma. The longer the wait, the higher the risk of complications and the lower the chances of a successful recovery.<br><br>Moreover, government rationing of healthcare can lead to discrimination against certain groups. A report by the American Medical Association found that government-controlled healthcare systems often prioritize younger, healthier patients over older or chronically ill patients. This ageist and discriminatory approach undermines the principle of equity in healthcare, where every individual, regardless of age or pre-existing conditions, should have access to necessary medical interventions. Furthermore, in the United Kingdom, a study by the British Medical Journal found that patients with mental health conditions were often denied access to treatments due to government rationing. This bias against mental health is not only unjust but also detrimental to the overall well-being of society. Mental health is as critical as physical health, and denying treatment to those in need perpetuates a cycle of suffering and societal burden.<br><br>Lastly, government rationing of healthcare can lead to a lack of accountability and transparency. A report by Transparency International found that government-controlled healthcare systems often lacked transparency and accountability in decision-making processes. When decisions about who receives care and who does not are made behind closed doors, without clear criteria or public input, it breeds mistrust and suspicion. In the United Kingdom, a study by the British Medical Journal found that government rationing decisions were often made without clear criteria or public input. This lack of transparency can lead to arbitrary and unfair decisions, where the most vulnerable populations are left without the care they desperately need. Without accountability, there is no recourse for those who are unfairly denied treatment, and the system becomes a breeding ground for corruption and abuse of power.<br><br>In conclusion, we firmly believe that government rationing of healthcare is not the solution to the scarcity of resources. It leads to inefficiencies and delays in treatment, fosters discrimination against vulnerable groups, and creates a lack of accountability and transparency. We must seek alternative solutions that ensure equitable access to healthcare without compromising the quality of care or the dignity of those in need. Thank you.
+                            </div>
+                        </details>
+                    
+                </div>
+
+                <div class="rating-section">
+                    
+                        <div class="form-group">
+                            <label for="q2_1">
+                                Rate the performance of For side:
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                    <input type="range" class="form-control-range w-80" id="q2_1" name="q2_1" min="1" max="5" value="3" step="1" required>
+                                    <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                        <span style="width: 33%; text-align: left;">Poor(1)</span>
+                                        <span style="width: 34%; text-align: center;">Average(3)</span>
+                                        <span style="width: 33%; text-align: right;">Excellent(5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="q2_1_value"></div>
+                        <script>
+                            document.getElementById('q2_1').oninput = function() {
+                                var value = this.value;
+                                var output = document.getElementById('q2_1_value');
+                                output.innerHTML = 'Current rating: ' + value;
+                            }
+                        </script>
+                        <div class="form-group mt-3">
+                            <label for="q2_1_comment"> (Optional) Additional comments for For side:</label>
+                            <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="1"></textarea>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="q2_2">
+                                Rate the performance of Against side:
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                    <input type="range" class="form-control-range w-80" id="q2_2" name="q2_2" min="1" max="5" value="3" step="1" required>
+                                    <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                        <span style="width: 33%; text-align: left;">Poor(1)</span>
+                                        <span style="width: 34%; text-align: center;">Average(3)</span>
+                                        <span style="width: 33%; text-align: right;">Excellent(5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="q2_2_value"></div>
+                        <script>
+                            document.getElementById('q2_2').oninput = function() {
+                                var value = this.value;
+                                var output = document.getElementById('q2_2_value');
+                                output.innerHTML = 'Current rating: ' + value;
+                            }
+                        </script>
+                        <div class="form-group mt-3">
+                            <label for="q2_2_comment"> (Optional) Additional comments for Against side:</label>
+                            <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="1"></textarea>
+                        </div>
+                    
+                </div>
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q2" name="q2" min="-5" max="5" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-5)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(5)</span>
+                            </div>
+                        </div>
                     </div>
-                </details>
-                
-                
-                <details class="collapsible-block">
-                    <summary class="collapsible-content"> (Optional) Against - Transcript </summary>
-                    <div>
-                        Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>Today, we stand against the motion that if healthcare is a scarce resource, the government should step in to ration care, deciding whose life is worth saving. We argue that such a system not only leads to inefficiencies and delays in treatment but also fosters discrimination and a lack of accountability and transparency.<br><br>First and foremost, government rationing of healthcare leads to inefficiencies and delays in treatment. A study by the National Bureau of Economic Research has found that government-controlled healthcare systems often experience longer wait times for critical procedures. This is not merely an inconvenience; it is a matter of life and death. When patients are forced to wait for extended periods, their conditions can deteriorate, leading to poorer outcomes and, in some cases, irreversible damage. For instance, in Canada, a report by the Fraser Institute revealed that patients often wait over four months for essential surgeries due to government rationing. This delay can be catastrophic for those suffering from acute conditions such as heart disease, cancer, or severe trauma. The longer the wait, the higher the risk of complications and the lower the chances of a successful recovery.<br><br>Moreover, government rationing of healthcare can lead to discrimination against certain groups. A report by the American Medical Association found that government-controlled healthcare systems often prioritize younger, healthier patients over older or chronically ill patients. This ageist and discriminatory approach undermines the principle of equity in healthcare, where every individual, regardless of age or pre-existing conditions, should have access to necessary medical interventions. Furthermore, in the United Kingdom, a study by the British Medical Journal found that patients with mental health conditions were often denied access to treatments due to government rationing. This bias against mental health is not only unjust but also detrimental to the overall well-being of society. Mental health is as critical as physical health, and denying treatment to those in need perpetuates a cycle of suffering and societal burden.<br><br>Lastly, government rationing of healthcare can lead to a lack of accountability and transparency. A report by Transparency International found that government-controlled healthcare systems often lacked transparency and accountability in decision-making processes. When decisions about who receives care and who does not are made behind closed doors, without clear criteria or public input, it breeds mistrust and suspicion. In the United Kingdom, a study by the British Medical Journal found that government rationing decisions were often made without clear criteria or public input. This lack of transparency can lead to arbitrary and unfair decisions, where the most vulnerable populations are left without the care they desperately need. Without accountability, there is no recourse for those who are unfairly denied treatment, and the system becomes a breeding ground for corruption and abuse of power.<br><br>In conclusion, we firmly believe that government rationing of healthcare is not the solution to the scarcity of resources. It leads to inefficiencies and delays in treatment, fosters discrimination against vulnerable groups, and creates a lack of accountability and transparency. We must seek alternative solutions that ensure equitable access to healthcare without compromising the quality of care or the dignity of those in need. Thank you.
-                    </div>
-                </details>
-                <br>
-                
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2_1" value="1" required>
-                    <label class="form-check-label" for="q2_1">For win</label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2_2" value="2" required>
-                    <label class="form-check-label" for="q2_2">Against win</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2_3" value="3" required>
-                    <label class="form-check-label" for="q2_3">Tie</label>
-                </div>
+                <div id="q2_value"></div>
+                <script>
+                    document.getElementById('q2').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q2_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
             </div>
         </div>
     
         <div class="card form-group">
             <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
             <div class="card-body">
-                
-                    <p> <strong> For </strong> </p>
-                    <p>
-                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/rebuttal_for.mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </p>
-                
-                    <p> <strong> Against </strong> </p>
-                    <p>
-                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/rebuttal_against.mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </p>
-                
-                
-                <details class="collapsible-block">
-                    <summary class="collapsible-content"> (Optional) For - Transcript </summary>
-                    <div>
-                        Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>I appreciate the opportunity to respond to the opposing arguments and to further elucidate why government rationing of healthcare is not only necessary but also ethically and practically superior in the face of scarce resources.<br><br>First, let's address the claim that government rationing leads to inefficiencies and delays in treatment. While it is true that wait times can be a concern in some government-led healthcare systems, this is not an inherent flaw of rationing but rather a symptom of underfunding and mismanagement. The solution to these issues is not to abandon government intervention but to improve it. For instance, the Veterans Health Administration (VHA) in the United States has demonstrated that with adequate funding and efficient management, government-led healthcare can provide timely and high-quality care. The VHA has implemented innovative strategies, such as telemedicine and streamlined appointment systems, to reduce wait times and improve patient outcomes. Therefore, the argument that government rationing inherently leads to inefficiencies is a mischaracterization; it is the quality of management, not the principle of rationing, that determines efficiency.<br><br>Next, the opposition argues that government rationing fosters discrimination against certain groups. This claim is based on anecdotal evidence and selective studies that do not account for the broader context of equitable healthcare provision. The reality is that a well-designed government rationing system can and should prioritize those most in need, regardless of age, socioeconomic status, or pre-existing conditions. The National Health Service (NHS) in the United Kingdom, for example, has implemented policies that ensure equitable access to healthcare by prioritizing treatments based on clinical need rather than financial considerations. The NHS has also made significant strides in addressing mental health disparities, ensuring that mental health services are integrated into the broader healthcare system. Therefore, the argument that government rationing leads to discrimination is unfounded; it is the implementation and oversight of the system that determine whether equity is achieved.<br><br>Lastly, the opposition claims that government rationing leads to a lack of accountability and transparency. This argument overlooks the fact that transparency and accountability are integral components of effective governance. In fact, many government-led healthcare systems have implemented robust mechanisms for public oversight and accountability. For example, the Swiss healthcare system employs a transparent process for rationing decisions, involving public consultations and clear criteria for resource allocation. Additionally, the NHS has established independent bodies, such as the National Institute for Health and Care Excellence (NICE), to ensure that decisions are made based on evidence and public input. Therefore, the argument that government rationing lacks transparency and accountability is a red herring; it is the commitment to these principles that determines the integrity of the system.<br><br>In conclusion, the opposition's arguments are based on misconceptions and selective evidence that do not reflect the potential for government rationing to achieve equitable, efficient, and transparent healthcare provision. By improving management, ensuring equitable access, and maintaining transparency and accountability, government rationing can address the challenges of scarce healthcare resources in a manner that is both ethical and effective. Thank you.
+                <div class="audio-section">
+                    
+                        <div class="row align-items-center mb-2">
+                            <div class="col-1 text-left">
+                                <strong>For</strong>
+                            </div>
+                            <div class="col-3">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/rebuttal_for.mp3" class="w-100">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    
+                        <div class="row align-items-center mb-2">
+                            <div class="col-1 text-left">
+                                <strong>Against</strong>
+                            </div>
+                            <div class="col-3">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/rebuttal_against.mp3" class="w-100">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    
+                </div>
+
+                <div class="transcript-section mt-4">
+                    
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) For - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">
+                                Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>I appreciate the opportunity to respond to the opposing arguments and to further elucidate why government rationing of healthcare is not only necessary but also ethically and practically superior in the face of scarce resources.<br><br>First, let's address the claim that government rationing leads to inefficiencies and delays in treatment. While it is true that wait times can be a concern in some government-led healthcare systems, this is not an inherent flaw of rationing but rather a symptom of underfunding and mismanagement. The solution to these issues is not to abandon government intervention but to improve it. For instance, the Veterans Health Administration (VHA) in the United States has demonstrated that with adequate funding and efficient management, government-led healthcare can provide timely and high-quality care. The VHA has implemented innovative strategies, such as telemedicine and streamlined appointment systems, to reduce wait times and improve patient outcomes. Therefore, the argument that government rationing inherently leads to inefficiencies is a mischaracterization; it is the quality of management, not the principle of rationing, that determines efficiency.<br><br>Next, the opposition argues that government rationing fosters discrimination against certain groups. This claim is based on anecdotal evidence and selective studies that do not account for the broader context of equitable healthcare provision. The reality is that a well-designed government rationing system can and should prioritize those most in need, regardless of age, socioeconomic status, or pre-existing conditions. The National Health Service (NHS) in the United Kingdom, for example, has implemented policies that ensure equitable access to healthcare by prioritizing treatments based on clinical need rather than financial considerations. The NHS has also made significant strides in addressing mental health disparities, ensuring that mental health services are integrated into the broader healthcare system. Therefore, the argument that government rationing leads to discrimination is unfounded; it is the implementation and oversight of the system that determine whether equity is achieved.<br><br>Lastly, the opposition claims that government rationing leads to a lack of accountability and transparency. This argument overlooks the fact that transparency and accountability are integral components of effective governance. In fact, many government-led healthcare systems have implemented robust mechanisms for public oversight and accountability. For example, the Swiss healthcare system employs a transparent process for rationing decisions, involving public consultations and clear criteria for resource allocation. Additionally, the NHS has established independent bodies, such as the National Institute for Health and Care Excellence (NICE), to ensure that decisions are made based on evidence and public input. Therefore, the argument that government rationing lacks transparency and accountability is a red herring; it is the commitment to these principles that determines the integrity of the system.<br><br>In conclusion, the opposition's arguments are based on misconceptions and selective evidence that do not reflect the potential for government rationing to achieve equitable, efficient, and transparent healthcare provision. By improving management, ensuring equitable access, and maintaining transparency and accountability, government rationing can address the challenges of scarce healthcare resources in a manner that is both ethical and effective. Thank you.
+                            </div>
+                        </details>
+                    
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) Against - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">
+                                Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>I appreciate the opportunity to respond to the opposing arguments and to further elucidate why government rationing of healthcare is not the solution to the challenges of scarce resources.<br><br>First, let's address the claim that government rationing does not inherently lead to inefficiencies; it is the quality of management that determines efficiency. While the Veterans Health Administration (VHA) may have shown improvements, it is an outlier and not representative of broader government-controlled systems. The majority of government-controlled healthcare systems, such as those in Canada and the United Kingdom, still face significant inefficiencies and long wait times, as evidenced by studies from the National Bureau of Economic Research and the Fraser Institute. These studies consistently show that wait times for critical procedures are significantly longer in government-controlled systems compared to private ones, reinforcing the claim that government rationing leads to inefficiencies.<br><br>Next, the opposition argues that government rationing can be transparent and accountable through effective governance mechanisms. Transparency and accountability are not sufficient to address the inherent inefficiencies and discriminatory practices of government rationing. The Swiss healthcare system's transparency process and the NHS's NICE body do not negate the fact that government-controlled systems often experience longer wait times and discrimination against certain groups, as highlighted by the National Bureau of Economic Research and the British Medical Journal. These studies consistently show that wait times for critical procedures are significantly longer in government-controlled systems compared to private ones, reinforcing the claim that government rationing leads to inefficiencies.<br><br>Furthermore, the logic that government rationing ensures equitable access is flawed because it assumes that the prioritization criteria are always fair and unbiased. However, reports from the American Medical Association and the British Medical Journal show that certain groups, such as older or mentally ill patients, are often discriminated against. Additionally, while transparency and accountability are important, they do not necessarily lead to equitable outcomes if the underlying criteria are flawed. The inefficiencies and delays in government-controlled healthcare systems are well-documented. Studies from the National Bureau of Economic Research and the Fraser Institute consistently show that wait times for critical procedures are significantly longer in government-controlled systems compared to private ones, reinforcing the claim that government rationing leads to inefficiencies.<br><br>In conclusion, the opposition's arguments are based on misconceptions and selective evidence that do not reflect the potential for government rationing to achieve equitable, efficient, and transparent healthcare provision. By improving management, ensuring equitable access, and maintaining transparency and accountability, government rationing can address the challenges of scarce healthcare resources in a manner that is both ethical and effective. Thank you.
+                            </div>
+                        </details>
+                    
+                </div>
+
+                <div class="rating-section">
+                    
+                        <div class="form-group">
+                            <label for="q3_1">
+                                Rate the performance of For side:
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                    <input type="range" class="form-control-range w-80" id="q3_1" name="q3_1" min="1" max="5" value="3" step="1" required>
+                                    <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                        <span style="width: 33%; text-align: left;">Poor(1)</span>
+                                        <span style="width: 34%; text-align: center;">Average(3)</span>
+                                        <span style="width: 33%; text-align: right;">Excellent(5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="q3_1_value"></div>
+                        <script>
+                            document.getElementById('q3_1').oninput = function() {
+                                var value = this.value;
+                                var output = document.getElementById('q3_1_value');
+                                output.innerHTML = 'Current rating: ' + value;
+                            }
+                        </script>
+                        <div class="form-group mt-3">
+                            <label for="q3_1_comment"> (Optional) Additional comments for For side:</label>
+                            <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="1"></textarea>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="q3_2">
+                                Rate the performance of Against side:
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                    <input type="range" class="form-control-range w-80" id="q3_2" name="q3_2" min="1" max="5" value="3" step="1" required>
+                                    <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                        <span style="width: 33%; text-align: left;">Poor(1)</span>
+                                        <span style="width: 34%; text-align: center;">Average(3)</span>
+                                        <span style="width: 33%; text-align: right;">Excellent(5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="q3_2_value"></div>
+                        <script>
+                            document.getElementById('q3_2').oninput = function() {
+                                var value = this.value;
+                                var output = document.getElementById('q3_2_value');
+                                output.innerHTML = 'Current rating: ' + value;
+                            }
+                        </script>
+                        <div class="form-group mt-3">
+                            <label for="q3_2_comment"> (Optional) Additional comments for Against side:</label>
+                            <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="1"></textarea>
+                        </div>
+                    
+                </div>
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q3" name="q3" min="-5" max="5" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-5)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(5)</span>
+                            </div>
+                        </div>
                     </div>
-                </details>
-                
-                
-                <details class="collapsible-block">
-                    <summary class="collapsible-content"> (Optional) Against - Transcript </summary>
-                    <div>
-                        Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>I appreciate the opportunity to respond to the opposing arguments and to further elucidate why government rationing of healthcare is not the solution to the challenges of scarce resources.<br><br>First, let's address the claim that government rationing does not inherently lead to inefficiencies; it is the quality of management that determines efficiency. While the Veterans Health Administration (VHA) may have shown improvements, it is an outlier and not representative of broader government-controlled systems. The majority of government-controlled healthcare systems, such as those in Canada and the United Kingdom, still face significant inefficiencies and long wait times, as evidenced by studies from the National Bureau of Economic Research and the Fraser Institute. These studies consistently show that wait times for critical procedures are significantly longer in government-controlled systems compared to private ones, reinforcing the claim that government rationing leads to inefficiencies.<br><br>Next, the opposition argues that government rationing can be transparent and accountable through effective governance mechanisms. Transparency and accountability are not sufficient to address the inherent inefficiencies and discriminatory practices of government rationing. The Swiss healthcare system's transparency process and the NHS's NICE body do not negate the fact that government-controlled systems often experience longer wait times and discrimination against certain groups, as highlighted by the National Bureau of Economic Research and the British Medical Journal. These studies consistently show that wait times for critical procedures are significantly longer in government-controlled systems compared to private ones, reinforcing the claim that government rationing leads to inefficiencies.<br><br>Furthermore, the logic that government rationing ensures equitable access is flawed because it assumes that the prioritization criteria are always fair and unbiased. However, reports from the American Medical Association and the British Medical Journal show that certain groups, such as older or mentally ill patients, are often discriminated against. Additionally, while transparency and accountability are important, they do not necessarily lead to equitable outcomes if the underlying criteria are flawed. The inefficiencies and delays in government-controlled healthcare systems are well-documented. Studies from the National Bureau of Economic Research and the Fraser Institute consistently show that wait times for critical procedures are significantly longer in government-controlled systems compared to private ones, reinforcing the claim that government rationing leads to inefficiencies.<br><br>In conclusion, the opposition's arguments are based on misconceptions and selective evidence that do not reflect the potential for government rationing to achieve equitable, efficient, and transparent healthcare provision. By improving management, ensuring equitable access, and maintaining transparency and accountability, government rationing can address the challenges of scarce healthcare resources in a manner that is both ethical and effective. Thank you.
-                    </div>
-                </details>
-                <br>
-                
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q3" id="q3_1" value="1" required>
-                    <label class="form-check-label" for="q3_1">For win</label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q3" id="q3_2" value="2" required>
-                    <label class="form-check-label" for="q3_2">Against win</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q3" id="q3_3" value="3" required>
-                    <label class="form-check-label" for="q3_3">Tie</label>
-                </div>
+                <div id="q3_value"></div>
+                <script>
+                    document.getElementById('q3').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q3_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
             </div>
         </div>
     
         <div class="card form-group">
             <div class="card-header"><b>Question 4: Closing Stage</b></div>
             <div class="card-body">
-                
-                    <p> <strong> For </strong> </p>
-                    <p>
-                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/closing_for.mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </p>
-                
-                    <p> <strong> Against </strong> </p>
-                    <p>
-                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/closing_against.mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </p>
-                
-                
-                <details class="collapsible-block">
-                    <summary class="collapsible-content"> (Optional) For - Transcript </summary>
-                    <div>
-                        Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>In closing, I reiterate the necessity of government rationing of healthcare in the face of scarce resources. Our debate has highlighted the ethical imperative of distributive justice, the efficacy of centralized decision-making, and the potential for equitable outcomes, all of which support the motion.<br><br>Firstly, the ethical imperative of distributive justice demands that healthcare resources be allocated fairly. A government-led system ensures that decisions are made based on need, not ability to pay, thereby upholding the principle that all lives have equal value. This approach protects the most vulnerable and promotes a just society.<br><br>Secondly, centralized decision-making in healthcare rationing is more effective than decentralized systems. A centralized approach allows for a comprehensive assessment of the healthcare landscape, enabling strategic allocation of resources. This prevents waste and ensures that the most effective treatments are available to those who need them most.<br><br>Lastly, a government-led rationing system has the potential to achieve more equitable outcomes. By mitigating socioeconomic disparities and ensuring that healthcare resources are distributed fairly, this system can lead to a more inclusive and compassionate society.<br><br>In conclusion, government rationing of healthcare is not only justified but essential in the face of scarce resources. It upholds ethical principles, enhances decision-making efficacy, and promotes equitable outcomes. Thank you.
+                <div class="audio-section">
+                    
+                        <div class="row align-items-center mb-2">
+                            <div class="col-1 text-left">
+                                <strong>For</strong>
+                            </div>
+                            <div class="col-3">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/closing_for.mp3" class="w-100">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    
+                        <div class="row align-items-center mb-2">
+                            <div class="col-1 text-left">
+                                <strong>Against</strong>
+                            </div>
+                            <div class="col-3">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1020/case1_2/closing_against.mp3" class="w-100">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    
+                </div>
+
+                <div class="transcript-section mt-4">
+                    
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) For - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">
+                                Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>In closing, I reiterate the necessity of government rationing of healthcare in the face of scarce resources. Our debate has highlighted the ethical imperative of distributive justice, the efficacy of centralized decision-making, and the potential for equitable outcomes, all of which support the motion.<br><br>Firstly, the ethical imperative of distributive justice demands that healthcare resources be allocated fairly. A government-led system ensures that decisions are made based on need, not ability to pay, thereby upholding the principle that all lives have equal value. This approach protects the most vulnerable and promotes a just society.<br><br>Secondly, centralized decision-making in healthcare rationing is more effective than decentralized systems. A centralized approach allows for a comprehensive assessment of the healthcare landscape, enabling strategic allocation of resources. This prevents waste and ensures that the most effective treatments are available to those who need them most.<br><br>Lastly, a government-led rationing system has the potential to achieve more equitable outcomes. By mitigating socioeconomic disparities and ensuring that healthcare resources are distributed fairly, this system can lead to a more inclusive and compassionate society.<br><br>In conclusion, government rationing of healthcare is not only justified but essential in the face of scarce resources. It upholds ethical principles, enhances decision-making efficacy, and promotes equitable outcomes. Thank you.
+                            </div>
+                        </details>
+                    
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) Against - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">
+                                Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>In closing, I reiterate our position that government rationing of healthcare is not the solution to the challenges of scarce resources. The opposition's arguments, while well-intentioned, fail to address the inherent inefficiencies and discriminatory practices that government rationing often entails.<br><br>Firstly, the opposition claims that government rationing does not inherently lead to inefficiencies, citing the Veterans Health Administration (VHA) as an example. However, the VHA is an outlier and not representative of broader government-controlled systems. The majority of such systems, as evidenced by studies from the National Bureau of Economic Research and the Fraser Institute, still face significant inefficiencies and long wait times. These studies consistently show that wait times for critical procedures are significantly longer in government-controlled systems compared to private ones, reinforcing our claim that government rationing leads to inefficiencies.<br><br>Now, summarizing our key points: Government rationing leads to inefficiencies and delays in treatment, as evidenced by studies from the National Bureau of Economic Research and the Fraser Institute. It also fosters discrimination against certain groups, as highlighted by reports from the American Medical Association and the British Medical Journal. Furthermore, government rationing can lead to a lack of accountability and transparency, as found by Transparency International and the British Medical Journal.<br><br>In conclusion, the opposition's arguments do not sufficiently address these critical issues. We maintain that government rationing is not the ethical or practical solution to the scarcity of healthcare resources. Thank you.
+                            </div>
+                        </details>
+                    
+                </div>
+
+                <div class="rating-section">
+                    
+                        <div class="form-group">
+                            <label for="q4_1">
+                                Rate the performance of For side:
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                    <input type="range" class="form-control-range w-80" id="q4_1" name="q4_1" min="1" max="5" value="3" step="1" required>
+                                    <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                        <span style="width: 33%; text-align: left;">Poor(1)</span>
+                                        <span style="width: 34%; text-align: center;">Average(3)</span>
+                                        <span style="width: 33%; text-align: right;">Excellent(5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="q4_1_value"></div>
+                        <script>
+                            document.getElementById('q4_1').oninput = function() {
+                                var value = this.value;
+                                var output = document.getElementById('q4_1_value');
+                                output.innerHTML = 'Current rating: ' + value;
+                            }
+                        </script>
+                        <div class="form-group mt-3">
+                            <label for="q4_1_comment"> (Optional) Additional comments for For side:</label>
+                            <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="1"></textarea>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="q4_2">
+                                Rate the performance of Against side:
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                    <input type="range" class="form-control-range w-80" id="q4_2" name="q4_2" min="1" max="5" value="3" step="1" required>
+                                    <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                        <span style="width: 33%; text-align: left;">Poor(1)</span>
+                                        <span style="width: 34%; text-align: center;">Average(3)</span>
+                                        <span style="width: 33%; text-align: right;">Excellent(5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="q4_2_value"></div>
+                        <script>
+                            document.getElementById('q4_2').oninput = function() {
+                                var value = this.value;
+                                var output = document.getElementById('q4_2_value');
+                                output.innerHTML = 'Current rating: ' + value;
+                            }
+                        </script>
+                        <div class="form-group mt-3">
+                            <label for="q4_2_comment"> (Optional) Additional comments for Against side:</label>
+                            <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="1"></textarea>
+                        </div>
+                    
+                </div>
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q4" name="q4" min="-5" max="5" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-5)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(5)</span>
+                            </div>
+                        </div>
                     </div>
-                </details>
-                
-                
-                <details class="collapsible-block">
-                    <summary class="collapsible-content"> (Optional) Against - Transcript </summary>
-                    <div>
-                        Ladies and Gentlemen, esteemed judges, and fellow debaters,<br><br>In closing, I reiterate our position that government rationing of healthcare is not the solution to the challenges of scarce resources. The opposition's arguments, while well-intentioned, fail to address the inherent inefficiencies and discriminatory practices that government rationing often entails.<br><br>Firstly, the opposition claims that government rationing does not inherently lead to inefficiencies, citing the Veterans Health Administration (VHA) as an example. However, the VHA is an outlier and not representative of broader government-controlled systems. The majority of such systems, as evidenced by studies from the National Bureau of Economic Research and the Fraser Institute, still face significant inefficiencies and long wait times. These studies consistently show that wait times for critical procedures are significantly longer in government-controlled systems compared to private ones, reinforcing our claim that government rationing leads to inefficiencies.<br><br>Now, summarizing our key points: Government rationing leads to inefficiencies and delays in treatment, as evidenced by studies from the National Bureau of Economic Research and the Fraser Institute. It also fosters discrimination against certain groups, as highlighted by reports from the American Medical Association and the British Medical Journal. Furthermore, government rationing can lead to a lack of accountability and transparency, as found by Transparency International and the British Medical Journal.<br><br>In conclusion, the opposition's arguments do not sufficiently address these critical issues. We maintain that government rationing is not the ethical or practical solution to the scarcity of healthcare resources. Thank you.
-                    </div>
-                </details>
-                <br>
-                
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q4" id="q4_1" value="1" required>
-                    <label class="form-check-label" for="q4_1">For win</label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q4" id="q4_2" value="2" required>
-                    <label class="form-check-label" for="q4_2">Against win</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q4" id="q4_3" value="3" required>
-                    <label class="form-check-label" for="q4_3">Tie</label>
-                </div>
+                <div id="q4_value"></div>
+                <script>
+                    document.getElementById('q4').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q4_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
             </div>
         </div>
     
 
     
         <div class="card form-group">
-            <div class="card-header"><b>Question 5: Overall Performance</b></div>
+            <div class="card-header"><b>Question 5: Post-Vote Stage</b></div>
             <div class="card-body">
                 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q5" id="q5_1" value="1" required>
-                        <label class="form-check-label" for="q5_1">For win</label>
+                    <div class="form-group">
+                        <label for="q5" style="font-weight: bold; font-size: 1.1em;">
+                            Please select the side you support after the debate.
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-100" id="q5" name="q5" min="-5" max="5" value="0" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 33%; text-align: left;">Against(-5)</span>
+                                    <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                    <span style="width: 33%; text-align: right;">For(5)</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q5" id="q5_2" value="2" required>
-                        <label class="form-check-label" for="q5_2">Against win</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q5" id="q5_3" value="3" required>
-                        <label class="form-check-label" for="q5_3">Tie</label>
-                    </div>
+                    <div id="q5_value"></div>
+                    <script>
+                        document.getElementById('q5').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q5_value');
+                            if (value < 0) {
+                                output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                            } else if (value > 0) {
+                                output.innerHTML = 'Current selection: ' + value + ' towards For';
+                            } else {
+                                output.innerHTML = 'Current selection: Tie';
+                            }
+                        }
+                    </script>
                 
             </div>
         </div>
     
         <div class="card form-group">
-            <div class="card-header"><b>Optional Question 6: The most impressive / surprise / persuasive points of the for side.</b></div>
+            <div class="card-header"><b>(Optional) Question 6: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
             <div class="card-body">
                 
                     <div class="form-group">
                         <label for="q6"></label>
-                        <input class="form-control" type="text" inputmode="text" name="q6">
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
                     </div>
                 
             </div>
         </div>
     
         <div class="card form-group">
-            <div class="card-header"><b>Optional Question 7: The most impressive / surprise / persuasive points of the against side.</b></div>
+            <div class="card-header"><b>(Optional) Question 7: Which factors were most crucial in your assessment?</b></div>
             <div class="card-body">
                 
                     <div class="form-group">
                         <label for="q7"></label>
-                        <input class="form-control" type="text" inputmode="text" name="q7">
-                    </div>
-                
-            </div>
-        </div>
-    
-        <div class="card form-group">
-            <div class="card-header"><b>Optional Question 8: These two sides are generated by two different AI debate systems, could you provide some suggestions on how to improve their performance?</b></div>
-            <div class="card-body">
-                
-                    <div class="form-group">
-                        <label for="q8"></label>
-                        <input class="form-control" type="text" inputmode="text" name="q8">
-                    </div>
-                
-            </div>
-        </div>
-    
-        <div class="card form-group">
-            <div class="card-header"><b>Optional Question 9: What aspects do you think are important to your evaluation?</b></div>
-            <div class="card-body">
-                
-                    <div class="form-group">
-                        <label for="q9"></label>
-                        <input class="form-control" type="text" inputmode="text" name="q9">
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
                     </div>
                 
             </div>
