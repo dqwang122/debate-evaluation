@@ -6,7 +6,7 @@ layout: home
 title: An Online Human Evaluation Platform for Debate Performance
 ---
 
-<!-- ## Debate Performance Evaluation
+## Debate Performance Evaluation
 
 You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. 
 You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. 
@@ -19,7 +19,7 @@ Finally, you will rate the performance of each side in the entire debate process
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
-</ul> -->
+</ul>
 
 ## Debate Pair Comparison
 
