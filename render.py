@@ -20,6 +20,7 @@ QLIST = [
     # "How do you track the debate flow during the listening?",
     "Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?",
     "Which factors were most crucial in your assessment?",
+    "How long did you spend on this evaluation?",
 ]
 
 
