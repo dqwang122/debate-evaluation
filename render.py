@@ -9,7 +9,7 @@ from jinja2 import FileSystemLoader, Environment
 
 DEFAULT_TEMPLATE_PATH = "./templates"
 DEFAULT_S3_BUCKET = "https://debaterecords.s3.amazonaws.com"
-DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbzZk4nyCtHSBsj9fcHu2TITJgL3PwNRGEBez6UAElAqQsO0fAiBqU_pp4e7n9vr2OODrw/exec"
+DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec"
 SAVE_ROOT = "forms"
 
 QLIST = [

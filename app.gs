@@ -8,13 +8,38 @@ function doGet(e) {
 
 	Sheet.getRange(LastRow+1, 1).setValue(params.name);
 	Sheet.getRange(LastRow+1, 2).setValue(params.mail);
-  Sheet.getRange(LastRow+1, 3).setValue(params.version);
+	Sheet.getRange(LastRow+1, 3).setValue(params.version);
 	Sheet.getRange(LastRow+1, 4).setValue(params.formid);
-  Sheet.getRange(LastRow+1, 5).setValue(params.timestamp);
+	Sheet.getRange(LastRow+1, 5).setValue(params.timestamp);
+
+  // Questions, sub-questions, and comments
+  var currentColumn = 6; // Starting column for question data
 
 	for (var i = 1; i <= 20; i++) {
-		Sheet.getRange(LastRow+1, 5+i).setValue(params["q" + i.toString()]);
-	}
+    // Main question response
+    if (params.hasOwnProperty("q" + i)) {
+      Sheet.getRange(LastRow+1, currentColumn).setValue(params["q" + i]);
+      currentColumn++;
+    }
+
+    // Sub-questions and comments
+    for (var j = 1; j <= 2; j++) {
+      var subQuestionKey = "q" + i + "_" + j;
+      var commentKey = subQuestionKey + "_comment";
+
+      // Sub-question
+      if (params.hasOwnProperty(subQuestionKey)) {
+        Sheet.getRange(LastRow+1, currentColumn).setValue(params[subQuestionKey]);
+        currentColumn++;
+      }
+
+      // Comment
+      if (params.hasOwnProperty(commentKey)) {
+        Sheet.getRange(LastRow+1, currentColumn).setValue(params[commentKey]);
+        currentColumn++;
+      }
+    }
+  }
 
 	return ContentService.createTextOutput(params.thank);
 }
