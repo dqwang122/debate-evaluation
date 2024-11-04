@@ -14,7 +14,7 @@ The process will take about 1 hour and a $30 Amazon gift card will be sent via e
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/1020/pair" and file.extname == ".html" %}
+    {% if file.path contains "forms/1103/pair" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
