@@ -1,0 +1,754 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+<style>
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px; /* Smaller thumb size */
+        height: 15px; /* Smaller thumb size */
+        background: #0000FF; /* Deep blue color for the thumb */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        margin-top: -5px; /* Adjust this value to move the thumb higher */
+    }
+    input[type="range"]::-moz-range-thumb {
+        width: 15px; /* Smaller thumb size */
+        height: 15px; /* Smaller thumb size */
+        background: #0000FF; /* Deep blue color for the thumb */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        margin-top: -5px; /* Adjust this value to move the thumb higher */
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: linear-gradient(to right, #0000FF 0%, #0000FF var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+        border-radius: 1.3px;
+    }
+    input[type="range"]::-moz-range-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: linear-gradient(to right, #0000FF 0%, #0000FF var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+        border-radius: 1.3px;
+    }
+    input[type="range"]:focus {
+        outline: none;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+   <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+   <hr class="my-4">
+
+   <div class="mb-4">
+       <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+   </div>
+
+   <div class="mb-4">
+       <h4>What to Expect:</h4>
+       <ul class="list-group">
+           <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+           <li class="list-group-item">Share your initial opinion before listening.</li>
+           <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+           <li class="list-group-item">Cast your final vote after listening.</li>
+           <li class="list-group-item">The process will take about 1 hour and a $30 Amazon gift card will be sent via email as a gift for your participation.</li>
+       </ul>
+   </div>
+
+   <div class="mb-4">
+       <h4>How to Vote:</h4>
+       <ul class="list-group">
+           <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+           <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+           <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+       </ul>
+   </div>
+
+   <div class="mb-4">
+       <h4>Rating Guide:</h4>
+       <div class="card-group">
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Poor (1)</h5>
+                   <p class="card-text" style="font-size: 16px;">Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Weak (2)</h5>
+                   <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization and inconsistent emotional delivery.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Moderate (3)</h5>
+                   <p class="card-text" style="font-size: 16px;">On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Strong (4)</h5>
+                   <p class="card-text" style="font-size: 16px;">Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Compelling (5)</h5>
+                   <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.</p>
+               </div>
+           </div>
+       </div>
+   </div>
+
+</div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>Motion: If Health Care Is A Scarce Resource Government Should Step In To Ration Care Deciding Whose Life Is Worth Saving </h4>
+    </div>
+    <br><br>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email: </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            
+    <input type="hidden" id="mode" name="mode" value="pair" >
+    <input type="hidden" id="mode" name="version" value="1103" >
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please select the side you support before the debate starts.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q1" name="q1" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q1_value"></div>
+                <script>
+                    document.getElementById('q1').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q1_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1103/case1_2/opening_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Honorable judges, esteemed colleagues, and attentive audience, we stand firmly in support of the motion: If healthcare is a scarce resource, government should step in to ration care, deciding whose life is worth saving.  This is not a proposition we take lightly, but one necessitated by the harsh realities of resource limitations.  We will define the key terms, establish our judging criteria, and present three compelling arguments for why government intervention is not just justifiable, but essential in these dire circumstances.<br><br>For the purpose of this debate, we define “scarce resource” as a resource insufficient to meet the demands placed upon it, as evidenced by long wait times, resource shortages, and the inability to provide necessary care to all who need it. “Rationing” is the controlled distribution of scarce resources, based on established criteria, to maximize benefit. This does not equate to arbitrary judgments on the value of life, but rather a structured, ethical allocation of limited resources.<br><br>Our judging criteria is simple: which side best ensures the greatest good for the greatest number while adhering to principles of fairness and justice in the face of unavoidable scarcity? We contend that government intervention best fulfills this criterion.<br><br>Firstly, rationing decisions, while difficult, are unavoidable when resources are truly scarce. As the Markkula Center for Applied Ethics notes, “Rationing is unavoidable because need is limitless and resources are not.”  (1) This fundamental truth necessitates a system for making these difficult choices. Leaving these life-and-death decisions to individual healthcare providers, burdened by emotional pressures and lacking a unified framework, is neither ethical nor efficient.  The realities of resource scarcity, as detailed in "The realities of rationing in health care," (3) necessitates a structured approach to allocation, especially during crises like the COVID-19 pandemic.<br><br>Secondly, ethical frameworks for resource allocation are best implemented through structured government programs. While individual practitioners strive to be ethical, personal biases and varying interpretations of ethical principles can lead to inconsistent and inequitable outcomes.  A centralized system, guided by clearly defined ethical guidelines developed through public discourse and expert consultation, ensures a more consistent and fair application of these principles. This was further highlighted in "The shared ethical framework to allocate scarce medical resources: a ..." (9),  which emphasizes the need for elucidating fundamental ethical values for allocation and using these values to delineate priority tiers for scarce resources. A centralized approach like this allows for structured implementation, transparency, and oversight, safeguarding against potential abuses and ensuring equitable allocation.<br><br>Thirdly, a centralized system enables better coordination and resource deployment during crises.  The "Discussion on Centralization and Decentralization Patterns in Emergency Management" (23) clearly outlines the advantages of centralized management during crises, highlighting improved decision-making and resource allocation. A coordinated government response can efficiently mobilize resources, track inventory, and direct resources to areas of greatest need, maximizing the impact of limited supplies. Conversely, decentralized systems often lead to duplication of effort, inefficient resource use, and inequitable access. As noted in “Equitably Allocating Resources during Crises,” centralized systems can ensure the most efficient use of resources by prioritizing patients based on factors like the SOFA score, thereby maximizing the potential positive impact of limited resources. (28) This coordination is especially critical in situations where time is of the essence, such as during a pandemic or natural disaster.  "Operational Recommendations for Scarce Resource Allocation in a ... - CHEST" (13) reinforces this point, detailing how a partnership of health systems successfully developed a scarce resource allocation framework based on citizens' values and expert consensus.<br><br>In conclusion, the inherent scarcity of healthcare resources necessitates a system of rationing. While undeniably difficult, these decisions are best made through a centralized, government-led system that ensures a consistent, ethical, and efficient allocation of limited resources, maximizing the benefit for the greatest number of people.  We believe that our framework of maximizing overall good while adhering to principles of fairness is best served by supporting this motion.<br><br><br><br>**Reference**<br>1. Aged-Based Health Care Rationing - Markkula Center for Applied Ethics<br>2. Rationing in healthcare—a scoping review - PMC - PubMed Central (PMC)<br>3. The realities of rationing in health care - PMC - PubMed Central (PMC)<br>4. The Ethics and Reality of Rationing in Medicine - CHEST<br>5. Rationing in healthcare—a scoping review - PMC - PubMed Central (PMC)<br>6. PDF<br>7. Rationing of health resources: What is ethical? | The BMJ<br>8. When rationing becomes inevitable in a pandemic: A discussion on the ...<br>9. The shared ethical framework to allocate scarce medical resources: a ...<br>10. Psychology of Scarcity: Understanding Its Impact on Decision-Making<br>11. How Scarcity Take a Psychological Toll and Impacts Decision-Making - Kitces<br>12. The effects of scarcity on consumer decision journeys<br>13. Operational Recommendations for Scarce Resource Allocation in a ... - CHEST<br>14. The shared ethical framework to allocate scarce medical resources: a ...<br>15. Experience of US Clinicians With Health Care Resource Scarcity During ...<br>16. Scarcity: Surviving Scarcity: The Role of Rationing in Times of Need<br>17. Rationing: Definition, Purposes, Historical Example - Livewell<br>18. Rationing: How It Works, Historical Examples, and Implications<br>19. Home Front During World War II: Rationing - HISTORY<br>20. Rationing in Wartime Britain - World History Encyclopedia<br>21. Rationing | The National WWII Museum | New Orleans<br>22. Scarcity and Intertemporal Choice - APA PsycNet<br>23. The psychology of scarcity - American Psychological Association (APA)<br>24. Psychology of Scarcity: Understanding Its Impact on Decision-Making<br>25. Is the Government using its own ethical framework?<br>26. Evidence-based practice and the ethics of care: 'What works' or 'what ...<br>27. Why ethical frameworks fail to deliver in a pandemic: Are proposed ...<br>28. Equitably Allocating Resources during Crises: Racial Differences in ...<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q2_1" name="q2_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q2_1_value"></div>
+                    <script>
+                        document.getElementById('q2_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q2_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1103/case1_2/opening_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">The proposition argues that if healthcare is a scarce resource, the government should ration care, deciding whose life is worth saving. We firmly oppose this motion.  Our definition of "rationing care" refers to government overriding the professional judgment of medical practitioners and patient choices to make final, irreversible decisions about individual access to potentially life-saving treatments based on predetermined criteria. This definition excludes other allocation strategies like price mechanisms, prioritization based on medical urgency, or improvements in efficiency and resource allocation.  Our judging criteria should be maximizing overall societal well-being, which includes individual autonomy, medical innovation, and quality of care.  Government rationing fails to meet this standard.<br><br>First, government rationing of healthcare fundamentally undermines the autonomy of individuals and medical professionals.  As argued in “Dignity, Autonomy, and Allocation of Scarce Medical Resources During…” (1), individual autonomy is a cornerstone of medical ethics.  Government intervention, as described by “Individual autonomy and state involvement in health care” (2), disrupts the established doctor-patient relationship, where treatment decisions are made collaboratively based on medical need and patient preferences. By empowering a centralized authority to dictate who receives care and who doesn't, regardless of individual circumstances, we strip individuals of their right to make informed decisions about their own health and well-being. Similarly, physicians are disempowered, their professional expertise superseded by bureaucratic mandates, hindering their ability to provide optimal care tailored to individual patient needs.  This erosion of autonomy not only damages the doctor-patient relationship but also infringes on the fundamental human right to make decisions about one’s own life.<br><br>Second, government healthcare rationing discourages innovation in medical treatments and technologies. The “Rationing cancer treatment…” study (3) shows how government decisions to deny access to new cancer drugs due to cost concerns impact oncologists' perceptions and practice. This approach creates a disincentive for pharmaceutical companies and medical researchers to invest in developing new treatments and technologies.  When the government controls access and dictates what treatments are available, the potential for return on investment in research and development is diminished.  This stifling of innovation ultimately limits the availability of potentially life-saving treatments for everyone, not just those directly affected by rationing policies.  Why would companies invest in breakthroughs when the government, rather than the market and medical professionals, ultimately determines their value and availability?  This chilling effect on innovation has long-term consequences for the advancement of medical science and the overall health of society.<br><br>Finally, rationing inevitably leads to a decline in the quality of healthcare services.  The systematic review “The impact of rationing nursing care on patient safety” (4) found that rationing of nursing care – a form of healthcare rationing – led to adverse patient safety outcomes, including higher rates of falls, medication errors, pressure ulcers, and healthcare-associated infections.  This is a direct result of resource limitations and prioritization based on government-defined criteria.  When care is rationed, necessary treatments and services may be delayed or withheld, resulting in worsened patient outcomes and even preventable deaths.  This is particularly concerning for vulnerable populations who may be disproportionately affected by rationing decisions.  As "Rationing of nursing care and its relationship to patient outcomes…" (5) points out, rationing can significantly affect patient safety and quality of care.  This not only creates a two-tiered healthcare system but also erodes the very foundation of the medical profession's commitment to providing the best possible care for all patients.<br><br><br>**Reference**<br>1. Macklin, R. Dignity, autonomy, and allocation of scarce medical resources during the COVID-19 pandemic. J Med Ethics. 2022;48(6):371-375.<br>2. Harris, J. Individual autonomy and state involvement in health care. J Med Ethics. 1991 Aug;17(4):240-6.<br>3.  Nexøe, J., et al. Rationing cancer treatment: a qualitative study of perceptions of legitimacy among Danish oncologists. BMC Med Ethics. 2018 Apr 10;19(1):30.<br>4.  Schoonhoven, L., et al. The Impact of Rationing Nursing Care on Patient Safety: A Systematic Review. J Nurs Scholarsh. 2017 Apr;49(2):158-167.<br>5.  Schubert, M., et al. Rationing of nursing care and its relationship to patient outcomes: the Swiss extension of the International Hospital Outcomes Study. Int J Qual Health Care. 2008 Feb;20(1):32-9.<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q2_2" name="q2_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q2_2_value"></div>
+                    <script>
+                        document.getElementById('q2_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q2_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q2" name="q2" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q2_value"></div>
+                <script>
+                    document.getElementById('q2').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q2_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1103/case1_2/rebuttal_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">The opposition’s arguments against government-led healthcare rationing, while seemingly concerned with individual autonomy and medical innovation, fail to address the fundamental reality of scarcity. Their narrow definition of rationing, which excludes other allocation strategies, ignores the unavoidable choices imposed by limited resources.  Our judging criteria, maximizing the greatest good for the greatest number while upholding fairness, recognizes that difficult decisions are inevitable, and a centralized approach best navigates these challenges.<br><br>The opposition claims government rationing undermines individual autonomy.  While respecting patient choice is crucial in ideal circumstances, their argument ignores the very premise of this debate: scarcity. When there aren’t enough resources for everyone, *someone* must make the difficult decisions about allocation.  Leaving these decisions to individual practitioners, influenced by personal biases or external pressures, is hardly a guarantee of autonomy.  As “The shared ethical framework to allocate scarce medical resources” (9) suggests, a transparent, government-led system, informed by ethical guidelines and public discourse, offers a more equitable and consistent approach than relying on individual judgments in the face of extreme pressure. This actually enhances fairness by reducing the influence of implicit biases and ensuring everyone has an equal chance based on objective criteria, unlike the arbitrary nature of individual decisions. Furthermore, "Rationing of health resources: What is ethical?" (7) emphasizes the importance of justice in resource allocation during crises, highlighting the need for a structured approach that government oversight can provide. The opposition’s argument for autonomy becomes irrelevant when the very resources necessary for exercising that autonomy are simply unavailable.<br><br>The opposition also argues that government rationing stifles innovation.  However, they conflate rationing with price controls, which is not the focus of this debate.  Government involvement in rationing can actually *stimulate* innovation by identifying critical areas of need and incentivizing research through targeted funding and grants. "Operational Recommendations for Scarce Resource Allocation in a ... - CHEST" (13) details how collaborative frameworks can incorporate citizen values and expert consensus in resource allocation, potentially guiding innovation toward addressing societal priorities. History offers ample evidence of government-led initiatives spurring innovation in response to crises, like the rapid development of vaccines and treatments during the COVID-19 pandemic. Moreover, rationing may create a more predictable market for new treatments, as demand for life-saving therapies will remain high despite limited individual access. This can provide a stable environment for investment in research and development, even if the government plays a role in allocation.<br><br>Finally, the opposition contends that rationing leads to a decline in quality of care, citing studies on nursing care rationing (4, 5).  While these studies raise valid concerns, they represent a specific instance of rationing, not the comprehensive, ethically-guided model we advocate.  Centralized rationing, as we propose, focuses on maximizing the benefit of limited resources.  This might mean prioritizing certain life-saving treatments over less effective ones, or focusing on preventative care to reduce the need for scarce interventions.  The argument conflates the negative consequences of *underfunding* healthcare with the necessary but challenging decisions imposed by scarcity. "Equitably Allocating Resources during Crises" (28) clarifies that crisis standards of care, often implemented in centralized systems, prioritize patients based on factors like the SOFA score, aiming to maximize the impact of limited resources and save as many lives as possible. This is not about reducing quality, but about making difficult choices in a resource-constrained environment to maximize overall benefit.  The opposition's argument fails to acknowledge that without rationing, quality of care for *everyone* suffers due to overburdened systems and resource depletion.<br><br>In conclusion, the opposition's arguments rely on a flawed understanding of rationing and fail to grapple with the fundamental constraints of scarcity.  Their appeal to autonomy rings hollow when individuals are denied effective healthcare due to lack of resources. Their concern for innovation ignores the potential for government to stimulate research and development.  And their warnings about quality of care conflate the consequences of underfunding with the difficult but necessary choices imposed by scarcity.  We maintain that a centralized, government-led system, guided by ethical principles and informed by expert consultation, is the best approach to ensure fairness, maximize benefit, and uphold the principles of justice in the face of unavoidable healthcare scarcity.<br><br><br>**Reference**<br>1. Aged-Based Health Care Rationing - Markkula Center for Applied Ethics<br>2. Rationing in healthcare—a scoping review - PMC - PubMed Central (PMC)<br>3. The realities of rationing in health care - PMC - PubMed Central (PMC)<br>4. The Ethics and Reality of Rationing in Medicine - CHEST<br>5. Rationing in healthcare—a scoping review - PMC - PubMed Central (PMC)<br>6. PDF<br>7. Rationing of health resources: What is ethical? | The BMJ<br>8. When rationing becomes inevitable in a pandemic: A discussion on the ...<br>9. The shared ethical framework to allocate scarce medical resources: a ...<br>10. Psychology of Scarcity: Understanding Its Impact on Decision-Making<br>11. How Scarcity Take a Psychological Toll and Impacts Decision-Making - Kitces<br>12. The effects of scarcity on consumer decision journeys<br>13. Operational Recommendations for Scarce Resource Allocation in a ... - CHEST<br>14. The shared ethical framework to allocate scarce medical resources: a ...<br>15. Experience of US Clinicians With Health Care Resource Scarcity During ...<br>16. Scarcity: Surviving Scarcity: The Role of Rationing in Times of Need<br>17. Rationing: Definition, Purposes, Historical Example - Livewell<br>18. Rationing: How It Works, Historical Examples, and Implications<br>19. Home Front During World War II: Rationing - HISTORY<br>20. Rationing in Wartime Britain - World History Encyclopedia<br>21. Rationing | The National WWII Museum | New Orleans<br>22. Scarcity and Intertemporal Choice - APA PsycNet<br>23. The psychology of scarcity - American Psychological Association (APA)<br>24. Psychology of Scarcity: Understanding Its Impact on Decision-Making<br>25. Is the Government using its own ethical framework?<br>26. Evidence-based practice and the ethics of care: 'What works' or 'what ...<br>27. Why ethical frameworks fail to deliver in a pandemic: Are proposed ...<br>28. Equitably Allocating Resources during Crises: Racial Differences in ...<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q3_1" name="q3_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q3_1_value"></div>
+                    <script>
+                        document.getElementById('q3_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q3_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1103/case1_2/rebuttal_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">The proposition’s case for government rationing rests on a flawed premise: that a centralized authority can better navigate the challenges of scarcity than individuals and medical professionals working within a framework of ethical principles.  They claim our definition of rationing is too narrow, yet their broad interpretation fails to distinguish between ethically problematic rationing and other allocation strategies, obscuring the real dangers of government control over life-and-death decisions. Our judging criteria, focused on maximizing individual well-being, encompasses the crucial elements of autonomy, innovation, and quality of care – all threatened by government rationing – while the proposition's focus on the "greatest good" risks sacrificing individual rights for a vaguely defined collective benefit.<br><br>The proposition argues that scarcity necessitates a centralized authority to make allocation decisions, implying that fairness is only possible through government control.  This is a false dichotomy.  While scarcity requires difficult choices, those choices are not automatically more ethical or equitable when made by a government bureaucracy. Their cited source, “The shared ethical framework…” (9), addresses the importance of ethical frameworks, but it doesn't endorse government *control* as the sole method for achieving ethical allocation.  In fact, their argument ignores the risks of bias and corruption inherent in centralized systems.  Who decides the criteria for "greatest good"?  What safeguards are in place to prevent political influence or discrimination?  As we’ve argued, empowering individuals and medical professionals, guided by robust ethical guidelines, preserves autonomy and fosters trust, which is essential in a just healthcare system.  The proposition's reference to “Rationing of health resources: What is ethical?” (7) reinforces our point.  This article, while acknowledging the ethical challenges of resource allocation, does not conclude that government rationing is the *only* ethical solution.  It instead emphasizes the need for transparency and public dialogue, values that are often absent in centralized systems.<br><br>The proposition attempts to sidestep the issue of stifled innovation by claiming that we've conflated rationing with price controls. This is a misdirection.  Rationing, by its very nature, limits access to treatments, thereby reducing the incentive for innovation.  The study “Rationing cancer treatment…” (3) directly demonstrates this, showing how oncologists perceive government denial of access to new cancer drugs as a legitimate constraint on their practice.  The scoping review they cite, "Rationing in healthcare…" (2), underscores the economic rationale for rationing: scarcity.  However, it doesn’t prove that government-led rationing *encourages* innovation. In fact, by limiting patient access and disrupting market forces, it creates an environment hostile to investment in research and development. The proposition's claim that government can stimulate innovation through targeted funding is a separate issue entirely and doesn't negate the negative impact of rationing itself.  The proposition's reliance on "Operational Recommendations…" (13) for supporting government-led innovation is also misplaced.  This source focuses on collaborative frameworks and incorporating citizen values, principles consistent with our argument for empowering individuals and medical professionals, not a centralized, government-controlled system.<br><br>Furthermore, the proposition dismisses our concerns about quality of care by claiming our cited studies represent only a "specific instance of rationing." This is a gross misrepresentation.  The studies on nursing care rationing (4, 5) highlight a fundamental problem: when resources are limited and allocation decisions are taken away from healthcare providers, quality of care suffers. This is not just about "underfunding," as they claim; it's about the inherent limitations of a system where bureaucratic dictates override professional judgment and patient needs.  The proposition's reference to “Equitably Allocating Resources during Crises” (28) actually supports our argument. The use of the SOFA score demonstrates that even in crisis situations, medical criteria, not arbitrary government mandates, should guide treatment decisions. This exemplifies how prioritization based on medical need can and should be implemented *without* government rationing.  Their argument that rationing maximizes overall benefit by prioritizing certain treatments is misleading. Who determines which treatments are "less effective"?  What prevents systemic biases from influencing these decisions?  Without individual autonomy and medical professional input, these decisions can become arbitrary and harmful.<br><br><br>**Reference**<br>1. Aged-Based Health Care Rationing - Markkula Center for Applied Ethics<br>2. Rationing in healthcare—a scoping review - PMC - PubMed Central (PMC)<br>3. Rationing cancer treatment: a qualitative study of perceptions of ...<br>4. The Impact of Rationing Nursing Care on Patient Safety: A ... - PubMed<br>5. The impact of rationing nursing care on patient safety: a ... - PSNet<br>6. The realities of rationing in health care - PMC - PubMed Central (PMC)<br>7. Rationing of health resources: What is ethical? | The BMJ<br>9. The shared ethical framework to allocate scarce medical resources: a ...<br>13. Operational Recommendations for Scarce Resource Allocation in a ... - CHEST<br>28. Equitably Allocating Resources during Crises: Racial Differences in ...<br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q3_2" name="q3_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q3_2_value"></div>
+                    <script>
+                        document.getElementById('q3_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q3_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q3" name="q3" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q3_value"></div>
+                <script>
+                    document.getElementById('q3').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q3_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1103/case1_2/closing_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, the core battleground has been the question of who best allocates scarce healthcare resources: a centralized government or individual practitioners guided by ethical frameworks. We have demonstrated that government intervention, while challenging, provides the most equitable and efficient solution, ensuring the greatest good for the greatest number.<br><br>The opposition’s appeals to individual autonomy, while valid in principle, crumble under the weight of scarcity.  When resources are limited, choices *must* be made.  As highlighted in “The shared ethical framework…” (9), a structured, transparent system, as proposed by our side, provides greater fairness than ad-hoc decisions made under pressure. Their claim that government rationing stifles innovation is equally unfounded.  We have demonstrated that government can actively promote innovation through targeted funding and by creating a predictable market for essential treatments.  Their citation of “Rationing cancer treatment…” (3) focuses on a narrow aspect of rationing and doesn't address the broader issue of how government can strategically allocate resources to stimulate advancement in critical areas.  Finally, their argument that rationing reduces quality of care conflates underfunding with the necessary prioritization imposed by scarcity.  “Equitably Allocating Resources during Crises” (28) demonstrates that even during crises, medical criteria guide resource allocation in centralized systems, ensuring that the most lives are saved with the limited resources available.<br><br>The fundamental value at stake here is justice.  Justice demands fairness and equitable access to life-saving care.  A centralized system, guided by ethical principles and public discourse, best upholds this value, ensuring that resource allocation decisions are based on need and not on individual privilege or circumstance.  We urge you to affirm the motion.<br><br><br>**Reference**<br>3. Rationing cancer treatment: a qualitative study of perceptions of ...<br>9. The shared ethical framework to allocate scarce medical resources: a ...<br>28. Equitably Allocating Resources during Crises: Racial Differences in ...<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q4_1" name="q4_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q4_1_value"></div>
+                    <script>
+                        document.getElementById('q4_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q4_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1103/case1_2/closing_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">This debate hinges on a fundamental question: who should decide who lives and who dies when healthcare resources are scarce?  The proposition advocates for government control, promising equitable allocation. We have argued that such a system, however well-intentioned, inevitably undermines individual autonomy, stifles innovation, and diminishes the quality of care.<br><br>The proposition’s case rests on a flawed understanding of both autonomy and innovation. They claim that individual choice is irrelevant in the face of scarcity. However, our argument is not that autonomy trumps all other considerations, but that government rationing eliminates patient choice entirely, replacing it with bureaucratic dictates. Their cited framework (9) actually supports *ethical* frameworks, not necessarily government-controlled ones. Furthermore, their claim that government stimulates innovation ignores the chilling effect of rationing on research and development, evidenced by the oncologists' concerns in study (3).  Their claim that the government’s role in fostering innovation during the COVID-19 pandemic negates the stifling effects of rationing is a non-sequitur.  Government funding of research is distinct from government control over allocation.<br><br>The proposition also downplays the detrimental impact of rationing on quality of care.  They dismiss studies on nursing care rationing (4, 5) as “specific instances,” failing to acknowledge that these studies reveal systemic problems inherent in any rationing system: delays in essential care, increased medical errors, and ultimately, poorer patient outcomes. Their reference to “Equitably Allocating Resources…” (28), while addressing crisis standards of care, does not justify government rationing in normal circumstances. Prioritization based on medical need is essential, but it should be guided by medical professionals, not government mandates.<br><br>Ultimately, this debate is about more than just resource allocation; it’s about the values we uphold as a society.  We believe in a healthcare system that prioritizes individual autonomy, fosters medical innovation, and ensures the highest possible quality of care for all. Government rationing, by its very nature, sacrifices these values.  We urge you to oppose this motion and defend a healthcare system where patients and medical professionals, not government bureaucrats, make the difficult, but ultimately more ethical, choices about treatment.<br><br>**Reference**<br>3. Rationing cancer treatment: a qualitative study of perceptions of ...<br>4. The Impact of Rationing Nursing Care on Patient Safety: A ... - PubMed<br>5. The impact of rationing nursing care on patient safety: a ... - PSNet<br>9. The shared ethical framework to allocate scarce medical resources: a ...<br>28. Equitably Allocating Resources during Crises: Racial Differences in ...<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q4_2" name="q4_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q4_2_value"></div>
+                    <script>
+                        document.getElementById('q4_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q4_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q4" name="q4" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q4_value"></div>
+                <script>
+                    document.getElementById('q4').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q4_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="1_2" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every question. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+    </script>
+
+    
+<script>
+    document.querySelectorAll('input[type="range"]').forEach(function(slider) {
+        slider.addEventListener('input', function() {
+            var value = (this.value - this.min) / (this.max - this.min) * 100;
+            this.style.setProperty('--value', value + '%');
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+</body>
+
+</html>

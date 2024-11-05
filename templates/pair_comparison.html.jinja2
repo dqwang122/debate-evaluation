@@ -202,6 +202,38 @@
                         <hr class="my-4">
                     {% endif %}
                 {% endfor %}
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;">
+                        {{ question.description }}
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="{{ question.name }}" name="{{ question.name }}" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="{{ question.name }}_value"></div>
+                <script>
+                    document.getElementById('{{ question.name }}').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('{{ question.name }}_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
             </div>
         </div>
     {% endfor %}
@@ -219,9 +251,9 @@
                             <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
                                 <input type="range" class="form-control-range w-100" id="{{ question.name }}" name="{{ question.name }}" min="-5" max="5" value="0" step="1" required>
                                 <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
-                                    <span style="width: 33%; text-align: left;">Against(-5)</span>
+                                    <span style="width: 33%; text-align: left;">Against(-3)</span>
                                     <span style="width: 34%; text-align: center;">Tie(0)</span>
-                                    <span style="width: 33%; text-align: right;">For(5)</span>
+                                    <span style="width: 33%; text-align: right;">For(3)</span>
                                 </div>
                             </div>
                         </div>
