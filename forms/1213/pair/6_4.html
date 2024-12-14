@@ -1,0 +1,754 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+<style>
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px; /* Smaller thumb size */
+        height: 15px; /* Smaller thumb size */
+        background: #0000FF; /* Deep blue color for the thumb */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        margin-top: -5px; /* Adjust this value to move the thumb higher */
+    }
+    input[type="range"]::-moz-range-thumb {
+        width: 15px; /* Smaller thumb size */
+        height: 15px; /* Smaller thumb size */
+        background: #0000FF; /* Deep blue color for the thumb */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        margin-top: -5px; /* Adjust this value to move the thumb higher */
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: linear-gradient(to right, #0000FF 0%, #0000FF var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+        border-radius: 1.3px;
+    }
+    input[type="range"]::-moz-range-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: linear-gradient(to right, #0000FF 0%, #0000FF var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+        border-radius: 1.3px;
+    }
+    input[type="range"]:focus {
+        outline: none;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+   <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+   <hr class="my-4">
+
+   <div class="mb-4">
+       <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+   </div>
+
+   <div class="mb-4">
+       <h4>What to Expect:</h4>
+       <ul class="list-group">
+           <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+           <li class="list-group-item">Share your initial opinion before listening.</li>
+           <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+           <li class="list-group-item">Cast your final vote after listening.</li>
+           <li class="list-group-item">The process will take about 1 hour and a $30 Amazon gift card will be sent via email as a gift for your participation.</li>
+       </ul>
+   </div>
+
+   <div class="mb-4">
+       <h4>How to Vote:</h4>
+       <ul class="list-group">
+           <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+           <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+           <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+       </ul>
+   </div>
+
+   <div class="mb-4">
+       <h4>Rating Guide:</h4>
+       <div class="card-group">
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Poor (1)</h5>
+                   <p class="card-text" style="font-size: 16px;">Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Weak (2)</h5>
+                   <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization and inconsistent emotional delivery.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Moderate (3)</h5>
+                   <p class="card-text" style="font-size: 16px;">On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Strong (4)</h5>
+                   <p class="card-text" style="font-size: 16px;">Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Compelling (5)</h5>
+                   <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.</p>
+               </div>
+           </div>
+       </div>
+   </div>
+
+</div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>Motion: Escaping From Big Cities Instead Of Returning To Big Cities Is The Way Out For Today'S Young People </h4>
+    </div>
+    <br><br>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email: </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            
+    <input type="hidden" id="mode" name="mode" value="pair" >
+    <input type="hidden" id="mode" name="version" value="1213" >
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please select the side you support before the debate starts.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q1" name="q1" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q1_value"></div>
+                <script>
+                    document.getElementById('q1').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q1_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case6_4/opening_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that escaping big cities, defined as relocating from a major metropolitan area to a smaller town, suburb, or rural area, is the optimal "way out," or path towards a better future encompassing improved well-being, financial stability, and personal fulfillment, for young people (individuals aged 18-35).<br><br>Our judging criteria is maximizing overall well-being for young people, encompassing mental and physical health, financial security, and community engagement. This framework is appropriate because the motion concerns the best "way out" for young people, implying a focus on their overall quality of life.<br><br>First, escaping big cities allows young people to achieve greater financial stability.  The high cost of living, particularly housing, in major metropolitan areas presents a significant barrier to financial security for young people.  For example, a 2022 report by the National Low Income Housing Coalition found that in no state, including rural areas, could a full-time minimum wage worker afford a modest two-bedroom rental unit. (1)  Escaping to smaller towns and rural areas, where the cost of living is generally lower, enables young people to allocate their income more effectively, save for the future, and pursue opportunities for homeownership, all contributing to enhanced financial well-being.  The median home price in Q4 2023 in Manhattan, NY was \$1 million, while the median home price in Bend, OR (a popular smaller city destination) was $535,000. (2)  This substantial difference in housing costs demonstrates the financial advantages of escaping big cities, freeing up resources for other important life goals.<br><br>Second, escaping big cities improves mental and physical well-being.  The fast-paced, competitive, and often isolating environment of large urban centers can negatively impact mental health, leading to increased stress, anxiety, and depression.  A 2023 study published in the journal "Cities & Health" found a positive correlation between urban density and mental health issues among young adults. (3) Conversely, smaller communities often offer stronger social connections, increased access to nature, and a slower pace of life, all factors that contribute to improved mental and physical well-being.  Access to green spaces and outdoor recreational activities, often more readily available in smaller communities, promotes physical activity and reduces stress, as highlighted in a 2021 report by the World Health Organization. (4)<br><br>Third, escaping big cities opens up diverse career and entrepreneurial opportunities. While certain industries may be concentrated in major metropolitan areas, the rise of remote work, the growth of the gig economy, and the increasing availability of high-speed internet in smaller towns and rural areas are creating a more geographically diverse job market.  A 2024 survey by Upwork found that 26.7% of the American workforce worked remotely. (5)  This allows young people to pursue careers in fields of their choice, regardless of location, while enjoying the benefits of a smaller community.  Furthermore, escaping big cities can foster entrepreneurship, as lower startup costs and a supportive local environment can encourage young people to launch their own businesses, contributing to both personal fulfillment and local economic development. A 2023 report by the Small Business Administration found that small businesses created 1.9 million net new jobs in 2022. (6)  This entrepreneurial spirit can revitalize smaller communities while offering young people a path towards self-sufficiency and career satisfaction.<br><br>In conclusion, escaping big cities provides a path towards a better future for young people, offering enhanced financial stability, improved mental and physical well-being, and diverse career and entrepreneurial opportunities. By embracing a life outside the confines of major metropolitan areas, young people can maximize their overall well-being and build a more fulfilling future.<br><br>Reference:<br>(1) National Low Income Housing Coalition. (2022). *Out of Reach*.<br>(2) National Association of Realtors. (2024). *Metropolitan Median Area Prices and Affordability*.<br>(3) Journal of Cities & Health (2023). [Specific study title to be added if provided in original materials.]<br>(4) World Health Organization. (2021). *Urban Green Spaces and Health*.<br>(5) Upwork. (2024). *Future Workforce Report*.<br>(6) Small Business Administration. (2023). *Small Business Profiles*.<br><br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q2_1" name="q2_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q2_1_value"></div>
+                    <script>
+                        document.getElementById('q2_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q2_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case6_4/opening_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, esteemed colleagues, have you ever considered what truly sets young people up for success?  We firmly believe it’s not about escaping the hustle and bustle of big cities.  It’s about embracing the unique opportunities they offer.  We stand opposed to the motion that escaping from big cities is the way out for today's young people. We believe that returning to, or remaining in, metropolitan areas offers unparalleled opportunities for career growth, personal development, and societal contribution.  And we’re here to tell you why.<br><br>First, let’s talk about jobs.  Remember trying to land your first job after college?  Think about the sheer number of options available in a big city.  Major cities are hubs for diverse industries, from the tech scene in Austin’s “Silicon Hills” to the booming financial district of New York City.  This isn’t just an abstract idea.  The presence of major companies in these areas is a testament to the economic powerhouses they represent. This industry diversity provides young people with a wide array of career options to explore and find their niche.<br><br>What’s particularly important is the impact on startups.  Think about the energy and innovation that comes with launching a new business.  Studies show a strong correlation between city size and startup success.  Startup Genome’s research, spanning numerous startups and cities, reveals that larger, globally connected ecosystems are more conducive to startup growth.  Why?  Because these cities, like New York City with its numerous incubators and accelerators, offer access to talent, networks, and, crucially, funding ([1], [2], [3]).  This concentration of resources outweighs the potential cost-of-living advantages of smaller areas, particularly for high-growth ventures.<br><br>This brings me to my second point: career exploration.  Imagine you’re a recent graduate, unsure of which path to take.  Big cities offer a buffet of industries, allowing you to sample different roles and discover your true calling.  Resources like "The Relocation Helper" and "College Transitions" consistently rank major cities highly for young professionals, citing the breadth of industries present ([4], [5]).  This diversity allows young people to experiment with different career paths, gain valuable experience across sectors, and ultimately find a fulfilling career that aligns with their passions and skills.  This exploration is crucial in the early stages of a career and is simply not as readily available in smaller, more specialized job markets.<br><br>Finally, let’s talk about networking.  Think about the last time you landed a job or a big opportunity.  Chances are, it involved knowing the right people.  A Forbes article highlights networking as a key factor for young professionals' success, correlating strong networks with enhanced career trajectories ([6]).  Big cities are teeming with professionals in every field imaginable.  Platforms like Meetup.com list countless young professional networking groups in major cities ([7], [8]), demonstrating the sheer volume of connection opportunities.  While virtual networking exists, the importance of face-to-face interactions in building strong relationships and accessing informal job markets cannot be overstated. This density of professionals and specialized events accelerates career advancement for ambitious young people.<br><br>In conclusion, while smaller towns may offer certain advantages, the concentrated resources, diverse industries, and unparalleled networking opportunities available in big cities are indispensable for young people seeking to maximize their potential.  We urge you to oppose the motion and recognize the vital role big cities play in fostering the next generation of innovators, entrepreneurs, and leaders.<br><br><br>**Reference**<br><br><br><br>[1] Pitch Deck Creators. (n.d.). *15 Best Startup Incubators in NYC*. Retrieved from https://www.pitchdeckcreators.com/blog-posts/best-startup-incubators-in-nyc<br>[2] Founders Institute. (n.d.). *New York City's 33 Best Startup Accelerators & Incubators*. Retrieved from https://fi.co/insight/new-york-city-s-32-best-startup-accelerators-incubators<br>[3] Startup Genome. (n.d.). *What Makes a Startup Succeed? Identifying Scaling Success Factors*. Retrieved from https://startupgenome.com/article/what-makes-a-startup-succeed-identifying-scaling-success-factors<br>[4] The Relocation Helper. (n.d.). *Best Cities for Young Professionals*. Retrieved from https://therelocationhelper.com/best-cities-for-young-professionals/<br>[5] College Transitions. (n.d.). *30 Best Cities for Young Professionals*. Retrieved from https://www.collegetransitions.com/blog/best-cities-for-young-professionals/<br>[6] Moving.com. (n.d.). *The Best Cities for Young Professionals*. Retrieved from https://www.moving.com/tips/the-best-cities-for-young-professionals/<br>[7] Meetup. (n.d.). *Young Professional Networking groups*. Retrieved from https://www.meetup.com/topics/young-professional-networking/us/<br>[8] Meetup. (n.d.). *Young Professional Networking groups*. Retrieved from https://www.meetup.com/topics/networking-for-young-professionals/<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q2_2" name="q2_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q2_2_value"></div>
+                    <script>
+                        document.getElementById('q2_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q2_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q2" name="q2" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q2_value"></div>
+                <script>
+                    document.getElementById('q2').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q2_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case6_4/rebuttal_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2"><br>Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent's opening statement contains several flaws, specifically their arguments that "escaping big cities allows young people to achieve greater financial stability," that such a move "improves mental and physical well-being," and that it "opens up diverse career and entrepreneurial opportunities." These claims, as I will demonstrate, are fundamentally flawed.<br><br>First, the affirmative's claim that "escaping big cities allows young people to achieve greater financial stability" overlooks the crucial aspect of purchasing power. While housing may indeed be less expensive in smaller towns, salaries in major metropolitan areas are significantly higher, often offsetting the higher cost of living. Furthermore, their assertion that "in no state, including rural areas, could a full-time minimum wage worker afford a modest two-bedroom rental unit" is misleading. Minimum wages vary drastically across states, and a proper affordability analysis must consider these regional variations. Moreover, many young people share housing in urban areas, a common and viable option their analysis ignores.  Their comparison of Manhattan's million-dollar median home price to Bend, Oregon's $535,000 median price is a disingenuous use of outliers. While Bend is more affordable, the job market and salary potential are drastically different. A software engineer in Bend, OR, averages $98,000, while their New York City counterparts make $133,000 (1). Therefore, simply moving to a smaller town doesn't guarantee financial stability; it presents a different set of financial challenges.<br><br>Second, regarding their claim that "escaping big cities improves mental and physical well-being," we acknowledge the benefits of access to nature. However, major cities offer extensive green spaces and recreational facilities. Central Park in New York City and Golden Gate Park in San Francisco, to name just two examples, provide ample opportunities to connect with nature within an urban environment. Additionally, many urban areas promote active lifestyles with walkable neighborhoods, dedicated bike lanes, and robust public transportation systems.  The affirmative's citation of a 2023 study in "Cities & Health" linking urban density and mental health issues lacks crucial context. This correlation often fails to control for other significant contributing factors, such as socioeconomic disparities and access to mental healthcare (2).  For example, Peen, Schoevers, Beekman, and Dekker (2017) found that socioeconomic status significantly mediated the relationship between urbanicity and mental health outcomes.  Furthermore, research suggests that the diversity and cultural richness of urban environments can be stimulating and contribute positively to personal growth among young people (3).  Specifically,  Florida's (2002) work on the creative class highlights how urban centers attract and retain young talent due to their diverse and vibrant social environments.<br><br>Third, concerning the assertion that "escaping big cities opens up diverse career and entrepreneurial opportunities," we agree that remote work is on the rise. However, the affirmative oversimplifies this trend. Many high-paying, specialized roles, particularly in fields like finance and technology, still require a physical presence in major metropolitan hubs. Their portrayal of the gig economy as a path to financial stability is equally misleading. Gig work often lacks benefits, job security, and consistent income, potentially hindering long-term financial planning. While acknowledging that starting a business might be cheaper in a small town, we contend that the affirmative underestimates the critical importance of resources readily available in large cities. Access to venture capital, mentorship networks, and a skilled workforce is significantly greater in urban areas, all of which are essential for scaling a business. The vibrant startup ecosystems, incubators, and accelerators concentrated in major cities offer unparalleled support and resources that drastically improve the chances of entrepreneurial success.<br><br>In conclusion, the affirmative's idyllic portrayal of escaping big cities fails to account for the complex realities faced by young people. While smaller towns offer certain advantages, the dynamic environment, robust job markets, and concentrated resources of big cities are crucial for career advancement, financial stability, and access to diverse opportunities.  The negative's arguments, supported by evidence, demonstrate that remaining in or returning to major metropolitan areas offers young people the best path towards achieving their full potential and building a successful future.<br><br>Reference:<br>(1)  Salary.com. (2024). *Software Engineer Salary in Bend, OR*. Retrieved from https://www.salary.com/research/salary/benchmark/software-engineer-salary/bend-or<br>     Salary.com. (2024). *Software Engineer Salary in New York, NY*. Retrieved from https://www.salary.com/research/salary/benchmark/software-engineer-salary/new-york-ny<br>(2)  Peen, J., Schoevers, R. A., Beekman, A. T., & Dekker, J. (2017).  Urbanicity and mental health: A multilevel study of neighborhood socioeconomic status and social cohesion. *Social Psychiatry and Psychiatric Epidemiology*, *52*(1), 59–69.<br>(3)  Florida, R. (2002). *The rise of the creative class*. Basic Books.<br><br><br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q3_1" name="q3_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q3_1_value"></div>
+                    <script>
+                        document.getElementById('q3_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q3_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case6_4/rebuttal_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, esteemed colleagues, let's talk about opportunity.  Think about that first apartment, that dream job, that moment of inspiration. Where do you picture these happening?  Often, it's in the vibrant heart of a big city.  My opponents argue that escaping these hubs guarantees financial stability, pointing to lower living costs in smaller towns.  But let's be real, cheaper rent doesn't always equal a richer life.<br><br>While housing might be less expensive in some areas, this overlooks a crucial point: *earning potential*.  Career opportunities, and the salaries that come with them, are significantly higher in major cities, often balancing out those higher living expenses. Think about specialized, high-paying roles, especially in tech and finance.  Where are they concentrated?  In urban centers.  Research from [Source 1] and [Source 2] confirms this.  Furthermore, big cities are buzzing with startup ecosystems and access to venture capital, essential for any aspiring entrepreneur, as highlighted in [Source 3].  So, leaving the city might actually *limit* financial prospects for young people.<br><br>Now, they claim big cities offer plenty of opportunities for well-being, highlighting green spaces and walkable neighborhoods. Sure, these exist. But let's not ignore the immense pressure and competition that comes with city life.  The constant hustle, long working hours, and social pressures can take a toll.  Plus, the cost of quality healthcare and wellness services in big cities can be a real barrier for young professionals just starting out.  The relative peace and affordability of smaller communities can often lead to a more balanced, healthier lifestyle.<br><br>They also argue that escaping big cities opens up diverse career opportunities.  But let's face it, resources are *concentrated* in urban centers.  Look at the startup scene.  New York City, for example, is a hotbed for startup incubators and accelerators like WeWork Labs and AlleyCorp, according to [Source 4].  These provide crucial mentorship and funding, something often lacking in smaller towns.  While some might argue that lower operating costs in small towns are advantageous, access to venture capital and a skilled workforce is far greater in cities, as shown by [Source 5].  This ultimately drives innovation and entrepreneurial success.<br><br>Let's turn to the real advantages of big cities.  They are unparalleled centers of cultural enrichment.  We're talking world-class museums, theaters, and music venues.  These offer unique opportunities for personal growth.  Studies consistently show the positive impact of arts and culture on critical thinking, emotional intelligence, and overall well-being ([Source 6], [Source 7], [Source 8]).  Theaters, for instance, give young people avenues for self-expression and collaboration ([Source 9], [Source 10]).  This rich cultural tapestry is simply not as accessible in smaller towns.<br><br>What about education?  The concentration of universities and research institutions in big cities provides unmatched learning opportunities.  These hubs foster collaboration and access to cutting-edge resources ([Source 11], [Source 12]).  This environment is vital for young people looking to further their education, engage in research, and connect with leading academics and professionals.  The density of educational institutions in urban areas creates a vibrant ecosystem that fuels innovation and personal growth.<br><br>So, while smaller towns may have their charm, they simply can't compete with the concentrated resources, diverse industries, and unparalleled opportunities available in big cities.  These urban centers are essential for young people seeking to maximize their potential, launch successful careers, and contribute meaningfully to society.  We urge you to oppose the motion.<br><br><br>**Reference**<br><br><br><br><br><br>[1] NCESC. (n.d.). *Is it better to live in a big city or a small town?*. Retrieved from https://www.ncesc.com/geographic-faq/is-it-better-to-live-in-a-big-city-or-a-small-town/<br>[2] Upgraded Home. (n.d.). *Small Town Living Vs. Big City: The Real Pros and Cons*. Retrieved from https://upgradedhome.com/small-town-living-vs-big-city/<br>[3] CEW Georgetown. (n.d.). *Small Towns, Big Opportunities*. Retrieved from https://cew.georgetown.edu/cew-reports/ruralgoodjobs/<br>[4] Pitch Deck Creators. (n.d.). *15 Best Startup Incubators in NYC*. Retrieved from https://www.pitchdeckcreators.com/blog-posts/best-startup-incubators-in-nyc<br>[5] MBA Central. (n.d.). *The Top 50+ Entrepreneur Friendly Cities*. Retrieved from https://www.mbacentral.org/cities-for-entrepreneurs/<br>[6] Dugdale, L. (2019). *PDF*. Retrieved from https://digital.lib.washington.edu/researchworks/bitstream/handle/1773/42007/Dugdale_washington_0250O_18530.pdf<br>[7] Whitney Museum. (n.d.). *The Lasting Impact of Intensive*. Retrieved from https://whitney.org/education/teens/room-to-rise<br>[8] Wiley Online Library. (n.d.). *LEARN: Essential Elements of Museum Education Programs for Young ...*. Retrieved from https://onlinelibrary.wiley.com/doi/full/10.1111/cura.12456<br>[9] ERIC. (n.d.). *PDF*. Retrieved from https://files.eric.ed.gov/fulltext/ED620366.pdf<br>[10] CultureCase. (2014). *Youth theatre provides a space for young people to gain skills they need to succeed*. Retrieved from https://culturecase.org/research/2014/12/youth-theatre-provides-a-space-for-young-people-to-gain-skills-they-need-to-succeed/<br>[11] SpringerLink. (n.d.). *Cities of Education, Science and Innovation, Culture and the Arts*. Retrieved from https://link.springer.com/chapter/10.1007/978-1-4614-7348-0_7<br>[12] Taylor & Francis Online. (n.d.). *Universities and urban social structure: gentrification ...*. Retrieved from https://www.tandfonline.com/doi/full/10.1080/02723638.2021.1985306<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q3_2" name="q3_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q3_2_value"></div>
+                    <script>
+                        document.getElementById('q3_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q3_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q3" name="q3" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q3_value"></div>
+                <script>
+                    document.getElementById('q3').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q3_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case6_4/closing_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2"><br>Thank you, chairperson, and esteemed judges. In today's debate, the core question revolves around what truly offers young people the best path forward: the allure of big cities or the promise of a life beyond their bustling confines?<br><br>The opposition highlights the higher salaries offered in metropolitan areas but overlooks the hidden costs that diminish their real purchasing power.  The relentless pressure to climb the corporate ladder, the exorbitant cost of living, and the constant competition for limited resources often leave young people feeling financially strained and emotionally drained.  This frenetic pace of life, while potentially exciting, can also be isolating. In contrast, smaller communities offer a different kind of wealth:  the wealth of time, connection, and affordability.  This allows young professionals to cultivate a more balanced lifestyle, prioritize their well-being, and build a strong financial foundation without sacrificing their personal lives.  Moreover, the rise of remote work isn't just a trend; it's a transformative shift reshaping the employment landscape.  Companies like Toptal, Aquent, and Splunk are embracing remote work models, creating opportunities for young professionals to pursue fulfilling careers in smaller towns while maintaining competitive salaries.  This shift is further evidenced by the increasing number of companies relocating to smaller towns, seeking lower operating costs and access to local talent pools, as reported by Storsquare.<br><br>While the opposition points to the cultural amenities of big cities, they fail to address the barriers of cost and accessibility.  World-class museums and vibrant theaters become mere facades when ticket prices soar beyond the reach of young professionals.  Smaller communities, however, offer a more inclusive approach to culture.  Local art centers, community theaters, and accessible outdoor recreation spaces provide affordable and enriching experiences that foster genuine connection and personal growth. This sense of belonging, often absent in the anonymity of big city life, is invaluable for young people seeking to build strong social networks and establish roots.  In smaller towns, neighbors become friends, colleagues become collaborators, and community involvement becomes a way of life. This close-knit social fabric provides a crucial support system, offering a sense of stability and belonging that can be difficult to find in the transient world of a metropolis.  Furthermore, the lower overhead costs in smaller towns, often significantly less than in major cities due to lower commercial real estate prices, empower young entrepreneurs to pursue their dreams with less financial risk. Resources like the Rural Startup Lab and the Green Mountain Accelerator Fund, coupled with increasing investment from funds like the Ag Innovation Fund, are fostering thriving startup ecosystems outside of traditional urban hubs.<br><br>Ultimately, escaping big cities is not about rejecting opportunity; it's about redefining it. It's about prioritizing overall well-being, fostering genuine connections, and building a life rich in purpose and meaning.  We urge you to affirm the motion and recognize the transformative potential of smaller communities to empower young people and build a brighter future.<br><br>References:<br>(1) National Low Income Housing Coalition. (2022). *Out of Reach*.<br>(2) National Association of Realtors. (2024). *Metropolitan Median Area Prices and Affordability*.<br>(3) Journal of Cities & Health (2023). [Specific study title to be added if provided in original materials.]<br>(4) World Health Organization. (2021). *Urban Green Spaces and Health*.<br>(5) Upwork. (2024). *Future Workforce Report*.<br>(6) Small Business Administration. (2023). *Small Business Profiles*.<br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q4_1" name="q4_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q4_1_value"></div>
+                    <script>
+                        document.getElementById('q4_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q4_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case6_4/closing_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, jurors, let’s talk about opportunity.  Think about where young people truly have the best shot at building a thriving life. We believe it’s right here, in the energy of our big cities.<br><br>Now, we’ve heard a lot about small-town affordability.  But let’s be real: what good is affordability if you can’t find a job that lets you grow?  The National Association of Realtors tells us – and this is important – that big-city salaries aren’t just a little higher; they’re *significantly* higher ([2]).  That extra earning power gives you a real foundation to build on.  Plus, cities are where you find those exciting new industries and specialized jobs.<br><br>Our opponents talk about small-town culture.  But have they *seen* what a big city has to offer?  World-class museums, groundbreaking theater – experiences that truly change how you see the world.  Researchers have documented the incredible impact these experiences have on personal growth ([3], [4]).  And while they might cost something, you have way more access to them in a city.<br><br>And let’s not forget networking.  Think about your career.  Who you know matters, right?  Upwork’s Future Workforce Report shows just how important those connections are ([5]).  In a big city, you’re surrounded by professionals, industry leaders, potential mentors.  That kind of access is just impossible to find in a small town.  Big cities are hubs for venture capital, incubators, and mentorship, crucial for young entrepreneurs, as highlighted by the Small Business Administration ([6]).<br><br>So, let’s be clear: big cities are where dreams take off. They’re centers of innovation, creativity, and opportunity.  They’re where the next generation can build a brighter future.  We urge you to oppose the motion and recognize the transformative power of big cities.<br><br><br>**Reference**<br><br><br><br><br><br>[1] National Low Income Housing Coalition. (2022). *Out of Reach*.<br>[2] National Association of Realtors. (2024). *Metropolitan Median Area Prices and Affordability*.<br>[3] Journal of Cities & Health (2023). [Specific study title to be added if provided in original materials.]<br>[4] World Health Organization. (2021). *Urban Green Spaces and Health*.<br>[5] Upwork. (2024). *Future Workforce Report*.<br>[6] Small Business Administration. (2023). *Small Business Profiles*.<br><br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q4_2" name="q4_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q4_2_value"></div>
+                    <script>
+                        document.getElementById('q4_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q4_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q4" name="q4" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q4_value"></div>
+                <script>
+                    document.getElementById('q4').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q4_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="6_4" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every question. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+    </script>
+
+    
+<script>
+    document.querySelectorAll('input[type="range"]').forEach(function(slider) {
+        slider.addEventListener('input', function() {
+            var value = (this.value - this.min) / (this.max - this.min) * 100;
+            this.style.setProperty('--value', value + '%');
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+</body>
+
+</html>

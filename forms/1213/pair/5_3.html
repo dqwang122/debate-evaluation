@@ -1,0 +1,754 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+<style>
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px; /* Smaller thumb size */
+        height: 15px; /* Smaller thumb size */
+        background: #0000FF; /* Deep blue color for the thumb */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        margin-top: -5px; /* Adjust this value to move the thumb higher */
+    }
+    input[type="range"]::-moz-range-thumb {
+        width: 15px; /* Smaller thumb size */
+        height: 15px; /* Smaller thumb size */
+        background: #0000FF; /* Deep blue color for the thumb */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        margin-top: -5px; /* Adjust this value to move the thumb higher */
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: linear-gradient(to right, #0000FF 0%, #0000FF var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+        border-radius: 1.3px;
+    }
+    input[type="range"]::-moz-range-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: linear-gradient(to right, #0000FF 0%, #0000FF var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+        border-radius: 1.3px;
+    }
+    input[type="range"]:focus {
+        outline: none;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+   <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+   <hr class="my-4">
+
+   <div class="mb-4">
+       <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+   </div>
+
+   <div class="mb-4">
+       <h4>What to Expect:</h4>
+       <ul class="list-group">
+           <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+           <li class="list-group-item">Share your initial opinion before listening.</li>
+           <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+           <li class="list-group-item">Cast your final vote after listening.</li>
+           <li class="list-group-item">The process will take about 1 hour and a $30 Amazon gift card will be sent via email as a gift for your participation.</li>
+       </ul>
+   </div>
+
+   <div class="mb-4">
+       <h4>How to Vote:</h4>
+       <ul class="list-group">
+           <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+           <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+           <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+       </ul>
+   </div>
+
+   <div class="mb-4">
+       <h4>Rating Guide:</h4>
+       <div class="card-group">
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Poor (1)</h5>
+                   <p class="card-text" style="font-size: 16px;">Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Weak (2)</h5>
+                   <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization and inconsistent emotional delivery.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Moderate (3)</h5>
+                   <p class="card-text" style="font-size: 16px;">On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Strong (4)</h5>
+                   <p class="card-text" style="font-size: 16px;">Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.</p>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <h5 class="card-title">Compelling (5)</h5>
+                   <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.</p>
+               </div>
+           </div>
+       </div>
+   </div>
+
+</div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>Motion: We Should Impose A Fat Tax </h4>
+    </div>
+    <br><br>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email: </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+                <small class="form-text text-muted">Required*</small>
+            </div>
+            
+    <input type="hidden" id="mode" name="mode" value="pair" >
+    <input type="hidden" id="mode" name="version" value="1213" >
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please select the side you support before the debate starts.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q1" name="q1" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q1_value"></div>
+                <script>
+                    document.getElementById('q1').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q1_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case5_3/opening_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, colleagues, fellow citizens, let's talk about something that affects every single one of us: our health.  Think about your last trip to the grocery store. Remember the colorful aisles packed with processed foods, sugary drinks, and salty snacks?  These tempting treats, while satisfying in the moment, often contribute to a growing public health crisis fueled by unhealthy diets.  That's why we stand firmly in favor of implementing a fat tax – a tax on foods and beverages high in sugar, fat, and salt.  This isn't about restricting choices; it's about investing in a healthier future for all of us.<br><br>Let's start with the facts.  *Fat taxes demonstrably reduce the consumption of unhealthy foods and beverages.*  A comprehensive review of 20 studies published in *Food Policy* clearly shows this.  Think of it this way: if something becomes more expensive, we naturally tend to buy less of it.  This study found consistent evidence of decreased sales and consumption of these less healthy foods, especially when combined with making healthier foods more affordable.  Now, some might worry about the impact on families with tighter budgets.  That's a valid concern, and that's why this same research shows that subsidies for healthy foods can effectively address this, making nutritious choices accessible to everyone.<br><br>This brings me to my second point: *fat taxes encourage healthier food choices and promote better overall diets.*  The same *Food Policy* review found that higher tax rates led to substantial reductions in the consumption of taxed foods, particularly when paired with subsidies for healthier alternatives.  Let's look at what happened in Mexico. They implemented an 8% tax on non-essential, energy-dense foods, and what happened?  Sales dropped – by 18% in supermarkets and up to a whopping 40% in other retailers.  Even Denmark, where a saturated fat tax was eventually repealed, saw a 4% reduction in saturated fat intake while it was in place.  These real-world examples show us that fat taxes can nudge us towards healthier options.<br><br>Now, let's talk about the most important aspect: *fat taxes disproportionately benefit low-income communities*, the very people most affected by diet-related diseases.  These are the communities often facing barriers to healthy eating, like limited access to fresh produce and affordable healthy options.  Research suggests that lower-income groups are more sensitive to price changes and, therefore, more likely to respond to fat taxes.  The *Food Policy* review confirms this, showing significant reductions in their consumption of unhealthy foods.<br><br>But it doesn't stop there.  The money raised from fat taxes can be reinvested to further benefit these communities.  Imagine this: the revenue generated could be used to subsidize healthy food options, making them more affordable for everyone.  Or, it could fund targeted health programs addressing diet-related diseases within these communities.  According to research from [Source 4] and [Source 5], these types of reinvestment strategies have proven effective in improving community health outcomes.  This two-pronged approach – reducing unhealthy food consumption and increasing access to healthier options – has the potential to significantly improve the health outcomes of low-income populations and reduce health disparities.  This isn't just about health; it's about social justice and health equity.<br><br>So, where does this leave us?  Fat taxes are a necessary and effective tool for promoting public health. They demonstrably reduce unhealthy food consumption, encourage healthier choices, and disproportionately benefit vulnerable communities.  We urge you to support this motion and invest in a healthier future for all.  Thank you.<br><br><br>**Reference**<br><br><br>1. Nnoaham, K. E., et al. (2024). Review: Effectiveness and policy implications of health taxes on foods high in fat, salt, and sugar. *Food Policy*, *128*, 102742. https://www.sciencedirect.com/science/article/pii/S0306919224000101<br>2. Imperial College London. (2024, April 24). Taxing unhealthy food helps cut obesity, says global study. https://www.imperial.ac.uk/news/252678/taxing-unhealthy-food-helps-obesity-says/<br>3. Ni Mhurchu, C., et al. (2020). Taxation of the fat content of foods for reducing their consumption and preventing obesity and cardiovascular disease. *Cochrane Database of Systematic Reviews*, (8). https://pubmed.ncbi.nlm.nih.gov/32914461/<br>4. Medical Xpress. (2024, April 25). Taxing unhealthy food helps cut obesity, says global study. https://medicalxpress.com/news/2024-04-taxing-unhealthy-food-obesity-global.html<br>5. UNC Gillings School of Global Public Health. (2024, April 25). Combining food taxes and subsidies can lead to healthier grocery purchases for low-income households. https://sph.unc.edu/sph-news/combining-food-taxes-and-subsidies-can-lead-to-healthier-grocery-purchases-for-low-income-households/<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q2_1" name="q2_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q2_1_value"></div>
+                    <script>
+                        document.getElementById('q2_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q2_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case5_3/opening_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that a fat tax, defined as a levy on foods and beverages high in fat, sugar, and/or salt, should be implemented to improve public health outcomes.<br><br>Our judging criteria is the net societal benefit.  We will demonstrate that the benefits of a fat tax, including improved public health outcomes, revenue generation for health initiatives, and positive changes in consumer behavior, outweigh any potential negative consequences.<br><br>First, a fat tax improves public health by reducing consumption of unhealthy foods and generating revenue for health initiatives.  Hungary's implementation of a similar tax resulted in an 11% reduction in sugar levels in taxed beverages (6). This demonstrates the potential for a fat tax to drive positive dietary changes.  The generated revenue can then be invested in public health programs targeting obesity prevention and education, magnifying the positive impact.  For example, revenue could fund subsidized healthy food programs, further encouraging healthier choices.<br><br>Second, a fat tax encourages positive shifts in consumer behavior.  When faced with increased prices on unhealthy options, consumers are more likely to seek healthier alternatives (4). This shift in consumption patterns contributes to a healthier population in the long term. As consumers adapt to the new pricing structure, they become more conscious of their food choices, fostering a culture of health and wellness.<br><br>Third, the negative consequences of a fat tax can be mitigated through careful implementation and targeted support for low-income groups.  Concerns about regressive impacts can be addressed by using the generated revenue to subsidize healthy food options for low-income families (9). This ensures that healthier choices are accessible to all, regardless of income level. Additionally, public awareness campaigns can educate consumers on healthy eating habits and the rationale behind the tax, increasing acceptance and promoting positive behavioral change.<br><br>In conclusion, a fat tax, implemented strategically and thoughtfully, offers a significant net benefit to society by improving public health, encouraging positive consumer behavior changes, and generating revenue for targeted health initiatives.<br><br>Reference:<br>(1)  FasterCapital. Fat Tax: Weighing the Cost & The Skinny on Fat Tax. Retrieved from https://fastercapital.com/content/Fat-Tax--Weighing-the-Cost--The-Skinny-on-Fat-Tax.html<br>(2) Economics Help. Pros and Cons of Fat Tax. Retrieved from https://www.economicshelp.org/blog/5056/economics/pros-and-cons-of-fat-tax/<br>(3) Ablison. Pros and Cons of Fat Tax. Retrieved from https://www.ablison.com/pros-and-cons-of-fat-tax/<br>(4) Mytton, O. T., Clarke, D., Rayner, M. (2012). Taxing unhealthy food and beverages to improve health. *BMJ*. 344:e2931.<br>(5) Jensen, J. D., Smed, S. (2013). The Danish tax on saturated fat – Short run effects on sales, prices and consumer behaviour. *Food Policy*. 39: 17-27.<br>(6) The Conversation. Why taxing junk food to tackle obesity isn't as simple as it seems. Retrieved from https://theconversation.com/why-taxing-junk-food-to-tackle-obesity-isnt-as-simple-as-it-seems-213513<br>(7)  SpringerLink. Impacts of fat taxes and subsidies on diet and health: a systematic review. Retrieved from https://link.springer.com/chapter/10.1007/978-3-319-77045-1_9<br>(8) EconLib. Fat Tax: Why We Should Tax Unhealthy Food. Retrieved from https://econ.economicshelp.org/2007/07/fat-tax-why-we-should-tax-unhealthy.html<br>(9) MSN. What Is a Fat Tax? The Question Taking Over the Internet. Retrieved from https://www.msn.com/en-us/food-and-drink/general/what-is-a-fat-tax-the-question-taking-over-the-internet/ar-AA1vGVgi<br>(10) Vittana. 11 Pros and Cons of a Fat Tax. Retrieved from https://vittana.org/11-pros-and-cons-of-a-fat-tax<br><br><br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q2_2" name="q2_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q2_2_value"></div>
+                    <script>
+                        document.getElementById('q2_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q2_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q2" name="q2" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q2_value"></div>
+                <script>
+                    document.getElementById('q2').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q2_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case5_3/rebuttal_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, colleagues, fellow citizens, let's talk about something that affects us all: our health, our food, and our wallets.  We're here today to discuss a proposed fat tax, and I want to address some concerns raised by the opposing side.<br><br>They argue that a fat tax improves public health and encourages healthier choices. They point to Hungary's sugar tax, claiming an 11% reduction in sugar levels in taxed drinks.  That sounds promising, right?  But let's look closer.  Focusing just on sugar in *some* drinks misses the bigger picture. What about the rest of our diet?  What about the long-term effects?  A study in *The Lancet* shows that people often just switch to *other* unhealthy, *untaxed* things.  Remember Denmark's fat tax?  It didn't work and actually caused *more* problems, so they got rid of it.<br><br>They also say that higher prices will make people choose healthier options.  That sounds nice, but where's the proof?  A real-world experiment published in *Contemporary Economic Policy*, involving 113 households over six months, tells a different story.  A 10% tax on high-calorie foods *did* lower soft drink purchases at first, but only for *one month*.  Then, get this, people who bought beer actually bought *more* beer after the tax!  This shows a big problem: fat taxes can just make people switch to other unhealthy things, potentially making things *worse*.  This isn't just a one-off finding; multiple studies show this "substitution effect."  So, the idea that fat taxes *always* lead to healthier choices just doesn't hold up.<br><br>Now, they say we can fix the negative effects of a fat tax.  We agree that careful planning and helping low-income families are important. But that doesn't solve the basic economic problems.  These taxes hit low-income families harder because they spend a bigger part of their income on food.  Help programs can be useful, but they're not a magic bullet. They can create complicated systems and mess with how the market works, potentially causing *more* problems.<br><br>Let's talk about the *real* benefits of a fat tax: the economic ones. These taxes bring in a lot of money that can go *directly* into public health programs.  Denmark's fat tax, for example, brought in €160 million a year!  That's like winning the lottery for public health!  Think of what that money could do: programs to prevent obesity, educational campaigns, and better access to healthy food, especially in communities that need it most.  This kind of investment can create real, lasting improvements in everyone's health.<br><br>And there's more.  This money can also help with the huge costs of healthcare for diet-related diseases.  Think about heart disease, type 2 diabetes, and some cancers.  These diseases put a massive strain on healthcare systems everywhere.  The money from a fat tax can help pay for preventative care, research, and treatment, improving public health *and* making healthcare systems stronger in the long run.<br><br>Finally, fat taxes encourage food companies to make their products healthier.  When there's a tax on sugar, companies want to lower the sugar in their products to avoid paying more.  This slowly but surely makes the food we buy healthier.  Studies show that taxes on sugary drinks have already led to lower sugar content, proving that taxes can push the food industry in a healthier direction.  This works *with* public health initiatives to create a healthier environment for everyone.<br><br>So, while the other side has some points, they don't address the big economic and public health benefits of a fat tax.  The money it brings in, the push for healthier products, and the chance to help low-income communities outweigh the potential downsides.  Let's support this and invest in a healthier, fairer future for all of us.<br><br><br>**Reference**<br><br><br><br><br>1. Mytton, O. T., et al. (2020). Fiscal policies for diet and prevention of noncommunicable diseases. *The Lancet. Public health*, *5*(7), e368–e376. https://www.thelancet.com/pdfs/journals/lanpub/PIIS2468-2667(20)30116-X.pdf<br>2. Fletcher, J. M., et al. (2015). The effects of a tax on sugar-sweetened beverages in an experimental setting: Impacts on beverage consumption, calorie intake, and expenditure. *Contemporary Economic Policy*, *33*(2), 293–306. <br>3. Smed, S., et al. (2012). Obesity, Fat Taxes and Their Effects on Consumers. In *The Economics of Obesity* (pp. 213-233). Springer, Berlin, Heidelberg. https://link.springer.com/chapter/10.1007/978-3-319-77045-1_9<br>4. Labrecque, J., et al. (2014). Fat Tax | HowStuffWorks. *HowStuffWorks*. https://money.howstuffworks.com/fat-tax.htm<br><br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q3_1" name="q3_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q3_1_value"></div>
+                    <script>
+                        document.getElementById('q3_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q3_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case5_3/rebuttal_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2"><br>Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent argues that a fat tax effectively reduces unhealthy food consumption, encourages healthier choices, mitigates negative impacts on low-income families, and generates revenue for public health. However, their arguments rest on a flawed understanding of consumer behavior, a short-sighted view of economic realities, and a disregard for potential unintended consequences. We contend that a fat tax, while seemingly well-intentioned, ultimately fails to achieve its stated goals and may even exacerbate existing inequalities.<br><br>First, the opponent points to the Hungary sugar tax as evidence of the effectiveness of such taxes. While we acknowledge the observed reduction in sugar consumption in certain beverages, this example overlooks the complexity of consumer behavior.  The study they cited, while showing a decrease in *taxed* sugar-sweetened beverages, fails to account for the substitution effect, where consumers may switch to other, potentially equally unhealthy, untaxed products (1).  For a fat tax to be truly effective, it must address a comprehensive range of unhealthy foods, not just a select few.  Therefore, focusing solely on the Hungary example provides an incomplete and potentially misleading picture of how a broader fat tax would impact overall dietary habits and public health outcomes.  By failing to address this key issue, the opponent's argument for the effectiveness of a fat tax is significantly weakened.<br><br>Second, the opponent argues that higher prices inherently lead to healthier choices. However, this assumption ignores the complex interplay of economic factors and consumer preferences. The study they cited, showing temporary reductions in soft drink purchases, is limited by its short timeframe and fails to capture the longer-term dynamics of consumer behavior (2). Longer-term studies, like Andreyeva et al. (2010),  demonstrate that while initial price sensitivity may exist,  consumers often adjust their spending habits over time, sometimes even increasing consumption of other, less healthy substitutes (2). This underscores the importance of considering the broader economic context and the potential for unintended consequences when evaluating the impact of a fat tax on consumer choices.  Ultimately, their argument fails to demonstrate a consistent, long-term shift towards healthier diets as a direct result of price increases.<br><br>Third, the opponent's claim that subsidies can fully mitigate the regressive impact of a fat tax on low-income families is overly optimistic.  While subsidies can certainly help improve access to healthy foods, they do not entirely address the fundamental issue of affordability.  Drewnowski and Eichelsdoerfer (2009) highlight the persistent economic challenges faced by low-income families in accessing nutritious diets, even with subsidies in place (3). Implementing a fat tax without addressing the underlying economic disparities could exacerbate existing inequalities, placing a disproportionate burden on those least able to afford it.  Therefore, the opponent's mitigation strategy, while well-intentioned, fails to adequately address the core issue of economic disparity and its impact on healthy food choices.<br><br>Finally, the opponent emphasizes the economic benefits of a fat tax, particularly the revenue generated for public health programs.  While we acknowledge this potential revenue stream, it's crucial to recognize that economic benefits alone do not justify a policy that potentially harms vulnerable populations and fails to demonstrably improve overall public health. Our framework of net societal benefit requires considering *both* the economic and health impacts of a policy. The opponent's narrow focus on revenue ignores the potential negative consequences outlined above and thus provides an incomplete picture of the true societal costs and benefits of a fat tax. A truly beneficial policy must improve public health outcomes without exacerbating existing inequalities.<br><br>Reference:<br>(1) Powell, L. M., et al. (2013). The effects of excise taxes on sugar-sweetened beverage consumption:  A meta-analysis. *Health Economics*, *22*(11), 1338–1348.<br>(2) Andreyeva, T., et al. (2010).  The impact of food prices on consumption: A systematic review of research on the price elasticity of demand for food. *American Journal of Agricultural Economics*, *92*(1), 1–35.<br>(3)  Drewnowski, A., & Eichelsdoerfer, C. (2009). Can low-income Americans afford a healthy diet? *Nutrition Reviews*, *67*(9), 515–522.<br><br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q3_2" name="q3_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q3_2_value"></div>
+                    <script>
+                        document.getElementById('q3_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q3_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q3" name="q3" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q3_value"></div>
+                <script>
+                    document.getElementById('q3').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q3_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case5_3/closing_for.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, colleagues, let’s talk about something that affects every single one of us: our health.  And more specifically, how we can build a healthier society *together*.  The question before us today is simple: Can a fat tax help us get there? We believe it absolutely can.<br><br>Now, we’ve heard some concerns about how a fat tax might change what people buy, and what it might mean for their wallets. Let’s address those head-on.  The other side points to things like Hungary’s sugar tax and some short-term studies on soda. They say, “Look, people just switched to other unhealthy things!”  But those examples don’t tell the whole story. They miss the bigger picture.  They don’t account for how our choices change over time, or how food companies adapt.  What we’ve shown is that a fat tax can actually encourage companies to make their products healthier.  That’s a real, lasting change that benefits everyone.<br><br>Now, let’s talk about cost.  Yes, a fat tax might seem like it hits lower-income families harder.  That’s a valid concern. But consider this: the money raised from this tax can go right back into those communities.  Think about programs that make healthy food more affordable, or initiatives that educate people about nutrition.  *This isn’t just about taxing; it’s about reinvesting*.  And let’s not forget the enormous cost of diet-related illnesses.  A fat tax can help us tackle that burden, freeing up resources for other essential services.<br><br>So, what are we really talking about here?  We’re talking about an investment. An investment in healthier communities, a stronger economy, and a fairer future for all of us.  We’re talking about making healthy choices easier for everyone, regardless of their income.  We’re talking about a long-term vision, not just quick fixes.  We urge you to join us in supporting this motion. Let’s invest in a healthier future, together. Thank you.<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q4_1" name="q4_1" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q4_1_value"></div>
+                    <script>
+                        document.getElementById('q4_1').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q4_1_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                        <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2">
+                        <div class="col-2 text-left">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-3">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1213/case5_3/closing_against.mp3" class="w-100">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2"><br>Thank you, chairperson, and esteemed judges.  Today’s debate revolves around a fundamental question: should the government dictate what we eat?  The proposition argues for a fat tax, claiming it promotes public health. We contend that this policy, while seemingly well-intentioned, infringes upon personal autonomy and exacerbates economic injustice, ultimately failing to achieve its stated goals.<br><br>The proposition’s argument rests on the flawed premise that taxing specific “unhealthy” items leads to healthier diets overall.  This ignores the basic economic principle of substitution.  When faced with higher prices, consumers adapt, often switching to other, potentially *less* healthy, untaxed alternatives.  This isn't just theoretical; studies like Powell et al. (2013) demonstrate this effect with sugar-sweetened beverages.  Imagine a single mother already struggling to afford nutritious food for her children. A fat tax forces her to abandon the slightly healthier option, now beyond her budget, for a cheaper, less healthy alternative. This isn't promoting health; it's deepening economic hardship and limiting choices for those already most vulnerable.<br><br>This leads us to the core issue of economic justice.  The proposition suggests subsidies can mitigate the regressive nature of a fat tax, but this band-aid solution fails to address the systemic inequalities at play.  Low-income families already face significant barriers to accessing healthy foods, a reality documented by Drewnowski and Eichelsdoerfer (2009).  Imposing a fat tax further burdens these families, exacerbating existing economic inequalities instead of promoting healthier choices.  Instead of using a blunt instrument like taxation, which restricts individual autonomy and disproportionately impacts the vulnerable, we should focus on empowering individuals through education and improved access to affordable, nutritious food.<br><br>A truly just and effective approach to public health respects individual autonomy and tackles the root causes of poor dietary habits – poverty, lack of education, and limited access.  We urge you to reject the proposition's restrictive and regressive policy and embrace a path that prioritizes education, empowerment, and economic justice.  Let's empower individuals to make informed choices, not dictate them.  Thank you.<br><br>References:<br>(1) Powell, L. M., et al. (2013). The effects of excise taxes on sugar-sweetened beverage consumption:  A meta-analysis. *Health Economics*, *22*(11), 1338–1348.<br>(2) Andreyeva, T., et al. (2010).  The impact of food prices on consumption: A systematic review of research on the price elasticity of demand for food. *American Journal of Agricultural Economics*, *92*(1), 1–35.<br>(3)  Drewnowski, A., & Eichelsdoerfer, C. (2009). Can low-income Americans afford a healthy diet? *Nutrition Reviews*, *67*(9), 515–522.<br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance in the following scale:
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                                <input type="range" class="form-control-range w-80" id="q4_2" name="q4_2" min="1" max="5" value="3" step="1" required>
+                                <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                    <span style="width: 20%; text-align: left;">Poor<sup data-toggle="tooltip" data-placement="bottom" title="Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Weak<sup data-toggle="tooltip" data-placement="bottom" title="Limited evidence with poor organization and inconsistent emotional delivery."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Moderate<sup data-toggle="tooltip" data-placement="bottom" title="On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: center;">Strong<sup data-toggle="tooltip" data-placement="bottom" title="Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain."><b>?</b></sup></span>
+                                    <span style="width: 20%; text-align: right;">Compelling<sup data-toggle="tooltip" data-placement="bottom" title="Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position."><b>?</b></sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q4_2_value"></div>
+                    <script>
+                        document.getElementById('q4_2').oninput = function() {
+                            var value = this.value;
+                            var output = document.getElementById('q4_2_value');
+                            output.innerHTML = 'Current rating: ' + value;
+                        }
+                    </script>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the audio, please select the side you support now.
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 offset-md-1 offset-lg-2">
+                            <input type="range" class="form-control-range w-100" id="q4" name="q4" min="-2" max="2" value="0" step="1" required>
+                            <div class="d-flex justify-content-between position-relative" style="width: 110%; margin-left: -5%;">
+                                <span style="width: 33%; text-align: left;">Against(-2)</span>
+                                <span style="width: 34%; text-align: center;">Tie(0)</span>
+                                <span style="width: 33%; text-align: right;">For(2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="q4_value"></div>
+                <script>
+                    document.getElementById('q4').oninput = function() {
+                        var value = this.value;
+                        var output = document.getElementById('q4_value');
+                        if (value < 0) {
+                            output.innerHTML = 'Current selection: ' + Math.abs(value) + ' towards Against';
+                        } else if (value > 0) {
+                            output.innerHTML = 'Current selection: ' + value + ' towards For';
+                        } else {
+                            output.innerHTML = 'Current selection: Tie';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    
+
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="5_3" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every question. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+    </script>
+
+    
+<script>
+    document.querySelectorAll('input[type="range"]').forEach(function(slider) {
+        slider.addEventListener('input', function() {
+            var value = (this.value - this.min) / (this.max - this.min) * 100;
+            this.style.setProperty('--value', value + '%');
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+</body>
+
+</html>
