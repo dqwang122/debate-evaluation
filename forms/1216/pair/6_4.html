@@ -14,6 +14,7 @@
         -webkit-appearance: none;
         width: 100%;
         background: transparent;
+        opacity: 0.5;
     }
     input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
@@ -54,6 +55,7 @@
     input[type="range"]:focus {
         outline: none;
     }
+    
 </style>
 
 </head>
@@ -154,7 +156,7 @@
     <input type="hidden" id="mode" name="version" value="1216" >
 
     
-        <div class="card form-group">
+        <div class="card form-group question" id="question_1" style="display: none;">
             <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
             <div class="card-body">
                 
@@ -193,17 +195,17 @@
             </div>
         </div>
     
-        <div class="card form-group">
+        <div class="card form-group question" id="question_2" style="display: none;">
             <div class="card-header"><b>Question 2: Opening Stage</b></div>
             <div class="card-body">
                 
                     <!-- Audio Player -->
-                    <div class="row align-items-center mb-2">
-                        <div class="col-2 text-left">
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
                             <strong> For Side </strong> 
                         </div>
-                        <div class="col-3">
-                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/opening_for.mp3" class="w-100">
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/opening_for.mp3" class="w-100" id="audio_1_For">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -252,16 +254,16 @@
                     </div>
 
                     
-                        <hr class="my-4">
+                    <hr class="my-4">
                     
                 
                     <!-- Audio Player -->
-                    <div class="row align-items-center mb-2">
-                        <div class="col-2 text-left">
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
                             <strong> Against Side </strong> 
                         </div>
-                        <div class="col-3">
-                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/opening_against.mp3" class="w-100">
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/opening_against.mp3" class="w-100" id="audio_2_Against">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -346,17 +348,17 @@
             </div>
         </div>
     
-        <div class="card form-group">
+        <div class="card form-group question" id="question_3" style="display: none;">
             <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
             <div class="card-body">
                 
                     <!-- Audio Player -->
-                    <div class="row align-items-center mb-2">
-                        <div class="col-2 text-left">
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
                             <strong> For Side </strong> 
                         </div>
-                        <div class="col-3">
-                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/rebuttal_for.mp3" class="w-100">
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/rebuttal_for.mp3" class="w-100" id="audio_1_For">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -405,16 +407,16 @@
                     </div>
 
                     
-                        <hr class="my-4">
+                    <hr class="my-4">
                     
                 
                     <!-- Audio Player -->
-                    <div class="row align-items-center mb-2">
-                        <div class="col-2 text-left">
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
                             <strong> Against Side </strong> 
                         </div>
-                        <div class="col-3">
-                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/rebuttal_against.mp3" class="w-100">
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -499,17 +501,17 @@
             </div>
         </div>
     
-        <div class="card form-group">
+        <div class="card form-group question" id="question_4" style="display: none;">
             <div class="card-header"><b>Question 4: Closing Stage</b></div>
             <div class="card-body">
                 
                     <!-- Audio Player -->
-                    <div class="row align-items-center mb-2">
-                        <div class="col-2 text-left">
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
                             <strong> For Side </strong> 
                         </div>
-                        <div class="col-3">
-                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/closing_for.mp3" class="w-100">
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/closing_for.mp3" class="w-100" id="audio_1_For">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -558,16 +560,16 @@
                     </div>
 
                     
-                        <hr class="my-4">
+                    <hr class="my-4">
                     
                 
                     <!-- Audio Player -->
-                    <div class="row align-items-center mb-2">
-                        <div class="col-2 text-left">
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
                             <strong> Against Side </strong> 
                         </div>
-                        <div class="col-3">
-                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/closing_against.mp3" class="w-100">
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_1216/case6_4/closing_against.mp3" class="w-100" id="audio_2_Against">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -654,7 +656,7 @@
     
 
     
-        <div class="card form-group">
+        <div class="card form-group question" id="question_5" style="display: none;">
             <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
             <div class="card-body">
                 
@@ -666,7 +668,7 @@
             </div>
         </div>
     
-        <div class="card form-group">
+        <div class="card form-group question" id="question_6" style="display: none;">
             <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
             <div class="card-body">
                 
@@ -678,7 +680,7 @@
             </div>
         </div>
     
-        <div class="card form-group">
+        <div class="card form-group question" id="question_7" style="display: none;">
             <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
             <div class="card-body">
                 
@@ -690,6 +692,9 @@
             </div>
         </div>
     
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
 
             <input type="text" name="formid" value="6_4" hidden>
             <input type="text" name="thank" value="Thanks" hidden>
@@ -736,7 +741,11 @@
     
 <script>
     document.querySelectorAll('input[type="range"]').forEach(function(slider) {
+        slider.dataset.changed = "false"; // Initial state
+        
         slider.addEventListener('input', function() {
+            this.dataset.changed = "true";
+            this.style.opacity = 1.0;
             var value = (this.value - this.min) / (this.max - this.min) * 100;
             this.style.setProperty('--value', value + '%');
         });
@@ -747,6 +756,84 @@
     $(function () {
         $('[data-toggle="tooltip"]').tooltip();
     });
+    
+    let currentQuestionIndex = 0;
+    const questions = document.querySelectorAll('.question');
+    const nextPageButton = document.getElementById('nextPageButton');
+
+    function showQuestion(index) {
+        questions.forEach((question, i) => {
+            question.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    const audios = document.querySelectorAll('audio');
+    audios.forEach((function(audioElement) {
+        audioElement.dataset.played = "false"; // Initial state
+
+        // audioElement.addEventListener('play', function() {
+        audioElement.addEventListener('ended', function() {
+            console.log('Audio has played:', this.src);
+            this.dataset.played = "true"; // Mark as played
+            
+        });
+    }));
+
+    nextPageButton.addEventListener('click', function() {
+        const currentQuestion = document.querySelector('.question[style*="display: block"]');
+        const rangeInputs = currentQuestion.querySelectorAll('input[type="range"]');
+        const currentaudio = currentQuestion.querySelectorAll('audio');
+        
+
+        let allValidAudio = true;
+        let allValidQuestion = true;
+        let invalidAudios = [];
+        let invalidQuestions = [];
+
+        // Check if all audios have been played
+        currentaudio.forEach(audioElement => {
+            if (audioElement.dataset.played === "false") {
+                allValidAudio = false;
+                const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+            }
+        });
+
+        // check all questions have been answered
+        rangeInputs.forEach(input => {
+            if (input.dataset.changed === "false") { // Check if the slider was changed
+                allValidQuestion = false;
+                const questionLabel = input.closest('.form-group').querySelector('label').innerText;
+                invalidQuestions.push(questionLabel);
+            }
+        });
+
+        if (!allValidAudio) {
+            alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+        } else if (!allValidQuestion) {
+            alert('Please vote for the following questions. You need to activate the slider by interacting with it \n => ' + invalidQuestions.join('\n => '));
+        } else {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+            }
+        }
+    });
+
+    previousPageButton.addEventListener('click', function() {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            showQuestion(currentQuestionIndex);
+        } else {
+            alert('This is the first question.');
+        }
+    });
+
+    // Initialize the first question
+    showQuestion(currentQuestionIndex);
+
 </script>
 
 </body>

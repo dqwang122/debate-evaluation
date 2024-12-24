@@ -25,5 +25,6 @@ Please feel free to use this as a template to create your own online human evalu
 1. Upload the debate audio to AWS S3.
 2. Upload the debate transcript to *assets/transcripts*
 3. Update *assets/metadata.json* with new case information.
-4. run `python render.py` to generate new HTMLs under *forms* directory.
+4. Run `python render.py` to generate new HTMLs under *forms* directory.
 5. Update the index.md to the latest case list.
+6. Use `bundle exec jekyll serve` to see the update
