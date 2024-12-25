@@ -27,6 +27,7 @@ QLIST = [
 def get_options():
     parser = argparse.ArgumentParser(description="Create the debate evaluation form.")
     parser.add_argument("--mode", default="pair", choices=["scalar", "pair"], help="The type of form to create.")
+    parser.add_argument("--target", default="common", choices=["common", "expert"], help="The type of audience")
     parser.add_argument("--version", default="1007", help="The version of the form.")
     args = parser.parse_args()
     return args
@@ -70,10 +71,15 @@ def load_case(version, mode):
 
 #     return html
 
-def create_pairwise_comparison_form(version, id, motion, questions, addition_questions=None):
+def create_pairwise_comparison_form(version, id, motion, questions, addition_questions=None, target="expert"):
     loader = FileSystemLoader(searchpath=DEFAULT_TEMPLATE_PATH)
     env = Environment(loader=loader)
-    template = env.get_template("pair_comparison.html.jinja2")
+    if target == "expert":
+        template = env.get_template("expert.html.jinja2")
+    elif target == "common":
+        template = env.get_template("common.html.jinja2")
+    else:
+        raise ValueError(f"Unknown target: {target}")
 
     html = template.render(
         page_title="Debate Pairwise Comparison",
@@ -91,7 +97,7 @@ def create_pairwise_comparison_form(version, id, motion, questions, addition_que
 def main():
     args = get_options()
 
-    save_dir = f"{SAVE_ROOT}/{args.version}/{args.mode}/"
+    save_dir = f"{SAVE_ROOT}/{args.version}/{args.target}/"
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     else:
@@ -146,7 +152,8 @@ def main():
         html = create_pairwise_comparison_form(args.version, c["case_id"], 
                                                 motion=motion, 
                                                 questions=questions, 
-                                                addition_questions=addition_questions)
+                                                addition_questions=addition_questions,
+                                                target=args.target)
 
         with open(f"{save_dir}/{c['case_id']}.html", "w") as f:
             f.write(html)
