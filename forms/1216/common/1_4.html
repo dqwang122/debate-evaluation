@@ -190,7 +190,7 @@
 
                 <div>
                     <h6>Compensation & Costs</h6>
-                    <p>You will receive a <strong>$10 for compensation after you complete the questionnaire</strong>. There will be no cost to you if you participate in this study.</p>
+                    <p>You will receive <strong>$10 for compensation after you complete the questionnaire</strong>. There will be no cost to you if you participate in this study.</p>
                 </div>
 
                 <div>
@@ -258,7 +258,7 @@
     <br><br>
 
     <div class="container" id="form_container">
-        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && addTimestamp();;">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && addTimestamp() && checkAllSlidersChanged();;">
         <input type="hidden" name="timestamp" id="timestamp">
             <div class="form-group">
                 <label for="name">Name: </label>
@@ -271,7 +271,7 @@
                 <small class="form-text text-muted">Required*</small>
             </div>
             
-    <input type="hidden" id="mode" name="mode" value="pair" >
+    <input type="hidden" id="mode" name="mode" value="common" >
     <input type="hidden" id="mode" name="version" value="1216" >
 
     
@@ -853,6 +853,16 @@
 
             // Set the value of the hidden input field to the current timestamp
             document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllSlidersChanged() {
+            const sliders = document.querySelectorAll('input[type="range"]');
+            for (let slider of sliders) {
+                if (slider.dataset.changed === "false") {
+                    alert('Please ensure you have voted for all questions by interacting with the sliders.');
+                    return false;
+                }
+            }
             return true;
         }
     </script>
