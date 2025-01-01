@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: 
 ---
 
 ## An Online Human Evaluation Platform for Debate Performance
