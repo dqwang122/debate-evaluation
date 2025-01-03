@@ -102,8 +102,9 @@ def main():
         os.makedirs(save_dir)
     else:
         print(f"Directory {save_dir} already exists. Clear it first.")
-        os.system(f"rm {save_dir}/*")
+        os.system(f"rm -r {save_dir}/*")
 
+    print("Generating ...")
     cases = load_case(args.version, args.mode)
     for c in cases:
         motion = c["name"].replace("_", " ").title()
@@ -112,8 +113,9 @@ def main():
         questions = [{
             "title": f"Question {qid}: Pre-Vote Stage",
             "audio_paths": [],
-            "description": f"Please select the side you support before the debate starts.",
-            "name": f"q{qid}"
+            "description": f"Please choose your attitude towards the given motion before the debate begins.",
+            "name": f"q{qid}",
+            "stage": "Pre-Vote"
         }]
         qid += 1
 
@@ -124,12 +126,13 @@ def main():
                     ["For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_for.mp3"],
                     ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against.mp3"],
                 ],
-                "description": f"After listening to the audio, please select the side you support now.",
+                "description": f"After listening to the two statements in {stage.capitalize()} stage, please choose your attitude towards the given motion now",
                 "transcript": [
                     c["transcript"][stage]["for"],
                     c["transcript"][stage]["against"]
                 ],
-                "name": f"q{qid}"
+                "name": f"q{qid}",
+                "stage": stage.capitalize()
             })
             qid += 1
 

@@ -3,10 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title: 
 ---
 
-## An Online Human Evaluation Platform for Debate Performance
+**An Online Human Evaluation Platform for Debate Performance**
 
 You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality.
 

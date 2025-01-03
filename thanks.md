@@ -3,7 +3,7 @@ layout: page
 permalink: /thanks/
 ---
 
-## Thank you for participating in our evaluation study!
+**Thank you for participating in our evaluation study!**
 
 We greatly appreciate the time and effort you've contributed to this research!
 

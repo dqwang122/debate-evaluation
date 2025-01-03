@@ -20,30 +20,30 @@
 
     {% block consent_form %}{% endblock %}
 
-    <div class="container">
-        <h4>Motion: {{ motion }} </h4>
-    </div>
-    <br><br>
 
     <div class="container" id="form_container">
-        <form id="theForm" action="{{ form_url }}" method="POST" onsubmit="return preventRepeatedSubmission() && addTimestamp() && checkAllSlidersChanged();;">
+        <form id="theForm" action="{{ form_url }}" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
         <input type="hidden" name="timestamp" id="timestamp">
             <div class="form-group">
-                <label for="name">Name / Prolific ID (for Prolific Participants)  </label>
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
                 <input class="form-control" type="text" inputmode="text" name="name" required>
-                <small class="form-text text-muted">Required*</small>
             </div>
             <div class="form-group">
-                <label for="mail">Email / Prolific Email (for Prolific Participants) </label>
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
                 <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
-                <small class="form-text text-muted">Required*</small>
             </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: {{ motion }} </h4></div>
+            <br>
+            
             {% block form_questions %}{% endblock %}
             <input type="text" name="formid" value="{{ form_id }}" hidden>
             <input type="text" name="thank" value="Thanks" hidden>
             <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
             <p class="text-muted">
-                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every question. Thank you.</small>
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
             </p>
         </form>
     </div>
@@ -64,9 +64,22 @@
         crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
         function preventRepeatedSubmission() {
             document.getElementById('submitBtn').disabled = true;
-            setTimeout("submitBtn.disabled=false;", 5000);
+            setTimeout("submitBtn.disabled=false;", 50);
             return true;
         };
         function addTimestamp() {
@@ -79,11 +92,15 @@
             document.getElementById("timestamp").value = readableTimestamp;
             return true;
         }
-        function checkAllSlidersChanged() {
-            const sliders = document.querySelectorAll('input[type="range"]');
-            for (let slider of sliders) {
-                if (slider.dataset.changed === "false") {
-                    alert('Please ensure you have voted for all questions by interacting with the sliders.');
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
                     return false;
                 }
             }
