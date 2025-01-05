@@ -161,7 +161,7 @@ def main():
         with open(f"{save_dir}/{c['case_id']}.html", "w") as f:
             f.write(html)
 
-
+    print("Done!")
 
 if __name__ == "__main__":
     main()

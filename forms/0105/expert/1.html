@@ -1,0 +1,900 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization and inconsistent emotional delivery.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Online Public Opinion Trials Bring Us Closer To Instead Of Further From Justice </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert" >
+    <input type="hidden" id="mode" name="version" value="0105" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case1/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that online public opinion trials bring us closer to justice.  Online public opinion trials are defined as situations where legal cases or controversies are extensively discussed and debated in online public forums, potentially influencing legal proceedings or outcomes. This includes social media discussions, online petitions, and citizen journalism efforts related to legal matters. Justice is a state of affairs in which fairness, equity, and the rule of law prevail, ensuring that individuals receive due process, appropriate punishments or remedies, and protection from harm.  "Closer to Justice" means progress towards a more just outcome, increasing fairness, equity, and adherence to the rule of law in legal processes and outcomes.<br><br>Our judging criteria is maximizing societal benefit. The side that best demonstrates a net positive impact on society's pursuit of justice, considering factors like fairness, accuracy, accountability, access to justice, and protection of individual rights, should win.  This framework is appropriate because the motion is fundamentally about whether online public opinion trials improve or hinder the overall effectiveness and fairness of the justice system.<br><br>First, online public opinion trials enhance transparency and accountability within the legal system.  Increased public scrutiny through online platforms holds legal actors accountable, exposes misconduct, and promotes fairness. For example, in 2021, public outcry on social media following the police killing of Elijah McClain contributed to a $15 million settlement in a civil rights lawsuit [1].  Studies show that public pressure resulting from online scrutiny can lead to police reforms and investigations into misconduct [2]. This transparency and accountability are crucial for a just legal system, as highlighted by research on the role of transparency in good governance [3].<br><br>Second, online platforms amplify marginalized voices and facilitate access to justice. Traditional legal processes can be inaccessible or biased against certain groups.  Online platforms provide avenues for marginalized communities to share their experiences, organize legal support, and advocate for their rights.  Research indicates that online campaigns have played a key role in legal reforms benefiting marginalized groups, such as the #MeToo movement raising awareness of sexual harassment and assault [4]. This increased access to justice and amplified voice for the marginalized contributes to a more equitable legal system.<br><br>Third, online public opinion trials facilitate information sharing and public education about legal issues, improving public understanding and engagement with the justice system. Open online discussions about legal cases can educate the public about legal principles, processes, and potential biases, fostering informed participation in legal and political discourse.  For instance, online discussions surrounding high-profile court cases often involve explanations of complex legal concepts, making them more accessible to the general public. This increased awareness ultimately strengthens the pursuit of justice.  A study by [5] demonstrated that online discussions of hypothetical legal problems led to deeper analysis and critical thinking among participants.<br><br>In conclusion, by fostering transparency and accountability, amplifying marginalized voices, and promoting public education, online public opinion trials ultimately contribute to a more just and equitable legal system, bringing us closer to, not further from, justice.<br><br>**Reference**<br>(1) Change.org.  Change.org releases top ten petitions that changed 2021. <br>(2) OJP.gov.  Law Enforcement and Public Safety Technology and Equipment Needs.<br>(3) United Nations.  Transparency, Accountability and Public Participation. <br>(4) #MeToo Movement.  A Timeline of Events. <br>(5) Rovai, Alfred P.  Building Sense of Community at a Distance.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case1/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, esteemed audience, we stand before you today to oppose the motion that online public opinion trials bring us closer to justice. While the proposition paints a rosy picture of increased transparency and amplified voices, we argue that these supposed benefits are overshadowed by the inherent dangers of online trials, which ultimately obstruct the path to true justice.  <br><br>First, let’s clarify what we mean by “online public opinion trials.” We define them as instances where individuals are subjected to public judgment and condemnation online, often based on incomplete information and fueled by emotional responses, before or irrespective of formal legal proceedings.  Our judging criteria today should be minimizing harm.  The side that best demonstrates how their interpretation of online public opinion trials minimizes harm to individuals and the integrity of the legal system should win this debate.  This framework is crucial because justice is not simply about speed or perceived public satisfaction; it's about ensuring fairness, due process, and protecting individual rights.<br><br>Now, let me turn to our first point: online public opinion trials readily devolve into vigilantism. Consider this: you are accused of a crime you didn’t commit, and before you even step into a courtroom, your reputation is tarnished, your life threatened, all based on incomplete information circulating online. Wikipedia's entry on internet vigilantism [1] notes public shaming as a common tactic, highlighting how online platforms are weaponized to enact extrajudicial “justice.”  This bypasses due process, fostering mob rule and undermining the legal system. The speed and reach of online platforms amplify the potential for misjudgment and harassment, creating a climate of fear and intimidation rather than justice.<br><br>This brings me to our second argument: online public opinion trials amplify biases and prejudices. Studies like "Media stereotypes, prejudice, and preference-based reinforcement" [2] show how prejudiced individuals gravitate towards confirming information, creating echo chambers that reinforce existing biases. These platforms prioritize engagement over accuracy, allowing biased narratives to spread rapidly and influence public perception, thus moving us further from impartial justice. Imagine a scenario where you’re judged not on the facts of a case, but on pre-existing biases amplified by algorithms designed to maximize engagement, not truth. That is the reality of online public opinion trials.<br><br>Finally, and perhaps most importantly, the crucial issue here is that online public opinion trials disproportionately affect marginalized communities.  They face a double disadvantage. First, as revealed in "Challenges to Continuity During the COVID-19 Pandemic - PMC" [3], many lack access to technology or the skills to navigate online spaces, limiting their ability to participate and counter misinformation. Second, "Introduction: Marginality and Social Media" [4] explains how existing power imbalances are amplified online, increasing their vulnerability to exploitation and online harassment. As you'll see, this combination of exclusion and amplified vulnerability exacerbates existing marginalization and undermines fair representation, moving us further from a just society.  <br><br>In conclusion, while the allure of online public opinion trials might seem appealing on the surface, we believe that their inherent dangers—vigilantism, amplified biases, and the disproportionate harm to marginalized communities—pose a significant threat to the very foundations of our justice system.  We urge you to consider the real-world consequences of these trials and stand with us in opposition.<br><br>**Reference**<br><br>[1]  Wikipedia. *Internet vigilantism*. https://en.wikipedia.org/wiki/Internet_vigilantism<br>[2]  Yogeeswaran, Kumar, and Joel S. Lee. “Media stereotypes, prejudice, and preference-based reinforcement.” *Journal of Communication*, vol. 73, no. 5, 2023, pp. 463–84. https://academic.oup.com/joc/article/73/5/463/7190600<br>[3]  Van Dorn, Amanda, et al. *Challenges to Continuity During the COVID-19 Pandemic*. https://pmc.ncbi.nlm.nih.gov/articles/PMC7228861/<br>[4] Pearce, Katy E. "Introduction: Marginality and Social Media." *Social Media + Society*, vol. 6, no. 3, July 2020. https://journals.sagepub.com/doi/full/10.1177/2056305120930413<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case1/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent’s opening statement mischaracterizes online public opinion trials, offering a narrow definition, a restrictive judging criterion, and a pessimistic outlook on their potential for good. We, the affirmative team, contend that online public opinion trials, broadly defined, contribute significantly to the pursuit of justice by maximizing societal benefit.<br><br>First, the negative team’s narrow definition of online public opinion trials as mere online judgment and condemnation ignores the multifaceted nature of online discourse related to legal issues.  Our broader definition, encompassing discussions, analyses, and information sharing, is more appropriate because it reflects the reality of how people engage with legal matters online.  Platforms like Cornell Law's Legal Information Institute [1] and the Electronic Case Filings websites of various courts [2] exemplify this, providing accessible legal information and promoting transparency, thereby fostering a more informed citizenry crucial for a just society. By excluding these vital functions, the negative’s definition weakens their argument. Our broader definition, encompassing the educational and informative aspects of online engagement, strengthens our case by demonstrating how these platforms enhance public understanding of the legal system, a cornerstone of achieving justice.<br><br>Second, the negative team’s focus on "minimizing harm" as the judging criterion is overly cautious and insufficient for evaluating the complex impact of online public opinion trials.  Maximizing societal benefit, our proposed criterion, is superior because it considers both potential harms and positive contributions to justice.  This holistic approach aligns with the core principles of justice, which seek not just to avoid harm, but also to actively promote fairness and equity.  A study in the Journal of Information Policy [3] highlights how online platforms facilitate civic engagement and can hold power accountable, directly contributing to a more just society.  By focusing solely on minimizing harm, the negative team neglects the significant potential for online platforms to *increase* justice, thus weakening their argument and strengthening ours.<br><br>Third, the negative team’s claim that online public opinion trials inevitably lead to vigilantism is an unfounded generalization.  While acknowledging potential risks, we argue that vigilantism is not an inherent outcome of online discussions. Many platforms actively moderate content [4], and research suggests that online discussions often center on raising awareness, supporting victims, and advocating for legal reforms [5].  These positive contributions are crucial for achieving justice and are entirely disregarded by the negative team.  Their focus on a potential negative outcome, while ignoring the demonstrable positive impacts, weakens their argument and strengthens our position that online platforms can be powerful tools for positive change.<br><br>Fourth, the negative team's argument that online platforms amplify biases, while true, overlooks their unique capacity to *mitigate* bias by providing diverse perspectives and amplifying marginalized voices. While traditional media can also amplify bias, as discussed in [6], online platforms offer a unique opportunity for counter-speech and the dissemination of alternative viewpoints [7]. This ability to challenge dominant narratives and foster a more inclusive public discourse is crucial for achieving a just society. By focusing solely on the potential for bias amplification, the negative team ignores the unique potential of online platforms to promote balanced and informed public discourse<br><br>**Reference**<br>(1) Cornell Law School. Legal Information Institute. www.law.cornell.edu/lii/<br>(2)  Administrative Office of the U.S. Courts.  pacer.gov<br>(3)  Bimber, Bruce. "Information Inequality:  Internet Use and the Creation of a Digital Underclass,"  *Journal of Information Policy* Vol. 8 (2018), pp. 1-22. <br>(4)  Gillespie, Tarleton. "Content Moderation and Platform Governance,"  *Research Handbook on Platform Governance* (Edward Elgar Publishing, 2022).<br>(5)  O’Neill, Onora. "Public Debate in a Digital World,"  *Journal of Ethics* Vol. 23 (2019), pp. 341-358.<br>(6)  Herman, Edward S., and Noam Chomsky. *Manufacturing Consent*. Pantheon Books, 2002.<br>(7)  Benkler, Yochai. *The Wealth of Networks*. Yale University Press, 2006.<br>(8)  National Digital Inclusion Alliance.  digitalinclusion.org<br>(9)  Ford Foundation.  "Closing the Digital Divide:  Ensuring Equitable Access to Technology and Opportunity." (2021)</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case1/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, and esteemed audience, the affirmative team’s arguments, while superficially appealing, fail to address the fundamental flaws of online public opinion trials. Their attempts to redefine the motion, shift the judging criteria, and downplay the inherent risks only serve to highlight the weakness of their position.<br><br>First, let’s address their broad definition of online public opinion trials. While resources like Cornell Law's Legal Information Institute [1] and Electronic Case Filings websites [2] undoubtedly offer valuable legal information, they are distinct from the often-toxic environment of online public opinion trials.  These trials, as we defined, involve public judgment and condemnation, often based on incomplete information.  This distinction is crucial.  While legal information platforms promote informed citizenry, online trials frequently devolve into biased, emotionally-charged judgments.  This undermines due process, evidenced by online shaming leading to offline harassment ([3], [4]) and the disproportionate impact of cancel culture on marginalized communities ([5], [6]).<br><br>Next, let’s consider their proposed judging criteria of "maximizing societal benefit."  While a laudable goal, it's dangerously incomplete.  Focusing solely on benefits ignores the potential for significant harm. Studies document the spread of misinformation [7] and negative public opinion outbreaks [8] resulting from online trials.  These harms can undermine the very justice the affirmative seeks to promote. A balanced approach, prioritizing minimizing harm, is crucial. Imagine being subjected to a trial by social media, your reputation tarnished before due process, based on misinformation amplified by algorithms. Where is the societal benefit in that?<br><br>The affirmative’s claim that vigilantism isn’t an inherent outcome of online discussions is simply wishful thinking.  While content moderation exists, the very structure of online public opinion trials encourages vigilantism.  Platforms enable rapid dissemination of accusations, fostering a mob mentality where individuals are condemned before due process ( [9]). This often spills into offline harassment and violence, documented in cases where online and offline bullying co-occur ([10], [3]).  While some online discussions might raise awareness, the potential for vigilantism remains significant, fueled by public shaming tactics ( [9]).  Think about how quickly misinformation spreads online, how easily individuals can be targeted and harassed.  This is not justice; it's a dangerous erosion of due process.<br><br>Finally, their argument about mitigating bias ignores the reality of echo chambers.  Prejudiced individuals seek confirming information online ( [11]). Platforms prioritize engagement, allowing biased narratives to proliferate [12].  Individuals are judged based on amplified pre-existing biases [13], hindering impartial justice.  Their claim of diverse perspectives is often drowned out by the cacophony of biased information amplified by algorithms designed for engagement, not truth.<br><br>Furthermore, let's address the critical issue of due process.  Social media's rapid information dissemination leads to premature judgments, impacting due process integrity ( [14]). This instantaneous nature bypasses the structured, evidence-based legal process, creating a "trial by social media" environment ([15]). This undermines the presumption of innocence and the right to a fair trial ([16]), jeopardizing impartiality.  Consider the potential consequences: your life upended by online accusations before you have a chance to defend yourself in a court of law. This is not justice; this is a dangerous perversion of it.<br><br><br>**Reference**<br><br>[1] Cornell Law School. *Legal Information Institute*. www.law.cornell.edu/lii/<br>[2] Administrative Office of the U.S. Courts. pacer.gov<br>[3]  Hinduja, Sameer, and Justin W. Patchin. “Connections Between Online Harassment and Offline Violence among Youth.” *Journal of Adolescent Health*, vol. 56, no. 1, 2015, pp. S17–21.<br>[4]  UNSW Sydney. *Online violence just as destructive as offline violence*. https://www.unsw.edu.au/newsroom/news/2019/11/online-violence-just-as-destructive-as-offline-violence<br>[5]  Therapy Group of DC. *The Psychology of Cancel Culture: Impacts on Mental Health*. https://therapygroupdc.com/therapist-dc-blog/the-psychology-of-cancel-culture-impacts-on-mental-health/<br>[6]  Media@LSE. *'Cancel culture' and historical silencing*. https://blogs.lse.ac.uk/medialse/2021/07/20/cancel-culture-and-historical-silencing/<br>[7]  Li, M., et al. “Online public opinion dissemination model and simulation under media convergence.” *Applied Soft Computing*, vol. 133, 2023.<br>[8]  Liu, Y., et al. “Online public opinion evaluation through the functional resonance analysis method.” *Journal of Intelligent & Fuzzy Systems*, vol. 40, no. 6, 2021, pp. 11617–29.<br>[9] Mount Royal University.  *Unmasking cyber vigilantism: MRU prof explores online justice*. https://www.mtroyal.ca/AboutMountRoyal/MediaRoom/Stories/2023/12/unmasking-cyber-vigilantism.htm<br>[10]  Barrense-Dias, Yara, et al. “Co-occurrence of online and offline bullying and sexual harassment victimization and perpetration among adolescents.” *International Journal of Environmental Research and Public Health*, vol. 19, no. 19, 2022.<br>[11] Fiveable.  *Echo Chamber - (Race and Gender in Media)*. https://fiveable.me/key-terms/race-and-gender-in-media/echo-chamber<br>[12]  The New York Times. *How Social Media Amplifies Misinformation More Than*. https://www.nytimes.com/2022/10/13/technology/misinformation-integrity-institute-report.html<br>[13] Yogeeswaran, Kumar, and Joel S. Lee. “Media stereotypes, prejudice, and preference-based reinforcement.” *Journal of Communication*, vol. 73, no. 5, 2023, pp. 463–84.<br>[14] Cumberland Trial Journal.  *Preserving the Right to a Fair Trial: Social Media’s Impact on*. https://cumberlandtrialjournal.com/2024/04/28/preserving-the-right-to-a-fair-trial-social-medias-impact-on-the-jury/<br>[15] The Alestle. *OPINION: Trial by social media harms due process rights*. https://www.alestlelive.com/opinion/article_ab914f3e-89fe-11ec-a75a-67333a862d82.html<br>[16] Pace Law Faculty Blogs.  *Social Media, Venue and the Right to a Fair Trial*. https://digitalcommons.pace.edu/cgi/viewcontent.cgi?article=2133&context=lawfaculty<br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case1/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges. In today's debate, our discussion primarily revolved around the impact of online public opinion trials on the pursuit of justice. While our opponents have focused on potential harms, we maintain that these platforms, when understood broadly, bring us closer to justice by maximizing societal benefit.<br><br>Our opponents define online public opinion trials narrowly as mere "judgment and condemnation." However, this ignores the multifaceted nature of online engagement with legal issues.  Online platforms are crucial for sharing information, fostering discussions, and promoting legal education. These activities, which *precede* judgment, empower citizens to form nuanced opinions and contribute to a more informed public discourse. Studies show online discussions can lead to deeper analysis and critical thinking about legal issues [17].  Moreover, online platforms have facilitated positive legal outcomes, such as petitions leading to a $15 million settlement in a civil rights lawsuit [19] and crowdsourced investigations helping identify suspects in criminal cases [10].<br><br>The negative team advocates for "minimizing harm" as the judging criteria.  While harm reduction is important, their narrow focus overlooks the significant potential for online platforms to *increase* justice. Our criterion, "maximizing societal benefit," encompasses both harm reduction and the active promotion of justice.  Increased transparency, a key feature of online discussions, holds legal actors accountable [9] and promotes fairness [8].  Furthermore, online platforms amplify marginalized voices [12], ensuring their concerns are heard and addressed, contributing to a more equitable legal system.<br><br>Our opponents raise valid concerns about due process<br><br>**Reference**<br>(1)  Herman, Edward S., and Noam Chomsky. *Manufacturing Consent*. Pantheon Books, 2002.<br>(2) Benkler, Yochai. *The Wealth of Networks*. Yale University Press, 2006.<br>(3)  Change.org. Change.org releases top ten petitions that changed 2021.<br>(4)  Mount Royal University. Unmasking cyber vigilantism: MRU prof explores online justice. <br>(5)  O’Neill, Onora. "Public Debate in a Digital World,"  *Journal of Ethics* Vol. 23 (2019), pp. 341-358.<br>(6)  Fiveable. *Echo Chamber*.<br>(7) Li, M., et al. “Online public opinion dissemination model and simulation under media convergence.” *Applied Soft Computing*, vol. 133, 2023.<br>(8)  OJP.gov.  Law Enforcement and Public Safety Technology and Equipment Needs.<br>(9)  Lawslearned.com. Public Opinion and Trials.<br>(10)  news.vt.edu. Sedition Hunters Help FBI.<br>(11)  Pearce, Katy E. "Introduction: Marginality and Social Media." *Social Media + Society*, vol. 6, no. 3, July 2020.<br>(12)  fastercapital.com. The Importance of Amplifying Marginalized Voices.<br>(13)  fbaum.unc.edu. J-Communication.<br>(14) Rovai, Alfred P.  Building Sense of Community at a Distance.<br>(15)  kcba.org.  National Study Can Be a Catalyst.<br>(16)  esguniversity.substack.com. The Evolution of Citizen Journalism.<br>(17)  academicworks.cuny.edu. Online Discussions.<br>(18) quora.com. Impact of Public Pressure.<br>(19) Change.org. Top Ten Petitions.<br>(20) innocenceproject.org. Innocence Project's Uplifting Moments from 2023.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case1/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Esteemed judges, the core conflict in this debate revolves around the true nature of online public opinion trials: do they enhance or obstruct justice?  We firmly believe they obstruct justice. While the affirmative paints a picture of informed citizenry and amplified voices, they fail to grapple with the inherent dangers we’ve highlighted.<br><br>Our opponents’ broad definition of online public opinion trials ignores the crucial distinction between information sharing and the toxic reality of online judgment and condemnation.  While platforms can educate, online trials often devolve into biased, emotionally-charged arenas.  Their focus on “maximizing societal benefit” as the sole criterion overlooks the demonstrable harms: vigilantism, amplified biases, and the disproportionate impact on marginalized communities.  Imagine yourselves subjected to a trial by social media, judged not on facts but on amplified biases, your life upended by accusations before due process.  Where is the justice in that?<br><br>We have shown that online public opinion trials encourage vigilantism, bypassing due process and fostering a mob mentality where individuals are condemned before having a chance to defend themselves.  These trials amplify existing prejudices, creating echo chambers where biased narratives proliferate.  They disproportionately harm marginalized communities, exacerbating existing vulnerabilities.  The affirmative's arguments fail to address these fundamental flaws. Their vision of a more just society through online trials is, at best, naive, and at worst, dangerously misleading.  We urge you to reject this flawed notion and uphold the principles of due process, fairness, and true justice.  A just society is built on the foundations of a fair legal system, not the shifting sands of online opinion.<br><br><br>**Reference**<br><br>[1] Herman, Edward S., and Noam Chomsky. *Manufacturing Consent*. Pantheon Books, 2002.<br>[2] Benkler, Yochai. *The Wealth of Networks*. Yale University Press, 2006.<br>[3] Change.org.  *Change.org releases top ten petitions that changed 2021*.<br>[4] Mount Royal University. *Unmasking cyber vigilantism: MRU prof explores online justice*. <br>[5] O’Neill, Onora. "Public Debate in a Digital World." *Journal of Ethics*, vol. 23, 2019, pp. 341-358.<br>[6] Fiveable. *Echo Chamber*.<br>[7] Li, M., et al. “Online public opinion dissemination model and simulation under media convergence.” *Applied Soft Computing*, vol. 133, 2023.<br>[8] OJP.gov.  *Law Enforcement and Public Safety Technology and Equipment Needs*.<br>[9] Lawslearned.com. *Public Opinion and Trials*.<br>[10] news.vt.edu.  *Sedition Hunters Help FBI*.<br>[11] Pearce, Katy E. "Introduction: Marginality and Social Media." *Social Media + Society*, vol. 6, no. 3, July 2020.<br>[12] fastercapital.com. *The Importance of Amplifying Marginalized Voices*.<br>[13] fbaum.unc.edu.  *J-Communication*.<br>[14] Rovai, Alfred P. *Building Sense of Community at a Distance*.<br>[15] kcba.org. *National Study Can Be a Catalyst*.<br>[16] esguniversity.substack.com.  *The Evolution of Citizen Journalism*.<br>[17] academicworks.cuny.edu. *Online Discussions*.<br>[18] quora.com.  *Impact of Public Pressure*.<br>[19] Change.org. *Top Ten Petitions*.<br>[20] innocenceproject.org. *Innocence Project's Uplifting Moments from 2023*.<br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>

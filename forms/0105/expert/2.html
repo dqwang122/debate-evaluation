@@ -1,0 +1,900 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization and inconsistent emotional delivery.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Social Media Should Be Required To Verify User Identities </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert" >
+    <input type="hidden" id="mode" name="version" value="0105" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case2/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, esteemed audience, today we stand firmly in support of the motion: Social media should be required to verify user identities. We believe this is a crucial step towards fostering a safer, more trustworthy, and accountable online environment.<br><br>First, let’s be clear about what we mean by identity verification.  We advocate for social media platforms to be legally obligated to implement identity verification processes for all users, both new and existing.  This could include government-issued ID, biometric verification, or a combination of methods.  This mandate would be enforced through tiered penalties for non-compliance, including fines and potential service suspension.<br><br>Our judging criteria for this debate is simple: will mandatory identity verification demonstrably reduce harm and improve the overall health of the online ecosystem? We believe the evidence overwhelmingly supports a “yes.”<br><br>Let me turn to our first argument: verification helps prevent the spread of misinformation and disinformation. Consider this:  you’re scrolling through your feed and encounter a shocking news story.  How can you be sure it’s true?  Anonymous accounts, often bots or malicious actors, thrive in the current environment, spreading falsehoods with impunity.  Verification empowers platforms to hold users accountable, deterring this behavior. As you’ll see, research on combating misinformation highlights the effectiveness of verification in stopping the spread of false narratives [1]. Studies demonstrate that verifying information's truthfulness is key to combating its proliferation [2].  By knowing who is posting, platforms can more effectively identify and remove harmful content, protecting you from deceptive information.<br><br>This brings me to our second, and crucial, point: verified identities enhance trust and credibility in online interactions.  Imagine you're buying something from an online marketplace. Wouldn’t you feel safer knowing the seller is a verified individual?  Prove's blog highlights how identity verification enhances trust between all parties involved in online marketplaces [3].  By validating user identities, platforms assure you that you're interacting with legitimate individuals, minimizing the risk of fraud. The PLOS ONE article, while acknowledging the nuances of online credibility, underscores the importance of platforms helping users identify trustworthy content [4]. Verified identities contribute to this process by offering a tangible marker of authenticity, empowering you to discern credible sources from deceptive ones. This heightened trust leads to increased user confidence and participation, fostering a healthier online environment.<br><br>Finally, and what’s particularly important, verification supports the development of a safer and more accountable online environment.  Think about how much freer people feel to be abusive or hateful when hiding behind anonymity. By linking actions to real individuals, verification reduces this anonymity, a key driver of harmful online behavior [5, 6].  This promotes responsible conduct, as users become more accountable for their words and actions.  Verification also streamlines content moderation, enabling platforms to identify and address harmful content more effectively [7], creating a safer space for everyone. As you can see in "Online Identity Authentication Methods," successful examples demonstrate the feasibility and benefits of identity verification [8].<br><br>In closing, the current landscape of anonymous or pseudonymous social media allows for the unchecked spread of misinformation, erodes trust, and fosters harmful behavior.  Mandatory identity verification offers a powerful solution to these problems. We urge you to support this motion, not just for a safer online experience, but for a healthier digital future for all.<br><br><br>**Reference**<br><br>[1] Sharma, S., et al. (2022). Combating Misinformation by Sharing the Truth: a Study on the Spread of COVID-19 Related Misinformation on WhatsApp. *Journal of Medical Internet Research*, *24*(6), e36005. https://pmc.ncbi.nlm.nih.gov/articles/PMC9188446/<br><br>[2] Rogue Community College Library Guides. (n.d.). *Fact-Checking & the SIFT Method - Fact-Checking and Misinformation: A LibGuide*. https://libguides.roguecc.edu/factcheck<br><br>[3] Prove. (n.d.). *How Identity Verification Delivers Enhanced Trust and Safety For Digital Marketplaces*. https://www.prove.com/blog/how-identity-verification-delivers-enhanced-trust-safety-digital-marketplaces<br><br>[4]  Faulmüller, N., et al. (2021). Virtual lab coats: The effects of verified source information on credibility judgments of science claims on social media. *PLOS ONE*, *16*(8), e0302323. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302323<br><br>[5] ScanDoc. (n.d.). *Understanding Online Identity Verification: Benefits and the Future*. https://scandoc.ai/blog/online-identity-verification-solution/<br><br>[6] NorthRow. (n.d.). *5 benefits of online ID document verification in a digital age*. https://www.northrow.com/blog/5-benefits-of-online-id-document-verification-in-a-digital-age<br><br>[7] KYCAML. (n.d.). *The Role of Age Verification in Preventing Cyberbullying and Online Harassment*. https://kycaml.guide/blog/the-role-of-age-verification-in-preventing-cyberbullying-and-online-harassment/<br><br>[8] Incode. (n.d.). *Online Identity Authentication Methods: Compare Top 4 Methods*. https://incode.com/blog/online-identity-authentication-methods-compare-top-4-methods/<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case2/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that mandatory social media verification, defined as legally requiring all users to confirm their real-world identities with official documentation before using social media platforms, should not be implemented.  Our judging criteria is the balancing of competing interests, meaning the optimal approach considers the trade-offs between safety and security, freedom of expression, privacy, and practical feasibility.<br><br>First, mandatory verification infringes on fundamental rights to privacy and anonymity.  Requiring users to link their real-world identities to their online presence undermines their ability to express themselves freely without fear of reprisal, particularly for marginalized groups or activists.  Studies show that anonymity is crucial for whistleblowers, dissidents, and vulnerable individuals who may face harassment or persecution if their identities are known [1].  For example, research indicates that real-name policies in South Korea and China have led to increased self-censorship and chilling effects on free speech [2]. This demonstrates how mandatory verification can disproportionately harm those who rely on anonymity for safety and self-expression, tilting the balance against freedom of expression and privacy.<br><br>Second, mandatory verification is practically infeasible and creates security risks. Verifying the identities of billions of social media users worldwide presents an immense logistical hurdle, requiring substantial resources and technical infrastructure. Research indicates that even sophisticated systems are vulnerable to breaches [3], and the sheer volume of sensitive personal data collected for verification would create a honeypot for hackers.  For example, the 2011 data breach at Sony, where 77 million user accounts were compromised, demonstrates the vulnerability of centralized data storage [4]. This highlights the significant security risks inherent in mandatory verification, making it practically infeasible and potentially dangerous.<br><br>Third, less restrictive alternatives exist to address harmful content. Instead of blanket verification requirements, platforms can implement more targeted approaches, such as improved reporting mechanisms, community-based moderation, and AI-powered content filtering.  Studies show that community-led moderation can be highly effective in addressing harmful content and fostering positive online environments [5]. For example, platforms like Reddit rely heavily on community moderators to enforce rules and maintain order, demonstrating the viability of alternatives to mandatory verification [6]. This proves that less restrictive and more nuanced approaches can effectively combat harmful content without sacrificing user privacy and anonymity.<br><br>In conclusion, while online safety is a valid concern, mandatory social media verification is an overreach that infringes on fundamental rights, poses significant security risks, and overlooks viable alternatives.  A balanced approach that prioritizes privacy, free speech, and practical feasibility is essential for a healthy online ecosystem.<br><br>**Reference**<br>(1) Stein, D. (2017).  Locating Anonymity in the Information Society.  Information, Communication & Society, 20(5), 669-686.<br>(2)  Lee, S. (2015).  The Politics of Online Identity:  Regulation and Control of Real Name Systems in South Korea.  Journal of Contemporary Asia, 45(3), 426-443.<br>(3)  Romanosky, S., Telang, R., & Acquisti, A. (2008).  Empirical Analysis of Data Breach Security.  Workshop on the Economics of Information Security, 1-38.<br>(4)  Keesing Journal of Documents & Identity.  The importance of identity verification in social media accounts. Retrieved from https://www.keesingtechnologies.com/blog/id-documents/the-importance-of-identity-verification-in-social-media-accounts/<br>(5)  Hamilton, W. L., & Zhang, J. (2020).  Contested Moderation:  Content Moderation as a Challenge for Platform Governance Research.  Proceedings of the ACM on Human-Computer Interaction, 4(CSCW2), 1-25.<br>(6)  Massanari, A. (2017).  #Gamergate and The Fempire Strikes Back:  Antifeminism and the Politics of Exclusion in Online Spaces.  New Media & Society, 19(3), 422-439.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case2/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, audience, our opponents raise concerns, but their arguments ultimately fail to address the core issues plaguing social media today: rampant misinformation, pervasive distrust, and unchecked harassment. Their proposed solutions simply don’t measure up to the challenge.<br><br>They argue that mandatory verification infringes on privacy and anonymity.  While we acknowledge the importance of anonymity in certain contexts, their argument overlooks a crucial point: unchecked anonymity fuels toxicity. Research indicates a strong correlation between anonymity and negative online behaviors [1, 2].  Think about it – how often have you seen hateful comments or blatant misinformation spread by anonymous accounts?  Verification brings accountability, encouraging responsible behavior and protecting vulnerable users from harassment.  We believe a balanced approach respects legitimate needs for anonymity while curbing its harmful manifestations.<br><br>Our opponents suggest less restrictive alternatives, like community moderation. While community-led efforts have a role, they are insufficient to address the scale of the problem.  Studies show anonymity fosters negativity [1, 2], directly contradicting the claim that community moderation fosters positive environments. Consider Reddit, their example.  While it utilizes community moderators, it still struggles with hate speech and misinformation.  This highlights the limitations of relying solely on voluntary efforts when the issue is systemic.<br><br>Now, let me turn to a critical point they overlooked: verification promotes responsible online behavior.  Research shows a strong link between anonymity and negativity [1, 2]. Anonymity allows individuals to act with impunity, shielding them from consequences. This disinhibition fuels harmful behaviors like harassment, doxing, and the spread of false information.  Verification changes the equation.  By knowing who is posting, users are more likely to think twice before engaging in harmful behavior. As Wang et al.’s research highlights, identity verification, even without visible badges, can decrease the posting of fake news [3]. A targeted approach focusing verification on actions, rather than just accounts, can address anonymity-driven negativity without compromising privacy.<br><br>The opposition also claims mandatory verification is infeasible and risky. However, we disagree.  They cite the Sony data breach as an example of the dangers of centralized data storage [4]. While data security is paramount, this argument misrepresents the issue.  We are not advocating for a single, centralized database.  Platforms can utilize decentralized verification systems, minimizing the risk of large-scale breaches.  Moreover, the benefits of increased safety and accountability outweigh the manageable risks.  Consider the alternative: a continued free-for-all where malicious actors operate unchecked.<br><br>Finally, and what’s particularly important, let's address the very real issue of online harassment.  The report "Preventing Online Harassment: The Power of Online Verification" demonstrates the power of verification in curbing abuse [5]. The study shows that online verification can decrease harassment incidents by a staggering 55% and increase user trust by 73%.  Imagine a social media environment where you feel safer, more confident in your interactions.  That's the future we advocate for, a future made possible by mandatory verification.<br><br>In closing, our opponents present a vision of the internet where anonymity reigns supreme, even at the expense of safety and trust.  We offer a different path, a path towards a more responsible, accountable, and ultimately safer online experience for all.<br><br><br>**Reference**<br><br>[1]  Kim, Y., et al. (2019). Impact of anonymity on roles of personal and group identities in online impulsive buying behavior. *Electronic Commerce Research and Applications*, *37*, 100877. https://www.sciencedirect.com/science/article/pii/S0378720618302490<br><br>[2]  Clean Up The Internet. (n.d.). *Academic research about anonymity, online disinhibition, and online harms*. https://www.cleanuptheinternet.org.uk/post/some-useful-scholarly-articles-about-online-disinhibition-anonymity-and-online-harms<br><br>[3] Wang, S. A., Pang, M. S., & Pavlou, P. A. (2024). Cure or Poison? Identity Verification and the Posting of Fake News on Social Media. In *Social Media, Misinformation, and the 2020 US Presidential Election* (pp. 93-113). Routledge. https://www.taylorfrancis.com/chapters/edit/10.4324/9781003433934-6/cure-poison-identity-verification-posting-fake-news-social-media-shuting-ada-wang-min-seok-pang-paul-pavlou<br><br>[4] Keesing Journal of Documents & Identity. (n.d.). *The importance of identity verification in social media accounts*. https://www.keesingtechnologies.com/blog/id-documents/the-importance-of-identity-verification-in-social-media-accounts/<br><br>[5]  LSPM. (2022). *Preventing Online Harassment: The Power of Online Verification*. https://www.lspm.org.uk/2022/news.aspx?id=12411248&CourseTitle=The+role+of+online+verification+in+preventing+online+harassment<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case2/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent's rebuttals, while raising seemingly valid points, ultimately fail to withstand scrutiny. Their arguments misrepresent the complexities of online anonymity, offer simplistic solutions to nuanced problems, and ultimately fail to justify the significant infringements on freedom of expression and privacy that their narrowly defined mandatory verification entails. We will address their arguments concerning anonymity, community moderation, feasibility, impact on vulnerable groups, and their restrictive definition of verification.<br><br>First, the affirmative argues that anonymity fuels toxicity, citing studies that show a correlation between anonymity and negative online behaviors [1, 2].  However, correlation does not equal causation. Their argument disregards the vital protective function of anonymity for vulnerable groups, such as whistleblowers, activists, and victims of domestic abuse.  Reporters Without Borders, in their 2023 World Press Freedom Index, highlight how China's extensive internet censorship and surveillance, including real-name policies, are used to suppress dissent and control the flow of information, severely restricting freedom of expression [9]. This chilling effect on free speech, particularly for marginalized communities, outweighs the potential reduction in online toxicity. While platforms like Reddit, which allow for pseudonymous participation, may still face challenges with harmful content, they demonstrate that anonymity and pseudonymity are not the root cause of online toxicity but rather a symptom of inadequate moderation and enforcement.<br><br>Second, they dismiss community moderation as insufficient, pointing to Reddit's ongoing content moderation challenges.  However, this critique overlooks the fact that Reddit, with its massive scale and decentralized structure, presents a uniquely challenging case. Smaller platforms and online forums successfully employ community moderation combined with other tools like AI filtering and reporting mechanisms, demonstrating that a multi-faceted approach can be effective. Discord, for example, leverages a combination of community moderators empowered by clear guidelines and tools, automated systems that scan for violations, and user reporting mechanisms to foster a safer online environment [10]. This demonstrates that alternative, less intrusive solutions exist that do not necessitate the heavy-handed approach of mandatory verification.<br><br>Third, the affirmative claims mandatory verification promotes responsible online behavior.  However, this ignores the fact that determined malicious actors can easily circumvent verification measures through identity theft or the creation of fake accounts. Moreover, linking real-world identities to online profiles significantly increases the risk of doxing and targeted harassment, particularly for marginalized groups.  The Electronic Frontier Foundation highlights the severe consequences of doxing, including stalking, harassment, and real-world violence, and advocates for stronger privacy protections online, rather than measures that increase the risk of exposure [11].  This increased risk negates any purported benefits of improved online behavior.<br><br>Fourth, their proposal of decentralized verification systems simply displaces the problem without solving it.  Such systems raise complex questions of governance, interoperability, and standardization<br><br>**Reference**<br>(9) Reporters Without Borders. (2023). *World Press Freedom Index*. https://rsf.org/en/index<br>(10) Discord. (n.d.). *Safety Center*. https://discord.com/safety<br>(11) Electronic Frontier Foundation. (n.d.). *Doxing*. https://www.eff.org/issues/doxing<br>(12) The Ronin Network Bridge Hack: How it Happened and What We Learned. https://blog.chainalysis.com/reports/ronin-bridge-hack-what-happened/</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case2/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">This debate boils down to a fundamental question: how do we create a safer, more trustworthy online environment? Our opponents argue for maintaining the status quo, prioritizing unchecked anonymity even at the cost of rampant misinformation and pervasive distrust.  We believe this is a grave mistake.<br><br>Our case for mandatory verification rests on three pillars. First, verification combats misinformation.  Imagine encountering a concerning news story on your feed.  Wouldn't you feel more secure knowing the source is verified?  Accountability is key, and verification empowers platforms to hold users responsible for the information they share.<br><br>Second, verification enhances trust. Think about buying something online.  Wouldn't you prefer knowing the seller is a verified individual?  Verification fosters transparency and builds confidence in online interactions, creating a more secure environment for everyone.<br><br>Finally, and most importantly, verification addresses the pervasive issue of online harassment. Studies show a direct link between verification and decreased harassment [5].  Imagine a social media where you feel safer, freer to express yourself without fear of abuse. That’s the future we champion.<br><br>Our opponents raise concerns about privacy, but their arguments lack substance. They cite extreme cases like China, ignoring the possibility of balanced approaches.  Their faith in community moderation is misplaced. Reddit, their prime example, is rife with harmful content, proving its inadequacy.  Their argument against decentralized verification systems simply displaces the problem.<br><br>We urge you to support mandatory verification, not for an idealized vision of absolute anonymity, but for a practical solution to the real-world problems plaguing social media today.  Choose safety. Choose trust. Choose a better online future.<br><br>**Reference**<br><br>[5]  LSPM. (2022). *Preventing Online Harassment: The Power of Online Verification*. https://www.lspm.org.uk/2022/news.aspx?id=12411248&CourseTitle=The+role+of+online+verification+in+preventing+online+harassment<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case2/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges. In today's debate, our discussion primarily revolved around the balance between online safety and fundamental rights like freedom of expression and privacy.<br><br>The affirmative side argues that mandatory verification is the key to a safer online environment. However, their arguments fail to address the significant risks to privacy and free speech that such a system entails.  They claim anonymity fuels toxicity, citing studies correlating anonymity with negative behavior [1, 2]. However, this correlation does not equal causation.  Anonymity is a crucial shield for vulnerable groups, enabling whistleblowers, activists, and those facing persecution to express themselves freely [1]. Reporters Without Borders highlight how mandatory real-name policies, as implemented in China, suppress dissent and restrict freedom of expression [9].  We must not sacrifice these vital protections for a perceived increase in online safety.<br><br>Furthermore, the affirmative's proposal is practically infeasible. Verifying the identities of billions of users presents a monumental challenge, even with decentralized systems.  These systems are still vulnerable to breaches, as evidenced by the Ronin Network hack, which exposed vulnerabilities in decentralized finance platforms [12].  The immense cost and technical complexity of implementing such a system globally would divert resources from more effective measures like improving content moderation.  Platforms like Discord demonstrate that a combination of community moderation, clear guidelines, and user reporting can create safer environments without sacrificing user privacy [10].<br><br>The affirmative also claims verification promotes responsible behavior.  However, this ignores the ease with which malicious actors can circumvent verification<br><br>**Reference**<br>(1) Stein, D. (2017). Locating Anonymity in the Information Society. Information, Communication & Society, 20(5), 669-686.<br>(2) Lee, S. (2015). The Politics of Online Identity: Regulation and Control of Real Name Systems in South Korea. Journal of Contemporary Asia, 45(3), 426-443.<br>(9) Reporters Without Borders. (2023). World Press Freedom Index. https://rsf.org/en/index<br>(10) Discord. (n.d.). Safety Center. https://discord.com/safety<br>(11) Electronic Frontier Foundation. (n.d.). Doxing. https://www.eff.org/issues/doxing<br>(12) The Ronin Network Bridge Hack: How it Happened and What We Learned. https://blog.chainalysis.com/reports/ronin-bridge-hack-what-happened/</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="2" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>

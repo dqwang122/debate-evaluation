@@ -1,0 +1,900 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization and inconsistent emotional delivery.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: We Should Subsidize Preschool </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert" >
+    <input type="hidden" id="mode" name="version" value="0105" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case3/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that we should subsidize preschool, defined as government funding provided to reduce the cost of early childhood education programs for children aged 3-5, focusing on their cognitive, social, and emotional development.<br><br>Our judging criteria is maximizing societal benefit. The optimal policy yields the greatest overall benefit to society, considering both short-term and long-term impacts on children, families, and the economy. This framework is appropriate because it encompasses the wide-ranging effects of preschool subsidies.<br><br>First, preschool subsidies improve long-term educational outcomes and reduce societal inequalities. Research indicates that access to high-quality preschool, especially for children from low-income families, leads to improved school readiness [8].  The positive effects of universal, high-quality preschool persist through tenth grade, demonstrating sustained benefits [8]. Studies show that preschool programs improve children's cognitive and social-emotional development, leading to better academic performance throughout their schooling [8]. This, in turn, results in higher rates of high school graduation and college enrollment [9], ultimately creating a more educated and productive workforce, thus benefiting society.<br><br>Second, preschool subsidies provide substantial economic benefits. By enabling parents, especially mothers, to enter or remain in the workforce, subsidies boost family incomes and increase overall economic productivity [4].  One study found that expanding child care subsidies could boost a local economy significantly [4]. Affordable access to child care is crucial for supporting children's healthy development, enabling parents to work or attend school, and helping businesses and the overall economy thrive [4]. Moreover, the increased tax revenue from employed parents and the reduced need for future social services due to improved educational outcomes offset the cost of the subsidies, making them a fiscally responsible investment [1]. Research indicates that high-quality public preschool programs for disadvantaged children yield benefits that outweigh the costs [1].<br><br>Third, preschool subsidies strengthen families and communities. Access to affordable, high-quality preschool reduces parental stress and improves family well-being [2, 8]. Stable use of subsidies supports continuity of care, positively impacting children's development and meeting families' needs [2]. Moreover, preschool fosters social and emotional development in children, preparing them to become engaged and responsible citizens [5]. These positive effects ripple through communities, potentially leading to stronger social cohesion and a reduction in crime rates in the long run.  Subsidies help bridge the opportunity gap for children from low-income families, contributing to a more equitable society [1].<br><br><br>In conclusion, subsidizing preschool is a worthwhile investment that generates significant positive returns for children, families, and society as a whole, ultimately leading to a more prosperous and equitable future.<br><br>**Reference**<br>(1) National Association of State Boards of Education (NASBE). An Economic Perspective on Preschool for All.  https://www.nasbe.org/an-economic-perspective-on-preschool-for-all/<br>(2) Administration for Children and Families (ACF). Research on Stability of Child Care Subsidies for Children and Families. https://www.acf.hhs.gov/opre/report/research-stability-child-care-subsidies-children-and-families<br>(3) Urban Institute. What If We Expanded Child Care Subsidies? https://www.urban.org/research/publication/what-if-we-expanded-child-care-subsidies<br>(4) DC Fiscal Policy Institute. Expanding Child Care Subsidies Would Boost the District’s Economy. https://www.dcfpi.org/all/expanding-child-care-subsidies-would-boost-the-districts-economy/<br>(5) Family for Every Child. Fact Sheet: Child Care and the Economy. https://www.ffyf.org/2024/03/06/fact-sheet-child-care-and-the-economy/<br>(6) The White House Council of Economic Advisers. Improving Access, Affordability, and Quality in the Early Care and Education (ECE) Market. https://www.whitehouse.gov/cea/written-materials/2023/07/18/improving-access-affordability-and-quality-in-the-early-care-and-education-ece-market/<br>(7) National Institute for Early Education Research (NIEER). Positive Effects of Universal, High-Quality Preschool Persist through 10th Grade. https://nieer.org/research-library/positive-effects-universal-high-quality-preschool-persist-through-10th-grade<br>(8) Wharton Budget Model. Economic Effects of Preschool and Childcare Programs. https://budgetmodel.wharton.upenn.edu/issues/2021/8/23/economic-effects-preschool-and-childcare-programs<br>(9) PubMed Central (PMC).  https://pmc.ncbi.nlm.nih.gov/articles/PMC3745537/</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case3/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, esteemed audience, we stand before you today to oppose the motion that we should subsidize preschool.  Our opponents have presented a vision of universal preschool as a panacea for societal ills, but we believe this vision is clouded by well-intentioned but ultimately misguided policy.  We contend that universal preschool subsidies are not only inefficient but also counterproductive, leading to unintended consequences that harm the very families and children they intend to help.<br><br>Our judging criteria for this debate is maximizing the effectiveness of educational spending.  We believe that every dollar invested in education should yield the greatest possible return in terms of improved outcomes for children.  This framework is crucial because it prioritizes demonstrable results and responsible stewardship of public funds.<br><br>First, let's address the misallocation of resources. While universal preschool sounds appealing, it spreads limited resources thinly across all families, regardless of need. Studies on targeted interventions for disadvantaged children, such as the Chicago Child-Parent Centers [1, 2], demonstrate significantly higher returns on investment.  These programs focus resources on those who benefit most, leading to substantial improvements in educational outcomes. By diverting funds towards universal preschool, we risk shortchanging these proven, targeted interventions and hindering overall educational progress.  We must prioritize effectiveness, not just broad access.<br><br>Now, consider the impact on tuition costs.  Our opponents argue that subsidies make preschool more affordable.  However, a key study from the Heritage Foundation [3] shows that government-funded preschool creates an artificial demand, allowing private institutions to inflate tuition.  This is because government-funded preschools undercut private providers, creating a demand driven by subsidies, not actual market needs. This gives private preschools the opportunity to raise prices, as they are no longer solely competing on price and quality. As highlighted in the Penn Wharton Budget Model study [4], government intervention through subsidies and funding can lead to cost increases. This model shows increased costs linked to such programs are often financed through debt, burdening taxpayers. The combined effect of artificial demand and increased costs demonstrates how subsidies lead to higher tuition, impacting families and the broader economy. Subsidies may appear to increase access but fail to address underlying affordability issues and instead distort the market. This underscores how government-subsidized preschool inflates tuition due to artificial demand.<br><br>Finally, let's examine the administrative burden. Expanding preschool programs necessitates a larger government bureaucracy to manage the influx of applications, allocate funds, and ensure compliance.  Research on the Child Care and Development Fund program [5, 6] reveals the existing administrative challenges. Scaling this program for universal preschool would exacerbate these challenges, requiring more staff, resources, and complex systems. This would divert resources away from educational services and negate the program's intended benefits. The Penn Wharton Budget Model study [4] projects increased government debt from such programs, partly due to higher administrative spending.  Considering that administrative expenses often consume 15% to 20% of total operating costs [7], the potential for significant financial strain is evident. While proponents tout long-term economic benefits, the immediate increase in bureaucratic overhead poses a considerable fiscal challenge.  We believe in responsible spending and maximizing the impact of each educational dollar.<br><br>**Reference**<br><br>[1] Early Childhood Interventions: Benefits, Costs, and Savings. https://www.rand.org/pubs/research_briefs/RB5014.html<br><br>[2] PDF. https://www.rand.org/content/dam/rand/pubs/research_briefs/1998/RB5014.pdf<br><br>[3] More Government Preschool: An Expensive and Unnecessary Middle-Class ... https://www.heritage.org/education/report/more-government-preschool-expensive-and-unnecessary-middle-class-subsidy<br><br>[4] Weighing the Costs and Benefits of Preschool and Childcare Policies. https://knowledge.wharton.upenn.edu/article/weighing-costs-benefits-preschool-childcare-policies/<br><br>[5] Improving Child Care Access, Affordability, and Stability in the Child ... https://www.federalregister.gov/documents/2024/03/01/2024-04139/improving-child-care-access-affordability-and-stability-in-the-child-care-and-development-fund-ccdf<br><br>[6] Keeping kids in care: Reducing administrative burden in state Child ... https://researchconnections.org/childcare/resources/148536<br><br>[7] What Are the Top Expenses for Preschools? - Business Plan Templates. https://businessplan-templates.com/blogs/running-costs/preschool<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case3/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent's opening statement contains several flaws, specifically regarding resource allocation, tuition costs, and administrative burden. They operate under a narrow framework of maximizing educational spending effectiveness, neglecting the broader societal benefits we champion: maximizing societal benefit. A policy’s true value lies in its holistic impact on society, considering not only educational outcomes but also factors like reduced healthcare costs due to preventative care and improved long-term health outcomes [1], increased social mobility through better access to opportunities [2], and stronger community bonds through shared early childhood experiences.<br><br>First, the negative side argues that “universal preschool spreads limited resources thinly across all families, regardless of need.” However, this argument presents a false dichotomy. Universal preschool and targeted programs are not mutually exclusive. Funding can, and should, be allocated to both, creating a synergistic approach that maximizes benefits. Research by Barnett and Haskins [3] supports the effectiveness of combining universal access with targeted support for children with greater needs. This dual approach yields greater overall positive impacts than either method individually. Moreover, universal preschool offers long-term societal benefits, such as increased workforce participation [4], which targeted interventions alone may not achieve. We must consider the broader picture of societal gain, not just immediate educational spending.<br><br>Second, the opposition claims that “government-funded preschool creates an artificial demand, allowing private institutions to inflate tuition.”  However, this argument misrepresents the complex dynamics of the preschool market.  Tuition increases are influenced by multiple factors like inflation and rising operational costs for all providers, not solely by subsidies.  Furthermore, subsidies significantly increase affordability for low-income families, enabling them to access quality preschool, an opportunity they might otherwise miss [5]. While managing potential cost increases is a valid concern, the claim that subsidies *solely* drive tuition inflation overlooks crucial factors and their importance in expanding access. Subsidies can even incentivize the creation of more affordable preschool options by stimulating competition.  By providing funding, the government effectively lowers the barrier to entry for new providers, particularly those focused on serving lower-income families.  This increased competition can pressure existing providers to moderate their price increases and offer more competitive rates, ultimately benefiting families.<br><br>Third, the negative team asserts that universal preschool would create an insurmountable administrative burden, arguing that “Scaling this program for universal preschool would exacerbate these challenges, requiring more staff, resources, and complex systems.” This argument assumes an inefficient expansion of the bureaucracy, which isn’t necessarily the case. A well-planned expansion, leveraging existing infrastructure and streamlining processes, can minimize administrative burden.  For instance, successful programs like Head Start [7] demonstrate how effective management and targeted allocation of resources can mitigate administrative challenges in large-scale early childhood programs. While acknowledging administrative costs, we argue that these are dwarfed by the long-term economic benefits of a more educated workforce and reduced social service costs [6]<br><br>**Reference**<br>(1) Heckman, J. J. (2006). "Skill formation and the economics of investing in children." Science, 312(5782), 1900-1902. [Discusses the long-term benefits of early childhood investments, including improved health outcomes]<br>(2) Barnett, W. S. (2011). "Effectiveness of early educational interventions." Science, 333(6045), 975-978. [Links early childhood education to increased social mobility]<br>(3) Barnett, W. S., & Haskins, R. (2010). Investing in high-quality prekindergarten programs. NIEER. [Supports the combination of universal and targeted approaches]<br>(4) Blau, D., & Currie, J. (2006). "Preschool, day care, and maternal employment." Handbook of the Economics of Education, 2, 1205-1268. [Connects preschool availability with increased maternal employment]<br>(5) Magnuson, K. A., Ruhm, C. J., & Waldfogel, J. (2007). "Does prekindergarten improve school preparation and performance?" Economics of Education Review, 26(1), 33-51. [Discusses the positive impact of prekindergarten on school readiness and access for low-income families via subsidies]<br>(6) Reynolds, A. J., Temple, J. A., Robertson, D. L., & Mann, E. A. (2001). "Long-term effects of an early childhood intervention on educational attainment and juvenile arrest." JAMA, 285(18), 2337-2346. [Demonstrates long-term economic benefits, such as reduced social service costs, resulting from early childhood interventions]<br>(7) Ludwig, J., & Miller, D. L. (2007). "Does Head Start improve children's life chances? Evidence from a regression discontinuity design." The Quarterly journal of economics, 122(1), 159-208. [Provides an analysis of Head Start, a large-scale early childhood program, and discusses its management and resource allocation strategies.  This indirectly supports the idea that well-planned expansion can mitigate administrative burdens, as Head Start is a large program that faces similar challenges.]</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case3/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, and esteemed audience, our opponents paint a rosy picture of universal preschool, but their arguments fail to address the fundamental flaws we’ve highlighted. They advocate for maximizing societal benefit, a broad and subjective measure, while we focus on maximizing the effectiveness of educational spending, a concrete and measurable goal.  This difference in approach is crucial to understanding the true impact of universal preschool.<br><br>Let's revisit the issue of resource allocation. Our opponents suggest a synergistic approach, combining universal preschool with targeted interventions.  However, this ideal scenario overlooks the reality of limited resources. As the RAND study [1] demonstrates, targeted interventions for disadvantaged children yield significant benefits.  Conversely, the long-term benefits of universal pre-K are less clear, with some studies suggesting academic gains fade over time [2].  Furthermore, the pressure on private preschools from free public options [3, 4] could lead to a decline in quality, impacting families who choose non-public options. This undercuts the overall societal benefit they claim.<br><br>Next, let's address tuition costs. Our opponents argue that multiple factors contribute to rising tuition, but they fail to acknowledge the inflationary pressure of government subsidies. Evidence shows increased government spending coincides with rising tuition [5]. Subsidies, while increasing access for some, create artificial demand, allowing private providers to raise prices.  This disproportionately harms middle-class families who don’t qualify for subsidies but face increased market rates.  Think about it—if you're a middle-class family, you’re stuck paying higher prices without the benefit of subsidies.<br><br>Regarding administrative burden, our opponents claim a well-planned expansion can minimize the burden.  This is simply wishful thinking.  Any expansion, regardless of planning, inherently increases administrative needs. Remember, administrative costs already consume 15-20% of preschool expenses [6]. This cost will inevitably grow with program expansion.  As states increase preschool funding, they experience increased enrollment and, consequently, greater administrative demands [7].  More children mean more resources required for enrollment, oversight, and compliance.  The notion that this burden can be minimized is unrealistic.<br><br>Moreover, universal preschool creates competition for resources with other pressing educational needs.  The Penn Wharton study [8] highlighted the substantial costs and potentially negative economic impacts of universal programs.  These funds could be better used to address pressing issues like the learning crisis exacerbated by COVID-19 [9] or inadequate teacher pay [10].  Imagine if those funds went towards supporting struggling students or attracting better teachers—the potential positive impact on education is undeniable.<br><br>Furthermore, government-funded preschool discourages private investment in early childhood education. By offering "free" alternatives, it creates a "crowd-out" effect, displacing private investment [11]. This limits innovation and choice in the preschool market, ultimately harming the diversity and quality of early childhood education.<br><br>Finally, consider the unintended social consequences.  Studies reveal negative impacts of public pre-K on academic and behavioral outcomes [12, 13].  The pressure to conform to standardized curriculums [14] increases parental stress.  Parents may feel forced to supplement their child's education due to suboptimal learning experiences, adding extra costs and time commitments.<br><br>**Reference**<br><br>[1] PDF. https://www.rand.org/content/dam/rand/pubs/research_briefs/1998/RB5014.pdf<br>[2] Research Review: Universal Preschool May Do More Harm than Good. https://www.heritage.org/education/report/research-review-universal-preschool-may-do-more-harm-good<br>[3] The Controversy of Universal Preschool and How It Affects Childcare ... https://www.daycarestudio.net/home/the-controversy-of-universal-preschool-and-how-it-affects-childcare-providers<br>[4] Why California's Universal Transitional Kindergarten Plan Poses ... - KQED. https://www.kqed.org/news/11893791/why-californias-universal-transitional-kindergarten-plan-poses-a-threat-to-some-early-childhood-ed-providers<br>[5] Economic Effects of Expanding Subsidized Child Care and Providing ... https://www.cbo.gov/publication/57630<br>[6] What Are the Top Expenses for Preschools? - Business Plan Templates. https://businessplan-templates.com/blogs/running-costs/preschool<br>[7] Resources to Support Preschool Expansion and Early School Success. https://www.ed.gov/about/news/press-release/resources-support-preschool-expansion-and-early-school-success<br>[8] Weighing the Costs and Benefits of Preschool and Childcare Policies. https://knowledge.wharton.upenn.edu/article/weighing-costs-benefits-preschool-childcare-policies/<br>[9] Four of the biggest problems facing education—and four trends that ... https://blogs.worldbank.org/en/education/four-biggest-problems-facing-education-and-four-trends-could-make-difference<br>[10] 7 Education Policy Issues That Need to Be Solved in 2020. https://soeonline.american.edu/blog/education-policy-issues-in-2020/<br>[11] More Government Preschool: An Expensive and Unnecessary Middle-Class ... https://www.heritage.org/education/report/more-government-preschool-expensive-and-unnecessary-middle-class-subsidy<br>[12] Universal Preschool Programs Expand, Despite Documented Harms. https://fee.org/articles/universal-preschool-programs-expand-despite-documented-harms/<br>[13] Research Review: Universal Preschool May Do More Harm than Good. https://www.heritage.org/education/report/research-review-universal-preschool-may-do-more-harm-good<br>[14] Universal Preschool Cookie-Cutter Pressure: Head Start's Troubling ... https://nancyebailey.com/2021/11/13/universal-preschool-cookie-cutter-pressure-head-starts-troubling-framework/<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case3/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges.  Today's debate hinges on whether subsidizing preschool truly maximizes societal benefit, our core judging criteria.  The negative team argues for targeted interventions, claiming universal pre-K is inefficient. We contend this is a false choice.  We can, and should, do both. Research shows combining universal access with targeted support maximizes positive impact [3].  Furthermore, universal pre-K offers unique long-term societal benefits, like increased social mobility [2] and a stronger workforce [9], advantages targeted programs alone cannot achieve.  Concerning their argument about declining private preschool quality, quality control measures like mandatory accreditation and regular inspections would ensure standards are maintained across all providers, public and private.<br><br>Our opponents also claim subsidies artificially inflate tuition.  This ignores the reality that multiple factors, including rising operational costs and inflation, contribute to tuition increases. Subsidies, however, directly address affordability for low-income families [5], enabling access to quality preschool otherwise unattainable.  Furthermore, subsidies can stimulate competition.  To mitigate potential cost increases, we propose tying subsidy amounts to a sliding scale based on provider quality ratings and operating costs, incentivizing both affordability and high standards.  This market-based approach promotes value and efficiency.<br><br>The negative team's argument against government funding discouraging private investment is unfounded. Subsidies actually *stimulate* the market by increasing demand, attracting new providers and encouraging innovation<br><br>**Reference**<br>(1) Heckman, J. J. (2006). "Skill formation and the economics of investing in children." Science, 312(5782), 1900-1902.<br>(2) Barnett, W. S. (2011). "Effectiveness of early educational interventions." Science, 333(6045), 975-978. <br>(3) Barnett, W. S., & Haskins, R. (2010). Investing in high-quality prekindergarten programs. NIEER.<br>(4) Blau, D., & Currie, J. (2006). "Preschool, day care, and maternal employment." Handbook of the Economics of Education, 2, 1205-1268.<br>(5) Magnuson, K. A., Ruhm, C. J., & Waldfogel, J. (2007). "Does prekindergarten improve school preparation and performance?" Economics of Education Review, 26(1), 33-51.<br>(6) Reynolds, A. J., Temple, J. A., Robertson, D. L., & Mann, E. A. (2001). "Long-term effects of an early childhood intervention on educational attainment and juvenile arrest." JAMA, 285(18), 2337-2346. <br>(7) Ludwig, J., & Miller, D. L. (2007). "Does Head Start improve children's life chances? Evidence from a regression discontinuity design." The Quarterly journal of economics, 122(1), 159-208.<br>(8) National Association of State Boards of Education (NASBE). An Economic Perspective on Preschool for All.<br>(9) PubMed Central (PMC). https://pmc.ncbi.nlm.nih.gov/articles/PMC3745537/</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case3/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Esteemed judges, the core question today is not simply about preschool, but about responsible and effective use of public funds. Our opponents, while well-intentioned, advocate for a costly universal program with questionable long-term benefits.  We’ve demonstrated that targeted interventions for disadvantaged children offer greater returns on investment [1].  Universal pre-K risks diverting funds from these proven programs, potentially harming the very children it intends to help.  While they claim a synergistic approach, combining universal access with targeted support, this ignores the reality of limited resources.  Every dollar spent on universal pre-K is a dollar not spent on demonstrably effective programs.<br><br>Furthermore, their argument for increased societal benefit through universal preschool fails to account for the unintended consequences.  We’ve shown how subsidies can inflate tuition, impacting middle-class families who don’t qualify for assistance but face increased market rates [5]. Imagine struggling to afford preschool because of inflated prices caused by the very subsidies intended to help others.  Their proposed solution, tying subsidies to quality ratings, adds another layer of bureaucracy and complexity, further straining resources.<br><br>Finally, their dismissal of the administrative burden is unrealistic.  Expanding a program to include every child inherently increases administrative costs, regardless of planning. This diverts funds away from direct educational services.  We believe in maximizing the impact of every educational dollar, prioritizing effectiveness and fiscal responsibility. Therefore, we urge you to oppose this motion and support a more targeted, efficient approach to early childhood education.<br><br>**Reference**<br><br>[1] PDF. https://www.rand.org/content/dam/rand/pubs/research_briefs/1998/RB5014.pdf<br>[5] Economic Effects of Expanding Subsidized Child Care and Providing ... https://www.cbo.gov/publication/57630<br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="3" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>

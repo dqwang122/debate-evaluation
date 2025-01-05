@@ -1,0 +1,900 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization and inconsistent emotional delivery.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Social Media Companies Should Be Required To Label Ai-Generated Content </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert" >
+    <input type="hidden" id="mode" name="version" value="0105" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case4/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, esteemed audience, we stand firmly in support of the motion: Social media companies should be required to label AI-generated content.  We believe this is a crucial step towards a more transparent, accountable, and ultimately safer online environment. Let’s first clarify what we mean by this motion.<br><br>Social media companies, the platforms enabling us to share and connect with others online, must clearly label all AI-generated content.  This includes any text, image, audio, or video created wholly or partially by AI, regardless of who posts it.  Think of it like the labels we already see for sponsored posts or political ads—clear, readily visible, and consistent across platforms.  These labels will be enforced by regulatory bodies like the FTC, ensuring compliance through audits and penalties.<br><br>Our judging criteria today is simple: will labeling AI-generated content contribute to a more informed and responsible online environment? We believe the answer is a resounding yes. Consider this:  when you scroll through your feed, wouldn’t you want to know if what you're seeing is a genuine human expression or the product of an algorithm?<br><br>Let me turn to our first argument: Labeling fosters greater transparency and accountability.  Platforms like Facebook have already begun labeling some AI-generated content, demonstrating the feasibility and benefits of this practice. As you'll see, when you know a piece of content is AI-generated, you can engage with it more critically, questioning its potential biases or inaccuracies. This transparency holds creators accountable and empowers you, the user, to make informed decisions about the information you consume. [1]<br><br>This brings me to our second, and arguably most crucial, argument: Labeling aligns with existing regulations and legal frameworks. The Fair Packaging and Labeling Act requires clear labeling for consumer products to prevent deception.  This principle of transparency applies equally to the digital world.  AI-generated content, if unlabeled, can mislead you, the consumer, about its origins and nature. Just as you have a right to know what’s in the food you buy, you deserve to know whether the content you're consuming is human-created or AI-generated. [2, 3, 4, 5]  The crucial issue here is not censorship, but informed consumption. It's about empowering you to navigate the digital landscape with the knowledge you need to make informed choices.  Moreover, the rise of deepfakes and increasingly sophisticated AI-generated content underscores the urgency of this issue. Without clear labeling, the potential for widespread misinformation is immense, threatening the very fabric of our shared reality.<br><br>Finally, what's particularly important is that labeling helps policymakers understand the impact of AI-generated content on society.  By tracking the prevalence and influence of AI-generated content, policymakers can make data-driven decisions to mitigate potential harms. This allows for informed regulation and the development of strategies to address issues like misinformation and manipulation. The MIT Media Lab emphasizes the importance of such labeling for informed policymaking in the age of AI.  [6]<br><br>In conclusion, requiring social media companies to label AI-generated content is not just a good idea; it's a necessary step to safeguard the integrity of our online spaces.  It empowers you, the user, with crucial information, fosters accountability, and provides policymakers with the data they need to navigate the evolving digital landscape. We urge you to support this motion for a more transparent and responsible online future.<br><br><br>**Reference**<br><br>[1] Facebook AI Label: Enhancing Transparency and Trust in Social Media Content.  https://aithenticate.org/artificial-intelligence/facebook-ai-label-enhancing-transparency-and-trust-in-social-media-content/<br>[2] Fair Packaging and Labeling Act: Regulations Under Section ...  https://www.ftc.gov/legal-library/browse/rules/fair-packaging-labeling-act-regulations-under-section-4-fair-packaging-labeling-act<br>[3] United States Product Labeling Requirements. https://www.compliancegate.com/united-states-product-labeling-requirements/<br>[4] The Critical Necessity of Immediate Regulation and Labeling ... https://fstoppers.com/artificial-intelligence/critical-necessity-immediate-regulation-and-labeling-ai-generated-media-688199<br>[5] Synthetic Media & Deepfakes. https://innovating.news/article/synthetic-media-deepfakes/<br>[6] Labeling AI-Generated Content: Promises, Perils, and Future Directions - MIT Media Lab. https://www.media.mit.edu/publications/labeling-ai-generated-content-promises-perils-and-future-directions/<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case4/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue against the proposition that social media companies should be required to label AI-generated content.  We define AI-generated content as any content created primarily by artificial intelligence tools, encompassing text, images, audio, and video. Social media companies are defined as platforms facilitating the creation and sharing of information via virtual communities and networks. Labeling refers to a clear and easily identifiable mark or disclosure on a piece of content indicating its origin as AI-generated.<br><br>Our judging criteria is minimizing harm and maximizing benefit. The optimal approach minimizes potential harms while maximizing the benefits of AI-generated content. This framework allows us to weigh both the potential negative consequences of unregulated AI content and the potential stifling of innovation from overly restrictive policies. We contend that mandatory labeling does more harm than good.<br><br>First, mandatory labeling is ineffective and potentially counterproductive.  While proponents argue labeling increases transparency, research from the MIT Computing and AI Policy Lab [1] suggests that simply labeling content as AI-generated doesn't address the core issue of verifying its truthfulness or harmfulness. This can lead to a "liar's dividend," where widespread skepticism towards all content undermines trust in authentic sources [1].  A study by YouGov [10] found that 48% of respondents would distrust content labeled as AI-generated, highlighting the potential for increased skepticism.  Instead of fostering informed decisions, blanket labeling could exacerbate existing trust issues on social media.<br><br>Second, mandatory labeling places undue burdens on social media companies. Implementing and enforcing such a system at scale is technically complex and resource-intensive.  The Information Technology & Innovation Foundation (ITIF) argues that current labeling mandates fall short due to impractical implementation challenges [6].  KSolves [15] details the significant costs associated with data labeling, training, and maintenance of AI detection systems, resources that could be better allocated to more effective content moderation strategies.  This burden disproportionately affects smaller platforms, hindering competition and innovation.<br><br>Third, alternative solutions are more promising. Instead of focusing on a potentially ineffective and burdensome labeling mandate, we should prioritize media literacy initiatives that empower users to critically evaluate information online, regardless of its source.  Additionally, investing in robust AI detection technologies and encouraging voluntary industry standards for disclosure offer more flexible and adaptable approaches [8].  These solutions can address the underlying concerns about harmful content without the drawbacks of mandatory labeling.<br><br><br>In conclusion, mandatory labeling of AI-generated content is a blunt instrument that fails to address the nuances of online information and may even exacerbate existing problems. A more effective approach involves empowering users through media literacy, improving detection technologies, and fostering responsible industry practices.<br><br>**Reference**<br>(1) MIT Computing and AI Policy Lab. (2023). *Policy Brief: Labeling AI-Generated Content*. https://computing.mit.edu/wp-content/uploads/2023/11/AI-Policy_Labeling.pdf<br>(2) Hao, K. (2023, August 9). *Watermarking AI is a good idea. But it won't save us from the 'liar's dividend'*. MIT Technology Review. https://www.technologyreview.com/2023/08/09/1077516/watermarking-ai-trust-online/<br>(3)  Iberdrola, I. (2024, September 24). How Generative AI Could Negatively Impact Social Media. MakeUseOf. https://www.makeuseof.com/generative-ai-negatively-impact-social-media/<br>(4)  Pennycook, G., Epstein, Z., Mosleh, M., Arechar, A. A., Eckles, D., & Rand, D. G. (2024). *Should we label AI-generated text?*. Proceedings of the National Academy of Sciences Nexus, 3(10), pgae403.<br>(5)  OpenTools AI. (n.d.). *Why Mandated AI Content Labels are Falling Flat (and What to Do Instead)*. https://opentools.ai/news/why-mandated-ai-content-labels-are-falling-flat-and-what-to-do-instead<br>(6)  Cromar, P. (2024, December 16). *Why AI-Generated Content Labeling Mandates Fall Short*. The Information Technology & Innovation Foundation (ITIF). https://itif.org/publications/2024/12/16/why-ai-generated-content-labeling-mandates-fall-short/<br>(7)  Fstoppers. (2024, March 18). *The Critical Necessity for Immediate Regulation and Labeling of AI-Generated Media*. https://fstoppers.com/artificial-intelligence/critical-necessity-immediate-regulation-and-labeling-ai-generated-media-688199<br>(8)  Kontent.ai. (n.d.). *Emerging best practices for disclosing AI-generated content*. https://kontent.ai/blog/emerging-best-practices-for-disclosing-ai-generated-content/<br>(9)  Oversight Board. (2024, July 16). *Content Moderation in a New Era for AI and Automation*. https://www.oversightboard.com/news/content-moderation-in-a-new-era-for-ai-and-automation/<br>(10) YouGov. (2024, June 11). *Labelling AI-generated & digitally altered content: misinformation 2024 research*. https://business.yougov.com/content/49550-labelling-ai-generated-digitally-altered-content-misinformation-2024-research<br>(11) Journalism & Liberty Initiative. (n.d.). *Platforms labeling AI content*. https://www.journalismliberty.org/publications/platforms-labeling-ai-content<br>(12) DisinfoLab. (2025, January 30). *Platforms' AI Policy Updates in 2024: Labelling as the silver bullet?*. https://www.disinfo.eu/publications/platforms-ai-policy-updates-in-2024-labelling-as-the-silver-bullet/<br>(13) KSolves. (n.d.). *The Hidden Costs of GenAI: Expenses for Data Labeling, Ongoing Training, Maintenance, and More*. https://www.ksolves.com/blog/artificial-intelligence/the-hidden-costs-of-genai-expenses-for-data-labeling-ongoing-training-maintenance-and-more/<br>(14) Capterra. (2023, November 16). *Labeling AI-Generated Content on Social Media*. https://www.capterra.com/resources/labeling-ai-generated-content-social-media/<br>(15) Investopedia. (n.d.). *Social Media*. https://www.investopedia.com/terms/s/social-media.asp</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case4/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">My opponent argues against labeling AI-generated content, claiming it's ineffective and burdensome. However, their arguments fail to recognize the fundamental value of transparency and the potential of informed decision-making.  Let’s dissect their claims.<br><br>They begin by saying labeling is ineffective, citing the MIT Computing and AI Policy Lab.  They claim it doesn't address the core issue of truthfulness and can lead to a "liar's dividend." While verifying truthfulness is indeed a complex issue, labeling provides a crucial first step.  It empowers you, the user, to approach content with a discerning eye, knowing its origin and potential biases.  This is not about eliminating misinformation entirely, but about giving you, the consumer, the tools you need to navigate the complexities of the digital age. Think about it: if you see a label clearly indicating a piece of content is AI-generated, you're more likely to critically evaluate its claims, rather than accepting them at face value.  This is the foundation of informed decision-making, and labeling provides that foundation. [1, 2]<br><br>Furthermore, their citation of the YouGov study, which found 48% of respondents would distrust AI-generated content, actually strengthens our case.  This highlights a pre-existing skepticism towards AI content, a skepticism that can only be addressed through greater transparency. Labeling doesn't create distrust; it acknowledges it, and allows for a more open and honest conversation about the role of AI in our information ecosystem.  What’s particularly important here is not to shy away from this skepticism, but to embrace it as an opportunity for education and critical engagement.<br><br>This brings me to their second point about the burden on social media companies.  They cite the ITIF and KSolves, arguing that implementation is complex and costly.  While there will undoubtedly be costs associated with implementing labeling systems, these are investments in a more responsible and sustainable digital future.  Consider this:  social media companies already invest heavily in content moderation systems to combat spam, hate speech, and other harmful content.  Labeling AI-generated content is a natural extension of these efforts, contributing to a healthier online environment. [3, 4] The crucial issue here is not whether labeling is costly, but whether the cost of inaction is greater.  The potential harms of unchecked AI-generated content, including the spread of misinformation and manipulation, far outweigh the investment required for labeling.<br><br>Finally, they propose alternative solutions like media literacy initiatives and voluntary industry standards.  While these are valuable additions to the conversation, they do not replace the need for clear labeling. Media literacy is essential, but it's not a silver bullet.  Think of it this way:  you are taught to read food labels to understand nutritional content, but it's the presence of those labels, mandated by law, that ensures you have access to that information.  Similarly, while voluntary industry standards can play a role, mandatory labeling provides a baseline level of transparency that all platforms must adhere to. [5]<br><br>In conclusion, our opponents have presented a vision of the internet where users are left to navigate a minefield of unlabeled, potentially deceptive content, relying solely on their own critical thinking skills.  We, on the other hand, advocate for a future where transparency empowers users with the knowledge they need to engage critically with the digital world.  Labeling is not a perfect solution, but it is a necessary step towards a more responsible and informed online environment.<br><br><br>**Reference**<br><br>[1] MIT Computing and AI Policy Lab. (2023). *Policy Brief: Labeling AI-Generated Content*. https://computing.mit.edu/wp-content/uploads/2023/11/AI-Policy_Labeling.pdf<br>[2] Hao, K. (2023, August 9). *Watermarking AI is a good idea. But it won't save us from the 'liar's dividend'*. MIT Technology Review. https://www.technologyreview.com/2023/08/09/1077516/watermarking-ai-trust-online/<br>[3] Cromar, P. (2024, December 16). *Why AI-Generated Content Labeling Mandates Fall Short*. The Information Technology & Innovation Foundation (ITIF). https://itif.org/publications/2024/12/16/why-ai-generated-content-labeling-mandates-fall-short/<br>[4] KSolves. (n.d.). *The Hidden Costs of GenAI: Expenses for Data Labeling, Ongoing Training, Maintenance, and More*. https://www.ksolves.com/blog/artificial-intelligence/the-hidden-costs-of-genai-expenses-for-data-labeling-ongoing-training-maintenance-and-more/<br>[5] Kontent.ai. (n.d.). *Emerging best practices for disclosing AI-generated content*. https://kontent.ai/blog/emerging-best-practices-for-disclosing-ai-generated-content/<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case4/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent's rebuttals, while seemingly addressing our concerns, fail to recognize the fundamental distinctions between healthy skepticism and blanket distrust, the disproportionate burden on smaller platforms, and the superior effectiveness of alternative solutions. Furthermore, we must first address a critical difference in how we define “AI-generated content” and our judging criteria.<br><br>The affirmative defines labeling as applying to "all AI-generated content," including content only *partially* generated by AI.  We find this definition overly broad and practically impossible to implement. How do we determine the threshold for “partial” generation?  Requiring social media companies to police the precise percentage of AI contribution in every piece of content is not only unrealistic but also opens the door to endless disputes and appeals. We propose a more reasonable definition, focusing on content where AI plays the *primary* role in its creation.  This clarifies the scope of the debate and allows for a more focused discussion on practical solutions.<br><br>Furthermore, the affirmative proposes “informed and responsible online environment” as judging criteria.  This is subjective and difficult to quantify. We believe the more appropriate criteria is minimizing harm and maximizing benefit.  This provides a clear and objective standard for evaluating the proposed policy.<br><br>Now, turning to their rebuttals, the affirmative claims that "labeling provides a crucial first step towards transparency, empowering users to be discerning." However, studies show that labeling, rather than promoting informed decision-making, exacerbates existing distrust, creating a chilling effect on online discourse [1].  While some skepticism is healthy, labeling fosters blanket distrust, where users dismiss content simply because of its AI origin, regardless of its actual veracity [2].  Imagine a small startup, already struggling to compete with larger platforms, now burdened with the exorbitant costs of implementing and maintaining complex AI detection and labeling systems. This stifles innovation and reinforces the dominance of established players.  Therefore, the affirmative's claim that labeling promotes informed decision-making is demonstrably false, and actively harmful to the online ecosystem.<br><br>The affirmative acknowledges the costs of implementing labeling, stating that these are "investments in a more responsible and sustainable digital future." However, they fail to recognize the scale and complexity of building and maintaining AI detection systems across all content types [3].  Research suggests these costs are significantly higher than traditional content moderation efforts, potentially diverting crucial resources away from more effective strategies like improving AI detection technologies.  For example, a small social media company might have to choose between complying with expensive labeling mandates and investing in crucial security upgrades, ultimately harming users.  Therefore, the affirmative’s attempt to minimize the financial and computational burden of their proposal is unconvincing.<br><br>Finally, the affirmative attempts to downplay the efficacy of alternative solutions, arguing that they “do not replace the need for clear labeling.” They use the analogy of food labels, arguing that mandatory labeling provides a baseline level of transparency.  However, this analogy is fundamentally flawed.  Online information requires critical thinking and evaluation, not just simple labels.  Unlike checking the sugar content on a cereal box, navigating the digital landscape necessitates nuanced judgment and critical analysis<br><br>**Reference**<br>(1) Pennycook, G., Epstein, Z., Mosleh, M., Arechar, A. A., Eckles, D., & Rand, D. G. (2024). *Should we label AI-generated text?*. Proceedings of the National Academy of Sciences Nexus, 3(10), pgae403.<br>(2) MIT Computing and AI Policy Lab. (2023). *Policy Brief: Labeling AI-Generated Content*. https://computing.mit.edu/wp-content/uploads/2023/11/AI-Policy_Labeling.pdf<br>(3) KSolves. (n.d.). *The Hidden Costs of GenAI: Expenses for Data Labeling, Ongoing Training, Maintenance, and More*. https://www.ksolves.com/blog/artificial-intelligence/the-hidden-costs-of-genai-expenses-for-data-labeling-ongoing-training-maintenance-and-more/<br>(4) Kontent.ai. (n.d.). *Emerging best practices for disclosing AI-generated content*. https://kontent.ai/blog/emerging-best-practices-for-disclosing-ai-generated-content/</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case4/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">This debate boils down to a fundamental question: do we prioritize transparency and user empowerment in the digital age, or do we succumb to the fear of change and the complexities of implementation? We firmly believe that informed decision-making is the cornerstone of a healthy online environment.<br><br>Our opponents argue that labeling is burdensome and ineffective. They claim it fosters distrust, stifles innovation, and is ultimately unnecessary. However, their arguments ignore the crucial distinction between healthy skepticism and uninformed dismissal. Labeling doesn't create distrust; it acknowledges existing skepticism and empowers you, the user, to engage critically with the information you consume.  Imagine scrolling through your feed and encountering a piece of content that resonates deeply. Wouldn't you want to know if that poignant image, that persuasive article, was crafted by a human or an algorithm?<br><br>We have demonstrated that labeling aligns with existing legal frameworks, like the Fair Packaging and Labeling Act, which mandates transparency for consumer products. This principle applies equally to the digital world.  Furthermore, labeling provides crucial data for policymakers, enabling them to understand and address the societal impact of AI-generated content.  Our opponents offer alternative solutions, like media literacy initiatives. While valuable, these are not mutually exclusive with labeling.  Education and transparency work hand-in-hand to empower users.  In a world increasingly shaped by AI,  we must equip ourselves with the tools for informed navigation. Labeling is that tool. It is a necessary step toward a future where technology serves, not deceives, the public. We urge you to support this motion.<br><br><br>**Reference**<br><br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0105/case4/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges. In today's debate, our discussion primarily revolved around the effectiveness of labeling AI-generated content, the burden such labeling places on social media companies, and the viability of alternative solutions.<br><br>Our team argued against mandatory labeling, emphasizing its potential to exacerbate existing distrust online.  Studies indicate that labeling content as "AI-generated" can trigger blanket dismissal, regardless of the content's veracity [1, 2]. This undermines the potential benefits of AI-generated content, such as educational resources or AI art.  Instead of fostering informed skepticism, mandatory labeling promotes an environment where users indiscriminately reject content based solely on its origin, hindering genuine critical engagement.  This effect is particularly concerning given the difficulty in establishing a precise definition of "AI-generated," as raised by our team.  Focusing on content where AI plays the *primary* role in creation offers a more practical approach.<br><br>Furthermore, research indicates the significant costs associated with implementing and maintaining the infrastructure for labeling AI-generated content across diverse platforms [3]. This disproportionately burdens smaller companies, potentially stifling innovation and reinforcing the dominance of established players.  Even large social media companies, already grappling with the complexities of content moderation, would face further strain from such a mandate.  These resources could be better allocated towards developing robust AI detection technologies, a more effective long-term solution.<br><br>Finally, we highlighted the potential of alternative solutions, such as promoting media literacy and encouraging voluntary industry standards for disclosure [4]<br><br>**Reference**<br>(1) Pennycook, G., et al. (2024). *Should we label AI-generated text?*. Proceedings of the National Academy of Sciences Nexus, 3(10), pgae403.<br>(2) MIT Computing and AI Policy Lab. (2023). *Policy Brief: Labeling AI-Generated Content*. [Link provided in earlier turns]<br>(3) KSolves. (n.d.). *The Hidden Costs of GenAI*. [Link provided in earlier turns]<br>(4) Kontent.ai. (n.d.). *Emerging best practices for disclosing AI-generated content*. [Link provided in earlier turns]</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Claims lack evidence/reasoning or contradictory evidence. Tone is flat/disengaging with no audience awareness.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Limited evidence with poor organization and inconsistent emotional delivery.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: On-topic evidence with logical flow and balanced emotional tone showing basic audience awareness, moderately swaying your opinion toward the given position.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Substantial evidence and clear logic. Engaging language that resonates with audience value. Substantially shift your perspective, though minor gaps may remain.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and masterful emotional appeal that creates deep connection. Strongly convince you to support the given position.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="4" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>
