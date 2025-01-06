@@ -126,7 +126,7 @@ def main():
                     ["For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_for.mp3"],
                     ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against.mp3"],
                 ],
-                "description": f"After listening to the two statements in {stage.capitalize()} stage, please choose your attitude towards the given motion now",
+                "description": f"After listening to the two statements in {stage.capitalize()} stage, please choose your attitude towards the given motion ({motion}) now",
                 "transcript": [
                     c["transcript"][stage]["for"],
                     c["transcript"][stage]["against"]
