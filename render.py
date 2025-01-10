@@ -27,7 +27,7 @@ QLIST = [
 def get_options():
     parser = argparse.ArgumentParser(description="Create the debate evaluation form.")
     parser.add_argument("--mode", default="pair", choices=["scalar", "pair"], help="The type of form to create.")
-    parser.add_argument("--target", default="common", choices=["common", "expert"], help="The type of audience")
+    parser.add_argument("--target", default="common", choices=["common", "expert", "admin"], help="The type of audience")
     parser.add_argument("--version", default="1007", help="The version of the form.")
     args = parser.parse_args()
     return args
@@ -78,6 +78,8 @@ def create_pairwise_comparison_form(version, id, motion, questions, addition_que
         template = env.get_template("expert.html.jinja2")
     elif target == "common":
         template = env.get_template("common.html.jinja2")
+    elif target == "admin":
+        template = env.get_template("admin.html.jinja2")
     else:
         raise ValueError(f"Unknown target: {target}")
 
