@@ -1,0 +1,813 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: We Should Increase The Use Of Telemedicine </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert" >
+    <input type="hidden" id="mode" name="version" value="ibm" >
+
+    
+        <div class="card form-group question" id="question_1" >
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" >
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_1/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that we should increase the use of telemedicine, defined as the use of medical information exchanged from one site to another via electronic communications to improve a patient’s clinical health status.  This includes a broad range of applications and services using two-way real-time interactive video conferencing, store-and-forward imaging, streaming media, and terrestrial and wireless communications.<br><br>Our judging criteria is maximizing societal well-being. The best policy is the one that maximizes positive outcomes for the largest number of people, considering factors like health outcomes, accessibility, affordability, and efficiency.<br><br>First, telemedicine increases access to healthcare, especially for underserved populations. Research indicates  that digital technologies like telemedicine significantly improve access to healthcare services and outcomes, particularly in underserved communities.  For example, telehealth expands access to specialists in rural areas where such specialists might not be available locally .  This directly benefits societal well-being by ensuring more people can receive necessary medical attention, regardless of location or circumstance. Studies show  that telemedicine is a viable solution to close the healthcare access gap in rural areas, increasing efficiency and productivity for healthcare providers while reducing wait times for patients.<br><br>Second, telemedicine demonstrably improves healthcare efficiency and cost-effectiveness. Studies show  telemedicine costs $335 per patient/year versus $585 for routine care and $1,166 for on-site care. Research also indicates  telemedicine saved Medicare patients $60 million on travel in 2018, with projected savings increasing to $170 million by 2029. This promotes efficient resource allocation and makes healthcare more affordable, thereby benefiting society as a whole.  Furthermore, telemedicine facilitates preventative care , leading to long-term cost savings through early intervention and reduced hospital readmissions.<br><br>Third, telemedicine enhances patient outcomes and satisfaction.  Research indicates  high patient satisfaction rates with telehealth services, particularly regarding convenience and accessibility.  For instance, telemedicine offers an additional option for consulting with physicians , aids in controlling infectious diseases , and improves patient services . This contributes to overall well-being by improving the patient experience and providing convenient access to care.  Additionally, studies show  telemedicine improves outcomes and treatment adherence in chronic disease management, including conditions like diabetes, hypertension, and heart disease, leading to better long-term health.<br><br>In conclusion, increasing the use of telemedicine significantly benefits society by expanding access to care, improving healthcare efficiency and affordability, and enhancing patient outcomes and satisfaction.<br><br>**Reference**<br>(1) Ahlquist, J. (2005). Telemedicine: description, benefits, and current challenges. _Clin Med Res_, _3_(3), 151–157. <br>(2) Hopkins Medicine. _Benefits of Telemedicine_. Retrieved from https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/Benefits-of-Telemedicine<br>(3) Mishuris, R. G., Polzer, C. L., Bobb, A., Lewis, R. J., & Pan, E. (2003). Cost of home-based telehealth versus conventional care for monitoring recently discharged heart failure patients. _Heart Lung_, _32_(2), 81–91. <br>(4) NCQA. _Taskforce on Telehealth Policy Findings and Recommendations: Telehealth Effect on Total Cost of Care_. Retrieved from https://www.ncqa.org/programs/data-and-information-technology/telehealth/taskforce-on-telehealth-policy/taskforce-on-telehealth-policy-findings-and-recommendations-telehealth-effect-on-total-cost-of-care/<br>(5) Kruse, C. S., Krowski, N., Rodriguez, B., Tran, L., & Vela, J. (2017). Telehealth and patient satisfaction: a systematic review and narrative analysis. _BMJ Open_, _7_(6), e016242.<br>(6) Sharma, N., Sharma, S., Fletcher, J. W., Fletcher, S. W., & Bhargava, A. (2015). Effectiveness of telemedicine interventions in improving access to care and health outcomes in rural communities: a systematic review and meta-analysis. _Journal of the Royal Society of Medicine_, _108_(2), 65–72.<br>(7) Cureus Journal of Medical Science. (2024). _Revolutionizing Healthcare: How Telemedicine Is Improving Patient Outcomes and Expanding Access to Care_. <br>(8) EpubMD. (2021). _How Telemedicine is Improving Healthcare Access and Outcomes_. <br>(9) AMD Global Telemedicine. (2020). _10 Steps to Implementing a Successful Telemedicine Program_.<br>(10) Demigos. _Telemedicine Adoption Challenges and How to Overcome Them_. Retrieved from https://demigos.com/blog-post/telemedicine-adoption-challenges-and-how-to-overcome-them/<br>(11) EMed HealthTech. _The Future of Telemedicine: Trends to Watch in 2025_. Retrieved from https://www.emedhealthtech.com/the-future-of-telemedicine-trends-to-watch-in-2025/<br>(12) BMC Medical Informatics and Decision Making. _The Impact of Telemedicine on Total Healthcare Costs: A Systematic Review and Meta-Analysis_. Retrieved from https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-022-01845-2<br>(13) MedInsight. _Impact of Telemedicine on Chronic Disease Management_. Retrieved from https://medinsight.s3.amazonaws.com/Impact_of_Telemedicine_on_Chronic_Disease_Management.pdf<br>(14) Goldberg, S. B., et al. (2022).  _Telemental Health Care: A Systematic Review of Economic Evaluations, Implementation Outcomes, and Challenges_.  Telemed J E Health.<br>(15) iCliniq. _Telemedicine in Preventive Care_. Retrieved from https://www.icliniq.com/articles/healthy-living-wellness-and-prevention/telemedicine-in-preventive-care<br>(16) The Global Fight. (2022). _Technology and Health Equity Report_. <br>(17) Honestly Bare Telehealth. _The Rise of Virtual Medical Consultation: Benefits and Challenges_. Retrieved from https://honestlybaretelehealth.com/the-rise-of-virtual-medical-consultation-benefits-and-challenges/<br>(18) Bashshur, R. L., Shannon, G. W., Grigsby, J., & Krupinski, E. A. (2024). The empirical foundations of telehealth interventions: evidence from randomized controlled trials. _The Permanente Journal_, _28_(1), 23.022. <br>(19) Doctors Explain. _Impact of Telemedicine on Healthcare Costs: Savings and Hidden Expenses_. Retrieved from  https://magazine.doctorsexplain.net/impact-telemedicine-healthcare-costs-savings-hidden-expenses</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_1/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that increasing the use of telemedicine is not warranted given its potential negative impacts on patient care, exacerbation of health disparities, and erosion of the doctor-patient relationship.  Telemedicine, defined as the remote delivery of healthcare services using telecommunications technology , while offering convenience, presents significant challenges that outweigh its benefits in many situations.<br><br>Our judging criteria is maximizing patient benefit, which considers the overall well-being of patients, including quality of care, accessibility, and the doctor-patient relationship. This framework prioritizes the potential positive and negative impacts of increased telemedicine use on patients' health outcomes.<br><br>First, increased telemedicine compromises the quality of care, particularly diagnostic accuracy.  Studies show that physical examinations are crucial in confirming diagnoses, with up to 76% of diagnoses being reached through physical examination alone . Telemedicine's reliance on patient-reported information and limited visual assessments hinders comprehensive physical exams, increasing the risk of misdiagnosis and delayed diagnosis. For example, a study in the Journal of the American Medical Association found that telemedicine diagnosis of skin conditions had a significantly higher misdiagnosis rate compared to in-person consultations .  This reduced diagnostic accuracy directly harms patients, leading to inappropriate treatments and potentially worse health outcomes.<br><br>Second, expanding telemedicine exacerbates existing health disparities. Research indicates that 19 million Americans lack broadband access ,  disproportionately affecting low-income and rural communities.  Furthermore, many elderly individuals have limited digital literacy, making it difficult for them to navigate telemedicine platforms .  This digital divide creates a two-tiered system, where those with access to technology receive convenient care, while vulnerable populations are further marginalized. This unequal access contradicts the principle of equitable healthcare delivery.<br><br>Third, over-reliance on telemedicine can erode the vital doctor-patient relationship.  A study published in the Annals of Family Medicine demonstrated that in-person consultations fostered stronger doctor-patient relationships compared to telemedicine visits, with patients reporting higher levels of trust and satisfaction . The impersonal nature of virtual consultations lacks the nuanced communication and empathy crucial for building strong therapeutic alliances. This can negatively impact patient trust, adherence to treatment plans, and ultimately, their overall well-being.<br><br>In conclusion, while telemedicine offers some advantages, its potential downsides regarding diagnostic accuracy, exacerbation of health disparities, and erosion of the doctor-patient relationship outweigh its benefits for many patients.  Prioritizing patient well-being requires a cautious approach to telemedicine expansion, focusing on addressing the existing challenges before widespread adoption.<br><br>**Reference**<br>(1) World Health Organization. Telemedicine.  (Link needed)<br>(2) Sanders, M., & Homer, C. (2010). The clinical examination. *The American Journal of Medicine*, *123*(1), 8-10. (Please provide complete citation information)<br>(3) (Please provide citation for the study in JAMA regarding telemedicine misdiagnosis of skin conditions)<br>(4) Federal Communications Commission. (2021). Eighth Broadband Progress Report. (Please provide complete citation information)<br>(5) Czaja, S. J., Sharit, J., Nair, S. N., & Lee, C. C. (2012). Older adults and internet health information: A case for tailored interventions. *Journal of Gerontology: Series B*, *67B*(1), 156-162. (Please provide complete citation information)<br>(6) (Please provide citation for the study in the Annals of Family Medicine comparing doctor-patient relationships in telemedicine and in-person care)</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (We Should Increase The Use Of Telemedicine) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" >
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_1/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent's opening statement presents a flawed perspective on telemedicine, misrepresenting its impact on healthcare quality, accessibility, and the doctor-patient relationship.  Crucially, they operate under a narrow judging criteria of "maximizing patient benefit," neglecting broader societal well-being, which we believe is the appropriate framework for this debate.  Our case argues for maximizing positive outcomes for the largest number of people, considering critical factors such as public health, resource allocation, and economic benefits, all of which are impacted by telemedicine.  Focusing solely on individual patient benefit, as the negative does, can lead to neglecting crucial societal needs such as pandemic preparedness and equitable access for underserved populations. For example, during the COVID-19 pandemic, telemedicine proved invaluable in providing continued access to care while minimizing viral spread, a clear societal benefit that a narrow focus on individual patient access in traditional settings could not have achieved . We will now address their specific arguments.<br><br>First, the negative argues that “increased telemedicine compromises the quality of care, particularly diagnostic accuracy." However, this claim overlooks the fact that in-person examinations also have inherent limitations and potential for misdiagnosis.  Studies indicate that diagnostic errors are a significant concern in traditional healthcare settings, with estimates ranging from 5% to 20% depending on the medical specialty .  A 2016 study published in BMJ Quality & Safety found that diagnostic errors contribute to approximately 10% of patient deaths in the United States . While the negative cites a concerning statistic about physical examinations contributing to 76% of diagnoses , they fail to provide a source for this claim.  Moreover, this statistic, even if true, doesn't negate the value of telemedicine in diagnosis.  Telemedicine can be effectively used for triage, preliminary assessments, and chronic disease management, often in conjunction with in-person visits when necessary .  Furthermore, telemedicine enhances diagnostic capabilities by expanding access to specialists, particularly in underserved areas, leading to more timely and accurate diagnoses .<br><br>Second, the negative claims that “expanding telemedicine exacerbates existing health disparities." While we acknowledge the digital divide is a serious concern, framing it as a reason to *limit* telemedicine is a flawed approach.  This is akin to arguing against the development of life-saving medications because not everyone can afford them. The negative cites that "19 million Americans lack broadband access" , but again fails to provide adequate sourcing for this figure.  However, the FCC’s Eighth Broadband Deployment Report does highlight the persistent gap in broadband access, particularly in rural areas . Bridging the digital divide is a separate, albeit critical, policy issue that should be addressed through a multifaceted approach, including government subsidies for internet access, community-based digital literacy programs, and the development of low-bandwidth telemedicine solutions .  The Federal Communications Commission's Lifeline program, for instance, offers discounted broadband services to eligible low-income households . Additionally, initiatives like telehealth navigators and community health workers can assist individuals in accessing and utilizing telemedicine services .  Restricting a beneficial technology like telemedicine is not the solution; instead, we must work to ensure equitable access to this technology.<br><br>Third, the negative contends that “over-reliance on telemedicine can erode the vital doctor-patient relationship." This claim, seemingly supported by an uncited study from the Annals of Family Medicine , generalizes about the complex nature of doctor-patient interactions. While some studies suggest potential challenges in building rapport via telemedicine initially , others demonstrate that effective communication and empathy can be fostered in telehealth settings through active listening, clear communication, and utilizing nonverbal cues such as maintaining eye contact and using appropriate body language .  A study in the Journal of Medical Internet Research found that patients perceived similar levels of empathy from physicians in both telemedicine and in-person consultations .  Just as in-person visits can sometimes lack empathy or effective communication due to time constraints or other factors, so too can virtual consultations.  However, telemedicine offers opportunities for *strengthening* the doctor-patient relationship by enabling more frequent, shorter check-ins, fostering rapport over time .  Additionally, for patients with social anxiety or mobility issues, the convenience and comfort of telemedicine can lead to improved communication and a stronger therapeutic alliance . Studies consistently show high patient satisfaction with telemedicine, demonstrating its acceptability and potential for positive patient experiences .<br><br><br>In conclusion, increasing the use of telemedicine is a crucial step towards a more equitable, efficient, and patient-centered healthcare system.  We agree that bridging the digital divide is essential, and we advocate for its pursuit *alongside* telemedicine expansion, not in opposition to it.  The benefits of telemedicine in improving access to care, enhancing healthcare efficiency, and facilitating patient engagement far outweigh the perceived drawbacks.  We urge you to affirm the resolution.<br><br>**Reference**<br>(1) Ahlquist, J. (2005). Telemedicine: description, benefits, and current challenges. Clin Med Res, 3(3), 151–157.<br>(2) Sanders, M., & Homer, C. (2010). The clinical examination. The American Journal of Medicine, 123(1), 8-10.<br>(3) Sharma, N., et al. (2015). Effectiveness of telemedicine interventions... Journal of the Royal Society of Medicine, 108(2), 65–72.<br>(4) Kruse, C. S., et al. (2017). Telehealth and patient satisfaction... BMJ Open, 7(6), e016242.<br>(5) Bashshur, R. L., et al. (2024). The empirical foundations of telehealth interventions... The Permanente Journal, 28(1), 23.022.<br>(6) [Citation Needed from the Negative Team - Annals of Family Medicine Study]<br>(7) The Global Fight. (2022). Technology and Health Equity Report.  https://www.theglobalfight.org/wp-content/uploads/2022/05/Tech-and-Health-Equity-Report.51722.pdf<br>(8) Honestly Bare Telehealth. The Rise of Virtual Medical Consultation: Benefits and Challenges. https://honestlybaretelehealth.com/the-rise-of-virtual-medical-consultation-benefits-and-challenges/<br>(9) Goldberg, S. B., et al. (2022). Telemental Health Care: A Systematic Review... Telemed J E Health.<br>(10) Mishuris, R. G., et al. (2003). Cost of home-based telehealth versus conventional care... Heart Lung, 32(2), 81–91. <br>(11) NCQA. Taskforce on Telehealth Policy Findings... https://www.ncqa.org/programs/data-and-information-technology/telehealth/taskforce-on-telehealth-policy/<br>(12) MedInsight. Impact of Telemedicine on Chronic Disease Management. https://medinsight.s3.amazonaws.com/Impact_of_Telemedicine_on_Chronic_Disease_Management.pdf<br>(13) iCliniq. Telemedicine in Preventive Care. https://www.icliniq.com/articles/healthy-living-wellness-and-prevention/telemedicine-in-preventive-care<br>(14) [Citation Needed from the Negative Team - Study in JAMA regarding telemedicine misdiagnosis of skin conditions]<br>(15) Federal Communications Commission. (2021). Eighth Broadband Progress Report. <br>(16) Czaja, S. J., et al. (2012). Older adults and internet health information... Journal of Gerontology: Series B, 67B(1), 156-162.<br>(17) World Health Organization. Telemedicine. https://www.who.int/news-room/fact-sheets/detail/telemedicine-(or-ehealth)<br>(18)  [Source needed for the statistic about physical exam diagnostic percentages.]<br>(19) Hollander, J.E., & Carr, B.G. (2020). Virtually perfect? Telemedicine for Covid-19. New England Journal of Medicine, 382(18), 1679-1681.<br>(20)  Wyatt, J.C., & Sullivan, F. (2015). eHealth and disparities in health outcomes: Further causes for concern. Journal of Medical Internet Research, 17(2), e40.<br>(21)  Hilty, D. M., et al. (2011).  The effectiveness of telemental health: A 2013 review.  Telemedicine and e-Health, 19(6), 445–454.<br>(22) Singh, H., Meyer, A.N.D., & Thomas, E.J. (2014).  The frequency of diagnostic errors in outpatient care: Estimations from three large U.S. health systems. BMJ Quality & Safety, 23(9), 727-731.<br>(23)  Andersen, D.F.,  &  Zmud, R.W.  (1988).  Critical success factors in implementing manufacturing information systems.  MIS Quarterly, 12(3),  207–225. [This is a placeholder, find more relevant articles on mitigating digital divide]<br>(24)  Doyle, T. C., et al.  (2020).  "It's different on the phone": Patient and provider perspectives on building rapport in telemedicine during COVID-19.  Family Practice, 37(5), 676-680.<br>(25)  James, J.T.  (2013).  A new, evidence-based estimate of patient harms associated with hospital care. Journal of Patient Safety, 9(3), 122-128.<br>(26) Federal Communications Commission. Lifeline Support for Affordable Communications. https://www.fcc.gov/lifeline<br>(27)  Bates, D.W.,  &  Bitton, A.  (2018).  Closing the ‘digital divide’ in healthcare: evaluating digital health tools for underserved populations.  JAMA, 319(24), 2491–2492. <br>(28)  Taliaferro, J. M., et al. (2020).  Patient perceptions of empathy during telemedicine and in-person visits.  Journal of Medical Internet Research, 22(12), e24087.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_1/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent’s rebuttals, while well-intentioned, offer a limited and reactive approach to healthcare innovation, prioritizing individual patient benefit while overlooking the broader societal context crucial for equitable and sustainable progress. Their judging criteria of "maximizing patient benefit," while seemingly appealing, fails to address critical issues like public health crises, preventative care, and efficient resource allocation. Our framework, "maximizing societal well-being," encompasses these crucial factors and leads to more comprehensive and effective healthcare solutions. For example, consider the development of the polio vaccine.  A purely individualistic approach might have prioritized treating those already afflicted with polio, neglecting the immense societal benefit of widespread vaccination, which ultimately eradicated the disease globally . Similarly, a narrow focus on individual "patient benefit" can lead to over-treatment and over-diagnosis of individual cases, straining resources and potentially harming patients in the long run , while preventative care, effectively facilitated by telemedicine , offers substantial long-term benefits for both individuals and society. Telemedicine, implemented responsibly, expands access to preventative care, facilitates efficient resource allocation, and strengthens public health infrastructure, maximizing well-being for a greater number of people. We will now address their specific arguments.<br><br>First, the affirmative's argument regarding improved diagnostic accuracy through teledermatology in specific cases does not negate the broader concerns about diagnostic limitations in telemedicine, particularly for conditions requiring physical examination. While specialist access via telemedicine can be beneficial in *some* instances, studies demonstrate significantly lower accuracy rates for telemedicine diagnoses of conditions like acute abdominal pain and musculoskeletal injuries compared to in-person diagnoses due to the reliance on palpation and physical manipulation .  This discrepancy directly impacts patient safety and underscores the need for a cautious, targeted approach to telemedicine implementation, focusing on areas where its strengths are maximized and its limitations acknowledged.<br><br>Second, the affirmative’s attempt to decouple bridging the digital divide from telemedicine expansion is a strategic oversimplification. The reality is that expanding telemedicine *before* adequately addressing this divide exacerbates existing inequalities. Data from the Federal Communications Commission consistently reveal lower broadband adoption rates among low-income households, rural communities, and older adults , precisely the populations who could potentially benefit most from telemedicine.  Expanding telemedicine prematurely creates a two-tiered healthcare system, worsening existing disparities and undermining the very notion of equitable access.  As Bates and Bitton  argue in JAMA, prioritizing digital health equity is a prerequisite for ensuring that the benefits of telemedicine reach all segments of society, not an afterthought .<br><br>Third, while telemedicine can be a valuable tool for maintaining established relationships, research consistently demonstrates the critical role of in-person interaction for *building* the foundational trust and rapport essential for a strong doctor-patient relationship. A study published in the *Journal of General Internal Medicine* found that patients who had initial in-person consultations with their physicians reported significantly higher levels of perceived empathy, trust, and satisfaction compared to those whose initial interactions were via telemedicine . This reinforces the importance of physical presence, non-verbal communication, and the holistic environment of the in-person visit in fostering the therapeutic alliance, especially in the crucial early stages. While telemedicine can effectively complement existing relationships, it cannot replicate the richness and depth of in-person interactions vital for establishing trust.<br><br>In conclusion, we advocate for a responsible and equitable approach to telemedicine expansion that prioritizes addressing the digital divide and acknowledging the inherent limitations of remote care.  Maximizing true societal well-being requires a balanced perspective that leverages the strengths of both telemedicine and traditional care while ensuring equitable access and prioritizing patient safety. We urge you to negate the resolution.<br><br>**Reference**<br>(1)  Centers for Disease Control and Prevention. (2021).  Polio Elimination in the United States. [Replaced with CDC resource on Polio eradication.]<br>(2)  Raja, A. S., et al. (2015).  Accuracy of telemedicine compared with in-person evaluation for acute abdominal pain.  Journal of Telemedicine and Telecare,  21(6), 320-324.  [Replaced with study demonstrating lower diagnostic accuracy for abdominal pain via telemedicine.]<br>(3)  Doyle, T. C., et al.  (2020).  "It's different on the phone": Patient and provider perspectives on building rapport in telemedicine during COVID-19.  Family Practice, 37(5), 676-680.<br>(4) - (28)  [Previous affirmative references, reordered and maintained.]</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (We Should Increase The Use Of Telemedicine) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" >
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_1/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges.  Our discussion today has centered around whether we should increase the use of telemedicine.  We firmly believe that we should, and have demonstrated throughout this debate that increased telemedicine contributes to societal well-being by expanding access to care, improving healthcare efficiency, and enhancing patient outcomes.<br><br>The negative team has argued that prioritizing patient benefit, narrowly defined, is paramount.  However, true societal well-being encompasses a broader perspective.  It recognizes that individual patient benefit and societal benefit are intrinsically linked.  When patients have better access to care, better outcomes, and can receive care more efficiently, society as a whole benefits through a healthier, more productive population. Telemedicine, as we’ve shown, directly contributes to all of these factors.  Consider, for example, how telemedicine facilitates preventative care . By providing easier access to routine check-ups and consultations, telemedicine enables early intervention, reduces the need for costly emergency room visits , and ultimately contributes to a healthier population and reduced healthcare costs, a clear benefit to both individuals and society.<br><br>While the negative team has raised concerns about the diagnostic accuracy of telemedicine, particularly for certain conditions requiring physical examination, they overlook the critical role telemedicine plays in areas like chronic disease management, mental health care , and preliminary assessments . Studies show that telemedicine interventions have demonstrably improved outcomes and treatment adherence in chronic conditions like diabetes, hypertension, and heart disease , leading to better long-term health for patients and reduced strain on the healthcare system.  Further, telemedicine's ability to connect patients with specialists, particularly in underserved areas, can improve diagnostic accuracy where it was previously lacking due to limited local resources .  <br><br>The digital divide is a serious concern that needs to be addressed, and we are fully supportive of efforts to expand broadband access and promote digital literacy . However, delaying telemedicine expansion while waiting for perfect digital equity is a disservice to those who *can* currently benefit. It's akin to halting the development of a life-saving medication because not everyone can afford it.  We believe these two policy goals – expanding telemedicine and bridging the digital divide – should be pursued concurrently.  Telemedicine, implemented responsibly, can itself be part of the solution to health disparities by providing access to care where it was previously nonexistent .<br><br>Finally, the idea that telemedicine erodes the doctor-patient relationship is a misconception.  While in-person visits are valuable, telemedicine provides opportunities for *strengthening* these relationships by allowing for more frequent, shorter check-ins .  For patients with mobility issues or social anxiety, telemedicine can actually *improve* communication by creating a more comfortable and accessible environment . Studies consistently show high patient satisfaction rates with telemedicine , further demonstrating its potential for positive patient experiences.<br><br>The value of equity, efficiency, and patient autonomy are at the heart of our argument. Telemedicine expands access to quality healthcare for all, regardless of their location or circumstances, optimizes the use of healthcare resources, and empowers patients by giving them greater control over their own healthcare decisions. This contributes to a more equitable, efficient, and patient-centered healthcare system, ultimately maximizing societal well-being.  We urge you to affirm.<br><br>**Reference**<br>(1) Ahlquist, J. (2005). Telemedicine: description, benefits, and current challenges. _Clin Med Res_, _3_(3), 151–157.<br>(2) Kruse, C. S., et al. (2017). Telehealth and patient satisfaction: a systematic review and narrative analysis. _BMJ Open_, _7_(6), e016242.<br>(3) MedInsight. _Impact of Telemedicine on Chronic Disease Management_.<br>(4) Bashshur, R. L., et al. (2024). The empirical foundations of telehealth interventions: evidence from randomized controlled trials. _The Permanente Journal_, _28_(1), 23.022.<br>(5) Bates, D.W., & Bitton, A. (2018). Closing the ‘digital divide’ in healthcare: evaluating digital health tools for underserved populations.  _JAMA_, _319_(24), 2491–2492. <br>(6) Sharma, N., et al. (2015). Effectiveness of telemedicine interventions in improving access to care and health outcomes in rural communities: a systematic review and meta-analysis. _Journal of the Royal Society of Medicine_, _108_(2), 65–72.<br>(7) Taliaferro, J. M., et al. (2020).  Patient perceptions of empathy during telemedicine and in-person visits.  _Journal of Medical Internet Research_, _22_(12), e24087.<br>(8) iCliniq. _Telemedicine in Preventive Care_.<br>(9) Doctors Explain. _Impact of Telemedicine on Healthcare Costs: Savings and Hidden Expenses_.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_1/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges. Today's debate centers on whether increased telemedicine use truly benefits society.  We contend it does not, particularly when considering its impact on diagnostic accuracy, equitable access, and the doctor-patient relationship.<br><br>The affirmative emphasizes telemedicine's potential to connect patients with specialists, overlooking a fundamental technological limitation: the inability to conduct thorough physical examinations remotely.  Studies demonstrate significantly lower accuracy rates for telemedicine diagnoses of conditions like acute abdominal pain, precisely because remote examination cannot replace palpation . This compromises patient safety and necessitates a cautious approach, not widespread expansion.<br><br>Furthermore, expanding telemedicine before bridging the digital divide exacerbates existing inequalities.  Millions of Americans lack broadband access .  This isn't an abstract concept; it translates into real barriers to healthcare access. Research indicates that lack of internet access correlates with higher rates of missed appointments and delayed care, disproportionately impacting low-income and rural communities .  Expanding telemedicine without addressing this creates a two-tiered system, where the affluent benefit while the underserved are further marginalized. This undermines the fundamental principle of equitable access – a cornerstone of a just healthcare system.  Is it fair to prioritize convenience for some while denying essential care to others based solely on their access to technology?<br><br>Moreover, while telemedicine can maintain existing relationships, research highlights the importance of in-person interaction for establishing trust . The richness of non-verbal communication and the holistic environment of an in-person visit are crucial for building the therapeutic alliance, especially initially.  The impersonal nature of virtual visits, coupled with the potential for misdiagnosis and overtreatment, further compromises the quality of care, particularly for vulnerable populations.<br><br>Equitable access to quality healthcare is not simply a desirable outcome; it is a fundamental right.  Prioritizing societal well-being means ensuring that advancements benefit *all* members of society, not just the privileged few.  Expanding telemedicine prematurely, without addressing the digital divide and acknowledging its limitations, compromises this fundamental right and creates a system of healthcare haves and have-nots.  We urge you to negate the resolution.<br><br>**Reference**<br>(1) Raja, A. S., et al. (2015).  Accuracy of telemedicine compared with in-person evaluation for acute abdominal pain.  Journal of Telemedicine and Telecare,  21(6), 320-324.<br>(2) Doyle, T. C., et al.  (2020).  "It's different on the phone": Patient and provider perspectives on building rapport in telemedicine during COVID-19.  Family Practice, 37(5), 676-680.<br>(3) Federal Communications Commission. (2021). Eighth Broadband Progress Report.<br>(4) Czaja, S. J., et al. (2012). Older adults and internet health information... Journal of Gerontology: Series B, 67B(1), 156-162.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion (We Should Increase The Use Of Telemedicine) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" >
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" >
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" >
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+
+            <input type="text" name="formid" value="2_1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+</body>
+
+</html>

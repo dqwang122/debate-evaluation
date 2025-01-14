@@ -26,7 +26,7 @@ Here are several examples for expert debaters:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0105/expert" and file.extname == ".html" %}
+    {% if file.path contains "forms/ibm/expert" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
