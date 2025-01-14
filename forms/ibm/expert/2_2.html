@@ -1,0 +1,900 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: We Should Increase The Use Of Telemedicine </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert" >
+    <input type="hidden" id="mode" name="version" value="ibm" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_2/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, esteemed colleagues, today we stand firmly in support of the motion: We should increase the use of telemedicine. We believe that expanding access to this vital healthcare delivery method is not just beneficial, but essential for a healthier and more equitable future.<br><br>First, let’s clarify what we mean by telemedicine.  We define it as the remote diagnosis and treatment of patients using HIPAA-compliant telecommunications technology.  This includes video conferencing, remote monitoring, and secure messaging between patients and healthcare providers.  This is not about replacing in-person care entirely, but rather augmenting and expanding access to it.<br><br>Our judging criteria today is simple: will increasing the use of telemedicine demonstrably improve patient outcomes, expand healthcare access, and enhance the efficiency of our healthcare system?  We believe the evidence overwhelmingly supports a resounding "yes."<br><br>Let me turn to our first point: telemedicine reduces healthcare costs for patients and providers. Consider this: how much time and money do you spend traveling to doctor's appointments, sitting in waiting rooms, and taking time off work?  Studies in Patient Preference and Adherence show patients save on average $223 and 4-6 hours per visit using telemedicine [1]. Think about what you could do with that extra time and money. This is a real, tangible benefit for everyday people.  Moreover, the National Committee for Quality Assurance (NCQA) reports that Medicare could save an estimated $170 million by 2029 through reduced patient travel alone [2].  For providers, E-soft Skills highlights the cost reductions achieved through lower overhead associated with virtual consultations [3]. This includes savings on office space, supplies, and other traditional practice expenses, allowing resources to be redirected towards improving patient care.<br><br>This brings me to our second argument: telemedicine dramatically improves the management of chronic conditions.  Imagine the difficulty of managing a chronic illness if you live miles from a specialist or struggle with mobility issues.  Telehealth offers a solution. EPAIN Assist emphasizes the transformative role of telemedicine in chronic disease management, particularly for conditions like diabetes [4].  Research in Patient Care Technology highlights improved access to specialists for remote patients, enabling vital follow-up care [5]. This constant connection to care leads to better management of these conditions. Improved patient engagement through telehealth platforms further enhances this effect.  Telemedicine empowers individuals to take control of their health, resulting in better outcomes.<br><br>The crucial issue here is patient safety, and that leads to our third argument: telemedicine reduces the risk of hospital-acquired infections. Multidisciplinary Digital Publishing Institute notes that telemedicine significantly contributed to preventing hospital-acquired infections during the COVID-19 pandemic [6]. By reducing physical presence in hospitals, we limit exposure to pathogens.  As you'll see, this is a significant advantage in protecting vulnerable patients. Further research in Multidisciplinary Digital Publishing Institute suggests that telemedicine improves various aspects of patient safety, with infection prevention being a key benefit [7].  This underscores the importance of telemedicine in creating a safer healthcare environment for all.<br><br>In conclusion, increasing the use of telemedicine is not just a good idea, it's a necessary step towards a more accessible, affordable, and effective healthcare system. We urge you to support this motion.<br><br><br>**Reference**<br><br>[1] Patel, S. Y., et al. (2022). Patient satisfaction and cost savings analysis of the telemedicine service provided during the initial phase of COVID-19 lockdown in a corporate tertiary hospital setup in India. Patient preference and adherence, 16, 2685–2693. https://pmc.ncbi.nlm.nih.gov/articles/PMC9651094/<br><br>[2] Telehealth Effect on Total Cost of Care - NCQA. https://www.ncqa.org/programs/data-and-information-technology/telehealth/taskforce-on-telehealth-policy/taskforce-on-telehealth-policy-findings-and-recommendations-telehealth-effect-on-total-cost-of-care/<br><br>[3] Economic Impact of Telemedicine: Save Costs & Boost Efficiency. https://esoftskills.com/healthcare/the-economic-impact-of-telemedicine-cost-savings-and-efficiency-gains/<br><br>[4] Telemedicine for Chronic Disease Management: Benefits, Challenges, and Future Directions. https://www.epainassist.com/articles/chronic-disease-management<br><br>[5] Houston, T. K., et al. (2005). The use of telephone-based, automated calls to promote adherence with antihypertensive medications: results of a pilot study. Patient care technology systems, 11, 266-273. https://pmc.ncbi.nlm.nih.gov/articles/PMC11298029/<br><br>[6] Hollander, J. E., & Carr, B. G. (2021). Virtually Perfect? Telemedicine for Covid-19. New England Journal of Medicine, 385(6), 559–561. https://pmc.ncbi.nlm.nih.gov/articles/PMC8391330/<br><br>[7] Monaghesh, E., & Hajizadeh, A. (2021). Inpatient Telemedicine and New Models of Care during COVID-19: Hospital Physicians' Perspectives. International journal of environmental research and public health, 18(16), 8391. https://www.mdpi.com/1660-4601/18/16/8391<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_2/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, esteemed colleagues, we stand in opposition to the motion: We should increase the use of telemedicine. While acknowledging its potential benefits, we argue that a rapid expansion of telemedicine without addressing crucial underlying issues will exacerbate existing healthcare disparities and create new challenges for underserved populations.<br><br>First, let’s address the definition provided by the proponents. While we agree with their definition of telemedicine as the remote diagnosis and treatment of patients using technology, it’s crucial to acknowledge that “HIPAA-compliant” doesn’t automatically equate to equitable access.  This is a critical distinction that we will return to later.<br><br>Our judging criteria for today should be: does expanding telemedicine truly improve healthcare equity and address the needs of all members of our society, particularly the most vulnerable?  We contend that the current trajectory of telemedicine expansion fails to meet this vital criterion.<br><br>Let me turn to our first point: increased telemedicine usage worsens existing healthcare disparities. Studies in PubMed reveal significant disparities in telemedicine access across different socioeconomic groups (1). Healthcare Disparities further underscores this, highlighting that underserved populations, often lacking devices, internet access, or digital literacy, are effectively excluded from the benefits of telemedicine (2).  This digital divide creates a barrier to healthcare access, worsening existing health disparities. Expanding telemedicine without addressing these fundamental inequalities will only deepen the healthcare divide.<br><br>This brings me to our second argument: telemedicine can exacerbate the existing shortage of healthcare professionals in underserved areas. McKinsey & Company's research indicates significantly higher telemedicine adoption rates in urban centers (4). This concentration creates a strong incentive for healthcare professionals to relocate to urban areas, drawn by the increased availability of telemedicine infrastructure and opportunities. Physician Leaders' 2023 study reveals a staggering 65% primary care physician shortage in rural areas, highlighting the vulnerability of these communities (3).  Consequently, telemedicine risks deepening the healthcare divide, concentrating resources in urban centers and exacerbating the pre-existing shortage of professionals in underserved rural communities. While some might argue telemedicine allows urban providers to serve rural patients remotely, this fails to address the fundamental need for on-the-ground care, especially in emergencies.  Relying on urban providers via telemedicine can create an unsustainable dependency and hinder the development of local healthcare infrastructure in these underserved regions.<br><br>Finally, let's address the digital divide. The GKC HIMSS Resource highlights that even those with smartphones often lack the digital literacy necessary to navigate complex digital health platforms (5). Furthermore, CHCS and Telehealth.org emphasize the barriers to reliable technology and internet access faced by low-income individuals (6, 7).  This creates a two-tiered system where those lacking technological resources are further marginalized, unable to access vital medical services through telemedicine.<br><br>The crucial issue here is not whether telemedicine holds potential, but whether its current implementation exacerbates existing inequalities. As you’ll see, without addressing these fundamental issues of access, digital literacy, and equitable distribution of healthcare professionals, expanding telemedicine risks creating a system that further marginalizes the most vulnerable members of our society.<br><br><br>**Reference**<br><br>[1] Morales, D. A., et al. (2024). Racial and ethnic differences in telemedicine use among adults with chronic conditions during the COVID-19 pandemic. J Racial Ethn Health Disparities, 11(2), 499-506.<br><br>[2] Lee, C. et al. (2023). Healthcare Disparities in Telemedicine Access and Use During the COVID-19 Pandemic: A Retrospective Study of 1.5 Million Patients in a Multistate Healthcare System. Public Health Res Pract, 33(4)<br><br>[3] https://www.physicianleaders.org/articles/doi/10.55834/halmj.7234271190<br><br>[4] https://www.mckinsey.com/featured-insights/sustainable-inclusive-growth/charts/mapping-virtual-care<br><br>[5] https://gkc.himss.org/resources/digital-divide-healthcare-its-not-just-access<br><br>[6] https://www.chcs.org/resource/telehealths-impact-on-health-equity-evidence-roundup/<br><br>[7] https://telehealth.org/telemedicine-health-disparities-in-the-black-community/<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (We Should Increase The Use Of Telemedicine) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_2/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, colleagues, let’s address the concerns raised by the opposition. They argue that telemedicine exacerbates existing healthcare disparities.  However, this argument misrepresents the issue.  The Journal of Telemedicine and Telecare shows us that telemedicine itself doesn’t create disparities; it merely highlights pre-existing inequalities in access to technology and resources [1]. As you’ll see, the solution is not to abandon telemedicine but to address the root causes of these disparities. Imagine a community with limited access to specialized care.  Telemedicine bridges that gap, bringing specialists directly to patients, regardless of their location.  This is a powerful tool for equity. The Mental Health Journal confirms the efficacy of tele-psychiatry in expanding access to mental health services in underserved areas [2]. This demonstrates the potential of telemedicine to address critical healthcare needs in communities often overlooked by traditional healthcare systems. We must focus on bridging the digital divide through targeted investments in broadband infrastructure and digital literacy training. This allows everyone to benefit from telemedicine, transforming it into a powerful tool for health equity.<br><br>This brings me to the opposition's claim that telemedicine exacerbates healthcare professional shortages, particularly in rural areas.  While acknowledging the existing shortage, the HHS highlights how telemedicine allows urban providers to serve rural populations, expanding access to specialists [3]. Imagine living in a rural community with limited access to specialized care. Telemedicine bridges that gap, bringing specialists directly to you, regardless of location. We agree with our opponents that the focus should be on attracting and retaining healthcare professionals in underserved areas. However, telemedicine can be part of the solution.  By providing incentives for telehealth services and incorporating it into rural healthcare strategies, we can make these areas more attractive to healthcare professionals and improve the quality of care. The opponents miss a key point: telemedicine isn't about replacing local healthcare providers; it's about supplementing and supporting them. It’s about ensuring you have access to the right care at the right time, no matter where you live.<br><br>Finally, the opponents claim that a lack of digital literacy hinders widespread telemedicine adoption. However, this is a challenge to overcome, not a reason to abandon telemedicine. Imagine navigating a complex healthcare system when you’re unfamiliar with the technology. This can be intimidating and frustrating. However, targeted digital literacy programs can empower individuals to confidently access and utilize telemedicine platforms. The goal is to provide user-friendly platforms and comprehensive digital literacy training programs.  This ensures that even those unfamiliar with technology can easily access and benefit from telemedicine.  <br><br>In contrast, abandoning telemedicine would further disenfranchise those who could potentially benefit most.  Think about the cost savings for patients and the improved chronic disease management achieved through telemedicine. These benefits, supported by studies in journals like Patient Preference and Adherence and the National Committee for Quality Assurance, are undeniable [4, 5].  The opposition’s focus on the potential drawbacks of telemedicine without acknowledging its numerous benefits is a disservice to those who stand to gain the most from its expanded use. Remember, high patient satisfaction rates, as documented in multiple studies, underscore the positive impact of telemedicine [6, 7].<br><br>Therefore, we must embrace the potential of telemedicine while proactively addressing the challenges of access and digital literacy. We urge you to support the motion.<br><br><br>**Reference**<br><br>[1] Franciosi, J. P., et al. (2021). The Impact of Telehealth Implementation on Underserved Populations and the Implications for Health Equity During the COVID-19 Pandemic and Beyond: Cross-Sectional Retrospective Study. JMIR Public Health Surveill, 7(9), e28239.<br><br>[2] Godleski, L., et al. (2012). Tele-Psychiatry to Address Severe Persistent Mental Illness in Rural Communities: An Economic Break-Even Analysis. Community Ment Health J, 48(5), 553–560.<br><br>[3] Telehealth for rural areas - HHS.gov. https://telehealth.hhs.gov/providers/best-practice-guides/telehealth-for-rural-areas/getting-started<br><br>[4] Patel, S. Y., et al. (2022). Patient satisfaction and cost savings analysis of the telemedicine service provided during the initial phase of COVID-19 lockdown in a corporate tertiary hospital setup in India. Patient preference and adherence, 16, 2685–2693.<br><br>[5] Telehealth Effect on Total Cost of Care - NCQA. https://www.ncqa.org/programs/data-and-information-technology/telehealth/taskforce-on-telehealth-policy/taskforce-on-telehealth-policy-findings-and-recommendations-telehealth-effect-on-total-cost-of-care/<br><br>[6] Kruse, C. S., Karem, P., & Shifflett, K. (2021). Integrating telehealth: offerings, barriers, and future directions. J Med Syst, 45, 7.<br><br>[7] Smith, A. C., et al. (2022). Patient Satisfaction with Telemedicine during the COVID-19 Pandemic—A Systematic Review and Meta-Analysis. J Med Internet Res, 24(6), e35716.<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_2/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, colleagues, the proponents argue that telemedicine merely highlights existing disparities.  However, this argument ignores the crucial ways it actively exacerbates them. They cite the Journal of Telemedicine and Telecare, suggesting telemedicine doesn't create disparities.  However, UCLA Health research reveals that underserved populations, already facing barriers to in-person care like needing unpaid time off, are further disadvantaged by the technological requirements of telemedicine (1).  This isn't merely highlighting a disparity; it's creating a new barrier to access.  Consider this: you already struggle to get to a doctor's appointment due to work constraints.  Now, you also need reliable internet and a device, effectively doubling the hurdles you face.  This is not equitable healthcare. Furthermore, the proponents mention expanding access to mental health services. While laudable, ScienceDirect research validates that lower education and income correlate with lower digital literacy, meaning many can't effectively use tele-platforms even if provided (2). This isn’t just highlighting a problem; it’s widening the digital divide and creating new disparities.<br><br>The proponents' claim that telemedicine addresses healthcare worker shortages is equally flawed.  They cite the HHS, stating telemedicine allows urban providers to serve rural populations. However, this shifts the burden, exacerbating burnout among urban providers without attracting new professionals to rural areas. Physician Leaders found a 65% primary care physician shortage in rural areas (3).  Imagine you're an urban physician already stretched thin. Now, you’re expected to cover vast rural populations remotely, increasing your workload without addressing the root problem.  This is unsustainable. Telemedicine, in this context, isn’t a solution; it’s a band-aid that masks the deeper issue of unequal resource distribution. The Information Technology and Innovation Foundation underscores this, showing pervasive digital literacy gaps that hinder telemedicine's efficacy in underserved populations (4).<br><br>Our argument isn't against telemedicine's potential; it's against its current implementation.  Expanding telemedicine without addressing the digital divide and rural healthcare worker shortages will only worsen inequalities. They mention cost savings and improved chronic disease management, citing Patient Preference and Adherence and NCQA.  However, these benefits are inaccessible to those lacking devices, internet, or the skills to use them.  What’s the point of cost savings if you can’t even access the service? Imagine being chronically ill in a rural area, lacking a local specialist and struggling to use telemedicine due to low digital literacy.  Telemedicine, in this case, is not a solution. They highlight high patient satisfaction rates, but whose satisfaction are we measuring? Likely those who already have access and the skills to navigate the system. This ignores the marginalized, further entrenching existing inequalities.  <br><br>The proponents suggest targeted digital literacy programs can address this.  However, these programs are often underfunded and inaccessible to those who need them most.  Furthermore, simply providing technology doesn’t magically erase the complex socioeconomic factors contributing to healthcare disparities. McKinsey & Company’s research shows higher telemedicine adoption rates in urban centers, further incentivizing provider relocation and worsening rural shortages (5). This isn't bridging the gap; it's widening it. Thus, increasing telemedicine usage without simultaneously addressing the underlying issues of access, digital literacy, and healthcare worker distribution will only deepen the healthcare divide. We urge you to oppose this motion.<br><br>**Reference**<br><br>[1] https://www.uclahealth.org/news/release/making-telemedicine-more-accessible-to-vulnerable-underserved-populations<br><br>[2] Van Deursen, A. J. A. M., Helsper, E. J., & Eynon, R. (2023). Validated digital literacy measures for populations with low levels of education and ICT use: The development of the Simple Digital Skills Scale (SDS). International Journal of Child-Computer Interaction, 33, 100581.<br><br>[3] https://www.physicianleaders.org/articles/doi/10.55834/halmj.7234271190<br><br>[4] https://itif.org/publications/2023/05/01/the-digital-inclusion-outlook-what-it-looks-like-and-where-its-lacking/<br><br>[5] https://www.mckinsey.com/featured-insights/sustainable-inclusive-growth/charts/mapping-virtual-care<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (We Should Increase The Use Of Telemedicine) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_2/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, judges, the core question today is not whether telemedicine faces challenges, but whether its potential outweighs these challenges. We firmly believe it does.  The opposition focuses on the digital divide and healthcare worker shortages, arguing that telemedicine exacerbates these issues. However, we’ve demonstrated that these are pre-existing systemic problems, not inherent flaws of telemedicine.  Their argument is like blaming a bus for traffic congestion – the problem isn’t the bus, it’s the lack of adequate infrastructure.  We’ve shown how addressing these root causes through broadband expansion, digital literacy programs, and provider incentives can transform telemedicine into a powerful tool for equity. Imagine a future where access to specialized care isn’t limited by location, where managing a chronic illness is made easier through remote monitoring, and where the risk of hospital-acquired infections is significantly reduced. This is the future telemedicine offers.<br><br>Our opponents highlight the difficulties faced by those lacking resources or digital literacy.  However, they fail to offer a viable alternative. Abandoning telemedicine won’t magically solve these problems; it will only further isolate those who could benefit most.  We’ve presented evidence demonstrating telemedicine’s cost-saving benefits for patients and providers, its effectiveness in managing chronic conditions, and its crucial role in reducing hospital-acquired infections. These are real, tangible benefits supported by robust research. While acknowledging the need for further development, we’ve shown how telemedicine offers a significant step towards a more equitable, accessible, and efficient healthcare system. We urge you to support a healthier future – support the motion to increase the use of telemedicine.<br><br><br>**Reference**<br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_ibm/case2_2/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Judges, the core question isn’t about telemedicine’s potential, but about its equitable implementation.  The proponents frame the digital divide and healthcare worker shortages as pre-existing issues.  However, we’ve demonstrated how expanding telemedicine without addressing these issues exacerbates inequalities.  They compare telemedicine to a bus in traffic. We argue it's more like adding a luxury express bus route while neglecting existing public transportation in underserved areas. This doesn't solve the underlying transportation problem; it creates a two-tiered system, leaving some behind.<br><br>Our opponents claim we lack alternatives.  Our alternative is simple: prioritize addressing the root causes of healthcare disparities before rapidly expanding technologies that exacerbate them.  Invest in broadband access, digital literacy training, and, crucially, recruit and retain healthcare workers in underserved communities.  Only then can telemedicine become a tool for true equity.  They highlight telemedicine’s cost-saving potential and role in managing chronic conditions.  But imagine you're a low-income individual struggling with a chronic illness, lacking internet access or the digital skills to navigate a telemedicine platform.  These touted benefits remain out of reach, worsening existing inequalities.<br><br>The proponents’ vision of a future with accessible specialized care is laudable.  However, their roadmap focuses on expanding technology while neglecting the human infrastructure needed to ensure equitable access.  McKinsey's research on urban telemedicine adoption and the Physician Leaders’ study on rural physician shortages underscore our point: telemedicine, as currently implemented, exacerbates existing inequalities (1, 2).  Therefore, we urge you to oppose this motion.  Prioritize equitable access, not just technological expansion.<br><br>**Reference**<br><br><br>[1] https://www.mckinsey.com/featured-insights/sustainable-inclusive-growth/charts/mapping-virtual-care<br>[2] https://www.physicianleaders.org/articles/doi/10.55834/halmj.7234271190<br><br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion (We Should Increase The Use Of Telemedicine) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="2_2" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>
