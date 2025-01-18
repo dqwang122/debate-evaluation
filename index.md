@@ -15,7 +15,7 @@ Here are several IBM samples:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/ibm/admin" and file.extname == ".html" %}
+    {% if file.path contains "forms/0117/admin" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
@@ -26,7 +26,7 @@ Here are several examples for expert debaters:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/ibm/expert" and file.extname == ".html" %}
+    {% if file.path contains "forms/0117/expert" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
@@ -37,7 +37,7 @@ Here are several examples for common audience:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0105/common" and file.extname == ".html" %}
+    {% if file.path contains "forms/0117/common" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}

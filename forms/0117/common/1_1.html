@@ -1,0 +1,1056 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 30 minutes and a $10 will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+<div id="consentModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="consentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document"  style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100 text-center" id="consentModalLabel">Consent Form</h4>
+            </div>
+            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                <div class="consent-form">
+                <h5>Study Title: Designing LLM-based Agents for Competitive Debate</h5>
+                <div>
+                    <p><strong>ID #</strong>: STUDY2024_00000359 </p>
+                    <p><strong>Principal Investigator:</strong> Dr. Fei Fang</p>
+                    <p>Software and Societal Systems Department (S3D), Carnegie Mellon University </br>
+                    5000 Forbes Ave, Pittsburgh, PA 15213 </br>
+                    (412) 268-2000, feifang@cmu.edu </br>
+                    <p><strong>Other Investigator(s):</strong> Danqing Wang, PhD student </p>
+                </div>
+
+                <hr class="my-4">
+                <div>
+                    <h6>Purpose of this Study</h6>
+                    <p>Competitive debate involves critical thinking, clear and persuasive expression, conflict resolving, and the organization of reliable evidence. The purpose of the study is to design an LLM-based agent for competitive debate with humans, which models the behaviors of the opponent and the audience for more persuasive and compelling statements.</p>
+                </div>
+
+                <div>
+                    <h6>Summary</h6>
+                    <p>You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side. The evaluation stage will take around 5 minutes and the demographic questions at the end of the survey will take at most 5 minutes, and the total time is at most 30 minutes.</p>
+                    <p>This human evaluation would provide valuable insights into the current state of AI debating capabilities, highlight areas for improvement, and help identify ways to enhance AI systems to more closely emulate human-level performance in complex argumentative tasks.</p>
+                </div>
+
+                <div>
+                    <h6>Participant Requirements</h6>
+                    <p>Participation in this study is limited to individuals who:</p>
+                    <ul>
+                        <li>Age 18 and older</li>
+                        <li>Have the ability to sign the consent form electronically</li>
+                        <li>Have access to the Internet</li>
+                        <li>Have a high school degree</li>
+                        <li>Should be located in US</li>
+                        <li>Must be fluent in written and spoken English</li>
+                    </ul>
+                    <p>A signed consent form is required for participation.</p>
+                </div>
+
+                <div>
+                    <h6>Risks</h6>
+                    <p>We confirm that the risk to participants is minimal, no greater than normal life. Several potential risks on Breach of Confidentiality should be considered: Participants will need to provide their name to sign the consent form and their email address to receive the compensation. They will also need to answer demographic questions at the end of the survey.</p>
+                </div>
+
+                <div>
+                    <h6>Benefits</h6>
+                    <p>Your involvement will contribute valuable information that could enhance the design and functionality of AI systems in constructing persuasive arguments and engaging in coherent debates. This could indirectly benefit the broader community by improving AI's ability to reason, articulate complex ideas, and respond dynamically in various contexts. The insights gained may also advance our understanding of human argumentation and decision-making processes.</p>
+                </div>
+
+                <div>
+                    <h6>Compensation & Costs</h6>
+                    <p>You will receive <strong>$10 for compensation after you complete the questionnaire</strong>. There will be no cost to you if you participate in this study.</p>
+                </div>
+
+                <div>
+                    <h6>Future Use of Information</h6>
+                    <p>In the future, once we have removed all identifiable information from your data, we may use the data for our future research studies, or we may distribute the data to other investigators for their research studies. We would do this without getting additional informed consent from you (or your legally authorized representative). Sharing of data with other researchers will only be done in such a manner that you will not be identified.</p>
+                </div>
+
+                <div>
+                    <h6>Confidentiality</h6>
+                    <p>The study will collect your research data through your use of Google Forms. These companies are not owned by CMU. These companies will have access to the research data that you produce and any identifiable information that you share with them while using their products. Please note that Carnegie Mellon does not control the Terms and Conditions of the companies or how they will use or protect any information that they collect.</p>
+                    <p><strong>Payment Confidentiality:</strong> Payment methods, especially those facilitated by third-party vendors (such as Visa, Venmo, Amazon, PayPal), may require that the researchers and/or the vendor collect and use personal information (such as your first and last name, email addresses, phone numbers, banking information) provided by you in order for your payment to be processed. As with any payment transaction, there is the risk of a breach of confidentiality from the third-party vendor. All personal information collected by the researcher will be held as strictly confidential and stored in a password-protected digital file, or in a locked file cabinet, until payments are processed and reconciled. This information will be destroyed at the earliest acceptable time. Personal information held by the third-party vendor will be held according to their terms of use policy.</p>
+                </div>
+
+                <div>
+                    <h6>Data Storage and Access</h6>
+                    <p>All study data will be securely stored at CMU, accessible only to the research team. Audio recordings will be transcribed and then deleted from third-party services. Personal identifiers will not be published or disseminated.</p>
+                </div>
+
+                <div>
+                    <h6>Rights</h6>
+                    <p>Your participation is voluntary. <strong>You are free to stop your participation at any point. Refusal to participate or withdrawal of your consent or discontinued participation in the study will not result in any penalty or loss of benefits or rights to which you might otherwise be entitled.</strong> The Principal Investigator may at his/her discretion remove you from the study for any of a number of reasons. In such an event, you will not suffer any penalty or loss of benefits or rights which you might otherwise be entitled.</p>
+                </div>
+
+                <div>
+                    <h6>Right to Ask Questions & Contact Information</h6>
+                    <p>If you have any questions about this study, you should feel free to ask them now. If you have questions later, desire additional information, or wish to withdraw your participation please contact the Principal Investigator by mail, phone or e-mail in accordance with the contact information listed on the first page of this consent.</p>
+                    <p>If you have questions pertaining to your rights as a research participant; or to report concerns to this study, you should contact the Office of Research Integrity and Compliance at Carnegie Mellon University. Email: irb-review@andrew.cmu.edu. Phone: 412-268-4721.</p>
+                </div>
+
+                <div>
+                    <h6>Voluntary Consent Confirmation</h6>
+                    <div>
+                        <p><input type="checkbox"> I confirm I am over 18 years old and in the United States</p>
+                        <p><input type="checkbox"> I confirm I have a high school degree</p>
+                        <p><input type="checkbox"> I have read and understood this consent form</p>
+                        <p><input type="checkbox"> I agree to participate in the study</p>
+                        <p><input type="checkbox"> I agree to be contacted by the study team in the future for a follow-up study</p>
+                    </div>
+
+                    <p>By clicking "Accept" below, you agree that the above information has been explained to you and all your current questions have been answered. You are encouraged to ask questions about any aspect of this research study during the course of the study and in the future. By signing this form, you agree to participate in this research study. </p>
+
+                </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="rejectConsent()">Reject</button>
+                <button type="button" class="btn btn-primary" onclick="acceptConsent()">Accept</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .consent-form {
+        font-size: 14px; /* Adjust the font size as needed */
+    }
+</style>
+
+
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Pursuing A Four-Year College Degree Remains Beneficial For Young Adults In Today'S Society </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="common" >
+    <input type="hidden" id="mode" name="version" value="0117" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0117/case1_1/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Hey everyone, we're here today to argue that, yes, a four-year college degree is still a good thing for young people these days.  We define "pursuing a four-year college degree" as attending an accredited institution to obtain a bachelor's degree, acknowledging that various paths to success exist.  We're judging this based on how it affects young people's lives – their jobs, how they grow as people, and how they contribute to society. Basically, we believe education has lots of value in different ways.<br><br>We will present three key arguments: First, college education cultivates critical thinking and problem-solving skills. Second, a bachelor's degree expands career opportunities and earning potential.  Third, a college degree promotes economic mobility and reduces income inequality.<br><br>Okay, so, first things first.  College nurtures essential critical thinking and problem-solving skills. Picture this: you're at work, facing a really tough problem. Do you rely on gut instinct or a methodical approach? Research in *Review of Educational Research* confirms significant cognitive growth during college [1]. This is not just some theory; this matters in real life. The National Association of Colleges and Employers (NACE) found that 82.9% of employers prioritize critical thinking in new hires [2].  Colleges give you the skills you need to do well in today's tough job world.  Studies in *Collegenp* and *Springer* further link improved critical thinking to better academic performance and psychological well-being, directly impacting real-world problem-solving and informed decision-making [3, 4]. And that, my friends, is super helpful for dealing with today's world.<br><br>Okay, now for my second point.  Earning a bachelor's degree unlocks a wider array of career opportunities. Consider this:  Indeed.com advises that a bachelor's degree keeps more career doors open, especially for leadership positions or pursuing advanced degrees [5].  While the Bureau of Labor Statistics (BLS) data highlights various successful career paths without a four-year degree [6], a significant 30% of jobs still require a bachelor’s or higher, leaving you with fewer options if you don't pursue higher education [7].  Southern New Hampshire University (SNHU) reinforces that a bachelor’s degree makes you more marketable across various industries and positions [8]. The key thing is not just finding a job, but how much you earn.  The BLS further states that jobs requiring a bachelor’s degree tend to offer higher median wages [7]. A college degree significantly enhances your earning potential and financial security.<br><br>Let me turn to our final argument.  A college degree significantly impacts economic mobility and income inequality. The Georgetown University Center on Education and the Workforce demonstrates this in their report "Learning and Earning by Degrees" [9].  Their analysis projects a staggering $14.2 trillion in added net earnings for workers with college degrees over their lifetimes, based on Census Bureau and National Center for Education Statistics data. This isn't just about individual gain.  This increased earning power fuels economic growth through higher spending and tax revenue, benefiting society as a whole.  While we acknowledge that education alone isn't a panacea for all economic challenges, the compelling data underscores the powerful role of a college degree in boosting individual earnings and contributing to broader economic prosperity.<br><br>In conclusion, a four-year college degree remains a powerful catalyst for positive change, equipping young adults with essential skills, expanding career horizons, and fostering economic growth.<br><br>**Reference**<br>[1] Huber, C. R., & Kuncel, N. R. (2016). Does College Teach Critical Thinking? A Meta-Analysis. *Review of Educational Research*, *86*(2), 431–468. https://doi.org/10.3102/0034654315605917<br><br>[2] National Association of Colleges and Employers (NACE). (2021). *Job Outlook 2021*.<br><br>[3] Collegenp. (2024). *Why Critical Thinking Is Important: Skills and Benefits - Collegenp*.<br><br>[4] Springer. (2022). *The role of problem-solving ability, beyond academic motivation, in ...*.<br><br>[5] Indeed.com. (n.d.). *Average Salary With vs. Without a College Degree | Indeed.com*.<br><br>[6] U.S. Department of Labor Blog. (2023, November 14). *10 Growing Jobs That Pay Well and Don’t Need a 4-Year Degree*.<br><br>[7] U.S. Bureau of Labor Statistics. (2021, September 8). *Projected openings in occupations that require a college degree*.<br><br>[8] Southern New Hampshire University (SNHU). (n.d.). *What Jobs Can You Get with a Bachelor’s Degree? | SNHU*.<br><br>[9] Georgetown University Center on Education and the Workforce. (n.d.). *Learning and Earning by Degrees: Gains in College Degree Attainment*.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0117/case1_1/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Hey everyone, we're here to argue that a four-year degree isn't always the best path for young people today. Our opponents focus on the good stuff, but they miss some big problems with degrees these days. We agree with their definition of pursuing a four-year college degree, meaning attending an accredited institution to obtain a bachelor's degree.  However, we disagree with their judging criteria. Instead of focusing solely on individual growth and societal contributions, we contend that the true measure of benefit lies in the overall value proposition. It's about seeing if the time and money you spend actually pays off in today's job market. This way, we can see the whole picture better.<br><br>We will present three key counterarguments. First, the cost of a four-year degree outweighs its financial benefits for many graduates. Second, online courses and certifications offer more affordable and flexible alternatives. Third, many successful individuals in various fields have not completed four-year degrees, proving alternative paths to success exist.<br><br>So, first, let's talk money. College can be really expensive.  Studies in FREOPP reveal a troubling statistic: 23% of bachelor's degrees offer a negative return on investment [1]. Think about it: one in four grads might be worse off after getting their degree.  This completely undermines the supposed financial advantages. And even when you do make money back, it often isn't much. The rising cost of tuition, as documented by College Values Online, exacerbates this issue [2].  For many young adults, the crushing weight of student loan debt can negate any potential financial gains for years, if not decades. This brings me to our second argument.<br><br>Luckily, there are other great options besides a four-year degree. Online courses and certifications provide more affordable and flexible pathways to career advancement. Think of getting a great education for way less money.  As you'll see, Learn.org provides a clear cost comparison. Online credits cost significantly less than in-person credits, both at public and private institutions [3]. This affordability, coupled with the flexibility of online learning, makes these options a compelling alternative for today’s young adults. They learn when they want, study what they need for their career, and skip the huge tuition bills.  This flexibility and affordability are critical in today's dynamic job market.<br><br>The crucial issue here is not just about affordability, but also changing notions of success. Our final argument challenges the outdated assumption that a four-year degree guarantees success. Countless individuals have achieved remarkable success without a traditional college education.  Think about tech giants like Bill Gates and Steve Jobs, as highlighted by Mashable [4]. They revolutionized the technology landscape after dropping out of college. Similarly, Richard Branson, the founder of Virgin Group, left school at 16, a fact detailed by Develop Good Habits [5]. These stories, and countless others, demonstrate that entrepreneurial spirit, self-education, and real-world experience can be more valuable than a formal degree in today's innovative economy.  They challenge the traditional narrative and offer a different perspective on success.<br><br>In conclusion, while a four-year degree may still hold value for some, it is no longer the only or even the best path to success for all. The high costs, the emergence of affordable alternatives, and the proven success of individuals without degrees all point to a changing landscape.  We urge you to consider these realities and reject the outdated notion that a four-year degree is essential for all young adults in today's society.<br><br>**Reference**<br>[1] Foundation for Research on Equal Opportunity.  *Does College Pay Off? A Comprehensive Return On Investment Analysis*. https://freopp.org/whitepapers/does-college-pay-off-a-comprehensive-return-on-investment-analysis/<br><br>[2] College Values Online. *Rising Costs: Cost Of College Degree Over Time*. https://www.collegevaluesonline.com/costs/degree-over-time/<br><br>[3] Learn.org. *Online College Vs. Traditional Cost Comparison*. https://learn.org/articles/online_college_vs_traditional_college_cost.html<br><br>[4] Mashable. *12 of the most successful entrepreneurs who dropped out of college*. https://mashable.com/article/12-entrepreneurs-who-dropped-out-of-college<br><br>[5] Develop Good Habits. *51 Successful People Who Didn’t Go to or Finish College*. https://www.developgoodhabits.com/successful-people-college/</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Pursuing A Four-Year College Degree Remains Beneficial For Young Adults In Today'S Society) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0117/case1_1/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Look, they've got a point about college costs, but they're missing the big picture – the long-term payoff. They talk about successful dropouts, but that's not the whole story, right?  So, let's tackle their points one by one, okay?<br><br>They say a degree isn't worth the money, pointing to folks who didn't get a good return.  But, you know, studies show that's not typical. Studies from College Possible demonstrate that bachelor's degree holders earn significantly more over their lifetime—a whopping $2.3 million more than high school graduates [1].  The San Francisco Fed adds that the average graduate recoups tuition costs by age 40 [2].  So, while costs are real, the long-term financial benefits are clear.<br><br>They highlight online courses and certifications as affordable alternatives. Sure, online courses teach you stuff, but they don't give you the same solid education and recognition as a degree.  Imagine this: You're trying to get a job, right?  Who gets a closer look, the candidate with a recognized degree or one with various online certifications? A degree holds weight, opening doors to more opportunities.<br><br>They showcase successful dropouts like Bill Gates and Steve Jobs.  These stories are inspiring, yeah, but they're not how things usually go. Data from the Social Security Administration shows a substantial earnings gap. Bachelor’s degree holders earn $900,000 more in median lifetime earnings than high school graduates [3]. These outliers shouldn’t overshadow the statistically proven financial advantage of a degree.<br><br>Okay, so, let's go back over what we've talked about.  We’ve shown that a college education cultivates vital skills. Think about yourself facing a tough problem at work. A meta-analysis in *Review of Educational Research* confirms significant gains in critical thinking during college [4].  These skills are crucial for navigating today's complex world. Furthermore, 82.9% of employers say they want this very skill in new hires [5]. This means your investment in education is an investment in your future career.<br><br>We've also shown that a bachelor's degree expands career opportunities.  The Bureau of Labor Statistics states almost a third of jobs require a four-year degree [6].  This isn't just about numbers, it's about your future. With a degree, you are prepared for the workforce and its evolving demands.  This directly impacts your earning potential, as highlighted by Indeed.com, by opening up more high-level positions [7]. They also stated that without the proper credentials, opportunities are limited, especially higher management roles or those requiring advanced study. This higher earning potential contributes to economic stability and long-term financial security, making a degree a worthwhile investment.<br><br>Finally, we've shown how a college degree enhances economic mobility.  The Georgetown University Center on Education and the Workforce, using robust Census and education data, projects trillions in added earnings for college graduates [8].  This fuels economic growth and benefits society.  They further emphasized education's essential role in social mobility, enhancing one's capacity to improve their economic circumstances. This reinforces the link between a college education and improved financial outcomes, contributing to a stronger economy overall.<br><br>In conclusion, while alternative paths exist, a four-year college degree offers significant advantages in terms of skills development, career prospects, and economic mobility. These long-term benefits outweigh the initial costs, making it a valuable investment for young adults in today’s world.<br><br>**Reference**<br>[1] College Possible. (n.d.). *The Economic Impact of College Degrees*.<br><br>[2] Federal Reserve Bank of San Francisco. (2014, May 5). *Is It Still Worth Going to College?*.<br><br>[3] Social Security Administration. (n.d.). *Research Summary: Education and Lifetime Earnings*.<br><br>[4] Huber, C. R., & Kuncel, N. R. (2016). Does College Teach Critical Thinking? A Meta-Analysis. *Review of Educational Research*, *86*(2), 431–468.<br><br>[5] National Association of Colleges and Employers (NACE). (2021). *Job Outlook 2021*.<br><br>[6] U.S. Bureau of Labor Statistics. (2022). *Occupational Outlook Handbook*.<br><br>[7] Indeed.com. (n.d.). *Average Salary With vs. Without a College Degree | Indeed.com*.<br><br>[8] Georgetown University Center on Education and the Workforce. (n.d.). *Learning and Earning by Degrees: Gains in College Degree Attainment*.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0117/case1_1/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">They mention long-term gains, right? But, they totally forget how expensive a four-year degree is right now. They say degrees guarantee success, but let's be honest, that's just not how it works. Okay, so let's tackle their arguments directly.  They brush off successful dropouts, but those stories are real.  While they cite statistics about higher earnings for graduates, Praxis profiles 125 successful individuals without degrees, across many fields [1]. These aren't just exceptions; they're proof that success doesn't always need a degree. And this leads me to their main point on long-term value.<br><br>They highlight this $2.3 million lifetime earning thing, but honestly, that's missing a lot. Consider this: the FREOPP study reveals a stark reality – nearly a quarter of bachelor's degrees lead to a negative return on investment [2].  And it gets worse: a staggering 43% of both two-year and master's degrees fail to deliver any financial gain.  So, before you bank on that $2.3 million, remember the significant number of graduates struggling to even break even. The rosy picture they paint ignores these stark statistics.<br><br>They're all about critical thinking from college, but where's the proof it helps you get a job?  They cite studies showing cognitive growth during college, but what good is that if graduates can't find suitable jobs? Research indicates a stark reality: 52% of recent college graduates are underemployed [3]. This means their expensive degrees aren't translating into fulfilling careers. It’s not just about learning to think critically; it's about being able to use those skills in a job that values them.  This brings me to their argument about online alternatives.<br><br>They say online courses aren't worth much, but employers are starting to think differently. They talk about prestige, but is a degree you're drowning in debt for really better than skills employers need?  Learn.org's data reveals that online credits cost significantly less – sometimes thousands less per credit – than traditional college, both public and private [4].  This financial advantage lets you invest in yourself without crippling debt.  Furthermore, platforms like Continents.us emphasize the benefits of flexible online learning.  You control your pace and focus on skills directly relevant to the job market, something traditional degrees often miss. And let’s not forget: increasingly, employers prioritize skills over degrees, as Forbes highlights [5].  So, while a degree might look good on paper, demonstrable skills land you the job. This leads us back to the financial reality of college.<br><br>They say you'll earn back tuition by 40, but that ignores the huge problems of high costs and big loans. College Values Online data shows tuition has increased by a whopping 747.8% since 1963 [6]. That's astronomical! This financial strain is made worse by student loan debt, averaging over $37,000 per borrower [7].  This crushing debt burden can delay major life milestones like homeownership, starting a family, or even just saving for retirement.  It's a financial anchor that can weigh you down for decades, severely limiting your financial freedom and future prospects.<br><br>In conclusion, we must acknowledge the shifting landscape of education and the job market. The increasing costs, the emergence of viable alternatives, and the proven success of non-graduates demonstrate that a four-year degree isn't essential for everyone.  We urge you to consider these points and reject the notion that college is the only path to success.<br><br>**Reference**<br>[1] Praxis. *125 Successful People Who Didn’t Graduate College*. https://discoverpraxis.com/blog/13067/125-successful-people-who-didnt-graduate-college<br>[2] Foundation for Research on Equal Opportunity. *Does College Pay Off? A Comprehensive Return On Investment Analysis*. https://freopp.org/whitepapers/does-college-pay-off-a-comprehensive-return-on-investment-analysis/<br>[3] HigherEdJobs. *Underemployment Rate Rises to 52%*. https://www.higheredjobs.com/career-advice/blogs/highered-careers/underemployment-rate-rises-to-52.html<br>[4] Learn.org. *Online College Vs. Traditional Cost Comparison*. https://learn.org/articles/online_college_vs_traditional_college_cost.html<br>[5] Forbes. *Hiring For Skills Over Degrees: A New Job Market Paradigm*. https://www.forbes.com/councils/forbescoachescouncil/2024/12/05/hiring-for-skills-over-degrees-a-new-job-market-paradigm/<br>[6] College Values Online. *Rising Costs: Cost Of College Degree Over Time*. https://www.collegevaluesonline.com/costs/degree-over-time/<br>[7] The College Investor. *Student Loan Debt Statistics [2025 Updates]*. https://thecollegeinvestor.com/student-loan-debt-statistics/</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (Pursuing A Four-Year College Degree Remains Beneficial For Young Adults In Today'S Society) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0117/case1_1/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Look, it all comes down to this: do four-year degrees still matter today?  We firmly believe it does.  They focused on costs, exceptions, not the bigger, long-term picture.  Let’s recap.<br><br>They highlighted the financial burden of college, citing cases of negative return on investment.  But, they ignored strong evidence: grads earn more over a lifetime.  College Possible, San Francisco Fed show it: a degree's a smart investment, better finances long-term [1, 2].  Think about your future; a degree provides financial security and opens doors to higher-paying jobs.<br><br>They showed us successful folks without degrees, right? Saying other paths are just as good.  Sure, many paths to success, but these stories don't change facts: degrees boost earnings, cut joblessness [3].  Consider this: you're applying for a job. A degree gives you an edge, showcasing your commitment to learning and skill development.<br><br>We've shown degrees give you key skills, like thinking critically, stuff employers want.  Research shows: college boosts brainpower, helps your career, problem-solving [4, 5]. Imagine navigating today’s complex challenges. These skills are invaluable, both professionally and personally.<br><br>Finally, we've demonstrated the broader societal benefits of higher education. More educated workers mean better economy, less income inequality [6].  This isn't just about individual gain; it's about building a stronger, more prosperous society for everyone.<br><br>A four-year degree is an investment – in yourself, your future, and our collective future.  Yes, many ways to succeed, but see the lasting value of college in our world today.  It empowers you, expands your opportunities, and contributes to a better future for all.<br><br>**Reference**<br>[1] College Possible. (n.d.). *The Economic Impact of College Degrees*.<br>[2] Federal Reserve Bank of San Francisco. (2014, May 5). *Is It Still Worth Going to College?*.<br>[3] Social Security Administration. (n.d.). *Research Summary: Education and Lifetime Earnings*.<br>[4] Huber, C. R., & Kuncel, N. R. (2016). Does College Teach Critical Thinking? A Meta-Analysis. *Review of Educational Research*, *86*(2), 431–468.<br>[5] National Association of Colleges and Employers (NACE). (2021). *Job Outlook 2021*.<br>[6] Georgetown University Center on Education and the Workforce. (n.d.). *Learning and Earning by Degrees: Gains in College Degree Attainment*.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0117/case1_1/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Look, it all comes down to this: Is a four-year degree the only way to live a good life? They say yes, stuck on these old ideas of success, you know? We say no, embracing a more realistic view of today’s world.  They talk about earning more later, but ignore the crazy debt that grads face.  Average earnings, sure, but what about those 23% who lose money on their degree? [1]  Tuition's insane, right? Up almost 750% since '63. [2]  What about the $37,000 average student loan debt [3]?  This isn't rare; it's real life for so many young people today. They say successful people without degrees are just, like, exceptions. Yet, 125 successful entrepreneurs, innovators, and leaders built empires without stepping foot on a college campus [4].  These are not anomalies; they’re proof that drive and ingenuity can trump a diploma.<br><br>Our opponents emphasize critical thinking skills gained in college. But really, does this lead to career success? I don't see it.  Half of recent grads are underemployed [5]. College just isn't prepping them for jobs today. It's obvious.  We’ve shown that online courses and certifications offer affordable, flexible alternatives, focused on the skills employers actually demand. These programs empower you to learn at your own pace, focus on relevant skills, and avoid mountains of debt. They offer a practical pathway to a fulfilling career, tailored to your needs and aspirations.  So, ask yourselves, what truly matters: a piece of paper or the skills to thrive in the real world?  In our fast-changing world, you know, adapting and real skills really matter.  Don't let outdated notions of success dictate your future.  Embrace the alternatives, invest wisely in your skills, and forge your own path to success.<br><br>**Reference**<br>[1] Foundation for Research on Equal Opportunity. *Does College Pay Off? A Comprehensive Return On Investment Analysis*. https://freopp.org/whitepapers/does-college-pay-off-a-comprehensive-return-on-investment-analysis/<br>[2] College Values Online. *Rising Costs: Cost Of College Degree Over Time*. https://www.collegevaluesonline.com/costs/degree-over-time/<br>[3] The College Investor. *Student Loan Debt Statistics [2025 Updates]*. https://thecollegeinvestor.com/student-loan-debt-statistics/<br>[4] Praxis. *125 Successful People Who Didn’t Graduate College*. https://discoverpraxis.com/blog/13067/125-successful-people-who-didnt-graduate-college<br>[5] HigherEdJobs. *Underemployment Rate Rises to 52%*. https://www.higheredjobs.com/career-advice/blogs/highered-careers/underemployment-rate-rises-to-52.html</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion (Pursuing A Four-Year College Degree Remains Beneficial For Young Adults In Today'S Society) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="1_1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        // Function to handle consent acceptance
+        function acceptConsent() {
+            const checkboxes = document.querySelectorAll('#consentModal input[type="checkbox"]');
+            let allChecked = true;
+
+            checkboxes.forEach(checkbox => {
+                if (!checkbox.checked) {
+                    allChecked = false;
+                }
+            });
+
+            if (allChecked) {
+                $('#consentModal').modal('hide');
+                // Additional logic for acceptance can be added here
+            } else {
+                alert('Please ensure all checkboxes are marked before proceeding.');
+            }
+        }
+
+        // Function to handle consent rejection
+        function rejectConsent() {
+            if (!confirm('You must accept the consent form to proceed. Click "OK" to stay on this page or "Cancel" to be redirected.')) {
+                window.location.href = '/debate-evaluation/thanks'; // Redirect to the "/thanks" page under the baseurl
+            }
+        }
+
+        // Show the consent modal on page load
+        $(document).ready(function() {
+            $('#consentModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            $('#consentModal').modal('show');
+        });
+
+
+    </script>
+
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>
