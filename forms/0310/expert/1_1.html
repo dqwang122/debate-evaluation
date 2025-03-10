@@ -1,0 +1,900 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Fast Fashion (Cheap, Trend-Driven Clothing) Should Be Banned </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert" >
+    <input type="hidden" id="mode" name="version" value="0310" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case1_1/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">We stand firmly in support of the motion: Fast fashion should be banned.<br><br>Let's begin by defining our terms to ensure clarity. Fast fashion, as understood by experts at institutions like the Ellen MacArthur Foundation, signifies the swift production of inexpensive clothing by mass-market retailers, prioritizing trend replication over durability and ethical considerations. A ban, in this context, entails prohibiting the production, distribution, and sale of these items within a specific jurisdiction, while simultaneously incentivizing the development and accessibility of sustainable and ethically produced alternatives.<br><br>Our judging criterion is straightforward: Which side presents the most compelling vision for a sustainable and ethical future for the clothing industry? A future that prioritizes the well-being of both people and the planet, ensuring resources are used responsibly and labor is treated with dignity.<br><br>Now, let’s examine why a ban is not just desirable, but necessary.<br><br>The environmental impact of fast fashion is undeniably catastrophic. The fashion industry is responsible for up to 10% of global carbon emissions . According to a 2022 report by Nikita Shukla, a contributing writer for Earth.org, this is more than the shipping and aviation industries combined . Zhikun Li, Ya Zhou, Minyi Zhao, Dabo Guan, and Zhifeng Yang, academic researchers focusing on life cycle assessment and environmental impacts of fashion consumption, published a study in *Science of The Total Environment* in 2024, revealing that the carbon footprint of fast fashion consumption is eleven times higher than that of traditional fashion consumption . Moreover, the industry's water consumption is equally alarming. Panaprium reported in 2024 that the Ellen MacArthur Foundation estimated that textile and apparel production uses almost 100 billion cubic meters of water annually . It’s a system that creates a constantly overflowing landfill, leaching toxins into our environment. Unlike other industries, fast fashion's business model relies on planned obsolescence, creating a cycle of relentless consumption and waste. Banning fast fashion is not about eliminating clothing; it's about eliminating this particularly destructive model.<br><br>Furthermore, fast fashion thrives on worker exploitation. Garment workers, predominantly women, in developing countries often face incredibly low wages, excessive working hours, and unsafe working conditions. Thegreensideofpink reported in 2024 that Fashion Revolution's Fashion Transparency Index revealed that 99% of major fashion firms continue to underreport the number of workers in their supply chain who are paid a living wage . While some may argue that fast fashion provides economic opportunities, these opportunities come at the cost of basic human rights and dignity. A ban is crucial to disrupt this system and pave the way for fair labor practices, ensuring that workers receive living wages and safe workplaces through a just transition into fair labor.<br><br>Finally, fast fashion fosters a culture of overconsumption. It encourages us to treat clothing as disposable, fueling a never-ending cycle of buying and discarding. Roadrunnerwm reported in 2021 that only 15% of used textiles are theoretically recycled, with up to half of that amount shipped overseas where the materials often end up in landfills anyway due to less advanced waste management systems . This rampant consumerism is unsustainable, and a ban on fast fashion is a necessary step towards a more conscious and responsible approach to clothing consumption.<br><br>Banning fast fashion is not simply about restricting choice; it's about creating a more sustainable, ethical, and equitable world. We urge you to support this motion.<br><br>**Reference**<br>[1] Zhikun Li, Ya Zhou, Minyi Zhao, Dabo Guan, and Zhifeng Yang. "The carbon footprint of fast fashion consumption and mitigation strategies-a case study of jeans." *Science of The Total Environment*, 2024, 924.<br>[2] Alex Assoune. "Fast Fashion Abusive Water Consumption." *Panaprium*, 2024.<br>[3] "Exploitation of human rights in the fashion industry." *Thegreensideofpink*, 2024.<br>[4] "The Environmental Crisis Caused by Textile Waste." *Roadrunnerwm*, 2021.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case1_1/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">We stand firmly against the proposed ban on fast fashion. While we acknowledge the concerns of the proponents regarding sustainability and ethical practices within the industry, we believe a ban is a drastic overreach with significant, negative repercussions. We agree that fast fashion is characterized by quickly produced, inexpensive clothing driven by trends. However, we must also recognize that it serves as a crucial source of affordable and accessible clothing for a large segment of the population, particularly those with limited financial resources. To frame this debate solely around sustainability versus exploitation is a false dilemma. Affordability, consumer choice, and economic opportunity are equally vital considerations that cannot be ignored.<br><br>A ban on fast fashion would disproportionately impact low-income individuals and families. For many, fast fashion isn't about keeping up with fleeting trends; it's about affording essential clothing items. Imagine a single parent needing to clothe growing children or a job seeker requiring appropriate attire for interviews. For these individuals, fast fashion provides a lifeline, offering affordable options that would otherwise be out of reach. To eliminate this option is akin to removing a crucial safety net, further marginalizing those already struggling to make ends meet. As Texas Thrift, a blog about recycling resources, pointed out in 2023, with rising inflation, consumers are spending more on essentials, making affordable clothing like fast fashion a necessity for many.<br><br>Instead of a ban, we advocate for more effective and sustainable solutions. We can foster a culture of conscious consumption through education and incentivize sustainable production through policy. Consider the potential of tax incentives for companies utilizing recycled materials or stricter regulations on textile waste. Moreover, organizations like Fashion Revolution encourage consumers to ask, "Who made my clothes?" and promote efforts to improve labor conditions and environmental sustainability, according to overconsumption.org, a website dedicated to sustainable consumption. These initiatives empower consumers to make informed choices and extend the life of their garments, creating a more circular and responsible fashion ecosystem.<br><br>Finally, we must consider the potential for devastating job losses, particularly in developing nations. Dr. Richard Munang, an Environmental Thought Leader, noted in a 2022 LinkedIn article that the fashion industry in Africa presents an opportunity to create millions of jobs for young people entering the labor market. A ban on fast fashion could cripple these industries, leaving countless individuals without a source of income. While fair labor practices are essential, a ban would devastate entire communities that depend on the fast fashion industry for their livelihoods. A more responsible approach involves collaborating with these industries to improve working conditions and wages, not eliminating their existence entirely.<br><br>Therefore, we maintain that a complete ban on fast fashion is not the answer. It would disproportionately harm low-income individuals, stifle economic opportunity, and ignore more effective, collaborative solutions. We urge you to oppose this motion and consider a more balanced and sustainable path forward that addresses the challenges of the fast fashion industry without sacrificing affordability and economic opportunity.<br><br>**Reference**<br>[1] Texas Thrift. "The Pros And Cons Of Fast Fashion." *Texas Thrift*, 13 Sept. 2023.<br>[2] Munang, Richard. "Fashioning with Waste: Turning Fast Fashion into an Opportunity in Africa." *LinkedIn*, 14 Dec. 2022.<br>[3] "The Hidden Costs of Fast Fashion: Economic & Environmental Impact." *overconsumption.org*, 7 Sept. 2024.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Fast Fashion (Cheap, Trend-Driven Clothing) Should Be Banned) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case1_1/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Our opponents would have you believe that banning fast fashion will trigger an economic catastrophe. But their argument crumbles under scrutiny because it is built on a flawed premise. The claim that a ban disproportionately hurts low-income individuals is a "false dilemma." They present this as a choice between sustainability and affordability, but that's a false choice! We aren't saying people don't deserve access to affordable clothing. We *are* saying that affordability shouldn't be subsidized by human rights violations and environmental devastation. It’s like arguing that people should be allowed to buy lead-painted toys because they are cheaper. Is that small saving worth the known harm?<br><br>Consider this: a single mother working multiple jobs to provide for her family. Does she truly benefit from a system that offers her cheap clothes made by exploited workers in unsafe conditions, further contributing to a polluted environment that disproportionately impacts her community? The answer is no. We can, and we must, create a system where ethical and sustainable clothing is accessible to everyone. This includes a "just transition," with new jobs created in the sustainable fashion industry, and training programs to help those workers transition.<br><br>Our opponents suggest that education, incentives, and regulations are sufficient. But these measures alone are simply not enough to solve the problem. While these are beneficial, they fail to address the fundamental issue: the relentless pursuit of profit that fuels the fast fashion industry. According to the Plastic Collective, a group dedicated to reducing plastic pollution, the fast fashion industry is responsible for approximately 10% of global carbon emissions and 20% of waste water. Regulations are easily circumvented, incentives can be exploited, and education takes time – time we don't have.<br><br>They also argue that a ban will lead to devastating job losses in developing nations. This is a classic “slippery slope” argument. It assumes that banning fast fashion will automatically lead to economic ruin. This is not necessarily true! Moreover, it ignores the reality that the status quo is already causing immense suffering. The current system relies on the exploitation of garment workers, who are often paid poverty wages and subjected to unsafe working conditions. We aren't advocating for overnight devastation. Instead, we envision a just transition, where workers are provided with the skills and resources they need to thrive in a sustainable fashion industry. It's like saying we shouldn't stop using coal because it will hurt coal miners, while ignoring the devastating health and environmental consequences of coal.<br><br>Ultimately, this debate boils down to our values. Do we prioritize short-term profits over the long-term well-being of people and the planet? Do we accept the exploitation of garment workers as an inevitable cost of cheap clothing? According to Oxfam GB, a global movement of millions of people working to end poverty, the world uses an estimated 80 billion pieces of clothing every year, a 400 percent increase from two decades ago. The US Government Accountability Office  also published a report in Vogue Business, a media company, that textile waste volume in the US increased by more than 50 per cent between 2000 and 2018, largely owing to the rise of fast fashion. We believe the answer is a resounding no. Banning fast fashion is not just about restricting choice; it's about creating a more sustainable, ethical, and equitable world.<br><br><br><br>**Reference**<br>[1] Oxfam GB. New Shocking Facts about Fast Fashion. 2021.<br>[2] The Plastic Collective. How Fast Fashion is Bad for the Environment. 2024.<br>[3] Vogue Business. The US finally acknowledges textile waste in new report. 2024.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case1_1/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Our opponents argue that our concerns about harming low-income individuals present a false dilemma, suggesting it's not just about affordability versus sustainability. But let's be clear: are they truly considering the immediate needs of struggling families? Instead of lead paint, let's consider food deserts. Banning fast fashion is like eliminating the only grocery store in a food desert that, while not ideal, provides essential sustenance. By banning access to fast fashion, how will families who rely on its affordability clothe their children?<br><br>They propose a "just transition," but that's a long-term solution that fails to address the immediate needs of those who rely on affordable clothing now. That single mother working multiple jobs needs clothes today, not a promise of a better system in the future. What happens if their transition plan fails? How can we ensure these struggles won't intensify?<br><br>They downplay the potential for job losses, dismissing our concerns as a "slippery slope" fallacy. But the risk is very real. The fast fashion industry provides significant employment opportunities, and a ban would inevitably lead to job losses. According to *Forbes*, Brooke Roberts-Islam, a sustainability writer, notes that fast fashion manufacturing hubs, typically in developing countries, should be focusing on decarbonization investment, not justifying their right to exist in a global market . While we acknowledge the need for ethical labor practices, a ban doesn't guarantee better jobs for those displaced, and it ignores the immediate economic hardship it would create. As reported by *Modern Diplomacy* in 2024, fast fashion allows for lower per-unit costs and globalization, which can improve living circumstances . A better approach involves working with these industries to improve conditions and wages, not eliminating their livelihoods altogether. This should be a just transition that actually works, instead of a theory that looks good on paper but is functionally useless.<br><br>Furthermore, while they attempt to frame our arguments as a false dilemma, they themselves are setting up a straw man. The core of our argument involves considerations beyond sustainability versus exploitation, such as consumer choice and economic opportunity. We also believe that solutions besides a ban should be explored, such as incentives and sustainability programs. For example, tax incentives could be offered to companies using recycled materials, or subsidies could be provided for worker training in ethical production. The ethical considerations are also important, as we do not want to compromise human rights, and the importance of access to affordable clothing cannot be overstated.<br><br>It’s not enough to say that ethical and sustainable clothing *should* be accessible. The reality is that it often isn't. What about rural areas or communities without access to sustainable brands? A complete ban takes away the option that many rely on, making it a decision against the well-being of all. According to *Overconsumption.org* in 2024, the global fast fashion market was valued at approximately $33 billion in 2022 and is projected to reach around $50 billion by 2027 . This exponential growth is primarily driven by consumer behavior that favors disposable trends over timeless quality.<br><br>We are not saying sustainability is unimportant. We want a more sustainable clothing industry. But we believe a ban is a blunt instrument that would cause more harm than good. Let's focus on solutions that address the challenges of fast fashion without sacrificing affordability and economic opportunity.<br><br>**Reference**<br>[1] Brooke Roberts-Islam. Fast Fashion Is The Industry’s Sustainability Scapegoat. Here’s Why That’s Wrong, And What Should Happen. *Forbes*, 2023.<br>[2] Modern Diplomacy. The Economic Implications of Fast Fashion for the Developed and Developing World. *Modern Diplomacy*, 2024.<br>[3] Overconsumption.org. Fast Fashion: The Economics and Environmental Cost of Overconsumption. *Overconsumption.org*, 2024.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (Fast Fashion (Cheap, Trend-Driven Clothing) Should Be Banned) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case1_1/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we’ve established a clear battleground: Is it ethically justifiable to prioritize short-term affordability when that affordability is directly subsidized by environmental destruction and human exploitation? Our opponents have consistently sidestepped this core ethical question, instead offering a false choice between a ban and the immediate needs of low-income families.<br><br>Let's be clear: we are not indifferent to the needs of struggling families. However, their food desert analogy is deeply flawed. Fast fashion isn't sustenance; it's more akin to cheap, processed food laden with hidden costs. It fills an immediate need, yes, but it actively undermines long-term health and well-being, both for the consumer and the planet.<br><br>Our opponents cling to the idea that a ban is a blunt instrument, that incentives and regulations are enough. But history has shown us that these measures alone are insufficient to curb the excesses of an industry driven by relentless profit. We've shown how those measures can be easily circumvented, and that the clock is running.<br><br>Furthermore, they continue to downplay the very real suffering caused by worker exploitation, painting a rosy picture of economic opportunity. But opportunity at what cost? To condemn garment workers to poverty wages and unsafe conditions, all so that we can have cheaper clothes? It's not an ethical equation.<br><br>We stand for a future where fashion is sustainable, ethical, and accessible to all. We believe that a ban on fast fashion is not a denial of opportunity, but a catalyst for innovation, forcing us to create a better system, a more just system. We aren't just proposing a solution, we are building a better world. We urge you to vote in favor of the ban. Thank you.<br><br>**Reference**<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case1_1/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, the central battleground has been the cost of affordability versus ethical production, the core arguments surrounding low-income individuals, sustainability, and job loss. But what they fail to acknowledge is the trade-offs that we have to make in the short-term in order to secure long-term benefits, benefits such as sustainability, industry, and consumer choice. They also frame the debate as an ethical equation, as they frame sustainability as the most important topic.<br><br>Our opponents claim that a ban will somehow magically create a better system. However, history shows that such grand, top-down interventions often backfire, creating unintended consequences that harm the very people they are intended to help. Consider the story of regulations, it is hard to make a system that will magically create and solve world's problems, regulations can be easily circumvented, or incentives exploited. By focusing exclusively on a future utopia, they disregard the real people who would be negatively impacted by a ban. For a low income people who can only afford some clothes in the present in order to survive, it is a matter of survival.<br><br>The heart of this debate, and the question you must ask is, can sustainability be realized without sacrificing access to affordable clothing and industry stability? And we believe that the answer is yes.<br><br>Their vision assumes that there will be workers ready for a "just" transition. But this is simply unrealistic. A better system means we need to work alongside current practices and encourage ethical and sustainable practices.<br><br>We envision a world where they are incentivized to produce more sustainable options. That is why we firmly oppose the ban. Vote against restriction and vote for incentivization!<br><br>**Reference**<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion (Fast Fashion (Cheap, Trend-Driven Clothing) Should Be Banned) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="1_1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,900 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Fast Fashion (Cheap, Trend-Driven Clothing) Should Be Banned </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert" >
+    <input type="hidden" id="mode" name="version" value="0310" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case2_1/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Good morning, everyone. We stand here today to affirm the resolution: self-driving cars will increase safety and should replace human drivers.<br><br>Let's define our terms. By "self-driving cars," we mean Level 5 autonomous vehicles, as defined by the Society of Automotive Engineers – vehicles capable of performing all driving tasks in all conditions without any human intervention. By "replacing human drivers," we envision a future where autonomous vehicles become the dominant mode of personal transportation.<br><br>Our criterion for judging this debate is simple: which transportation system will save more lives and prevent more injuries? Driving, as it stands, presents inherent risks. Self-driving cars offer us the opportunity to significantly mitigate these risks and create a safer transportation system for all. Therefore, we contend that the side that demonstrates the greatest potential for enhancing public safety should prevail.<br><br>Now, let's turn to our arguments.<br><br>Firstly, self-driving cars, programmed to obey traffic laws, will drastically reduce accidents caused by human error. According to a study by the National Highway Traffic Safety Administration , an estimated 94% of motor vehicle accidents are caused by driver error . This includes speeding, drunk driving, and distracted driving. Imagine a future where a mother, exhausted after a long day, is driving home. Instead of the risk of her briefly closing her eyes and causing an accident, her self-driving car safely navigates the road, preventing a potential tragedy. These are the accidents that self-driving cars will help prevent.<br><br>Secondly, autonomous vehicles can communicate with each other and with infrastructure to anticipate and avoid potential hazards, creating a safer traffic ecosystem. Just as a flock of birds communicates and adjusts its flight path in real-time to avoid collisions and maintain optimal formation, self-driving cars can share data about road conditions, traffic flow, and potential hazards, creating a coordinated and efficient transportation network. Alice Salter, writing for EasyMile, a company focused on autonomous driving solutions, notes that even a small percentage of autonomous vehicles on the road, around 5-10%, can significantly improve traffic management in complex environments . This is because autonomous vehicles can subtly moderate the speed of human-driven vehicles, leading to better traffic flow and reduced congestion.<br><br>Thirdly, predictive algorithms in autonomous vehicles assess road conditions and adjust driving styles accordingly, proactively averting human-error collisions. Like a grandmaster in chess, who considers all moves and strategies to make the correct decision for success, autonomous vehicles can anticipate potential hazards and adjust their driving styles proactively to minimize the risk of accidents. Janet Fleetwood, PhD, MPH, in an article published in the *American Journal of Public Health*, highlights the potential of autonomous vehicles to reduce traffic fatalities by up to 90% by eliminating accidents caused by human error . This shift from minimizing post-crash injury to collision prevention represents a significant advance in auto safety.<br><br>We believe that autonomous vehicles have the potential to save countless lives and create a safer, more efficient transportation system for all. We urge you to support policies that incentivize the development and deployment of self-driving car technology, and to advocate for infrastructure investments that will enable their safe and efficient operation. By embracing this technology, we can build a future where our roads are safer for everyone. Thank you.<br><br>**Reference**<br>[1] Statistics. How many accidents are caused by human error - Statistics.<br>[2] Salter, Alice. Will autonomous vehicles put an end to traffic congestion? EasyMile, 2025.<br>[3] Fleetwood, Janet. “Public Health, Ethics, and Autonomous Vehicles.” *American Journal of Public Health*, 2017.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case2_1/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">We're here today to stand against the proposition that self-driving cars will increase safety and should replace human drivers. While we acknowledge the technical advancements in autonomous vehicle technology, we believe the focus on Level 5 autonomy as the *only* future of transportation is a flawed premise. "Replacing" human drivers doesn't have to mean a complete and total elimination of human involvement. There's room for a balanced approach, where technology assists, not supplants, human skill and judgment.<br><br>Now, let's talk about how we should evaluate this debate. Our opponents may argue that the core question is simply which system saves more lives. We contend that this is far too narrow a lens. Societal well-being is a multifaceted concept that extends beyond mere accident statistics. Ethical considerations and economic impacts are equally crucial. Therefore, we propose that the best transportation system is one that maximizes overall societal benefit, encompassing safety, ethical responsibility, and economic stability.<br><br>First, let's address the very real and growing threat of cybersecurity. Self-driving cars are, at their core, sophisticated computer systems on wheels. And as we all know, any computer system is vulnerable to hacking. Imagine the chaos and potential for disaster if a malicious actor were to gain control of a fleet of these vehicles. Attorney Jeffrey R. Harris, writing for *Harris Lowry Manton LLP*, a firm specializing in car accident law, highlights the cybersecurity risks in autonomous vehicles, noting how cybercriminals might remotely attack a self-driving car.  Forcing a vehicle to run a stop sign or miss navigation cues will almost certainly cause a car accident, and serious crashes, resulting in catastrophic injuries for everyone involved. It's akin to hacking into a city's traffic light system, creating gridlock and preventing emergency vehicles from reaching those in need. Are we truly prepared to exchange the known risks of human error for the entirely new and potentially catastrophic risks of cyberterrorism?<br><br>Second, self-driving cars present a host of complex ethical dilemmas. How will these vehicles be programmed to react in unavoidable accident scenarios? Will they prioritize the safety of their occupants above all else, even at the expense of pedestrians? Will algorithms make decisions based on factors like age or perceived social value? As Vamsi Vemoori, co-founder of Epochs and an AI systems expert in EVs & AVs, points out in *Forbes*, self-driving cars will grapple with subtle yet equally important ethical questions.  These aren’t abstract thought experiments; they are real-world ethical challenges that demand careful consideration and public discourse.<br><br>Finally, let's consider the inevitable economic impact. The widespread adoption of self-driving cars will undoubtedly lead to massive job displacement in the transportation industry. According to research by the Upjohn Institute for Employment Research, as reported by *Y-Mobility*, autonomous vehicles could directly eliminate anywhere from 1.3 to 2.3 million jobs over the next thirty years.  These losses will disproportionately affect truck drivers, taxi drivers, bus drivers, and delivery personnel, creating significant economic hardship for countless individuals and families.<br><br>We believe that while self-driving cars may offer certain technological advantages, their potential risks and societal costs far outweigh the claimed benefits. Therefore, we urge you to oppose this resolution and consider a more balanced and human-centered approach to the future of transportation.<br><br>**Reference**<br>[1] Harris, Jeffrey R. "Can Driverless Vehicles Be Hacked?" *Harris Lowry Manton LLP*. September 28, 2022.<br>[2] Vemoori, Vamsi. "Navigating The Ethical Dilemmas Of Self-Driving Cars." *Forbes*. October 23, 2024.<br>[3] "The Impact of Autonomous Vehicles on Job Markets." *Y-Mobility*. October 4, 2023.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Fast Fashion (Cheap, Trend-Driven Clothing) Should Be Banned) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case2_1/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">The opposition raises some interesting points, but we firmly believe their concerns are either overstated or pale in comparison to the overwhelming safety benefits offered by self-driving cars.<br><br>Let's begin with the issue of cybersecurity. The opposition conjures up a terrifying vision of cyberterrorists seizing control of entire fleets of self-driving cars, leading to widespread accidents and catastrophic injuries. With all due respect, this argument commits a classic slippery slope fallacy, assuming that a single security breach will inevitably cascade into utter chaos. The problem of security is prevalent in self-driving car computer systems, but these systems also have various defensive measurements against the problems. Just as banks implement robust security protocols to protect against cyberattacks, self-driving car manufacturers can implement safeguards to prevent hacking. Security analysts can continuously monitor self-driving car operations and discover attacks for defensive purposes. This proactive approach prevents minor hacking incidents from escalating into severe accidents with injuries and fatalities.<br><br>Now, let's address the ethical dilemmas. The opposition questions how self-driving cars will be programmed to react in unavoidable accident scenarios. Will they prioritize the safety of their occupants at the expense of pedestrians? These are valid questions, and thankfully, they are already being addressed. Car manufacturing companies, governments, and AI experts have been working on ethical frameworks for years. The Institute of Electrical and Electronics Engineers , for example, has developed a framework for ethically aligned design of autonomous and intelligent systems, including self-driving cars, which addresses issues such as accountability, transparency, and beneficence. This ethical AI decision-making is being applied to many areas, reducing potential safety risks. Moreover, these concerns, while important, do not outweigh the potential to save countless lives by eliminating human error. According to research, distracted driving, speeding and drunk driving are the major causes of car accidents . *Nature Communications* published a study in 2024 that analyzed thousands of accident reports and found that autonomous vehicles were involved in fewer accidents than human drivers in most scenarios . Human drivers often make split-second decisions in accident scenarios, and these decisions are not always rational or ethical, as human responses might be affected by emotions and stress. Therefore, even if self-driving cars are not perfect, they are still less likely to cause harm than human drivers.<br><br>Finally, the opposition raises the specter of massive job displacement, suggesting that autonomous vehicles could eliminate millions of jobs in the transportation industry. While some jobs will be lost, new jobs will also be created in areas such as software development, data analysis, and autonomous vehicle maintenance. It's a transition, not an apocalypse. Furthermore, the *Logistics Viewpoints* indicates that Vehicle-to-Vehicle  communication systems are revolutionizing road safety, especially in the freight, trucking, and logistics industry . The economic benefits of reduced accidents and increased efficiency could more than offset the costs of job displacement. As people become freed from driving, they can focus on more creative and productive work.<br><br>In conclusion, the concerns raised by the opposition, while not without merit, do not outweigh the potential safety benefits of self-driving cars. We stand by our position that self-driving cars will increase safety and should replace human drivers.<br><br>**Reference**<br>[1] Top 25 Causes of Car Accidents: Exploring the Major Factors.<br>[2] Nature Communications, 2024. A matched case-control analysis of autonomous vs human-driven vehicle accidents.<br>[3] Logistics Viewpoints, 2024. Transforming Road Safety and Efficiency: The Role of V2V Communication in Freight and Trucking.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case2_1/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Our opponents paint a utopian vision of self-driving cars, promising a future free from accidents and traffic jams. But this rosy picture obscures some very real and pressing dangers. They downplay our concerns about cybersecurity, dismissing them as a mere "slippery slope." However, cybersecurity is not a hypothetical threat; it's a clear and present danger that must be addressed. Self-driving cars are essentially computers on wheels, and like any complex, interconnected system, they are vulnerable to malicious attacks. Consider the 2017 WannaCry ransomware attack, which crippled hospitals and businesses worldwide. Are we to believe that car manufacturers are somehow immune to such threats? Ongoing research at the University at Buffalo suggests that malicious actors could cause these systems to fail. Laurie Kaiser, *author_info* at the University at Buffalo, reports that researchers found vulnerabilities that could allow a vehicle to be rendered invisible to AI-powered radar systems . Proactive monitoring is a good start, but it's far from a foolproof solution.<br><br>Furthermore, our opponents claim that the ethical dilemmas of self-driving cars are being adequately addressed. They point to frameworks and guidelines, but ethical AI remains a work in progress, not a finished product. These guidelines are often abstract and fail to provide concrete solutions to the complex moral quandaries that these vehicles will inevitably face. As *Forbes* magazine points out, the ethics of self-driving cars are largely determined by the engineers who program them . This raises the question: who decides which life is more valuable in an unavoidable accident scenario? Our opponents highlight studies showing a potential reduction in accidents, but that's not the whole story. We acknowledge that autonomous vehicles should eliminate accidents caused by drunk driving or distracted driving. However, even a single ethically questionable decision by an autonomous vehicle can erode public trust and inflict far-reaching damage. Human drivers make unethical choices, but we have legal structures to punish and deter such behavior. What similar structures will hold autonomous vehicles accountable for their decisions?<br><br>Finally, let's address the economic elephant in the room: job displacement. Our opponents argue that new jobs will offset the losses, but this is a classic distraction. The real issue isn't just the *number* of jobs, but the *type* and *location*. As Vamsi Vemoori, *author_info* and co-founder of Epochs, points out in *Forbes*, self-driving cars could displace millions of transportation workers . Are displaced truck drivers in rural communities going to magically transform into software engineers in Silicon Valley? It's highly unlikely. While technological progress has historically led to job losses, the scale and speed of displacement caused by self-driving cars is unprecedented. Redwood Logistics reported in 2023 that there are 3.5 million professional truck drivers in America, and upwards of 8.7 million individuals employed in the trucking and freight industry overall . Progress is inevitable, but we cannot make these steps blindly. Technology is not always the solution, and often leads to new problems.<br><br>We are not against safety. However, safety can be improved by enhancing human driving rather than replacing human driving. Replacing human driving is not necessary, and does not maximize overall societal benefit.<br><br>**Reference**<br>[1] Kaiser, Laurie. “Researchers Probe Safety of AI in Driverless Cars, Find Vulnerabilities.” *TechXplore*, September 2, 2024.<br>[2] “5 Moral Dilemmas That Self-Driving Cars Face Today.” *Forbes*.<br>[3] Vemoori, Vamsi. “How To Navigate Job Displacement In The Age Of Self-Driving Cars.” *Forbes*.<br>[4] “How Will Autonomous Trucking Affect the Trucking Industry.” *Redwood Logistics*, 2023.</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (Fast Fashion (Cheap, Trend-Driven Clothing) Should Be Banned) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case2_1/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In closing, let's revisit the heart of this debate: safety. We've demonstrated that self-driving cars offer a clear path to saving lives by mitigating the risks of human error, which accounts for 94% of accidents.<br><br>The opposition clings to concerns about cybersecurity, but like airport security after 9/11, self-driving car systems can evolve to address such threats, with constant monitoring and ethical AI to reduce potential safety risks.<br><br>They also raise ethical dilemmas. But ethical frameworks are already in development, providing far better guidance than human drivers operating under stress or impaired. Their concern over job displacement is, frankly, a red herring. Technology has always disrupted job markets and also created opportunities. The future of driving might be artificial, but as humans freed from driving, we are given a great opportunity to pursue what we are passionate about.<br><br>The core of their argument rests on preserving a "balanced approach," but balance does not mean maintaining a system where human error continues to cause preventable accidents. And even then, a more balanced approach might be achieved by helping car companies accelerate the development of safety measurements and ethical frameworks, instead of stopping their innovative attempts to help the society.<br><br>Our opponents try to scare you with scenarios of hackers seizing control and ethically compromised algorithms making life-or-death decisions. The plain truth is that our roads today are far more dangerous. The choice is clear: stick with the well-documented dangers of human drivers, or embrace a future where technology dramatically reduces accidents, saving countless lives. In conclusion, we respectfully submit that the resolution stands: self-driving cars will increase safety and should replace human drivers.<br><br>**Reference**<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0310/case2_1/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">The crux of this debate boils down to a single question: are we willing to trade the known risks of human drivers for the unknown risks of autonomous vehicles? Our opponents say yes, arguing that self-driving cars offer a clear path to safety. But we contend that this path is riddled with potholes and detours.<br><br>They claim we're fear-mongering about cybersecurity, but we're simply pointing out a fundamental vulnerability. To compare it to airport security is to ignore the reality. In airports, humans can step in when computers fail. In a driverless vehicle, when the code goes, so does our control. The car is then a missile guided by malicious code. This isn't a slippery slope; it's a question of risk management. Are we comfortable entrusting our lives to systems that can be hacked?<br><br>They also downplay the ethical dilemmas, arguing that frameworks are in development. But these frameworks are being designed by humans who inevitably have blind spots. The ethics of programming algorithms to choose between lives in unavoidable accidents is an unsolvable question. Do we value profit above everything? Are algorithms the best ways to avoid moral conflicts? Or is human driving a better option?<br><br>Finally, they dismiss job displacement as a mere "red herring," another form of distraction. But for millions of Americans, their job is not a distraction. This plan puts people in crisis. We’ve argued that job loss is a key consideration. Our opponents have failed to consider this problem, and do not know how to answer it.<br><br>The opposition offers a future of technological certainty, but we argue that this vision is dangerous. Vote against the resolution to stand against the resolution: self-driving cars will increase safety and should replace human drivers.<br><br>**Reference**<br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion (Fast Fashion (Cheap, Trend-Driven Clothing) Should Be Banned) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 3 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_7" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 7: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q7"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 3 / 3 </b></div>
+        </div>
+    
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="2_1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>
