@@ -9,7 +9,7 @@ from jinja2 import FileSystemLoader, Environment
 
 DEFAULT_TEMPLATE_PATH = "./templates"
 DEFAULT_S3_BUCKET = "https://debaterecords.s3.amazonaws.com"
-DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbwI9tybbTbP9ulEbv4iTuqMWbo8-2ppkylHOqH_GBq-TU86A5DGzvPqU3AmaEhNAJo5DQ/exec"
+DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbwW_zshDTc2X6jleDnc781GoLLgWIa1_0KMrWCYM6-X3B3G4tkhNSj5lNGJcgCCBap5Fw/exec"
 SAVE_ROOT = "forms"
 
 QLIST = [
@@ -27,7 +27,7 @@ QLIST = [
 def get_options():
     parser = argparse.ArgumentParser(description="Create the debate evaluation form.")
     parser.add_argument("--mode", default="pair", choices=["scalar", "pair"], help="The type of form to create.")
-    parser.add_argument("--target", default="common", choices=["common", "expert", "admin"], help="The type of audience")
+    parser.add_argument("--target", default="common", choices=["common", "expert", "admin", "comparison"], help="The type of audience")
     parser.add_argument("--version", default="1007", help="The version of the form.")
     args = parser.parse_args()
     return args
@@ -39,17 +39,31 @@ def load_case(version, mode):
     cases = info[version]
     cases = [case for case in cases if mode in case["mode"]]
     for c in cases:
-        with open(c["transcript"]) as f:
-            data = json.load(f)
+        if isinstance(c["transcript"], str):
+            c["transcript"] = [c["transcript"]]
+
+        data_list = []
+        for t in c["transcript"]:
+            with open(t) as f:
+                data = json.load(f)
+                data_list.append(data)
+        
+        c["transcript"] = {}
+        for stage in ["opening", "rebuttal", "closing"]:
+            c["transcript"][stage] = {"for": [], "against": []}
+
+        for data in data_list:
             process = data["debate_process"]
-            c["transcript"] = {}
-            for stage in ["opening", "rebuttal", "closing"]:
-                c["transcript"][stage] = {}
             for p in process:
                 stage = p["stage"]
                 side = p["side"]
-                text = p["content"]
-                c["transcript"][stage][side] = text.replace("\n", "<br>")
+                text = p["content"].replace("\n", "<br>").replace("\\", "")
+                if len(data_list) == 1:
+                    c["transcript"][stage][side] = text
+                else:
+                    c["transcript"][stage][side].append(text)
+        
+
     return cases
     
 
@@ -80,8 +94,11 @@ def create_pairwise_comparison_form(version, id, motion, questions, addition_que
         template = env.get_template("common.html.jinja2")
     elif target == "admin":
         template = env.get_template("admin.html.jinja2")
+    elif target == "comparison":
+        template = env.get_template("comparison.html.jinja2")
     else:
         raise ValueError(f"Unknown target: {target}")
+
 
     html = template.render(
         page_title="Debate Pairwise Comparison",
@@ -122,30 +139,40 @@ def main():
         qid += 1
 
         for stage in ["opening", "rebuttal", "closing"]:
-            questions.append({
-                "title": f"Question {qid}: {stage.capitalize()} Stage",
-                "audio_paths": [
-                    ["For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_for.mp3"],
-                    ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against.mp3"],
-                ],
-                "description": f"After listening to the two statements in {stage.capitalize()} stage, please choose your attitude towards the given motion ({motion}) now",
-                "transcript": [
-                    c["transcript"][stage]["for"],
-                    c["transcript"][stage]["against"]
-                ],
-                "name": f"q{qid}",
-                "stage": stage.capitalize()
-            })
+            if args.target == "comparison":
+                questions.append({
+                    "title": f"Question {qid}: {stage.capitalize()} Stage",
+                    "audio_paths": [
+                        ["For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_for_a.mp3", "For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_for_b.mp3"],
+                        ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against_a.mp3", "Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against_b.mp3"],
+                    ],
+                    "description": f"After listening to the two statements in {stage.capitalize()} stage, please choose your attitude towards the given motion ({motion}) now",
+                    "transcript": [
+                        c["transcript"][stage]["for"], # for pairs
+                        c["transcript"][stage]["against"] # against pairs
+                    ],
+                    "name": f"q{qid}",
+                    "stage": stage.capitalize()
+                })
+                # print(questions[-1]["audio_paths"])
+            else:
+                questions.append({
+                    "title": f"Question {qid}: {stage.capitalize()} Stage",
+                    "audio_paths": [
+                        ["For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_for.mp3"],
+                        ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against.mp3"],
+                    ],
+                    "description": f"After listening to the two statements in {stage.capitalize()} stage, please choose your attitude towards the given motion ({motion}) now",
+                    "transcript": [
+                        c["transcript"][stage]["for"],
+                        c["transcript"][stage]["against"]
+                    ],
+                    "name": f"q{qid}",
+                    "stage": stage.capitalize()
+                })
             qid += 1
 
-        # addition_questions = [
-        #     {
-        #         "title": f"Question {qid}: Post-Vote Stage",
-        #         "description": f"Please select the side you support after the debate.",
-        #         "name": f"q{qid}",
-        #         "type": "checkbox",
-        #     },]
-        # qid += 1
+
         addition_questions = []
         for q in QLIST:
             addition_questions.append({
