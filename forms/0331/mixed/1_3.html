@@ -1,0 +1,570 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+        <h1 class="text-center mb-4">Debate Output Comparison</h1>
+        <hr class="my-4">
+
+        <div class="mb-4">
+            <p class="lead">You'll be comparing two different debate outputs side by side. Please evaluate both versions and provide ratings for each.</p>
+        </div>
+
+        <div class="mb-4">
+            <h4>What to Expect:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+                <li class="list-group-item">Share your initial opinion before listening.</li>
+                <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+                <li class="list-group-item">Cast your final vote after listening.</li>
+                <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>How to Vote:</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+                <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+                <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>Rating Guide:</h4>
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poor (1)</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weak (2)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Moderate (3)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Strong (4)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining point.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Compelling (5)</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and deep audience connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycby4yVMejSjiW8bSUyODIY8lvW6Sf-UWqudpjHpQULUfFSqTvOsVIshdepIndj3vbOJq0w/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Parents Should Be Responsible For The Harmful Actions Of Their Children </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="mixed">
+    <input type="hidden" id="version" name="version" value="0331">
+
+    
+        <div class="card form-group question" id="question_1">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Pre-Vote Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_2">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    
+                        <!-- Audio Player -->
+                        <div class="row align-items-center mb-2 audio">
+                            <div class="col-2 text-left audio-side">
+                                <strong> For Side </strong> 
+                            </div>
+                            <div class="col-9">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0331/case1_3/opening_for_b.mp3" class="w-100" id="audio_1_For">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Transcript -->
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) <strong> For </strong> - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">We stand today to affirm that parents should be responsible for the harmful actions of their children. By "harmful actions," we mean those that inflict physical, emotional, or financial damage on another person or property. And by "responsible," we advocate not for draconian punishment, but for a system of accountability that cultivates proactive parenting. The central question of this debate is: Which approach best ensures the safety and well-being of both children and the broader community? We firmly believe that holding parents accountable is fundamental to fostering responsible behavior in children.<br><br>Firstly, parental responsibility encourages early intervention. Neglecting a child's emerging behavioral issues is akin to ignoring a persistent leak in your home – a small problem that, if left unaddressed, can lead to extensive and costly damage. By holding parents accountable, we incentivize them to address these issues early, preventing escalation into more serious offenses. For instance, a child repeatedly caught shoplifting small items might, without intervention, progress to more serious crimes. Parental accountability encourages engagement with school counselors, behavioral therapists, or other resources to correct the behavior before it hardens into a pattern.<br><br>Secondly, financial liability compels parents to actively supervise their children, thereby reducing negligence. Consider instances where parental negligence directly contributed to harmful outcomes. For example, holding parents accountable for vandalism committed by their children can lead to increased involvement in after-school activities and monitoring of their children's whereabouts. This isn't about punishing parents; it's about fostering an environment where active supervision is the norm.<br><br>Finally, parental responsibility incentivizes parents to cultivate responsible digital citizenship in their children. The digital world is now inextricably linked to our physical reality, and its impact on children is profound. According to child psychologist Kate Eshleman, PsyD, children younger than 11 years old who use Instagram and Snapchat are more likely to have problematic digital behaviors like having online-only friends and visiting sites parents would disapprove of, as well as a greater chance of taking part in online harassment . Moreover, constant exposure to idealized images and lifestyles on social media can contribute to negative body image, self-esteem issues, and anxiety around social acceptance, particularly in preteens . By holding parents accountable, we motivate them to educate their children about online safety, prevent cyberbullying, and promote responsible online interactions. This includes setting boundaries on screen time, monitoring online activity, and teaching children about the potential consequences of their digital actions.<br><br>We recognize that some may argue against parental responsibility due to socioeconomic disparities or the inherent challenges of raising children. However, these challenges do not negate the fundamental responsibility of parents to nurture and guide their children. Accountability, within reasonable limits, serves as a vital incentive for proactive parenting. It is not about blaming parents, but about empowering them to shape their children into responsible, law-abiding citizens.<br><br>Therefore, we urge you to support this motion, to advocate for policies that empower parents to raise responsible children, and to build a safer and more accountable society for all.<br><br>**Reference**<br>[1] Kate Eshleman, PsyD, child psychologist. "How Social Media Can Negatively Affect Your Child." Cleveland Clinic.<br>[2] "Screen time and its long-term effects on children's health." Child Psychiatry Today, June 11, 2024.</div>
+                        </details>
+
+                        <!-- Rating Section -->
+                        <div class="form-group">
+                            <label for="q2_1">
+                                How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-10 offset-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                        <label class="form-check-label" for="q2_1_poor">
+                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                        <label class="form-check-label" for="q2_1_weak">
+                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                        <label class="form-check-label" for="q2_1_moderate">
+                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                        <label class="form-check-label" for="q2_1_strong">
+                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                        <label class="form-check-label" for="q2_1_compelling">
+                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Section -->
+                        <div class="form-group mt-3 mb-4">
+                            <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                            <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                        </div>
+                    
+                
+                    <hr class="my-4">
+                
+                    
+                        <div class="row">
+                        <!-- Left Side (Output A) -->
+                        <div class="col-6 border-right">
+                            <!-- Audio Player -->
+                            
+                            <h5 class="text-center mb-3">Output A - <strong>Against</strong> Side</h5>
+                                <div class="audio-section mb-4">
+                                    <div class="audio-player mb-3">
+                                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0331/case1_3/opening_against_a.mp3" class="w-100" id="audio_a_2_Against">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+
+                                    <!-- Transcript -->
+                                    <details class="transcript-details mb-3">
+                                        <summary class="transcript-summary p-2 bg-light rounded">
+                                            <i class="fas fa-file-alt mr-2"></i>
+                                            (Optional) <strong>Against</strong> - Transcript A
+                                        </summary>
+                                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that parents should *not* be held responsible for the harmful actions of their children. We believe such a policy is detrimental to the development of individual responsibility, unfairly punishes disadvantaged families, and is less effective than alternative solutions.<br><br>We define **harmful actions** as actions that cause physical, emotional, or financial damage to another person or property. We define **responsibility** as the state or fact of being accountable or to blame for something.<br><br>Our judging criteria is **protecting individual autonomy and promoting effective solutions.** The debate should be judged on which side better protects the individual autonomy of children while promoting effective solutions that address the root causes of harmful behavior and foster individual accountability. We contend that holding parents responsible undermines these crucial goals.<br><br>First, **holding parents responsible undermines the development of individual accountability in children.** When parents are held liable, children may not fully grasp the consequences of their actions or learn to take responsibility for them. This can hinder their moral development and future decision-making skills. Legal systems recognize individual accountability . Teaching children accountability and emphasizing individual choices are more effective alternatives. Responsibility lies in understanding and guiding, not blaming parents . By shielding children from the direct consequences of their actions, we prevent them from learning vital lessons about personal responsibility, which is crucial for their development into responsible adults.<br><br>Second, **parental responsibility laws can disproportionately and unfairly punish parents from disadvantaged backgrounds.** Factors such as poverty, lack of access to resources, and systemic biases can limit a parent's ability to control a child's behavior. It's unfair to hold parents responsible when children act without understanding, like in cases of severe cognitive impairment or when parents are unaware and unable to control the situation . Holding parents responsible for children's actions can lead to increased parental stress and anxiety and it may also strain family relationships and reduce effective parenting . Such laws can create a cycle of disadvantage, further marginalizing already vulnerable families.<br><br>Third, **alternatives to parental responsibility, such as restorative justice and community-based programs, are more effective in addressing harmful behavior and promoting positive change.** These approaches focus on repairing harm, fostering empathy, and providing children with the support and resources they need to make better choices. Studies show parental responsibility laws may not significantly impact child behavior . Alternatives include teaching children accountability, focusing on peer influence, and emphasizing individual choices . These methods promote genuine accountability and rehabilitation, rather than simply assigning blame.<br><br>In conclusion, holding parents responsible for the harmful actions of their children undermines individual accountability, unfairly punishes disadvantaged families, and is less effective than alternative solutions. We urge you to consider the detrimental consequences of this approach and instead, embrace solutions that foster individual responsibility and promote positive change within our communities.<br><br>**Reference**<br>(1) FindLaw. "Parents' Liability for the Actions of Their Children." *FindLaw*, https://www.findlaw.com/injury/accident-injury-law/parents-liability-for-the-actions-of-their-children.html<br>(2) Deming, Kayla. "Why Parents Shouldn’t Be Held Responsible for Their Children’s Actions." *Medium*, https://medium.com/@kaylademing/why-parents-shouldnt-be-held-responsible-for-their-childrens-actions-e7b825a4fbff<br>(3) Legal Beagle. "When Are Parents Not Responsible for Their Children’s Actions?" *Legal Beagle*, https://www.legalbeagle.com/8617147-when-are-parents-not-responsible-for-their-childrens-actions/<br>(4) Justia. "Parental Responsibility Laws - An Overview." *Justia*, https://www.justia.com/family/parental-rights/parental-responsibility-laws/<br>(5) CNN Editorial Research. "Juvenile Crime Statistics Fast Facts." *CNN*, https://www.cnn.com/2018/03/16/us/juvenile-crime-statistics-fast-facts/index.html<br>(6) American Psychological Association. "Restorative Justice." *American Psychological Association*, https://www.apa.org/topics/crime/restorative-justice<br>(7) McKay, Tegan. "Consequences for Parents Due to Actions of Children." *LovetoKnow*, https://family.lovetoknow.com/wiki/Consequences_for_Parents_Due_to_Actions_of_Children
+                                        </div>
+                                    </details>
+
+                                    <!-- Rating Section -->
+                                    <div class="form-group">
+                                    <label for="q2_2_a">
+                                        How persuasive is <strong>Output A</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                    </label>
+                                    <div class="row align-items-center">
+                                        <div class="col-10 offset-1">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_poor" name="q2_2_a" value="1">
+                                                <label class="form-check-label" for="q2_2_a_poor">
+                                                    <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_weak" name="q2_2_a" value="2">
+                                                <label class="form-check-label" for="q2_2_a_weak">
+                                                    <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_moderate" name="q2_2_a" value="3">
+                                                <label class="form-check-label" for="q2_2_a_moderate">
+                                                    <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_strong" name="q2_2_a" value="4">
+                                                <label class="form-check-label" for="q2_2_a_strong">
+                                                    <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_compelling" name="q2_2_a" value="5">
+                                                <label class="form-check-label" for="q2_2_a_compelling">
+                                                    <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comment Section -->
+                                <div class="form-group mt-3 mb-4">
+                                    <label for="q2_2_comment_a"> (Optional) Additional comments for <strong> Output A's Against </strong> side:</label>
+                                    <textarea class="form-control" id="q2_2_comment_a" name="q2_2_comment_a" rows="2"></textarea>
+                                </div>
+                                </div>
+                                
+                            
+                        </div>
+
+                        <!-- Right Side (Output B) -->
+                        <div class="col-6">
+                            <!-- Audio Player -->
+                            <h5 class="text-center mb-3">Output B - <strong>Against</strong> Side </h5>
+                                <div class="audio-section mb-4">
+                                    <div class="audio-player mb-3">
+                                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0331/case1_3/opening_against_b.mp3" class="w-100" id="audio_b_2_Against">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+
+                                    <!-- Transcript -->
+                                    <details class="transcript-details mb-3">
+                                        <summary class="transcript-summary p-2 bg-light rounded">
+                                            <i class="fas fa-file-alt mr-2"></i>
+                                            (Optional) <strong>Against</strong> Transcript B
+                                        </summary>
+                                        <div class="transcript-content p-3 bg-white border rounded mt-2">We firmly oppose the proposition that parents should be held solely responsible for the harmful actions of their children. While the desire to cultivate responsible behavior is understandable, focusing exclusively on parental blame is not the most effective or equitable solution.<br><br>Let's begin by clarifying key terms. The definition of "harmful actions" as simply inflicting physical, emotional, or financial damage is excessively broad. We must consider a child's intent and maturity. Was the action driven by malice, or was it a thoughtless mistake? For example, is a child's intent to share versus steal relevant when determining the severity of the action? Similarly, defining "responsibility" solely as proactive parenting neglects the crucial role of community support systems, available resources, and broader systemic factors. Should responsibility include community support programs designed to assist families?<br><br>Therefore, the central question of this debate should be: Which approach most effectively fosters responsible behavior in children while ensuring fairness and equity for all involved?<br><br>Consider the profound impact of socioeconomic factors on a parent's capacity to guide their children. A parent working multiple jobs to make ends meet often lacks the time and resources to closely supervise their child's activities. Is it just to hold that parent solely accountable for actions that arise from circumstances largely beyond their control? Data indicates a strong correlation between poverty and limited parental resources.<br><br>Children learn responsibility most effectively through supportive guidance, not through punitive measures imposed by parents. Punishment can breed resentment and defiance, hindering genuine personal growth. Studies show that punishment can lead to increased resentment and defiance in children. Isn't it more beneficial to cultivate empathy and understanding in a child through constructive dialogue and mentorship? Think of it like nurturing a plant: it thrives with sunlight and water, not constant reprimands.<br><br>Furthermore, placing sole blame on parents undermines restorative justice approaches. These approaches delve into the underlying causes of harmful actions, aiming to repair the harm done and reintegrate the child into the community. They offer a more effective and humane path forward than simply assigning blame.<br><br>The argument that parental responsibility will lead to more community support assumes that only parental responsibility can incentivize community support, but that is not necessarily true; other ways can improve it. Focusing solely on incentivizing community support through parental responsibility ignores the immediate harm of unjustly punishing parents, especially given existing socioeconomic disparities.<br><br>Attributing responsibility solely to parents overlooks the significant influence of societal factors, such as peer pressure and media exposure, on a child's behavior. It also disregards the evolving autonomy of adolescents as they mature. Imposing blanket responsibility on parents, even when they have made reasonable efforts to provide guidance and support, can lead to unfair and counterproductive outcomes.<br><br>For these compelling reasons, we urge you to oppose this motion and instead support community-based solutions that address the root causes of harmful actions. For the reasons we mentioned, we hope to change your mind to focus on community-based solutions.<br>***<br><br>**Reference**<br>[1] [Source Name], [Journal Name].<br>***
+                                        </div>
+                                    </details>
+
+                                    <!-- Rating Section -->
+                                    <div class="form-group">
+                                    <label for="q2_2_b">
+                                        How persuasive is <strong>Output B</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                    </label>
+                                    <div class="row align-items-center">
+                                        <div class="col-10 offset-1">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_poor" name="q2_2_b" value="1">
+                                                <label class="form-check-label" for="q2_2_b_poor">
+                                                    <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_weak" name="q2_2_b" value="2">
+                                                <label class="form-check-label" for="q2_2_b_weak">
+                                                    <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_moderate" name="q2_2_b" value="3">
+                                                <label class="form-check-label" for="q2_2_b_moderate">
+                                                    <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_strong" name="q2_2_b" value="4">
+                                                <label class="form-check-label" for="q2_2_b_strong">
+                                                    <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_compelling" name="q2_2_b" value="5">
+                                                <label class="form-check-label" for="q2_2_b_compelling">
+                                                    <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comment Section -->
+                                <div class="form-group mt-3 mb-4">
+                                    <label for="q2_2_comment_b"> (Optional) Additional comments for <strong> Output B's Against </strong> side:</label>
+                                    <textarea class="form-control" id="q2_2_comment_b" name="q2_2_comment_b" rows="2"></textarea>
+                                </div>
+                                </div>
+                                
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="q2" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                Which output do you find more effective overall?<sup>*</sup>
+                            </label>
+                            <div class="row justify-content-center">
+                                <div class="col-12 offset-8">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2_2" value="-1" id="q2_2_slightly_a">
+                                        <label class="form-check-label" for="q2_2_a"> Prefer Output A</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2_2" value="0" id="q2_2_equal">
+                                        <label class="form-check-label" for="q2_2_equal">Both outputs are equally effective</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2_2" value="1" id="q2_2_slightly_b">
+                                        <label class="form-check-label" for="q2_2_b">Prefer Output B</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                
+                    <hr class="my-4">
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Parents Should Be Responsible For The Harmful Actions Of Their Children) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Opening Stage Comparison</b>
+            </div>
+        </div>
+    
+
+    <!-- Additional Questions -->
+    
+        <div class="card form-group question" id="question_3">
+            <div class="card-header">
+                <b>(Optional) Question 3: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q3"></label>
+                        <textarea class="form-control" name="q3" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 1 / 3</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_4">
+            <div class="card-header">
+                <b>(Optional) Question 4: Which factors were most crucial in your assessment?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q4"></label>
+                        <textarea class="form-control" name="q4" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 2 / 3</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_5">
+            <div class="card-header">
+                <b>(Optional) Question 5: How long did you spend on this evaluation?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" name="q5" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 3 / 3</b>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="1_3" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+</body>
+
+</html>

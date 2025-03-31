@@ -68,15 +68,15 @@
 {% endblock %}
 
 {% block form_questions %}
-    <input type="hidden" id="mode" name="mode" value="comparison">
+    <input type="hidden" id="mode" name="mode" value="comparison2">
     <input type="hidden" id="version" name="version" value="{{ version }}">
 
     {% for question in questions %}
         <div class="card form-group question" id="question_{{ loop.index }}">
             <div class="card-header"><b>{{ question.title }}</b></div>
             <div class="card-body">
-                <div class="row">
                 {% for audio_path in question.audio_paths %}
+                <div class="row">
                     <!-- Left Side (Output A) -->
                     <div class="col-6 border-right">
                         <!-- Audio Player -->
@@ -167,7 +167,7 @@
                                 <details class="transcript-details mb-3">
                                     <summary class="transcript-summary p-2 bg-light rounded">
                                         <i class="fas fa-file-alt mr-2"></i>
-                                        (Optional) Transcript B
+                                        (Optional) <strong>{{ audio_path[2] }}</strong> Transcript B
                                     </summary>
                                     <div class="transcript-content p-3 bg-white border rounded mt-2">{{ question.transcript[loop.index0][1] }}
                                     </div>
@@ -224,11 +224,36 @@
                                 <hr class="my-3">
                             {% endif %}
                     </div>
-                {% endfor %}
                 </div>
-                
+
+                <div class="row">
+                <div class="form-group">
+                    <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                        Which output do you find more effective overall?<sup>*</sup>
+                    </label>
+                    <div class="row justify-content-center">
+                        <div class="col-12 offset-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="-1" id="{{ question.name }}_{{ loop.index }}_slightly_a">
+                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a"> Prefer Output A</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="0" id="{{ question.name }}_{{ loop.index }}_equal">
+                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_equal">Both outputs are equally effective</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="1" id="{{ question.name }}_{{ loop.index }}_slightly_b">
+                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b">Prefer Output B</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
 
                 <hr class="my-4">
+                {% endfor %}
+
+                
 
                 <!-- Overall Comparison Question -->
                 {% if not question.audio_paths %}
@@ -257,28 +282,6 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" id="{{ question.name }}_for_2" name="{{ question.name }}" value="2">
                                     <label class="form-check-label" for="{{ question.name }}_for">Highly Support</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="form-group mt-4">
-                        <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;">
-                            Which output do you find more effective overall?<sup>*</sup>
-                        </label>
-                        <div class="row justify-content-center">
-                            <div class="col-8">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="{{ question.name }}" value="-1" id="{{ question.name }}_slightly_a">
-                                    <label class="form-check-label" for="{{ question.name }}_a"> Prefer Output A</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="{{ question.name }}" value="0" id="{{ question.name }}_equal">
-                                    <label class="form-check-label" for="{{ question.name }}_equal">Both outputs are equally effective</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="{{ question.name }}" value="1" id="{{ question.name }}_slightly_b">
-                                    <label class="form-check-label" for="{{ question.name }}_b">Prefer Output B</label>
                                 </div>
                             </div>
                         </div>

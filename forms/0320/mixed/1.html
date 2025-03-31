@@ -1,0 +1,942 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+        <h1 class="text-center mb-4">Debate Output Comparison</h1>
+        <hr class="my-4">
+
+        <div class="mb-4">
+            <p class="lead">You'll be comparing two different debate outputs side by side. Please evaluate both versions and provide ratings for each.</p>
+        </div>
+
+        <div class="mb-4">
+            <h4>What to Expect:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+                <li class="list-group-item">Share your initial opinion before listening.</li>
+                <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+                <li class="list-group-item">Cast your final vote after listening.</li>
+                <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>How to Vote:</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+                <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+                <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>Rating Guide:</h4>
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poor (1)</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weak (2)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Moderate (3)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Strong (4)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining point.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Compelling (5)</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and deep audience connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycby4yVMejSjiW8bSUyODIY8lvW6Sf-UWqudpjHpQULUfFSqTvOsVIshdepIndj3vbOJq0w/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Genetic Enhancement Of Human Embryos Should Be Permitted </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="mixed">
+    <input type="hidden" id="version" name="version" value="0320">
+
+    
+        <div class="card form-group question" id="question_1">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Pre-Vote Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_2">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    
+                        <!-- Audio Player -->
+                        <div class="row align-items-center mb-2 audio">
+                            <div class="col-2 text-left audio-side">
+                                <strong> For Side </strong> 
+                            </div>
+                            <div class="col-9">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0320/case1/opening_for_b.mp3" class="w-100" id="audio_1_For">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Transcript -->
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) <strong> For </strong> - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">Honorable judges, esteemed opponents, and members of the audience, we stand before you today to advocate for a future where science empowers us to build healthier, brighter lives. We firmly believe that genetic enhancement of human embryos should be permitted. To be precise, we define "genetic enhancement" as the modification of a human embryo's genome to improve traits beyond correcting existing diseases. It’s about optimizing potential, not just fixing what’s broken.<br><br>The core question before us is: which path demonstrably leads to the greatest overall well-being for humanity, while simultaneously minimizing suffering? Therefore, we propose a utilitarian framework as the judging criterion. The side that convincingly demonstrates the greatest potential to maximize well-being and minimize suffering should prevail.<br><br>Genetic enhancement offers a tangible opportunity to eradicate inherited diseases. Consider a family burdened by the knowledge that they carry the gene for cystic fibrosis. They face a harrowing choice. However, with genetic enhancement, they could ensure their child is born free from this debilitating disease, saving them from years of suffering and extending their lifespan. Permitting genetic enhancement allows us to eliminate devastating inherited diseases, ensuring healthier lives for future generations. This benefit ethically outweighs concerns about embryo manipulation, presenting a moral imperative to act.<br><br>We acknowledge the ethical considerations surrounding this technology. The central question is not whether we *can* enhance, but *how* we responsibly implement it. Think of genetic enhancement like driving a car. Without rules and training, a car can be dangerous. However, with proper regulation, it provides immense benefits. Similarly, responsible genetic enhancement, guided by stringent ethical guidelines and robust regulatory oversight, can unlock human potential while effectively minimizing potential risks. This might include mandatory ethics review boards for all genetic enhancement procedures, or strict limits on the types of traits that can be enhanced. It is possible to create guidelines and regulations before non-medically indicated use of genetic enhancement .<br><br>Furthermore, genetic enhancement presents a unique opportunity to enhance cognitive abilities. Throughout history, societies have relied on education to improve human intellect. However, what if we could augment our cognitive potential from the start? Imagine scientists with enhanced problem-solving skills developing new renewable energy technologies, or creating more effective algorithms for predicting and mitigating natural disasters. Moreover, enhanced cognition could contribute to solving problems that cause widespread suffering, such as developing more effective treatments for mental illness. The limitations of the human condition can be physical and/or mental/cognitive . Genetic enhancement uniquely positions us to boost cognitive functions, potentially fostering groundbreaking solutions to pressing global issues like climate change, surpassing the capabilities of current educational models.<br><br>For these compelling reasons, we firmly believe that genetic enhancement of human embryos should be permitted. There are active clinical trials approaching a variety of inherited and acquired disorders of different organ systems .<br><br>**Reference**<br>[1] Rubeis, Giovanni, and Florian Steger. “Risks and Benefits of Human Germline Genome Editing: An Ethical Analysis.” *Asian Bioeth Rev* 10, no. 2 (2018): 133–41.<br>[2] Almeida, Mara, and Rui Diogo. “Human Enhancement: Genetic Engineering and Evolution.” *Evolution, Medicine, and Public Health* 2019, no. 1 (2019): 169–77.<br>[3] Kohn, Donald B., Yvonne Y. Chen, and Melissa J. Spencer. “Successes and Challenges in Clinical Gene Therapy.” *Gene Therapy* 30 (2023): 738–46.</div>
+                        </details>
+
+                        <!-- Rating Section -->
+                        <div class="form-group">
+                            <label for="q2_1">
+                                How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-10 offset-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                        <label class="form-check-label" for="q2_1_poor">
+                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                        <label class="form-check-label" for="q2_1_weak">
+                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                        <label class="form-check-label" for="q2_1_moderate">
+                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                        <label class="form-check-label" for="q2_1_strong">
+                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                        <label class="form-check-label" for="q2_1_compelling">
+                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Section -->
+                        <div class="form-group mt-3 mb-4">
+                            <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                            <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                        </div>
+                    
+                
+                <hr class="my-4">
+                
+                    
+                        <!-- Audio Player -->
+                        <div class="row align-items-center mb-2 audio">
+                            <div class="col-2 text-left audio-side">
+                                <strong> Against Side </strong> 
+                            </div>
+                            <div class="col-9">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0320/case1/opening_against_a.mp3" class="w-100" id="audio_2_Against">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Transcript -->
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) <strong> Against </strong> - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that genetic enhancement of human embryos should *not* be permitted. We define **genetic enhancement** as altering the genetic makeup of a human embryo with the intention of improving traits beyond normal health, function, or appearance, going beyond treating or preventing disease, aiming for enhancements like increased intelligence or athletic ability. **Permitted** means officially allowed or authorized; not forbidden by law or regulation.<br><br>Our judging criteria is based on **Utilitarianism**: The permissibility of genetic enhancement should be judged based on whether it maximizes overall well-being and minimizes harm to society as a whole, considering both present and future generations. We will demonstrate that the potential harms of genetic enhancement significantly outweigh any potential benefits.<br><br>First, the *unintended consequences and off-target effects* of genetic modification technologies pose significant risks. While CRISPR technology shows promise, it is not without flaws. Studies show that CRISPR-Cas9 genome editing can lead to unintended mutations at the targeted section of DNA in early human embryos . These off-target mutations and unintended genetic changes could have unpredictable and potentially harmful consequences for the individual and, critically, for future generations . Given that CRISPR is highly efficient in the cells of human embryos , the risk of unintended mutations remains a grave concern. The long-term health implications of these unintended modifications are unknown, and some could be devastating. Thus, until we have a complete understanding of the tech, we can not move forward with it.<br><br>Second, permitting genetic enhancement will inevitably *exacerbate social inequality*. If genetic enhancement becomes available, it is highly likely to be accessible only to the wealthy . Molecular biologist Lee Silver fears that disparate access to genetic technologies will drive a wedge between enhanced and un-enhanced classes of people . The cost of these technologies will create a genetically enhanced upper class, further widening the gap between the rich and the poor and creating a more unjust and unequal society . If misused, gene editing could make social inequalities worse . This division will cause unrest and instability.<br><br>Third, genetic enhancement will lead to the *erosion of human dignity and devaluation of non-enhanced individuals*. The pursuit of genetic enhancement could lead to a societal devaluation of individuals who are not genetically modified, fostering discrimination and undermining the inherent dignity and worth of all human beings. The main societal risk is seen in the possible misuse of GGE for non-medically indicated purposes such as genetic enhancement . Genetic enhancement can cause anxiety, depression, and identity issues . Ethical concerns include the potential loss of natural traits and unforeseen consequences. Gene-editing alters the physical body. Due to the integrated mind-body relationship, it can also directly and indirectly modify mental identity .<br><br>In conclusion, permitting genetic enhancement of human embryos presents unacceptable risks. The potential for unintended consequences, the certainty of increased social inequality, and the likely erosion of human dignity outweigh any speculative benefits. Therefore, we strongly urge you to reject the proposition.<br><br>**Reference**<br>(1) Researchers call for greater awareness of unintended consequences of CRISPR gene-editing. University of Cambridge. https://www.cam.ac.uk/research/news/researchers-call-for-greater-awareness-of-unintended-consequences-of-crispr-gene-editing-0<br>(2) Kim, K. H., & Kim, Y. (2021). Ethical issues in germline gene editing. *Journal of Korean medical science*, *36*(48), e334.<br>(3) Genetic enhancement could make social inequalities worse if misused, warns author. CBC Radio. https://www.cbc.ca/radio/thecurrent/the-current-for-march-23-2021-1.5960200/gene-editing-could-make-social-inequalities-worse-if-misused-warns-author-1.5960568<br>(4) Silver spoons and golden genes: Designing inequality. Petrie-Flom Center for Health Law Policy, Biotechnology, and Bioethics at Harvard Law School. https://petrieflom.law.harvard.edu/2018/10/26/silver-spoons-and-golden-genes-designing-inequality/<br>(5) Implications of Gene-editing on Mental Identity. Columbia University Department of Bioethics. https://journals.library.columbia.edu/index.php/bioethics/article/view/11794<br>(6) New study warns of dangers of gene editing in human embryos. News Medical. https://www.news-medical.net/news/20230626/New-study-warns-of-dangers-of-gene-editing-in-human-embryos.aspx<br>(7) Ethical Issues in Germline Gene Editing. ASGCT. https://patienteducation.asgct.org/patient-journey/ethical-issues-germline-gene-editing</div>
+                        </details>
+
+                        <!-- Rating Section -->
+                        <div class="form-group">
+                            <label for="q2_2">
+                                How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-10 offset-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                        <label class="form-check-label" for="q2_2_poor">
+                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                        <label class="form-check-label" for="q2_2_weak">
+                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                        <label class="form-check-label" for="q2_2_moderate">
+                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                        <label class="form-check-label" for="q2_2_strong">
+                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                        <label class="form-check-label" for="q2_2_compelling">
+                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Section -->
+                        <div class="form-group mt-3 mb-4">
+                            <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                            <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                        </div>
+                    
+                
+                <hr class="my-4">
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Genetic Enhancement Of Human Embryos Should Be Permitted) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Opening Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_3">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    
+                        <!-- Audio Player -->
+                        <div class="row align-items-center mb-2 audio">
+                            <div class="col-2 text-left audio-side">
+                                <strong> For Side </strong> 
+                            </div>
+                            <div class="col-9">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0320/case1/rebuttal_for_b.mp3" class="w-100" id="audio_1_For">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Transcript -->
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) <strong> For </strong> - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">The heart of this debate rests on whether we choose progress with foresight or retreat into apprehension. Our opponents present a dystopian vision, dwelling solely on potential pitfalls. But we must not discard a valuable opportunity due to unfounded fears.<br><br>First, they challenge our definition of "optimizing potential" as overly simplistic and subjective. However, subjectivity does not invalidate the pursuit of improvement. While defining 'enhancement' involves subjective elements, ethical guidelines and open discussions can steer responsible application, preventing ethically problematic outcomes. The subjective nature of 'optimal' does not negate the possibility of objective advancements in health and disease resistance through genetic enhancement. Are we to deny a child freedom from Huntington's disease because defining "optimal health" is subjective? As Mara Almeida and Rui Diogo point out, advances in medicine have already reshaped human evolution .<br><br>Next, they claim a utilitarian framework is inadequate. This is inaccurate. While gene interactions are complex, advancements in understanding genomics and careful clinical trials can minimize potential harm and ensure responsible application of genetic enhancement. We can weigh potential benefits against risks, as we do with any medical intervention.<br><br>Now, let's address their main concerns. The opponent fears a "genetic divide." This is a valid concern, but not an insurmountable one. Consider public education. We strive to provide equal educational opportunities, yet disparities persist. Do we abandon education because of this? No. Instead, we work to level the playing field. Similarly, ensuring equitable access to genetic enhancement technologies through subsidies and public programs can prevent a 'genetic divide' and promote social equality. These programs could be funded through a dedicated tax on genetic enhancement procedures, ensuring that those who benefit directly contribute to equitable access. Why assume the worst? As argued in *The Stanford Review*, taxing the wealthy on genetic enhancements can help fund enhancements for the poor, promoting a more equitable distribution of benefits.<br><br>The specter of eugenics is also raised. This is a serious accusation, but misguided. Strict ethical guidelines, public education, and legal safeguards can prevent genetic enhancement from promoting eugenics and ensure it benefits all members of society. To say that genetic enhancement is the same as eugenics is like saying that fire used for cooking is the same as fire used for arson. The key difference lies in the intent and responsible control.<br><br>Finally, they highlight regulatory challenges and the difficulty in predicting long-term consequences. Of course, challenges exist. It is the nature of innovation. But do we halt progress because of potential difficulties? No. Instead, we develop strategies to address them. Establishing international collaborations, transparent research practices, and continuous monitoring can address the challenges of regulating genetic enhancement technologies and prevent unintended harm. Consider the aviation industry. According to Airlines for America, despite inherent risks, stringent safety regulations have dramatically reduced mortality rates . We can apply similar rigorous oversight to genetic enhancement.<br><br>**Reference**<br>[1] Rubeis, Giovanni, and Florian Steger. “Risks and Benefits of Human Germline Genome Editing: An Ethical Analysis.” *Asian Bioeth Rev* 10, no. 2 (2018): 133–41.<br>[2] Almeida, Mara, and Rui Diogo. “Human Enhancement: Genetic Engineering and Evolution.” *Evolution, Medicine, and Public Health* 2019, no. 1 (2019): 169–77.<br>[3] Kohn, Donald B., Yvonne Y. Chen, and Melissa J. Spencer. “Successes and Challenges in Clinical Gene Therapy.” *Gene Therapy* 30 (2023): 738–46.<br>[4] Airlines For America. “Safety Record of U.S. Air Carriers.” December 24, 2022.<br>[5] Rothschild, Jodie. 2020. “Ethical Considerations of Gene Editing and Genetic Selection.” *Journal of General and Family Medicine* 21 (3): 37–47.<br>[6] Present). “Eugenics: Its Origin and Development (1883.” *Inquiries into Human Fertility and Its Development* (1883).<br>[7] Caplan, Arthur L, Brendan Parent, Michael Shen, and Carolyn Plunkett. 2015. “No Time to Waste—the Ethical Challenges Created by CRISPR.” *EMBO Reports* 16 (11): 1421–26.<br>[8] The Stanford Review. “Arguing For and Against Genetic Engineering.” June 7, 2007.</div>
+                        </details>
+
+                        <!-- Rating Section -->
+                        <div class="form-group">
+                            <label for="q3_1">
+                                How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-10 offset-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                        <label class="form-check-label" for="q3_1_poor">
+                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                        <label class="form-check-label" for="q3_1_weak">
+                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                        <label class="form-check-label" for="q3_1_moderate">
+                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                        <label class="form-check-label" for="q3_1_strong">
+                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                        <label class="form-check-label" for="q3_1_compelling">
+                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Section -->
+                        <div class="form-group mt-3 mb-4">
+                            <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                            <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                        </div>
+                    
+                
+                <hr class="my-4">
+                
+                    
+                        <!-- Audio Player -->
+                        <div class="row align-items-center mb-2 audio">
+                            <div class="col-2 text-left audio-side">
+                                <strong> Against Side </strong> 
+                            </div>
+                            <div class="col-9">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0320/case1/rebuttal_against_a.mp3" class="w-100" id="audio_2_Against">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Transcript -->
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) <strong> Against </strong> - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you chairperson is steam a judges ladies and gentlemen. The opponent attempts to paint a rosy picture of genetic enhancement. But their arguments are riddled with flaws. We will demonstrate why their utilitarian approach is not only insufficient but also dangerous and why they're proposed solutions are unrealistic and potentially harmful. First they claim our definition of optimizing potential is overly subjective. Yet they fail to provide a clear objective alternative. The reality is that any definition of enhancement is inherently subjective reflecting the values and biases of those making the decision. Are we to believe that a government committee can objectively define what constitutes an optimal human being. This opens the door to ethically problematic applications such as prioritizing certain traits over others based on societal prejudices. We must ask whose definition of better are we using and what are the potential consequences of imposing that definition on future generations. Second they advocate for a utilitarian framework. Claiming it will maximize well-being. However this approach ignores the fundamental issue of equity. Even if genetic enhancement could theoretically increase overall well-being it is unlikely to benefit everyone equally. As lee silver notes disparate access to genetic technologies will drive a wedge between enhanced and unenhanced classes of people. Their utilitarian calculus fails to account for the very real possibility of exacerbating existing inequalities creating a society where the rich get richer and the poor get genetically left behind. How can we speak of maximizing well-being when such a significant portion of the population is excluded from the benefits? Utilitarian approach ignores the inherent value and dignity of each individual regardless of their genetic makeup. Third they propose subsidies and public programs to address the genetic divided drawing an analogy to public education. However this analogy is flawed. While we strive for equal educational opportunities disparities persist due to factors such as socioeconomic status and geographic location. Consider that in the us in 2021 the top 20% of earners received 50% of all income. Can subsidies and public programs truly level the playing field when such disparities exists moreover their proposed funding mechanism attacks on genetic enhancement is inherently regressive. It creates a system where only the wealthy can afford genetic enhancement which in turn leads to a society that continues the genetic divided. The wealthy can pay for the enhancement and the associated tax while the less wealthy would be unable to afford it to begin with. Fourth they dismiss our concerns about eugenics claiming that strict ethical guidelines and legal safeguards can prevent misuse. However history is replete with examples of eugenic movements that despite good intentions resulted in discrimination and social stratification. The pursuit of genetic perfection however well-intentioned carries an inherent risk of devaluing those who do not meet the ideal standard. It is not enough to simply say that this time will be different. We must learn from the mistakes of the past and recognized the potential for even seemingly benign genetic enhancements to contribute to a culture of intolerance and discrimination. As bioethicist henry greeley notes embryo selection alone can accomplish almost anything genetic modification can.<br><br>**Reference**<br>(1) Virolainen, Samuel J, Andrew VonHandorf, Kenyatta C M F Viel, Matthew T Weirauch, and Lisa M Benson. 2022. “Gene–Environment Interactions and Their Impact on Human Health.” *Genes and Immunity* 24 (1): 1–11.<br>(2) Rothschild, Jodie. 2020. “Ethical Considerations of Gene Editing and Genetic Selection.” *Journal of General and Family Medicine* 21 (3): 37–47.<br>(3) Present). “Eugenics: Its Origin and Development (1883.” *Inquiries into Human Fertility and Its Development* (1883).<br>(4) Caplan, Arthur L, Brendan Parent, Michael Shen, and Carolyn Plunkett. 2015. “No Time to Waste—the Ethical Challenges Created by CRISPR.” *EMBO Reports* 16 (11): 1421–26.<br>(5) Rubeis, Giovanni, and Florian Steger. “Risks and Benefits of Human Germline Genome Editing: An Ethical Analysis.” *Asian Bioeth Rev* 10, no. 2 (2018): 133–41.<br>(6) Almeida, Mara, and Rui Diogo. “Human Enhancement: Genetic Engineering and Evolution.” *Evolution, Medicine, and Public Health* 2019, no. 1 (2019): 169–77.<br>(7) Greely, Henry. Stanford University in California.<br>(8) Silver, Lee. Molecular biologist.<br>(9) Kohn, Donald B., Yvonne Y. Chen, and Melissa J. Spencer. “Successes and Challenges in Clinical Gene Therapy.” *Gene Therapy* 30 (2023): 738–46.<br>(10) Boutin, et al.<br>(11) Income Distribution in the U.S. https://www.cbpp.org/research/poverty-and-inequality/income-inequality-in-the-united-states</div>
+                        </details>
+
+                        <!-- Rating Section -->
+                        <div class="form-group">
+                            <label for="q3_2">
+                                How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-10 offset-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                        <label class="form-check-label" for="q3_2_poor">
+                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                        <label class="form-check-label" for="q3_2_weak">
+                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                        <label class="form-check-label" for="q3_2_moderate">
+                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                        <label class="form-check-label" for="q3_2_strong">
+                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                        <label class="form-check-label" for="q3_2_compelling">
+                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Section -->
+                        <div class="form-group mt-3 mb-4">
+                            <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                            <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                        </div>
+                    
+                
+                <hr class="my-4">
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (Genetic Enhancement Of Human Embryos Should Be Permitted) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Rebuttal Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_4">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    
+                        <!-- Audio Player -->
+                        <div class="row align-items-center mb-2 audio">
+                            <div class="col-2 text-left audio-side">
+                                <strong> For Side </strong> 
+                            </div>
+                            <div class="col-9">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0320/case1/closing_for_b.mp3" class="w-100" id="audio_1_For">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Transcript -->
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) <strong> For </strong> - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, colleagues, let's cut through the fear-mongering. This debate isn't about creating superhumans; it's about alleviating suffering and maximizing human potential. Our opponents dwell on hypothetical risks, conveniently ignoring the very real, present-day suffering caused by genetic diseases. Imagine eradicating cystic fibrosis, Huntington's disease, or sickle cell anemia. This isn't science fiction; it's a tangible possibility.<br><br>They argue "improvement" is subjective, yet medicine constantly strives to improve health outcomes, even with differing patient values. We acknowledge the complexities, but inaction condemns countless individuals to preventable suffering.<br><br>The specter of eugenics is raised, a dark chapter in history. However, to equate genetic enhancement with eugenics is a gross oversimplification. Robust ethical guidelines, coupled with stringent regulations, can prevent misuse and ensure equitable access.  points out the importance of ethical considerations in genetic research. Dismissing genetic enhancement based on fear is to deny future generations the chance at healthier, more fulfilling lives.<br><br>We are not suggesting a perfect solution, but a path toward progress. The future is not something to be feared, but something to be shaped responsibly. We urge you to embrace the potential of genetic enhancement, guided by ethics and driven by compassion, to build a healthier, more equitable future for all.<br><br>**Reference**<br>[1] National Academies of Sciences, Engineering, and Medicine. 2017. *Human Genome Editing: Science, Ethics, and Governance*. Washington, DC: The National Academies Press.</div>
+                        </details>
+
+                        <!-- Rating Section -->
+                        <div class="form-group">
+                            <label for="q4_1">
+                                How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-10 offset-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                        <label class="form-check-label" for="q4_1_poor">
+                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                        <label class="form-check-label" for="q4_1_weak">
+                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                        <label class="form-check-label" for="q4_1_moderate">
+                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                        <label class="form-check-label" for="q4_1_strong">
+                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                        <label class="form-check-label" for="q4_1_compelling">
+                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Section -->
+                        <div class="form-group mt-3 mb-4">
+                            <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                            <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                        </div>
+                    
+                
+                <hr class="my-4">
+                
+                    
+                        <div class="row">
+                        <!-- Left Side (Output A) -->
+                        <div class="col-6 border-right">
+                            <!-- Audio Player -->
+                            
+                            <h5 class="text-center mb-3">Output A - <strong>Against</strong> Side</h5>
+                                <div class="audio-section mb-4">
+                                    <div class="audio-player mb-3">
+                                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0320/case1/closing_against_a.mp3" class="w-100" id="audio_a_2_Against">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+
+                                    <!-- Transcript -->
+                                    <details class="transcript-details mb-3">
+                                        <summary class="transcript-summary p-2 bg-light rounded">
+                                            <i class="fas fa-file-alt mr-2"></i>
+                                            (Optional) <strong>Against</strong> - Transcript A
+                                        </summary>
+                                        <div class="transcript-content p-3 bg-white border rounded mt-2">```text<br>Thank you, chairperson, and esteemed judges. In today's debate, our discussion primarily revolved around the core issue of whether we should permit genetic enhancement of human embryos, and the fundamental values underpinning this decision.<br><br>The affirmative side failed to provide a clear, objective standard for "improvement." The inherent subjectivity in defining what constitutes an enhancement inevitably reflects the biases of those in power, leading to discriminatory practices. Ethical concerns of genetic engineering of human embryos is high and the main societal risk is seen in the possible misuse of GGE for non-medically indicated purposes such as genetic enhancement .<br><br>Even with advancements in genomics, eliminating unintended harm from gene interactions is impossible, even with advancements, and raises ethical questions about permanently altering the human species. The risks of genetic enhancement of human embryos like off-target mutations and unintended genetic changes, these risks may affect future generations . While medicine always has unintended consequences, genetic modifications pose far more serious and irreversible alterations.<br><br>Subsidies and public programs are insufficient to address the "genetic divide." The implementation of genomic medicine does not intentionally focus on health equity, existing health disparities can be exacerbated . While socioeconomic disparities exist in healthcare and education, genetic enhancement uniquely alters the heritable human genome, creating a permanent biological underclass. Access to this technology will inevitably be dictated by socioeconomic factors.<br><br>The opposition argues that strict ethical guidelines and legal safeguards can prevent eugenics.<br><br>**Reference**<br>(1) Virolainen, Samuel J, et al. *Genes and Immunity* 24 (1): 1–11, 2022.<br>(2) Rothschild, Jodie. *Journal of General and Family Medicine* 21 (3): 37–47, 2020.<br>(3) Present). *Inquiries into Human Fertility and Its Development*, 1883.<br>(4) Caplan, Arthur L, et al. *EMBO Reports* 16 (11): 1421–26, 2015.<br>(5) Jooma, Sonya, et al. *Ethn Dis*. 29, no. Suppl 1: 173–178, 2019.<br>(6) Simmons, Danielle. *Nature Education* 1, no. 1: 173, 2008.<br>(7) Obasogie, Osagie K. *UC Berkeley School of Public Health*, June 20, 2024.<br>(8) Lau, Pin Lean. *BioTech* (Basel) 12, no. 3: 51, 2023.<br>(9) https://pmc.ncbi.nlm.nih.gov/articles/PMC7747319/<br>(10) https://www.cam.ac.uk/research/news/researchers-call-for-greater-awareness-of-unintended-consequences-of-crispr-gene-editing-0<br>(11) https://www.eurostemcell.org/ethics-changing-genes-embryo<br>(12) https://www.medicalnewstoday.com/articles/324576<br>(13) https://pubmed.ncbi.nlm.nih.gov/8201288/<br>(14) https://journalofethics.ama-assn.org/article/prevention-and-human-gene-editing-governance/2021-01<br><br>```
+                                        </div>
+                                    </details>
+
+                                    <!-- Rating Section -->
+                                    <div class="form-group">
+                                    <label for="q4_2_a">
+                                        How persuasive is <strong>Output A</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                    </label>
+                                    <div class="row align-items-center">
+                                        <div class="col-10 offset-1">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_a_poor" name="q4_2_a" value="1">
+                                                <label class="form-check-label" for="q4_2_a_poor">
+                                                    <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_a_weak" name="q4_2_a" value="2">
+                                                <label class="form-check-label" for="q4_2_a_weak">
+                                                    <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_a_moderate" name="q4_2_a" value="3">
+                                                <label class="form-check-label" for="q4_2_a_moderate">
+                                                    <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_a_strong" name="q4_2_a" value="4">
+                                                <label class="form-check-label" for="q4_2_a_strong">
+                                                    <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_a_compelling" name="q4_2_a" value="5">
+                                                <label class="form-check-label" for="q4_2_a_compelling">
+                                                    <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comment Section -->
+                                <div class="form-group mt-3 mb-4">
+                                    <label for="q4_2_comment_a"> (Optional) Additional comments for <strong> Output A's Against </strong> side:</label>
+                                    <textarea class="form-control" id="q4_2_comment_a" name="q4_2_comment_a" rows="2"></textarea>
+                                </div>
+                                </div>
+                                
+                            
+                        </div>
+
+                        <!-- Right Side (Output B) -->
+                        <div class="col-6">
+                            <!-- Audio Player -->
+                            <h5 class="text-center mb-3">Output B - <strong>Against</strong> Side </h5>
+                                <div class="audio-section mb-4">
+                                    <div class="audio-player mb-3">
+                                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0320/case1/closing_against_b.mp3" class="w-100" id="audio_b_2_Against">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+
+                                    <!-- Transcript -->
+                                    <details class="transcript-details mb-3">
+                                        <summary class="transcript-summary p-2 bg-light rounded">
+                                            <i class="fas fa-file-alt mr-2"></i>
+                                            (Optional) <strong>Against</strong> Transcript B
+                                        </summary>
+                                        <div class="transcript-content p-3 bg-white border rounded mt-2">Honorable judges, the opposition offers a seductive vision of a genetically enhanced future, but at its heart lies a gamble with humanity itself. Are we truly prepared to wager our collective well-being on the elusive promise of "optimization"?<br><br>Our opponents sidestepped the fundamental issue: the inherent subjectivity in defining "optimizing potential." Whose values will dictate these enhancements? Who decides what constitutes "optimal," and what becomes of those deemed less desirable? History teaches us that ethical guidelines, however well-intentioned, are vulnerable to bias and abuse.<br><br>They also downplayed the looming threat of a 'genetic divide,' a society cleaved in two by unequal access to genetic advantages. While suggesting subsidies as a remedy, they failed to confront the underlying inequalities that would inevitably persist. Without a rigorous and cautious evaluation framework, we risk normalizing eugenics and its attendant discrimination, repeating the mistakes of the past.<br><br>Furthermore, their faith in international collaboration and regulations to mitigate long-term consequences is dangerously naive. We cannot predict the full ramifications of this technology. As  at Universitynotes, the complexity of gene interactions means unintended consequences are virtually guaranteed. Are we prepared to unleash a force whose ultimate impact remains shrouded in uncertainty?<br><br>The potential for irreversible societal division and profound ethical violations is simply too great. Genetic enhancement, while alluring, is a perilous path. Let us choose wisdom, equity, and caution. I urge you to reject this motion.<br><br>**Reference**<br>[1] Source Name, University X.
+                                        </div>
+                                    </details>
+
+                                    <!-- Rating Section -->
+                                    <div class="form-group">
+                                    <label for="q4_2_b">
+                                        How persuasive is <strong>Output B</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                    </label>
+                                    <div class="row align-items-center">
+                                        <div class="col-10 offset-1">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_b_poor" name="q4_2_b" value="1">
+                                                <label class="form-check-label" for="q4_2_b_poor">
+                                                    <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_b_weak" name="q4_2_b" value="2">
+                                                <label class="form-check-label" for="q4_2_b_weak">
+                                                    <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_b_moderate" name="q4_2_b" value="3">
+                                                <label class="form-check-label" for="q4_2_b_moderate">
+                                                    <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_b_strong" name="q4_2_b" value="4">
+                                                <label class="form-check-label" for="q4_2_b_strong">
+                                                    <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q4_2_b_compelling" name="q4_2_b" value="5">
+                                                <label class="form-check-label" for="q4_2_b_compelling">
+                                                    <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comment Section -->
+                                <div class="form-group mt-3 mb-4">
+                                    <label for="q4_2_comment_b"> (Optional) Additional comments for <strong> Output B's Against </strong> side:</label>
+                                    <textarea class="form-control" id="q4_2_comment_b" name="q4_2_comment_b" rows="2"></textarea>
+                                </div>
+                                </div>
+                                
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="q4" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                Which output do you find more effective overall?<sup>*</sup>
+                            </label>
+                            <div class="row justify-content-center">
+                                <div class="col-12 offset-8">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4_2" value="-1" id="q4_2_slightly_a">
+                                        <label class="form-check-label" for="q4_2_a"> Prefer Output A</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4_2" value="0" id="q4_2_equal">
+                                        <label class="form-check-label" for="q4_2_equal">Both outputs are equally effective</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4_2" value="1" id="q4_2_slightly_b">
+                                        <label class="form-check-label" for="q4_2_b">Prefer Output B</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                
+                <hr class="my-4">
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion (Genetic Enhancement Of Human Embryos Should Be Permitted) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Closing Stage Comparison</b>
+            </div>
+        </div>
+    
+
+    <!-- Additional Questions -->
+    
+        <div class="card form-group question" id="question_5">
+            <div class="card-header">
+                <b>(Optional) Question 5: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" name="q5" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 1 / 3</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_6">
+            <div class="card-header">
+                <b>(Optional) Question 6: Which factors were most crucial in your assessment?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" name="q6" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 2 / 3</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_7">
+            <div class="card-header">
+                <b>(Optional) Question 7: How long did you spend on this evaluation?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q7"></label>
+                        <textarea class="form-control" name="q7" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 3 / 3</b>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+</body>
+
+</html>

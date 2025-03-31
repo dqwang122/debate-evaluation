@@ -1,0 +1,570 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+        <h1 class="text-center mb-4">Debate Output Comparison</h1>
+        <hr class="my-4">
+
+        <div class="mb-4">
+            <p class="lead">You'll be comparing two different debate outputs side by side. Please evaluate both versions and provide ratings for each.</p>
+        </div>
+
+        <div class="mb-4">
+            <h4>What to Expect:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+                <li class="list-group-item">Share your initial opinion before listening.</li>
+                <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+                <li class="list-group-item">Cast your final vote after listening.</li>
+                <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>How to Vote:</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+                <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+                <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>Rating Guide:</h4>
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poor (1)</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weak (2)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Moderate (3)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Strong (4)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining point.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Compelling (5)</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and deep audience connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycby4yVMejSjiW8bSUyODIY8lvW6Sf-UWqudpjHpQULUfFSqTvOsVIshdepIndj3vbOJq0w/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Ai Will Lead To The Decline Of Human Creative Arts </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="mixed">
+    <input type="hidden" id="version" name="version" value="0331">
+
+    
+        <div class="card form-group question" id="question_1">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Pre-Vote Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_2">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    
+                        <!-- Audio Player -->
+                        <div class="row align-items-center mb-2 audio">
+                            <div class="col-2 text-left audio-side">
+                                <strong> For Side </strong> 
+                            </div>
+                            <div class="col-9">
+                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0331/case2_1/opening_for_a.mp3" class="w-100" id="audio_1_For">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Transcript -->
+                        <details class="transcript-details mb-3">
+                            <summary class="transcript-summary p-2 bg-light rounded">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                (Optional) <strong> For </strong> - Transcript
+                            </summary>
+                            <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that AI will lead to the decline of human creative arts. We define "decline" as a gradual and continuous loss of value, power, or quality in the perceived worth, economic viability, and cultural significance of human-created art forms. "Human Creative Arts" encompasses artistic endeavors primarily conceived and executed by human beings, excluding art generated solely by artificial intelligence. We refer to "AI" as computer systems capable of generating art.<br><br>Our judging criteria is artistic integrity and cultural value. We believe a world where human expression and creativity are valued over AI-generated content is preferable. The affirmative must prove that AI-driven art significantly undermines human artistic endeavors to meet this standard.<br><br>First, AI-generated art devalues human skill and effort. The ease and speed with which AI can produce art diminishes the perceived value of the years of training, practice, and dedication required to master traditional art forms. This leads to decreased demand for human artists and a loss of cultural appreciation for human artistic skill. Studies show that the proliferation of easily accessible AI-generated content can lead to a devaluation of human-created works. For instance, a study published in the *Journal of Cultural Economics* found that increased automation in creative industries often results in lower wages and fewer opportunities for human artists . This is because AI can flood the market with cheap, readily available content, undercutting the prices that human artists can reasonably charge. Furthermore, the psychological impact of readily available AI art can lead to a diminished appreciation for the unique qualities and emotional depth that human artists bring to their work. **I need data on artist income decline and examples of AI art replacing human art in commercial contexts to strengthen this argument.** Therefore, the readily availability of AI art directly threatens the livelihood and recognition of human artists.<br><br>Second, AI art raises copyright and ownership issues, undermining artists' livelihoods. The use of existing artwork to train AI models raises significant copyright concerns. Artists may find their styles and creations replicated by AI without their consent or compensation, further devaluing their original works and potentially leading to legal battles and economic hardship. Legal scholars, writing in the *Stanford Law Review*, have noted the ambiguity in current copyright law regarding AI-generated art, particularly concerning the "fair use" doctrine . This ambiguity leaves artists vulnerable to having their work exploited without recourse. For example, visual artists are seeing their unique styles replicated by AI models, leading to their art being indistinguishable from AI generated content. This forces artists to compete with near-identical copies of their work, diminishing its value and creating marketplace confusion. **I need legal precedents on AI art copyright and examples of artists suing AI companies to add more weight to this argument.** Thus, unresolved copyright issues and potential for exploitation make it difficult for human artists to sustain their careers.<br><br>Third, AI art limits creative exploration and innovation by mimicking existing styles. Because AI art is trained on existing datasets, it tends to replicate and remix established styles rather than pushing the boundaries of artistic expression. This stifles true innovation and leads to a homogenization of art, ultimately diminishing the richness and diversity of human creative culture.<br><br>**Reference**<br>(1) Towse, R. (2010). *A textbook of cultural economics*. Cambridge University Press.<br>(2) Lemley, M. A. (1997). *Fair use as market failure*. Stanford Law Review, 1243-1297.<br>(3) Dietrich, A. (2004). *The cognitive neuroscience of creativity*. Nature Reviews Neuroscience, 5(12), 1011-1021.</div>
+                        </details>
+
+                        <!-- Rating Section -->
+                        <div class="form-group">
+                            <label for="q2_1">
+                                How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                            </label>
+                            <div class="row align-items-center">
+                                <div class="col-10 offset-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                        <label class="form-check-label" for="q2_1_poor">
+                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                        <label class="form-check-label" for="q2_1_weak">
+                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                        <label class="form-check-label" for="q2_1_moderate">
+                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                        <label class="form-check-label" for="q2_1_strong">
+                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                        <label class="form-check-label" for="q2_1_compelling">
+                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Section -->
+                        <div class="form-group mt-3 mb-4">
+                            <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                            <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                        </div>
+                    
+                
+                    <hr class="my-4">
+                
+                    
+                        <div class="row">
+                        <!-- Left Side (Output A) -->
+                        <div class="col-6 border-right">
+                            <!-- Audio Player -->
+                            
+                            <h5 class="text-center mb-3">Output A - <strong>Against</strong> Side</h5>
+                                <div class="audio-section mb-4">
+                                    <div class="audio-player mb-3">
+                                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0331/case2_1/opening_against_a.mp3" class="w-100" id="audio_a_2_Against">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+
+                                    <!-- Transcript -->
+                                    <details class="transcript-details mb-3">
+                                        <summary class="transcript-summary p-2 bg-light rounded">
+                                            <i class="fas fa-file-alt mr-2"></i>
+                                            (Optional) <strong>Against</strong> - Transcript A
+                                        </summary>
+                                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that AI will *not* lead to the decline of human creative arts. We define "decline" as a sustained and significant loss of strength, quality, or value in creative arts. "Creative arts" encompasses visual arts, performing arts, and literature. We maintain that while AI will undoubtedly impact the creative landscape, it will not cause a decline in human artistic expression.<br><br>Our judging criteria is based on the **impact on the overall quality and accessibility of creative expression**. You should favor the side that demonstrates a greater positive impact on the quality, diversity, and accessibility of creative expression for humans. We will show that AI, when used responsibly and ethically, can enhance human creativity and expand access to art, thereby preventing a decline and potentially fostering a renaissance.<br><br>First, **AI serves as a tool to enhance human creativity, not replace it.** Just as photography didn't eliminate painting, but instead provided new avenues for artistic expression, AI offers artists new tools and possibilities. AI can automate tedious and time-consuming tasks, freeing up artists to focus on the conceptual and emotional aspects of their work. It can also generate novel combinations of ideas and styles, pushing the boundaries of creative exploration. Instead of replacing the artist, AI becomes a collaborator, expanding their creative potential. Thus increasing the quality and diversity of artwork. We need **examples of artists using AI as a tool to create unique and innovative works, data on the time saved and efficiency gained by artists using AI tools, and expert opinions from art critics and historians on the role of technology in art history.**<br><br>Second, **human emotional intelligence and lived experience remain crucial elements in artistic creation that AI cannot replicate.** Art is not simply about technical skill; it is about expressing human emotion, conveying personal experiences, and connecting with audiences on a deeper level. AI, lacking genuine consciousness and emotional understanding, cannot replicate the depth, nuance, and authenticity of human art. The ability to imbue art with personal meaning and emotional resonance is a uniquely human trait that will continue to be valued and sought after. Meaning that AI cannot affect the quality and value of human artwork. We need **comparative analyses of AI-generated art and human-created art, focusing on the emotional depth and resonance of each. Expert opinions from psychologists and art therapists on the role of emotional expression in art. Studies showing audience perception of the emotional impact of art created by humans versus AI.**<br><br>Third, **ethical and legal constraints on AI-generated art will limit its potential to dominate or diminish human creativity.** The rise of AI art raises important questions about copyright, originality, and fair use. Concerns about AI potentially infringing on existing artists' styles or generating derivative works are already leading to legal challenges and discussions about regulating AI art. As ethical guidelines and legal frameworks are developed, they will likely restrict the extent to which AI can be used to create art commercially and protect the rights of human artists. This will safeguard the integrity and value of human-created art by ensuring the focus is kept on originality. We need **examples of legal challenges to AI-generated art based on copyright infringement. Analysis of ethical frameworks for AI art creation and their potential impact on the art market. Expert opinions from legal scholars and ethicists on the future of AI art regulation.<br><br>**Reference**<br>
+                                        </div>
+                                    </details>
+
+                                    <!-- Rating Section -->
+                                    <div class="form-group">
+                                    <label for="q2_2_a">
+                                        How persuasive is <strong>Output A</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                    </label>
+                                    <div class="row align-items-center">
+                                        <div class="col-10 offset-1">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_poor" name="q2_2_a" value="1">
+                                                <label class="form-check-label" for="q2_2_a_poor">
+                                                    <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_weak" name="q2_2_a" value="2">
+                                                <label class="form-check-label" for="q2_2_a_weak">
+                                                    <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_moderate" name="q2_2_a" value="3">
+                                                <label class="form-check-label" for="q2_2_a_moderate">
+                                                    <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_strong" name="q2_2_a" value="4">
+                                                <label class="form-check-label" for="q2_2_a_strong">
+                                                    <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_a_compelling" name="q2_2_a" value="5">
+                                                <label class="form-check-label" for="q2_2_a_compelling">
+                                                    <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comment Section -->
+                                <div class="form-group mt-3 mb-4">
+                                    <label for="q2_2_comment_a"> (Optional) Additional comments for <strong> Output A's Against </strong> side:</label>
+                                    <textarea class="form-control" id="q2_2_comment_a" name="q2_2_comment_a" rows="2"></textarea>
+                                </div>
+                                </div>
+                                
+                            
+                        </div>
+
+                        <!-- Right Side (Output B) -->
+                        <div class="col-6">
+                            <!-- Audio Player -->
+                            <h5 class="text-center mb-3">Output B - <strong>Against</strong> Side </h5>
+                                <div class="audio-section mb-4">
+                                    <div class="audio-player mb-3">
+                                        <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0331/case2_1/opening_against_b.mp3" class="w-100" id="audio_b_2_Against">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+
+                                    <!-- Transcript -->
+                                    <details class="transcript-details mb-3">
+                                        <summary class="transcript-summary p-2 bg-light rounded">
+                                            <i class="fas fa-file-alt mr-2"></i>
+                                            (Optional) <strong>Against</strong> Transcript B
+                                        </summary>
+                                        <div class="transcript-content p-3 bg-white border rounded mt-2">We stand firmly against the assertion that AI will lead to the decline of human creative arts. While we acknowledge the concerns, we believe this perspective overlooks AI's transformative potential.<br><br>Let's begin with a crucial clarification. Imagine a world where all art becomes homogenous and uninspired, reflecting only what algorithms deem popular – *that* would be decline. Our opponents define "decline" as a tangible degradation in quality, uniqueness, and societal value. We contend that this definition is overly restrictive. Instead, we envision a vibrant ecosystem where AI empowers artists to push boundaries, creating entirely new forms of expression we can’t even imagine today. Artistic evolution is not synonymous with decline, and to limit our understanding in this way is to ignore the dynamic nature of art itself. The definition should encompass evolution and transformation as art adapts to new technologies and societal values.<br><br>Furthermore, we propose that this debate be judged not solely on whether AI diminishes or enhances human creative endeavors, but on the overall impact of AI on human creativity. Focusing solely on potential drawbacks overlooks AI's significant contributions to artistic innovation and accessibility.<br><br>Now, let's address the specific arguments presented. First, the claim that AI's dependence on pre-existing data smothers genuine innovation is a mischaracterization. AI's dependence on existing data does not stifle innovation; rather, it provides a foundation for artists to build upon, experiment with, and create novel works.<br><br>Consider the historical parallel of photography. When it emerged, many feared it would spell the end of painting. Instead, photography became an art form of its own, and painting evolved alongside it. Similarly, AI can serve as a springboard for experimentation, allowing artists to explore new styles and techniques that were previously unimaginable.<br><br>Second, the assertion that AI imperils the livelihoods of human artists is not inevitable. The accessibility afforded by AI does not necessarily lead to apathy but can foster greater engagement and understanding of art, broadening the audience and creating new consumers. More people engaging with art, even AI-generated art, can stimulate interest in human-created art, leading to increased demand for authentic, unique pieces and art instruction. Thus, AI can augment, not destroy, the value and potential markets for human artistry.<br><br>Finally, the argument that over-reliance on AI diminishes essential skills is historically inaccurate. The claim that AI diminishes human skill development ignores the historical precedent of technological advancements augmenting, not replacing, artistic abilities. Instead, AI can augment human artists' abilities, allowing them to focus on higher-level creative tasks and explore new artistic frontiers. As Sungjin Park  notes, generative AI introduces a dynamic interplay between technological liberation and dependency, democratizing artistic expression.<br><br>In conclusion, we believe that AI presents not a threat, but an opportunity. It enhances artistic accessibility, inspires creativity, and facilitates the preservation of our cultural heritage. We should start to embrace AI to create and experience the future of arts, because it not only enables the creation of more art, but also enables more interaction between human and arts.<br><br>**Reference**<br>[1] Park, Sungjin. "The work of art in the age of generative AI: aura, liberation, and democratization." *AI & SOCIETY* (May 3, 2024).
+                                        </div>
+                                    </details>
+
+                                    <!-- Rating Section -->
+                                    <div class="form-group">
+                                    <label for="q2_2_b">
+                                        How persuasive is <strong>Output B</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                    </label>
+                                    <div class="row align-items-center">
+                                        <div class="col-10 offset-1">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_poor" name="q2_2_b" value="1">
+                                                <label class="form-check-label" for="q2_2_b_poor">
+                                                    <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_weak" name="q2_2_b" value="2">
+                                                <label class="form-check-label" for="q2_2_b_weak">
+                                                    <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_moderate" name="q2_2_b" value="3">
+                                                <label class="form-check-label" for="q2_2_b_moderate">
+                                                    <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_strong" name="q2_2_b" value="4">
+                                                <label class="form-check-label" for="q2_2_b_strong">
+                                                    <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="q2_2_b_compelling" name="q2_2_b" value="5">
+                                                <label class="form-check-label" for="q2_2_b_compelling">
+                                                    <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comment Section -->
+                                <div class="form-group mt-3 mb-4">
+                                    <label for="q2_2_comment_b"> (Optional) Additional comments for <strong> Output B's Against </strong> side:</label>
+                                    <textarea class="form-control" id="q2_2_comment_b" name="q2_2_comment_b" rows="2"></textarea>
+                                </div>
+                                </div>
+                                
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="q2" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                Which output do you find more effective overall?<sup>*</sup>
+                            </label>
+                            <div class="row justify-content-center">
+                                <div class="col-12 offset-8">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2_2" value="-1" id="q2_2_slightly_a">
+                                        <label class="form-check-label" for="q2_2_a"> Prefer Output A</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2_2" value="0" id="q2_2_equal">
+                                        <label class="form-check-label" for="q2_2_equal">Both outputs are equally effective</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2_2" value="1" id="q2_2_slightly_b">
+                                        <label class="form-check-label" for="q2_2_b">Prefer Output B</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                
+                    <hr class="my-4">
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Ai Will Lead To The Decline Of Human Creative Arts) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Opening Stage Comparison</b>
+            </div>
+        </div>
+    
+
+    <!-- Additional Questions -->
+    
+        <div class="card form-group question" id="question_3">
+            <div class="card-header">
+                <b>(Optional) Question 3: Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q3"></label>
+                        <textarea class="form-control" name="q3" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 1 / 3</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_4">
+            <div class="card-header">
+                <b>(Optional) Question 4: Which factors were most crucial in your assessment?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q4"></label>
+                        <textarea class="form-control" name="q4" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 2 / 3</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_5">
+            <div class="card-header">
+                <b>(Optional) Question 5: How long did you spend on this evaluation?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" name="q5" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 3 / 3</b>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="2_1_opening_against" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+</body>
+
+</html>
