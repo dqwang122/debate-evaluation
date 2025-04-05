@@ -18,7 +18,7 @@ QLIST = [
     # "The performance of the opening / rebuttal / closing statement of each side. Anything to improve?",
     # "The quality of the proposed claims, the rebuttal actions, the summarization, etc.",
     # "How do you track the debate flow during the listening?",
-    "Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?",
+    # "Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?",
     "Which factors were most crucial in your assessment?",
     "How long did you spend on this evaluation?",
 ]
@@ -26,7 +26,7 @@ QLIST = [
 
 def get_options():
     parser = argparse.ArgumentParser(description="Create the debate evaluation form.")
-    parser.add_argument("--mode", default="pair", choices=["scalar", "pair"], help="The type of form to create.")
+    parser.add_argument("--mode", default="pair", choices=["single", "pair"], help="The type of form to create.")
     parser.add_argument("--target", default="common", choices=["common", "expert", "admin", "comparison", "mixed"], help="The type of audience")
     parser.add_argument("--version", default="1007", help="The version of the form.")
     parser.add_argument("--pair_stage", default="rebuttal_for", help="The stage to pair the form. all means all stages and sides")
@@ -87,7 +87,7 @@ def load_case(version, mode):
 
 #     return html
 
-def create_pairwise_comparison_form(version, id, motion, questions, addition_questions=None, target="expert"):
+def create_form(version, id, motion, questions, addition_questions=None, target="expert"):
     loader = FileSystemLoader(searchpath=DEFAULT_TEMPLATE_PATH)
     env = Environment(loader=loader)
     if target == "expert":
@@ -149,8 +149,8 @@ def create_question_form(args, case, motion, target_stage=None, target_side=None
                     ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against_a.mp3", "Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against_b.mp3"],
                 ]
             question["transcript"] = [c["transcript"][stage]["for"], c["transcript"][stage]["against"]]
+        
         elif args.target == "mixed":
-
             assert assigned_stance is not None, "assigned_stance is required for mixed target"
             assert target_stage is not None, "target_stage is required for mixed target"
             assert target_side is not None, "target_side is required for mixed target"
@@ -182,11 +182,13 @@ def create_question_form(args, case, motion, target_stage=None, target_side=None
                     ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against_{against_model}.mp3"],
                 ]
                 question["transcript"] = [c["transcript"][stage]["for"][for_idx], c["transcript"][stage]["against"][against_idx]]
+        
         else:
             question["audio_paths"] = [
                 ["For", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_for.mp3"],
                 ["Against", f"{DEFAULT_S3_BUCKET}/audio_{args.version}/case{c['case_id']}/{stage}_against.mp3"],
             ]
+            question["transcript"] = [c["transcript"][stage]["for"], c["transcript"][stage]["against"]]
 
         questions.append(question)
         qid += 1
@@ -220,7 +222,7 @@ def main():
     cases = load_case(args.version, args.mode)
     for c in cases:
         motion = c["name"].replace("_", " ").title()
-        pair_stage = args.pair_stage if "paired_stage" not in c else c["paired_stage"]
+        pair_stage = args.pair_stage if "pair_stage" not in c else c["pair_stage"]
         if pair_stage == "all":
             target_stage, target_side = "all", "all"
         else:
@@ -238,17 +240,17 @@ def main():
                 for target_side in ["for", "against"]:
                     new_case_id = f"{ori_case_id}_{target_stage}_{target_side}"
                     questions, addition_questions = create_question_form(args, c, motion, target_stage, target_side, assigned_stance)
-                    html = create_pairwise_comparison_form(args.version, new_case_id, 
+                    html = create_form(args.version, new_case_id, 
                                                     motion=motion, 
                                                     questions=questions, 
                                                     addition_questions=addition_questions,
                                                     target=args.target)
                     with open(f"{save_dir}/{new_case_id}.html", "w") as f:
                         f.write(html)
-                    print(f"Saved {new_case_id}.html")
+                    print(f"Saved {save_dir}/{new_case_id}.html")
         else:
             questions, addition_questions = create_question_form(args, c, motion, target_stage, target_side, assigned_stance)
-            html = create_pairwise_comparison_form(args.version, c["case_id"], 
+            html = create_form(args.version, c["case_id"], 
                                                     motion=motion, 
                                                     questions=questions, 
                                                     addition_questions=addition_questions,
@@ -256,7 +258,7 @@ def main():
 
             with open(f"{save_dir}/{c['case_id']}.html", "w") as f:
                 f.write(html)
-            print(f"Saved {c['case_id']}.html")
+            print(f"Saved {save_dir}/{c['case_id']}.html")
 
     print("Done!")
 
