@@ -76,180 +76,181 @@
             <div class="card-header"><b>{{ question.title }}</b></div>
             <div class="card-body">
                 {% for audio_path in question.audio_paths %}
+                <div class="side-container">
                     {% if audio_path|length > 2 %}
                         <div class="row">
-                        <!-- Left Side (Output A) -->
-                        <div class="col-6 border-right">
-                            <!-- Audio Player -->
-                            
-                            <h5 class="text-center mb-3">Output A - <strong>{{ audio_path[0] }}</strong> Side</h5>
-                                <div class="audio-section mb-4">
-                                    <div class="audio-player mb-3">
-                                        <audio controls src="{{ audio_path[1] }}" class="w-100" id="audio_a_{{ loop.index }}_{{ audio_path[0] }}">
-                                            Your browser does not support the audio element.
-                                        </audio>
+                            <!-- Left Side (Output A) -->
+                            <div class="col-6 border-right">
+                                <!-- Audio Player -->
+                                
+                                <h5 class="text-center mb-3">Output A - <strong>{{ audio_path[0] }}</strong> Side</h5>
+                                    <div class="audio-section mb-4">
+                                        <div class="audio-player mb-3">
+                                            <audio controls src="{{ audio_path[1] }}" class="w-100" id="audio_a_{{ loop.index }}_{{ audio_path[0] }}">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        </div>
+
+                                        <!-- Transcript -->
+                                        <details class="transcript-details mb-3">
+                                            <summary class="transcript-summary p-2 bg-light rounded">
+                                                <i class="fas fa-file-alt mr-2"></i>
+                                                (Optional) <strong>{{ audio_path[0] }}</strong> - Transcript A
+                                            </summary>
+                                            <div class="transcript-content p-3 bg-white border rounded mt-2">{{ question.transcript[loop.index0][0] }}
+                                            </div>
+                                        </details>
+
+                                        <!-- Rating Section -->
+                                        <div class="form-group">
+                                        <label for="{{ question.name }}_{{ loop.index }}_a">
+                                            How persuasive is <strong>Output A</strong> in supporting <strong>{{ audio_path[0] }}</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                        </label>
+                                        <div class="row align-items-center">
+                                            <div class="col-10 offset-1">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_poor" name="{{ question.name }}_{{ loop.index }}_a" value="1">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_poor">
+                                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_weak" name="{{ question.name }}_{{ loop.index }}_a" value="2">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_weak">
+                                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_moderate" name="{{ question.name }}_{{ loop.index }}_a" value="3">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_moderate">
+                                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_strong" name="{{ question.name }}_{{ loop.index }}_a" value="4">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_strong">
+                                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_compelling" name="{{ question.name }}_{{ loop.index }}_a" value="5">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_compelling">
+                                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <!-- Transcript -->
-                                    <details class="transcript-details mb-3">
-                                        <summary class="transcript-summary p-2 bg-light rounded">
-                                            <i class="fas fa-file-alt mr-2"></i>
-                                            (Optional) <strong>{{ audio_path[0] }}</strong> - Transcript A
-                                        </summary>
-                                        <div class="transcript-content p-3 bg-white border rounded mt-2">{{ question.transcript[loop.index0][0] }}
-                                        </div>
-                                    </details>
+                                    <!-- Comment Section -->
+                                    <div class="form-group mt-3 mb-4">
+                                        <label for="{{ question.name }}_{{ loop.index }}_comment_a"> (Optional) Additional comments for <strong> Output A's {{ audio_path[0] }} </strong> side:</label>
+                                        <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment_a" name="{{ question.name }}_{{ loop.index }}_comment_a" rows="2"></textarea>
+                                    </div>
+                                    </div>
+                                    {% if not loop.last %}
+                                        <hr class="my-3">
+                                    {% endif %}
+                                
+                            </div>
 
-                                    <!-- Rating Section -->
-                                    <div class="form-group">
-                                    <label for="{{ question.name }}_{{ loop.index }}_a">
-                                        How persuasive is <strong>Output A</strong> in supporting <strong>{{ audio_path[0] }}</strong> side? Rate the performance based on the following principle. <sup>*</sup>
-                                    </label>
-                                    <div class="row align-items-center">
-                                        <div class="col-10 offset-1">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_poor" name="{{ question.name }}_{{ loop.index }}_a" value="1">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_poor">
-                                                    <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
-                                                </label>
+                            <!-- Right Side (Output B) -->
+                            <div class="col-6">
+                                <!-- Audio Player -->
+                                <h5 class="text-center mb-3">Output B - <strong>{{ audio_path[2] }}</strong> Side </h5>
+                                    <div class="audio-section mb-4">
+                                        <div class="audio-player mb-3">
+                                            <audio controls src="{{ audio_path[3] }}" class="w-100" id="audio_b_{{ loop.index }}_{{ audio_path[2] }}">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        </div>
+
+                                        <!-- Transcript -->
+                                        <details class="transcript-details mb-3">
+                                            <summary class="transcript-summary p-2 bg-light rounded">
+                                                <i class="fas fa-file-alt mr-2"></i>
+                                                (Optional) <strong>{{ audio_path[2] }}</strong> Transcript B
+                                            </summary>
+                                            <div class="transcript-content p-3 bg-white border rounded mt-2">{{ question.transcript[loop.index0][1] }}
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_weak" name="{{ question.name }}_{{ loop.index }}_a" value="2">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_weak">
-                                                    <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_moderate" name="{{ question.name }}_{{ loop.index }}_a" value="3">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_moderate">
-                                                    <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_strong" name="{{ question.name }}_{{ loop.index }}_a" value="4">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_strong">
-                                                    <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_a_compelling" name="{{ question.name }}_{{ loop.index }}_a" value="5">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a_compelling">
-                                                    <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
-                                                </label>
+                                        </details>
+
+                                        <!-- Rating Section -->
+                                        <div class="form-group">
+                                        <label for="{{ question.name }}_{{ loop.index }}_b">
+                                            How persuasive is <strong>Output B</strong> in supporting <strong>{{ audio_path[0] }}</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                        </label>
+                                        <div class="row align-items-center">
+                                            <div class="col-10 offset-1">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_poor" name="{{ question.name }}_{{ loop.index }}_b" value="1">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_poor">
+                                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_weak" name="{{ question.name }}_{{ loop.index }}_b" value="2">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_weak">
+                                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_moderate" name="{{ question.name }}_{{ loop.index }}_b" value="3">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_moderate">
+                                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_strong" name="{{ question.name }}_{{ loop.index }}_b" value="4">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_strong">
+                                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_compelling" name="{{ question.name }}_{{ loop.index }}_b" value="5">
+                                                    <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_compelling">
+                                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Comment Section -->
-                                <div class="form-group mt-3 mb-4">
-                                    <label for="{{ question.name }}_{{ loop.index }}_comment_a"> (Optional) Additional comments for <strong> Output A's {{ audio_path[0] }} </strong> side:</label>
-                                    <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment_a" name="{{ question.name }}_{{ loop.index }}_comment_a" rows="2"></textarea>
-                                </div>
-                                </div>
-                                {% if not loop.last %}
-                                    <hr class="my-3">
-                                {% endif %}
-                            
+                                    <!-- Comment Section -->
+                                    <div class="form-group mt-3 mb-4">
+                                        <label for="{{ question.name }}_{{ loop.index }}_comment_b"> (Optional) Additional comments for <strong> Output B's {{ audio_path[0] }} </strong> side:</label>
+                                        <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment_b" name="{{ question.name }}_{{ loop.index }}_comment_b" rows="2"></textarea>
+                                    </div>
+                                    </div>
+                                    {% if not loop.last %}
+                                        <hr class="my-3">
+                                    {% endif %}
+                            </div>
                         </div>
 
-                        <!-- Right Side (Output B) -->
-                        <div class="col-6">
-                            <!-- Audio Player -->
-                            <h5 class="text-center mb-3">Output B - <strong>{{ audio_path[2] }}</strong> Side </h5>
-                                <div class="audio-section mb-4">
-                                    <div class="audio-player mb-3">
-                                        <audio controls src="{{ audio_path[3] }}" class="w-100" id="audio_b_{{ loop.index }}_{{ audio_path[2] }}">
-                                            Your browser does not support the audio element.
-                                        </audio>
-                                    </div>
-
-                                    <!-- Transcript -->
-                                    <details class="transcript-details mb-3">
-                                        <summary class="transcript-summary p-2 bg-light rounded">
-                                            <i class="fas fa-file-alt mr-2"></i>
-                                            (Optional) <strong>{{ audio_path[2] }}</strong> Transcript B
-                                        </summary>
-                                        <div class="transcript-content p-3 bg-white border rounded mt-2">{{ question.transcript[loop.index0][1] }}
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                    Which output do you find more effective overall?<sup>*</sup>
+                                </label>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 offset-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="-1" id="{{ question.name }}_{{ loop.index }}_slightly_a">
+                                            <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a"> Prefer Output A</label>
                                         </div>
-                                    </details>
-
-                                    <!-- Rating Section -->
-                                    <div class="form-group">
-                                    <label for="{{ question.name }}_{{ loop.index }}_b">
-                                        How persuasive is <strong>Output B</strong> in supporting <strong>{{ audio_path[0] }}</strong> side? Rate the performance based on the following principle. <sup>*</sup>
-                                    </label>
-                                    <div class="row align-items-center">
-                                        <div class="col-10 offset-1">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_poor" name="{{ question.name }}_{{ loop.index }}_b" value="1">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_poor">
-                                                    <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_weak" name="{{ question.name }}_{{ loop.index }}_b" value="2">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_weak">
-                                                    <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_moderate" name="{{ question.name }}_{{ loop.index }}_b" value="3">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_moderate">
-                                                    <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_strong" name="{{ question.name }}_{{ loop.index }}_b" value="4">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_strong">
-                                                    <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="{{ question.name }}_{{ loop.index }}_b_compelling" name="{{ question.name }}_{{ loop.index }}_b" value="5">
-                                                <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b_compelling">
-                                                    <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
-                                                </label>
-                                            </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="0" id="{{ question.name }}_{{ loop.index }}_equal">
+                                            <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_equal">Both outputs are equally effective</label>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <!-- Comment Section -->
-                                <div class="form-group mt-3 mb-4">
-                                    <label for="{{ question.name }}_{{ loop.index }}_comment_b"> (Optional) Additional comments for <strong> Output B's {{ audio_path[0] }} </strong> side:</label>
-                                    <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment_b" name="{{ question.name }}_{{ loop.index }}_comment_b" rows="2"></textarea>
-                                </div>
-                                </div>
-                                {% if not loop.last %}
-                                    <hr class="my-3">
-                                {% endif %}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
-                                Which output do you find more effective overall?<sup>*</sup>
-                            </label>
-                            <div class="row justify-content-center">
-                                <div class="col-12 offset-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="-1" id="{{ question.name }}_{{ loop.index }}_slightly_a">
-                                        <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_a"> Prefer Output A</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="0" id="{{ question.name }}_{{ loop.index }}_equal">
-                                        <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_equal">Both outputs are equally effective</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="1" id="{{ question.name }}_{{ loop.index }}_slightly_b">
-                                        <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b">Prefer Output B</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="{{ question.name }}_{{ loop.index }}" value="1" id="{{ question.name }}_{{ loop.index }}_slightly_b">
+                                            <label class="form-check-label" for="{{ question.name }}_{{ loop.index }}_b">Prefer Output B</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
 
                     {% else %}
@@ -321,7 +322,14 @@
                             <textarea class="form-control" id="{{ question.name }}_{{ loop.index }}_comment" name="{{ question.name }}_{{ loop.index }}_comment" rows="2"></textarea>
                         </div>
                     {% endif %}
-                
+                </div>
+
+                    {% if not loop.last %}
+                       <div class="text-center">
+                           <button id="nextSideButton" class="btn btn-primary btn-lg button-next-side" type="button">Next Side</button>
+                       </div>
+                    {% endif %}
+
                     <hr class="my-4">
                 {% endfor %}
 
@@ -412,4 +420,136 @@
             </div>
         </div>
     {% endfor %}
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+{% endblock %} 
+
+
+
+{% block scripts %}
+    <script>
+
+        // Call this function when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setupAudioSideNavigation();
+        });
+
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i <= index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            // Get all currently visible questions
+            const currentQuestions = document.querySelectorAll('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check each visible question
+            currentQuestions.forEach(currentQuestion => {
+                // Check if all audios have been played
+                const currentaudio = currentQuestion.querySelectorAll('audio');
+                currentaudio.forEach(audioElement => {
+                    if (audioElement.dataset.played === "false") {
+                        allValidAudio = false;
+                        const audioLabel = audioElement.closest(".audio") ? 
+                            audioElement.closest(".audio").querySelector('.audio-side').innerText :
+                            audioElement.id;
+                        invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                    }
+                });
+
+                // check all questions have been answered
+                const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+                const radioNames = new Set();
+                radioGroups.forEach(input => radioNames.add(input.name));
+                radioNames.forEach(name => {
+                    const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                    const isChecked = Array.from(group).some(input => input.checked);
+                    if (!isChecked) {
+                        allValidQuestion = false;
+                        const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                        invalidQuestions.push(questionLabel);
+                    }
+                });
+            });
+            
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting (for both sides). \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions (for both sides). You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    /* document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' }); */
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+        // Add a function to handle navigation between audio sides
+        function setupAudioSideNavigation() {            
+            // Add "Other Side" button after each question's navigation
+            questions.forEach(question => {
+                const audioContainers = question.querySelectorAll('.side-container');
+                if (audioContainers.length > 1) {                
+                    // Initially show only the first audio
+                    audioContainers.forEach((container, index) => {
+                        if (index === 0) {
+                            container.style.display = 'block';
+                        } else {
+                            container.style.display = 'none';
+                        }
+                    });
+                    
+                    // Set up the click handler for the Other Side button
+                    let currentAudioIndex = 0;
+                    const otherSideBtn = question.querySelectorAll('.button-next-side');
+                    otherSideBtn.forEach(button => {
+                        button.addEventListener('click', function() {
+                            currentAudioIndex = (currentAudioIndex + 1) % audioContainers.length;
+                            
+                            // Show the next audio
+                            audioContainers[currentAudioIndex].style.display = 'block';
+                            button.style.display = 'none';
+                        });
+                    });
+                }
+            });
+        }
+
+    </script>
 {% endblock %} 

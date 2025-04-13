@@ -38,7 +38,6 @@ def get_options():
 def check_and_save(name, html):
     if os.path.exists(name):
         print(f"File {name} already exists. Regenerating ...")
-        os.system(f"rm -r {name}")
     
     with open(name, "w") as f:
         f.write(html)
