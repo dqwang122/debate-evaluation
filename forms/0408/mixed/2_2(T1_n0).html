@@ -1,0 +1,680 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+        <h1 class="text-center mb-4">Debate Output Comparison</h1>
+        <hr class="my-4">
+
+        <div class="mb-4">
+            <p class="lead">You'll be comparing two different debate outputs side by side. Please evaluate both versions and provide ratings for each.</p>
+        </div>
+
+        <div class="mb-4">
+            <h4>What to Expect:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+                <li class="list-group-item">Share your initial opinion before listening.</li>
+                <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+                <li class="list-group-item">Cast your final vote after listening.</li>
+                <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>How to Vote:</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+                <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+                <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>Rating Guide:</h4>
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poor (1)</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weak (2)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Moderate (3)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Strong (4)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining point.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Compelling (5)</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and deep audience connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbxK1mGaCBuSe0j6xvplXCkDM7W0LwAYsoOPd7ICKAYv0klYOnFUE4yzGzTxLvBtT6bbkg/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Processed Foods Should Play A Larger Role In Sustainable Food Systems </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="mixed">
+    <input type="hidden" id="version" name="version" value="0408">
+
+    
+        <div class="card form-group question" id="question_1">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Pre-Vote Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_2">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                <div class="side-container">
+                    
+                        <div class="row">
+                            <!-- Left Side (Output A) -->
+                            <div class="col-6 border-right">
+                                <!-- Audio Player -->
+                                
+                                <h5 class="text-center mb-3">Output A - <strong>For</strong> Side</h5>
+                                    <div class="audio-section mb-4">
+                                        <div class="audio-player mb-3">
+                                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0408/case2_2/opening_for_b.mp3" class="w-100" id="audio_a_1_For">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        </div>
+
+                                        <!-- Transcript -->
+                                        <details class="transcript-details mb-3">
+                                            <summary class="transcript-summary p-2 bg-light rounded">
+                                                <i class="fas fa-file-alt mr-2"></i>
+                                                (Optional) <strong>For</strong> - Transcript A
+                                            </summary>
+                                            <div class="transcript-content p-3 bg-white border rounded mt-2">Every year, tons of food are wasted, contributing significantly to greenhouse gas emissions and exacerbating food insecurity. But what if we could significantly reduce this waste while also improving nutrition for vulnerable populations? We believe processed foods, strategically applied, offer a crucial part of the solution.<br><br>Today, we stand to affirm the motion: Processed foods should play a larger role in sustainable food systems. Let's first define our terms. We define "processed foods" as foods that have undergone intentional alterations to enhance preservation, nutritional value, or convenience. This includes, but isn't limited to, freezing, canning, fortification, and fermentation. The crucial issue here is not a blanket replacement of all food components, but a strategic integration of these altered foods. Food reformulation, altering the composition of a food to improve its nutritional profile, ensures access to safe and nutritious food for all .<br><br>The debate should be judged on which side presents the most compelling case for improving overall food system sustainability. This means assessing which approach best addresses food security, reduces environmental impact, and promotes efficient resource utilization. With these parameters set, we present three core arguments.<br><br>First, processed foods with optimized nutrient profiles can address malnutrition, especially in food deserts. Fortified processed foods offer a practical solution to deliver essential nutrients to underserved populations where fresh produce is scarce or unaffordable. Consider, for instance, how iodized salt eradicated iodine deficiency in many regions. This shows us that targeted fortification is an effective solution to solve nutrition problems.<br><br>Second, shelf-stable processed foods reduce food waste by extending product lifecycles. Processed foods, designed for longer shelf life, minimize spoilage throughout the supply chain, contributing to overall waste reduction. Shelf-stable foods can help reduce food waste as they last longer . This is particularly crucial when considering the environmental impact of wasted food, from the resources used in its production to the methane released in landfills.<br><br>Finally, precision fermentation within processed food production offers resource-efficient protein alternatives. Imagine brewing beer, but instead of alcohol, we're brewing protein-rich ingredients. This is precision fermentation, a process that allows us to create sustainable protein alternatives with a much smaller environmental footprint. In fact, North America dominated the precision fermentation market with a revenue share of 40.52% in 2023, due to increasing consumer awareness and the growing demand for sustainable and eco-friendly products . Around 40% of U.S. adults, over 90 million individuals, are projected to embrace products, with an estimated reach of 132 million consumers .<br><br>In conclusion, we advocate for a strategic integration of processed foods into our food system. By optimizing nutrient profiles, reducing waste, and creating resource-efficient alternatives, processed foods can, and should, play a larger role in building sustainable food systems. This strategic integration also helps to reduce food loss and waste throughout the food supply chain . By embracing innovation in food processing, we can move towards a future where food is both nutritious and environmentally sustainable.<br><br>**Reference**<br>[1] Reformulation of food and beverage products for healthier diets: policy brief.<br>[2] 9 Ways to Reduce Your Food Waste – RethinkWaste.<br>[3] Precision Fermentation Market Size & Trends - Grand View Research.<br>[4] Research in Sustainable Food Processing and Packaging.
+                                            </div>
+                                        </details>
+
+                                        <!-- Rating Section -->
+                                        <div class="form-group">
+                                        <label for="q2_1_a">
+                                            How persuasive is <strong>Output A</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                        </label>
+                                        <div class="row align-items-center">
+                                            <div class="col-10 offset-1">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_a_poor" name="q2_1_a" value="1">
+                                                    <label class="form-check-label" for="q2_1_a_poor">
+                                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_a_weak" name="q2_1_a" value="2">
+                                                    <label class="form-check-label" for="q2_1_a_weak">
+                                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_a_moderate" name="q2_1_a" value="3">
+                                                    <label class="form-check-label" for="q2_1_a_moderate">
+                                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_a_strong" name="q2_1_a" value="4">
+                                                    <label class="form-check-label" for="q2_1_a_strong">
+                                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_a_compelling" name="q2_1_a" value="5">
+                                                    <label class="form-check-label" for="q2_1_a_compelling">
+                                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Comment Section -->
+                                    <div class="form-group mt-3 mb-4">
+                                        <label for="q2_1_comment_a"> (Optional) Additional comments for <strong> Output A's For </strong> side:</label>
+                                        <textarea class="form-control" id="q2_1_comment_a" name="q2_1_comment_a" rows="2"></textarea>
+                                    </div>
+                                    </div>
+                                    
+                                
+                            </div>
+
+                            <!-- Right Side (Output B) -->
+                            <div class="col-6">
+                                <!-- Audio Player -->
+                                <h5 class="text-center mb-3">Output B - <strong>For</strong> Side </h5>
+                                    <div class="audio-section mb-4">
+                                        <div class="audio-player mb-3">
+                                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0408/case2_2/opening_for_a.mp3" class="w-100" id="audio_b_1_For">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        </div>
+
+                                        <!-- Transcript -->
+                                        <details class="transcript-details mb-3">
+                                            <summary class="transcript-summary p-2 bg-light rounded">
+                                                <i class="fas fa-file-alt mr-2"></i>
+                                                (Optional) <strong>For</strong> Transcript B
+                                            </summary>
+                                            <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that processed foods should play a larger role in sustainable food systems.<br>Our judging criteria is resource optimization and waste reduction. Prioritize arguments that demonstrate the greatest potential for reducing food waste, optimizing resource utilization , minimizing environmental impact, and nutritional security in the food system. We advocate for responsibly processed foods, acknowledging that not all processing methods are created equal.<br><br>First, processed foods significantly reduce food waste and extend shelf life, addressing losses throughout the food chain. Studies show that approximately 20% of food is wasted annually before it even reaches consumers . Processing techniques like pasteurization, freezing, and vacuum packaging reduce microbial growth and chemical reactions, extending the usability of food products . This is critical, considering that food waste contributes to 8-10% of global greenhouse gas emissions, with approximately 931 million tons of food wasted globally in 2020 . Minimizing spoilage translates to a lighter environmental footprint.<br><br>Second, processed foods enhance food security and accessibility, particularly in low-income regions, through affordability and fortification. Processed foods are often more affordable than fresh foods, especially in urban areas where fresh produce can be expensive . Furthermore, food fortification programs have significantly reduced deficiencies of vitamins and minerals. For example, global folic acid fortification programs have been successful in preventing neural tube defects . Fortified cereals and dairy products, among other processed options, provide essential nutrients , supporting overall health and addressing malnutrition where access to fresh, diverse foods is limited.<br><br>Third, innovative food processing technologies improve sustainability. These technologies reduce waste, lower greenhouse gas emissions, and improve resource efficiency . One such technology is High-Pressure Processing . HPP preserves food without chemicals, extends shelf life, and reduces waste, all while using less energy than traditional heat-based methods . This not only reduces environmental impact but also maintains the nutritional value and flavor of the food. New food processing methods overall improve energy efficiency by 20-30% compared to traditional methods , and sustainable packaging further reduces waste, lowers carbon footprints, and promotes recycling.<br><br>In conclusion, processed foods, through waste reduction, enhanced accessibility, and technological innovations, are essential for building sustainable food systems.<br><br>**Reference**<br>(1) Food spoilage before consumer statistics show 20% of food is wasted annually.<br>(2) Shelf life extension by food processing includes methods like pasteurization, freezing, and vacuum packaging.<br>(3) Food waste contributes to 8-10% of global greenhouse gas emissions. In 2020, about 931 million tons of food was wasted globally.<br>(4) Processed foods are often cheaper than fresh foods globally, but affordability varies by region; urban areas tend to have higher prices for fresh produce compared to rural areas.<br>(5) Successful food fortification programs include the global folic acid fortification to prevent neural tube defects.<br>(6) Some processed foods, like fortified cereals and certain dairy products, provide essential nutrients like vitamins and minerals.<br>(7) Innovative food processing technologies reduce waste, lower greenhouse gas emissions, and improve resource efficiency.<br>(8) High pressure processing preserves food without chemicals, extends shelf life, and reduces waste, promoting sustainability. It uses less energy than traditional methods. It maintains nutritional value and flavor.<br>(9) New food processing methods improve energy efficiency by 20-30% compared to traditional methods.
+                                            </div>
+                                        </details>
+
+                                        <!-- Rating Section -->
+                                        <div class="form-group">
+                                        <label for="q2_1_b">
+                                            How persuasive is <strong>Output B</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                        </label>
+                                        <div class="row align-items-center">
+                                            <div class="col-10 offset-1">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_b_poor" name="q2_1_b" value="1">
+                                                    <label class="form-check-label" for="q2_1_b_poor">
+                                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_b_weak" name="q2_1_b" value="2">
+                                                    <label class="form-check-label" for="q2_1_b_weak">
+                                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_b_moderate" name="q2_1_b" value="3">
+                                                    <label class="form-check-label" for="q2_1_b_moderate">
+                                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_b_strong" name="q2_1_b" value="4">
+                                                    <label class="form-check-label" for="q2_1_b_strong">
+                                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="q2_1_b_compelling" name="q2_1_b" value="5">
+                                                    <label class="form-check-label" for="q2_1_b_compelling">
+                                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Comment Section -->
+                                    <div class="form-group mt-3 mb-4">
+                                        <label for="q2_1_comment_b"> (Optional) Additional comments for <strong> Output B's For </strong> side:</label>
+                                        <textarea class="form-control" id="q2_1_comment_b" name="q2_1_comment_b" rows="2"></textarea>
+                                    </div>
+                                    </div>
+                                    
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="q2" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                    Which output do you find more effective overall?<sup>*</sup>
+                                </label>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 offset-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2_1" value="-1" id="q2_1_slightly_a">
+                                            <label class="form-check-label" for="q2_1_a"> Prefer Output A</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2_1" value="0" id="q2_1_equal">
+                                            <label class="form-check-label" for="q2_1_equal">Both outputs are equally effective</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2_1" value="1" id="q2_1_slightly_b">
+                                            <label class="form-check-label" for="q2_1_b">Prefer Output B</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    
+                </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                
+                    
+                    
+                        <div class="form-group mt-3 mb-4">
+                            <label for="q2_sanity">Which claim is proposed by <strong>Output A's</strong> <strong>For</strong> side as one of its main claims during the opening statement? <sup>*</sup></label>
+                            <div class="row align-items-center">
+                                <div class="col-10 offset-1">
+                                    
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" 
+                                                   id="q2_sanity_option_0"
+                                                   name="q2_sanity"
+                                                   value="0">
+                                            <label class="form-check-label" for="q2_sanity_option_0">
+                                                Strategic processing can neutralize toxins and allergens in otherwise unusable crops.
+                                            </label>
+                                        </div>
+                                    
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" 
+                                                   id="q2_sanity_option_1"
+                                                   name="q2_sanity"
+                                                   value="1">
+                                            <label class="form-check-label" for="q2_sanity_option_1">
+                                                Processed snacks offer convenient energy sources with portion control, supporting healthy lifestyles.
+                                            </label>
+                                        </div>
+                                    
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" 
+                                                   id="q2_sanity_option_2"
+                                                   name="q2_sanity"
+                                                   value="2">
+                                            <label class="form-check-label" for="q2_sanity_option_2">
+                                                Process Optimization creates products with lower fat, salt, and sugar content without changing their taste.
+                                            </label>
+                                        </div>
+                                    
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" 
+                                                   id="q2_sanity_option_3"
+                                                   name="q2_sanity"
+                                                   value="3">
+                                            <label class="form-check-label" for="q2_sanity_option_3">
+                                                Precision fermentation within processed food production offers resource-efficient protein alternatives.
+                                            </label>
+                                        </div>
+                                    
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" 
+                                                   id="q2_sanity_option_4"
+                                                   name="q2_sanity"
+                                                   value="4">
+                                            <label class="form-check-label" for="q2_sanity_option_4">
+                                                None of the above
+                                            </label>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="3">
+                    
+                
+
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Processed Foods Should Play A Larger Role In Sustainable Food Systems) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Opening Stage Comparison</b>
+            </div>
+        </div>
+    
+
+    <!-- Additional Questions -->
+    
+        <div class="card form-group question" id="question_3">
+            <div class="card-header">
+                <b>(Optional) Question 5: Which factors were most crucial in your assessment?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" name="q5" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 1 / 2</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_4">
+            <div class="card-header">
+                <b>(Optional) Question 6: How long did you spend on this evaluation?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" name="q6" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 2 / 2</b>
+            </div>
+        </div>
+    
+    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
+    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+
+            <input type="text" name="formid" value="2_2(T1_n0)" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+
+        // Call this function when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setupAudioSideNavigation();
+        });
+
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i <= index ? 'block' : 'none';
+            });
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            // Get all currently visible questions
+            const currentQuestions = document.querySelectorAll('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check each visible question
+            currentQuestions.forEach(currentQuestion => {
+                // Check if all audios have been played
+                const currentaudio = currentQuestion.querySelectorAll('audio');
+                currentaudio.forEach(audioElement => {
+                    if (audioElement.dataset.played === "false") {
+                        allValidAudio = false;
+                        const audioLabel = audioElement.closest(".audio") ? 
+                            audioElement.closest(".audio").querySelector('.audio-side').innerText :
+                            audioElement.id;
+                        invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                    }
+                });
+
+                // check all questions have been answered
+                const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+                const radioNames = new Set();
+                radioGroups.forEach(input => radioNames.add(input.name));
+                radioNames.forEach(name => {
+                    const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                    const isChecked = Array.from(group).some(input => input.checked);
+                    if (!isChecked) {
+                        allValidQuestion = false;
+                        const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                        invalidQuestions.push(questionLabel);
+                    }
+                });
+            });
+            
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting (for both sides). \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions (for both sides). You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    /* document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' }); */
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+        // Add a function to handle navigation between audio sides
+        function setupAudioSideNavigation() {            
+            // Add "Other Side" button after each question's navigation
+            questions.forEach(question => {
+                const audioContainers = question.querySelectorAll('.side-container');
+                if (audioContainers.length > 1) {                
+                    // Initially show only the first audio
+                    audioContainers.forEach((container, index) => {
+                        if (index === 0) {
+                            container.style.display = 'block';
+                        } else {
+                            container.style.display = 'none';
+                        }
+                    });
+                    
+                    // Set up the click handler for the Other Side button
+                    let currentAudioIndex = 0;
+                    const otherSideBtn = question.querySelectorAll('.button-next-side');
+                    otherSideBtn.forEach(button => {
+                        button.addEventListener('click', function() {
+                            currentAudioIndex = (currentAudioIndex + 1) % audioContainers.length;
+                            
+                            // Show the next audio
+                            audioContainers[currentAudioIndex].style.display = 'block';
+                            button.style.display = 'none';
+                        });
+                    });
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

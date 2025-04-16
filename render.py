@@ -2,14 +2,16 @@
 """Generate forms for human evaluation."""
 
 import os
+import copy
 import json
+import random
 import argparse
 
 from jinja2 import FileSystemLoader, Environment
 
 DEFAULT_TEMPLATE_PATH = "./templates"
 DEFAULT_S3_BUCKET = "https://debaterecords.s3.amazonaws.com"
-DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycby4yVMejSjiW8bSUyODIY8lvW6Sf-UWqudpjHpQULUfFSqTvOsVIshdepIndj3vbOJq0w/exec"
+DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbxK1mGaCBuSe0j6xvplXCkDM7W0LwAYsoOPd7ICKAYv0klYOnFUE4yzGzTxLvBtT6bbkg/exec"
 SAVE_ROOT = "forms"
 
 QLIST = [
@@ -22,7 +24,6 @@ QLIST = [
     "Which factors were most crucial in your assessment?",
     "How long did you spend on this evaluation?",
 ]
-
 
 def get_options():
     parser = argparse.ArgumentParser(description="Create the debate evaluation form.")
@@ -43,6 +44,43 @@ def check_and_save(name, html):
         f.write(html)
     print(f"Saved {name}")
 
+
+def get_sanity_check_questions(data, side, stage):
+    if "debate_thoughts" not in data:
+        return {}
+    if stage == "opening":
+        context = [p for p in data["debate_thoughts"][side] if p["mode"] == "choose_main_claims"]
+        if len(context) == 0:
+            return {}
+        else:
+            candidates = context[0]["ranked_claims"]
+            correct = context[0]["selected_claims"]
+            incorrect = [o for o in candidates if o not in correct]
+            correct_answer = random.choice(correct)
+            incorrect_answer = random.sample(incorrect, 3)
+            options = [correct_answer] + incorrect_answer
+            random.shuffle(options)
+            options.append("None of the above")
+            answer = options.index(correct_answer)
+            question = {
+                "title": f"Which claim is proposed by <strong>{side.capitalize()}</strong> side as one of its main claims during the opening statement?",
+                "options": options,
+                "answer": answer,
+                "stage": stage,
+                "side": side,
+                "type": "choice",
+            }
+            return question
+    elif stage == "rebuttal":
+        return {}
+    else:
+        return {
+            "title": f"Which is the main battlefield / conflict / question mentioned by <strong>{side.capitalize()}</strong> side in its closing statement?",
+            "stage": stage,
+            "side": side,
+            "type": "text",
+        }
+
 def load_case(version, mode):
     file = "assets/metadata.json"
     with open(file) as f:
@@ -60,21 +98,27 @@ def load_case(version, mode):
                 data_list.append(data)
         
         c["transcript"] = {}
+        c["sanity_check_questions"] = {}
         for stage in ["opening", "rebuttal", "closing"]:
             c["transcript"][stage] = {"for": [], "against": []}
+            c["sanity_check_questions"][stage] = {"for": [], "against": []}
 
+        # may have multiple transcripts (output a and b)
         for data in data_list:
             process = data["debate_process"]
             for p in process:
                 stage = p["stage"]
                 side = p["side"]
                 text = p["content"].replace("\n", "<br>").replace("\\", "")
+                sanity_check_question = get_sanity_check_questions(data, side, stage)
                 if len(data_list) == 1:
                     c["transcript"][stage][side] = text
                 else:
                     c["transcript"][stage][side].append(text)
-        
-
+                
+                if len(sanity_check_question) > 0:
+                    c["sanity_check_questions"][stage][side].append(sanity_check_question)
+                    
     return cases
     
 
@@ -113,6 +157,7 @@ def create_form(version, id, motion, questions, addition_questions=None, target=
 
 def create_question_form(args, case, motion, head_to_head=None, assigned_stance=None):
     c = case
+    reverse = c["reverse"] if "reverse" in c else False
 
     current_head_num = 0
 
@@ -135,36 +180,53 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
             "description": f"After listening to the two statements in {stage.capitalize()} stage, please choose your attitude towards the given motion ({motion}) now",
             "transcript": [],
             "name": f"q{qid}",
-            "stage": stage.capitalize()
+            "stage": stage.capitalize(),
+            "sanity_check": []
         }
 
         if args.target == "comparison":
-            question["audio_paths"] = [
-                    ["For", f"{audio_root}/{stage}_for_a.mp3", "For", f"{audio_root}/{stage}_for_b.mp3"],
-                    ["Against", f"{audio_root}/{stage}_against_a.mp3", "Against", f"{audio_root}/{stage}_against_b.mp3"],
-                ]
-            question["transcript"] = [c["transcript"][stage]["for"], c["transcript"][stage]["against"]]
+            if reverse:
+                question["audio_paths"] = [
+                        ["For", f"{audio_root}/{stage}_for_b.mp3", "For", f"{audio_root}/{stage}_for_a.mp3"],
+                        ["Against", f"{audio_root}/{stage}_against_b.mp3", "Against", f"{audio_root}/{stage}_against_a.mp3"],
+                    ]
+                question["transcript"] = [c["transcript"][stage]["for"][::-1], c["transcript"][stage]["against"][::-1]]
+            else:
+                question["audio_paths"] = [
+                        ["For", f"{audio_root}/{stage}_for_a.mp3", "For", f"{audio_root}/{stage}_for_b.mp3"],
+                        ["Against", f"{audio_root}/{stage}_against_a.mp3", "Against", f"{audio_root}/{stage}_against_b.mp3"],
+                    ]
+                question["transcript"] = [c["transcript"][stage]["for"], c["transcript"][stage]["against"]]
         
         elif args.target in ["mixed", "expr"]:
             assert assigned_stance is not None, "assigned_stance is required for mixed target"
             assert head_to_head is not None, "target_stage is required for mixed target"
 
+            # baseline idx=0, test idx=1; a is baseline, b is test
             for_model = assigned_stance["for"]
             against_model = assigned_stance["against"]
             for_idx = 0 if for_model == "a" else 1
             against_idx = 0 if against_model == "a" else 1
             if stage in head_to_head:
                 if "for" in head_to_head[stage]:
-                    question["audio_paths"].append(["For", f"{audio_root}/{stage}_for_a.mp3", "For", f"{audio_root}/{stage}_for_b.mp3"])
-                    question["transcript"].append(c["transcript"][stage]["for"])
+                    if reverse:
+                        question["audio_paths"].append(["For", f"{audio_root}/{stage}_for_b.mp3", "For", f"{audio_root}/{stage}_for_a.mp3"])
+                        question["transcript"].append(c["transcript"][stage]["for"][::-1])
+                    else:
+                        question["audio_paths"].append(["For", f"{audio_root}/{stage}_for_a.mp3", "For", f"{audio_root}/{stage}_for_b.mp3"])
+                        question["transcript"].append(c["transcript"][stage]["for"])
                     current_head_num += 1
                 else:
                     question["audio_paths"].append(["For", f"{audio_root}/{stage}_for_{for_model}.mp3"])
                     question["transcript"].append(c["transcript"][stage]["for"][for_idx])
 
                 if "against" in head_to_head[stage]:
-                    question["audio_paths"].append(["Against", f"{audio_root}/{stage}_against_a.mp3", "Against", f"{audio_root}/{stage}_against_b.mp3"])
-                    question["transcript"].append(c["transcript"][stage]["against"])
+                    if reverse:
+                        question["audio_paths"].append(["Against", f"{audio_root}/{stage}_against_b.mp3", "Against", f"{audio_root}/{stage}_against_a.mp3"])
+                        question["transcript"].append(c["transcript"][stage]["against"][::-1])
+                    else:
+                        question["audio_paths"].append(["Against", f"{audio_root}/{stage}_against_a.mp3", "Against", f"{audio_root}/{stage}_against_b.mp3"])
+                        question["transcript"].append(c["transcript"][stage]["against"])
                     current_head_num += 1
                 else:
                     question["audio_paths"].append(["Against", f"{audio_root}/{stage}_against_{against_model}.mp3"])
@@ -183,6 +245,35 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
             ]
             question["transcript"] = [c["transcript"][stage]["for"], c["transcript"][stage]["against"]]
 
+        if "sanity_check_questions" in c :
+            if args.target in ["mixed", "expr"]:
+                for side in ["for", "against"]:
+                    if len(c["sanity_check_questions"][stage][side]) > 0:
+                        sanity_check = copy.deepcopy(c["sanity_check_questions"][stage][side][-1])
+                        if head_to_head is not None and stage in head_to_head and side in head_to_head[stage]:
+                            # sanity check is always for our test output
+                            if reverse:
+                                sanity_check["title"] = sanity_check["title"].replace("by", f"by <strong>Output A's</strong>")
+                            else:
+                                sanity_check["title"] = sanity_check["title"].replace("by", f"by <strong>Output B's</strong>")
+                            question["sanity_check"].append(sanity_check)
+                        else:
+                            if (side == "for" and for_model == "b") or (side == "against" and against_model == "b"):
+                                question["sanity_check"].append(sanity_check)
+            else:
+                for side in ["for", "against"]:
+                    if len(c["sanity_check_questions"][stage][side]) > 0:
+                        sanity_check = copy.deepcopy(c["sanity_check_questions"][stage][side][-1])
+                        if reverse:
+                            sanity_check["title"] = sanity_check["title"].replace("by", f"by <strong>Output A's</strong>")
+                        else:
+                            sanity_check["title"] = sanity_check["title"].replace("by", f"by <strong>Output B's</strong>")
+                        question["sanity_check"].append(sanity_check)
+
+
+
+
+
         questions.append(question)
         qid += 1
 
@@ -196,9 +287,14 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
                 else:
                     last_stage_flag = True
                     if "against" not in head_to_head[questions[i]["stage"].lower()]:
+                        # remove the against side
                         questions[i]["audio_paths"] = questions[i]["audio_paths"][:-1]
                         questions[i]["transcript"] = questions[i]["transcript"][:-1]
+                        if len(questions[i]["sanity_check"]) > 0 and questions[i]["sanity_check"][-1]["side"] == "against":
+                            questions[i]["sanity_check"] = questions[i]["sanity_check"][:-1]
 
+
+    print([q["sanity_check"] for q in questions if "sanity_check" in q])
 
     addition_questions = []
     for q in QLIST:

@@ -1,0 +1,1355 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <div class="container">
+        <h1 class="text-center mb-4">Debate Output Comparison</h1>
+        <hr class="my-4">
+
+        <div class="mb-4">
+            <p class="lead">You'll be comparing two different debate outputs side by side. Please evaluate both versions and provide ratings for each.</p>
+        </div>
+
+        <div class="mb-4">
+            <h4>What to Expect:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+                <li class="list-group-item">Share your initial opinion before listening.</li>
+                <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+                <li class="list-group-item">Cast your final vote after listening.</li>
+                <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>How to Vote:</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+                <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+                <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4>Rating Guide:</h4>
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poor (1)</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weak (2)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Moderate (3)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Strong (4)</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining point.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Compelling (5)</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and deep audience connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbxK1mGaCBuSe0j6xvplXCkDM7W0LwAYsoOPd7ICKAYv0klYOnFUE4yzGzTxLvBtT6bbkg/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: It Is Time To Welcome An A.I. Tutor In The Classroom </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="comparison2">
+    <input type="hidden" id="version" name="version" value="0416">
+
+    
+        <div class="card form-group question" id="question_1">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+
+                
+
+                <!-- Overall Comparison Question -->
+                
+                    <div class="form-group">
+                        <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                            Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                    <label class="form-check-label" for="q1_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                    <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                    <label class="form-check-label" for="q1_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                    <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                    <label class="form-check-label" for="q1_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>End of Pre-Vote Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_2">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                <div class="row">
+                    <!-- Left Side (Output A) -->
+                    <div class="col-6 border-right">
+                        <!-- Audio Player -->
+                        
+                        <h5 class="text-center mb-3">Output A - <strong>For</strong> Side</h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/opening_for_a.mp3" class="w-100" id="audio_a_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>For</strong> - Transcript A
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we assert that it is indeed time to welcome A.I. Tutors into the classroom. We define an AI Tutor as an artificial intelligence system designed to provide personalized instruction, answer questions, and track student progress in an educational setting [1]. A classroom is defined as the physical or virtual learning environment where instruction takes place.<br><br>Our judging criteria is maximizing educational outcomes. The side that demonstrates the greatest potential for improved student learning, personalized instruction, and increased access to quality education should win the debate.<br><br>First, AI Tutors enhance personalized learning, leading to improved educational outcomes. AI tutors adapt to individual student needs and learning styles, providing customized instruction and feedback [2]. This personalization leads to improved engagement and motivation. Studies show that AI tutors can double learning rates and boost student engagement through adaptive instruction and real-time feedback [3]. For example, a high school in California reported a 30% improvement in math test scores in one semester among students using AI tutoring [6]. The personalized learning experience facilitated by AI tutors leads to improved student engagement, motivation, and overall educational outcomes [4].<br><br>Second, AI Tutors increase access to quality education, breaking down geographical and economic barriers. They offer personalized learning and are available 24/7 [5]. Infusing AI into tutoring breaks down geographical and economic barriers by enabling students from all corners of the globe to access high-quality education, leveling the playing field [7]. As Stand Together reports, AI tutors enhance education by increasing access and improving learning outcomes [8]. The World Economic Forum highlights that AI tutors give access to Machine Learning in education to fill the achievement gap in schooling and provide personalized assistance to each student, regardless of their geographical or socio-economic status [9].<br><br>Third, AI Tutors support and empower teachers, transforming them into more effective facilitators of learning. AI tutors automate routine tasks, provide data-driven insights into student performance, and free up teachers' time to focus on more complex aspects of teaching and fostering meaningful interactions with students [10]. For instance, AI systems analyze student performance to help teachers adapt instruction [11]. As noted by the NORC, teachers can leverage AI-derived insights to adjust their instructional methodologies, fostering a more effective and adaptive pedagogical approach [12].<br><br>In conclusion, AI Tutors are not just a futuristic concept but a present-day solution that enhances personalized learning, increases access to quality education, and supports teachers in the classroom. For these reasons, we strongly affirm the motion.<br><br>**Reference**<br>(1) Quora, "What are the potential benefits of AI tutors compared to human tutors?" https://www.quora.com/What-are-the-potential-benefits-of-AI-tutors-compared-to-human-tutors<br>(2) World Economic Forum, "Ways AI can benefit education." https://www.weforum.org/stories/2024/05/ways-ai-can-benefit-education/<br>(3) Workee, "Revolutionizing Education: AI's Impact on Tutoring." https://workee.net/blog/revolutionizing-education-ai-impact-on-tutoring<br>(4) CelebalTech, "AI Tutor." https://celebaltech.com/ai-tutor<br>(5) EdTech Magazine, "Are AI Tutors the Answer to Lingering Learning Loss?" https://edtechmagazine.com/k12/article/2024/05/are-ai-tutors-answer-lingering-learning-loss<br>(6) Workee, "Revolutionizing Education: AI's Impact on Tutoring." https://workee.net/blog/revolutionizing-education-ai-impact-on-tutoring<br>(7) NORC, "Unlocking Hearts and Minds: The Transformative Power of AI-Enhanced High-Dose Tutoring." https://www.norc.org/research/library/unlocking-hearts-and-minds-transformative-power-of-ai-enhanced-high-dose-tutoring.html<br>(8) Stand Together, "How AI Personal Tutors Are Re-Shaping Education." https://standtogether.org/stories/education/how-ai-personal-tutors-are-re-shaping-education<br>(9) World Economic Forum, "Ways AI can benefit education." https://www.weforum.org/stories/2024/05/ways-ai-can-benefit-education/<br>(10) Medium, "AI Tutors: Smart Assistants - How AI is Supporting Teachers and Students." https://medium.com/@techedtrends/ai-tutors-smart-assistants-how-ai-is-supporting-teachers-and-students-a1d1344b17b2<br>(11) Medium, "AI Tutors vs Human Teachers: Are we entering a new era of education?" https://medium.com/data-storytelling-corner/ai-tutors-vs-human-teachers-are-we-entering-a-new-era-of-education-9e70e2dc3904<br>(12) NORC, "Unlocking Hearts and Minds: The Transformative Power of AI-Enhanced High-Dose Tutoring." https://www.norc.org/research/library/unlocking-hearts-and-minds-transformative-power-of-ai-enhanced-high-dose-tutoring.html
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q2_1_a">
+                                    How persuasive is <strong>Output A</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_a_poor" name="q2_1_a" value="1">
+                                            <label class="form-check-label" for="q2_1_a_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_a_weak" name="q2_1_a" value="2">
+                                            <label class="form-check-label" for="q2_1_a_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_a_moderate" name="q2_1_a" value="3">
+                                            <label class="form-check-label" for="q2_1_a_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_a_strong" name="q2_1_a" value="4">
+                                            <label class="form-check-label" for="q2_1_a_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_a_compelling" name="q2_1_a" value="5">
+                                            <label class="form-check-label" for="q2_1_a_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_1_comment_a"> (Optional) Additional comments for <strong> Output A's For </strong> side:</label>
+                                <textarea class="form-control" id="q2_1_comment_a" name="q2_1_comment_a" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                                <hr class="my-3">
+                            
+                        
+                    </div>
+
+                    <!-- Right Side (Output B) -->
+                    <div class="col-6">
+                        <!-- Audio Player -->
+                        <h5 class="text-center mb-3">Output B - <strong>For</strong> Side </h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/opening_for_b.mp3" class="w-100" id="audio_b_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>For</strong> Transcript B
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">Friends, educators, esteemed judges, we stand firmly in support of the motion: It is time to welcome an AI Tutor in the classroom. Let's be clear: an AI Tutor, as we envision it, is not a standalone replacement for educators, but an adaptive learning system powered by artificial intelligence. This system provides personalized instruction, immediate feedback, and continuous support to students, all under the expert guidance and supervision of qualified teachers.<br><br>Our judging criteria are straightforward: Which approach demonstrably optimizes educational outcomes, maximizes resource efficiency, and empowers teachers to focus on the uniquely human aspects of their profession – fostering socio-emotional growth and critical thinking?<br><br>As you will see, AI Tutors are powerful tools that significantly enhance the educational experience. First, AI tutors offer personalized learning pathways, adapting to each student's unique pace and learning style for optimized comprehension. This personalized approach directly optimizes educational outcomes by addressing the inefficiencies of a one-size-fits-all approach. Imagine moving from a lecture hall, where everyone hears the same message regardless of their individual needs, to a tailored conversation where the AI tutor addresses each student's specific misunderstandings and learning gaps. This ensures students master core concepts before progressing to more advanced material, boosting engagement and knowledge retention.<br><br>Second, integrating AI tutors reduces the cost of education in the long term by optimizing resource allocation and improving student outcomes, thereby maximizing the return on investment in education. According to IBM, schools that have implemented Watson’s AI solutions saw a 20% improvement in student performance metrics in subjects like math and science [1]. This improvement in student outcomes directly maximizes resource efficiency by reducing the need for costly remediation programs and improving overall graduation rates. Furthermore, AI-assisted models are cost efficient, at approximately $700 annually per student.<br><br>Third, and crucially, AI tutors free up human teachers to focus on socio-emotional learning and mentorship, critical aspects of education that AI cannot fully replicate. This empowerment of teachers directly optimizes educational outcomes by allowing them to focus on the areas where they can have the greatest impact. Think of teachers as skilled gardeners, carefully nurturing young minds. *Education Week* reports that teachers spend up to 29 hours a week on nonteaching tasks [2]. By handling routine tasks, such as grading and delivering personalized instruction, AI allows teachers to dedicate more time to building strong relationships with their students and fostering their emotional and social development. This cultivates well-rounded individuals, not just repositories of information.<br><br>We acknowledge legitimate concerns about data privacy, algorithmic bias, and the potential for over-reliance on technology. However, these challenges can be mitigated through responsible implementation, robust data security measures, and ongoing human oversight. District Spotlight: St. Vrain Valley School District (CO) offers a yearlong professional development program focused on integrating AI into classroom instruction [3]. It is about creating a future where technology empowers both students and teachers, leading to a more effective, equitable, and enriching educational experience for all. It's time for us to embrace AI tutors, so that the students can learn with a more effective, equitable, and enriching educational experience. Support the AI implementation from today on! Thank you.<br><br>**Reference**<br>[1] Benefits, Use Cases & Examples. "The Role of AI in Education - Benefits, Use Cases & Examples." *Products Rentals and Listings*, January 25, 2025.<br>[2] Here’s How Teachers Are Using AI to Save Time. "Here's How Teachers Are Using AI to Save Time - Education Week." *Education Week*, [Date Unavailable].<br>[3] The robots are here (and they have feedback): Can AI improve teacher effectiveness? - National Council on Teacher Quality. "The robots are here (and they have feedback): Can AI improve teacher effectiveness?" *National Council on Teacher Quality*, [Date Unavailable].
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q2_1_b">
+                                    How persuasive is <strong>Output B</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_b_poor" name="q2_1_b" value="1">
+                                            <label class="form-check-label" for="q2_1_b_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_b_weak" name="q2_1_b" value="2">
+                                            <label class="form-check-label" for="q2_1_b_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_b_moderate" name="q2_1_b" value="3">
+                                            <label class="form-check-label" for="q2_1_b_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_b_strong" name="q2_1_b" value="4">
+                                            <label class="form-check-label" for="q2_1_b_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_b_compelling" name="q2_1_b" value="5">
+                                            <label class="form-check-label" for="q2_1_b_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_1_comment_b"> (Optional) Additional comments for <strong> Output B's For </strong> side:</label>
+                                <textarea class="form-control" id="q2_1_comment_b" name="q2_1_comment_b" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                                <hr class="my-3">
+                            
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                        Which output do you find more effective overall?<sup>*</sup>
+                    </label>
+                    <div class="row justify-content-center">
+                        <div class="col-12 offset-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2_1" value="-1" id="q2_1_slightly_a">
+                                <label class="form-check-label" for="q2_1_a"> Prefer Output A</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2_1" value="0" id="q2_1_equal">
+                                <label class="form-check-label" for="q2_1_equal">Both outputs are equally effective</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2_1" value="1" id="q2_1_slightly_b">
+                                <label class="form-check-label" for="q2_1_b">Prefer Output B</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr class="my-4">
+                
+                <div class="row">
+                    <!-- Left Side (Output A) -->
+                    <div class="col-6 border-right">
+                        <!-- Audio Player -->
+                        
+                        <h5 class="text-center mb-3">Output A - <strong>Against</strong> Side</h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/opening_against_a.mp3" class="w-100" id="audio_a_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>Against</strong> - Transcript A
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate we shall argue that welcoming ai tutors into the classroom is premature and detrimental to holistic student development. We define an ai tutor as an artificial intelligence powered system designed to provide personalized instruction feedback and support to students. Often through adaptive learning algorithms and natural language processing. Welcoming implies the widespread integration and adoption of ai tutors as a standard component of the educational system in classrooms. Are judging criteria is maximising holistic educational development. The side that best demonstrates a commitment to and achievement of students overall growth. Including cognitive skills social emotional learning ethical reasoning and preparation for a complex future should win this debate. First ai tutors undermine the development of crucial social-emotional skills studies show that relying more on ai may reduce teacher to student interactions. Impacting the social-emotional aspects of learning. Human interaction is a crucial part of the learning process. And minimizing it can negatively affect the development of social skills. Ai tutors lack human interaction emotional support and real-time feedback. A teacher's job is not just to impart knowledge but also to motivate and inspire students. The reduction in face-to-face communication. Can negatively affect the development of social skills in students. Therefore by diminishing these vital interactions. Ai tutors hinder the development of empathy communication and teamwork skills. Which are essential for success in both academic and personal life? If we value well-rounded individuals we must recognize the irreplaceable role of human connection in education. Second ai tutors raised significant ethical concerns regarding bias and data privacy. Ai tutors can unintentionally perpetuate biases potentially skewing analyzes and affecting educational outcomes. Ethical concerns such as privacy bias and equity remains significant challenges. Ai tutors collect student data raising privacy concerns and requiring strict data protection measures and compliance with regulations like gdpr. Institutions must comply with data protection regulations and prevent potential breaches or misuse of sensitive information. The use of biased algorithms can lead to unequal learning opportunities. While data breaches can compromise students personal information and future prospects. For instance if an ai tutor is trained on a data set that under represents certain demographics. It may inadvertently provide less effective instruction. Do students from those groups prioritizing ethical considerations and data security is paramount to ensuring a fair and safe learning environment for all students. Third human teachers offer adaptability and nuance that ai cannot replicate. Over-reliance on ai can negatively impact critical and analytical thinking abilities. A students may become less adept at independently analyzing information forming logical arguments and making well-reasoned decisions. While ai-driven personalized training benefits educators it could potentially lead to fewer teachers in the classroom. Despite the benefits of ai it is better used in conjunction with real human inputs rather than as a sole replacement for the educator. Human teachers can tailor their approach to individual learning styles. Provide nuanced feedback and address unforeseen challenges in real time. The unique ability of human teachers to inspire motivate and adapt to individual student needs and learning styles is irreplaceable by ai tutors. Therefore the irreplaceable adaptability and nuanced understanding that human teachers bring to the classroom are crucial for fostering critical thinking problem solving and a genuine love of learning.<br><br>**Reference**<br>(1) Education, U. of Illinois. AI in schools: Pros and cons. URL: https://education.illinois.edu/about/news-events/news/article/2024/10/24/ai-in-schools--pros-and-cons<br>(2) Potkonjak, V., Gardner, M., Callaghan, V., Mattila, P., Guetl, C., & Petrović, V. M. (2017). Virtual laboratories for education in science, technology, and engineering: A review. Computers & Education, 95, 309–327.<br>(3) Physics Sensei. The Pros And Cons Of AI Tutoring: Is It The Right Solution For Every Student?. URL: https://physicssensei.com/the-pros-and-cons-of-ai-tutoring-is-it-the-right-solution-for-every-student/<br>(4) Harvard Independent. Counterpoint: Why AI Should Not Be Used in the Classroom. URL: https://harvardindependent.com/counterpoint-why-ai-should-not-be-used-in-the-classroom/<br>(5) Grassini, S. (2023). The role of artificial intelligence in personalized learning: a systematic review. Smart Learning Environments, 10(1), 1-21.<br>(6) NMS. Pros and Cons of AI in the Future of Education. URL: https://www.nms.org/Resources/Newsroom/Blog/2024/August-2024/Pros-and-Cons-of-AI-in-the-Future-of-Education.aspx<br>(7) University of Iowa. Role of AI in Modern Education. URL: https://onlineprograms.education.uiowa.edu/blog/role-of-ai-in-modern-education<br>(8) TANDFONLINE. Ethical Issues and Guidelines for AI in Education. URL: https://www.tandfonline.com/doi/full/10.1080/1475939X.2024.2428601<br>(9) Paradiso Solutions. What Is an AI Tutor?. URL: https://www.paradisosolutions.com/what-is-an-ai-tutor/<br>(10) Promethean World. Potential Downsides of AI in Education. URL: https://www.prometheanworld.com/resource-center/blogs/potential-downsides-of-ai-in-education/<br>(11) Promethean World. The Key to Integrating AI in the Classroom. URL: https://www.prometheanworld.com/resource-center/blogs/potential-downsides-of-ai-in-education/
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q2_2_a">
+                                    How persuasive is <strong>Output A</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_a_poor" name="q2_2_a" value="1">
+                                            <label class="form-check-label" for="q2_2_a_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_a_weak" name="q2_2_a" value="2">
+                                            <label class="form-check-label" for="q2_2_a_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_a_moderate" name="q2_2_a" value="3">
+                                            <label class="form-check-label" for="q2_2_a_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_a_strong" name="q2_2_a" value="4">
+                                            <label class="form-check-label" for="q2_2_a_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_a_compelling" name="q2_2_a" value="5">
+                                            <label class="form-check-label" for="q2_2_a_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_2_comment_a"> (Optional) Additional comments for <strong> Output A's Against </strong> side:</label>
+                                <textarea class="form-control" id="q2_2_comment_a" name="q2_2_comment_a" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                        
+                    </div>
+
+                    <!-- Right Side (Output B) -->
+                    <div class="col-6">
+                        <!-- Audio Player -->
+                        <h5 class="text-center mb-3">Output B - <strong>Against</strong> Side </h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/opening_against_b.mp3" class="w-100" id="audio_b_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>Against</strong> Transcript B
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">We acknowledge our opponents' definitions of AI tutors and classrooms, but urge you to consider the limitations they conveniently omit. While we agree maximizing educational outcomes is a laudable *goal*, we believe education should prioritize equity, empathy, and the development of well-rounded individuals, values that are threatened by the uncritical adoption of AI tutors. These points must be taken into account.<br><br>As you'll see, the promise of AI tutors masks a darker reality. Far from leveling the playing field, AI tutors will exacerbate educational inequality. The affluent will disproportionately benefit from access to better technology and resources. Imagine two schools: one with the latest AI software, high-speed internet, and trained staff, and another struggling with outdated computers and limited connectivity. Unequal access to technology and reliable internet will create a divide, where wealthier students gain an additional advantage while disadvantaged students fall further behind. It’s like giving a head start to those already in the lead. According to the U.S. Government Accountability Office (GAO), during the 2020-21 school year, more than a third of students (about 18.5 million) attended schools where 75% or more students were of a single race or ethnicity [1]. Introducing AI tutors risks widening this existing divide. The ethical concerns are broader than a mere "digital divide", though. Cathy O’Neil's book “Weapons of Math Destruction” details the real and potentially detrimental ethical concerns in mathematical models. AI algorithms are trained on data, and if that data reflects existing biases – gender, racial, socioeconomic – the AI tutor will perpetuate and amplify those biases. Personalized learning can also lead to echo chambers, reinforcing existing beliefs and limiting exposure to diverse perspectives.<br><br>Furthermore, the over-reliance on AI tutors will stunt the development of crucial socio-emotional skills. Human interaction is essential for developing empathy, collaboration, and conflict resolution skills. AI tutors simply cannot replicate the nuances of human relationships and risk hindering the development of these vital life skills. Education isn't solely about knowledge acquisition. It's also about developing empathy, social skills, and emotional intelligence through human interaction. Take for example, a child struggling with a concept who is comforted by a teacher’s kind words. AI cannot replicate this. *A 2024 study in Smart Learning Environments* reveals that over-reliance on AI for information acquisition can negatively impact both critical thinking skills and dispositions [2].<br><br>Finally, the implementation of AI tutors raises serious concerns about data privacy and the potential misuse of student data. AI tutors collect vast amounts of data on student performance, learning styles, and personal information. This data could be vulnerable to breaches, unauthorized access, or used for purposes beyond educational improvement, raising ethical and legal concerns. Think of a student's learning difficulties becoming public knowledge due to a data breach. *Infosecurity Magazine reported in 2024* that since 2005, educational institutions in the United States have experienced 3713 data breaches, impacting over 37.6 million records [3]. We risk undermining fundamental ethical principles within education by prioritizing convenience over caution.<br><br>For these reasons, we oppose the motion. Let's invest in teachers, promote equitable access to resources, and foster human connection in the classroom, creating a truly inclusive and enriching educational experience for all.<br><br>**Reference**<br>[1] U.S. Government Accountability Office (U.S. GAO). K-12 Education: Student Population Has Significantly Diversified, but Many Schools Remain Divided Along Racial, Ethnic, and Economic Lines.<br><br>[2] Zhai, Chunpeng, Santoso Wibowo, and Lily D. Li. "The effects of over-reliance on AI dialogue systems on students' cognitive abilities: a systematic review." *Smart Learning Environments* 11, no. 28 (2024).<br><br>[3] Mascellino, Alessandro. "Data Breaches in US Schools Exposed 37.6M Records." *Infosecurity Magazine*, May 14, 2024.
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q2_2_b">
+                                    How persuasive is <strong>Output B</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_b_poor" name="q2_2_b" value="1">
+                                            <label class="form-check-label" for="q2_2_b_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_b_weak" name="q2_2_b" value="2">
+                                            <label class="form-check-label" for="q2_2_b_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_b_moderate" name="q2_2_b" value="3">
+                                            <label class="form-check-label" for="q2_2_b_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_b_strong" name="q2_2_b" value="4">
+                                            <label class="form-check-label" for="q2_2_b_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_b_compelling" name="q2_2_b" value="5">
+                                            <label class="form-check-label" for="q2_2_b_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_2_comment_b"> (Optional) Additional comments for <strong> Output B's Against </strong> side:</label>
+                                <textarea class="form-control" id="q2_2_comment_b" name="q2_2_comment_b" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                        Which output do you find more effective overall?<sup>*</sup>
+                    </label>
+                    <div class="row justify-content-center">
+                        <div class="col-12 offset-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2_2" value="-1" id="q2_2_slightly_a">
+                                <label class="form-check-label" for="q2_2_a"> Prefer Output A</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2_2" value="0" id="q2_2_equal">
+                                <label class="form-check-label" for="q2_2_equal">Both outputs are equally effective</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2_2" value="1" id="q2_2_slightly_b">
+                                <label class="form-check-label" for="q2_2_b">Prefer Output B</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr class="my-4">
+                
+
+                
+
+                <!-- Overall Comparison Question -->
+                
+            </div>
+            <div class="card-footer">
+                <b>End of Opening Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_3">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                <div class="row">
+                    <!-- Left Side (Output A) -->
+                    <div class="col-6 border-right">
+                        <!-- Audio Player -->
+                        
+                        <h5 class="text-center mb-3">Output A - <strong>For</strong> Side</h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/rebuttal_for_a.mp3" class="w-100" id="audio_a_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>For</strong> - Transcript A
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent's arguments contain three critical flaws: first, they argue AI tutors will exacerbate inequality; second, that they will stunt socio-emotional development; and third, that they pose unacceptable data privacy risks. We will demonstrate that these concerns are either unfounded or outweighed by the significant benefits of AI tutors.<br><br>First, the opposition claims AI tutors will widen the educational divide, benefiting only the affluent. This argument ignores the fundamental capacity of AI to democratize access to quality education [7]. AI tutors break down geographical and economic barriers, providing personalized learning experiences to students regardless of their socio-economic status [2]. They can deliver tailored instruction and support to students in underserved areas, addressing the unique challenges they face. While disparities in technology access remain a challenge, various studies show AI tutors can double learning rates and boost student engagement [8]. We must strive to bridge the digital divide so that all students can participate in and benefit from technological advancements [7].<br><br>Second, the opposition suggests that AI tutors will hinder the development of crucial socio-emotional skills. This argument creates a false dichotomy. AI tutors are not intended to replace human interaction but to enhance it [14]. By automating routine tasks and providing data-driven insights, AI tutors free up teachers' time to focus on fostering meaningful interactions with students [9]. Teachers can leverage AI-derived insights to adjust their instructional methodologies, fostering a more effective and adaptive pedagogical approach [10]. We believe that a balanced approach, combining the personalized support of AI with the empathy and guidance of human teachers, will lead to the best educational outcomes.<br><br>Third, the opposition raises valid concerns about data privacy and security. We acknowledge that the collection and use of student data must be handled responsibly. However, we believe that proper regulations and safeguards can effectively mitigate these risks [15]. Moreover, it is important to consider that data breaches are a risk in many areas, including traditional educational record keeping [3]. It is essential to consider the potential benefits of AI tutors alongside the potential risks [13]. The personalized learning, increased accessibility, and enhanced student engagement offered by AI tutors outweigh the data privacy concerns, especially with proper data protection policies in place.<br><br>In conclusion, the opposition's arguments fail to address the significant potential of AI tutors to enhance personalized learning, increase access to quality education, and support teachers in the classroom. For these reasons, we maintain our strong affirmation of the motion.<br><br>**Reference**<br>(1) Quora, "What are the potential benefits of AI tutors compared to human tutors?" https://www.quora.com/What-are-the-potential-benefits-of-AI-tutors-compared-to-human-tutors<br>(2) World Economic Forum, "Ways AI can benefit education." https://www.weforum.org/stories/2024/05/ways-ai-can-benefit-education/<br>(3) Workee, "Revolutionizing Education: AI's Impact on Tutoring." https://workee.net/blog/revolutionizing-education-ai-impact-on-tutoring<br>(4) CelebalTech, "AI Tutor." https://celebaltech.com/ai-tutor<br>(5) EdTech Magazine, "Are AI Tutors the Answer to Lingering Learning Loss?" https://edtechmagazine.com/k12/article/2024/05/are-ai-tutors-answer-lingering-learning-loss<br>(6) Workee, "Revolutionizing Education: AI's Impact on Tutoring." https://workee.net/blog/revolutionizing-education-ai-impact-on-tutoring<br>(7) NORC, "Unlocking Hearts and Minds: The Transformative Power of AI-Enhanced High-Dose Tutoring." https://www.norc.org/research/library/unlocking-hearts-and-minds-transformative-power-of-ai-enhanced-high-dose-tutoring.html<br>(8) Stand Together, "How AI Personal Tutors Are Re-Shaping Education." https://standtogether.org/stories/education/how-ai-personal-tutors-are-re-shaping-education<br>(9) World Economic Forum, "Ways AI can benefit education." https://www.weforum.org/stories/2024/05/ways-ai-can-benefit-education/<br>(10) Medium, "AI Tutors: Smart Assistants - How AI is Supporting Teachers and Students." https://medium.com/@techedtrends/ai-tutors-smart-assistants-how-ai-is-supporting-teachers-and-students-a1d1344b17b2<br>(11) Medium, "AI Tutors vs Human Teachers: Are we entering a new era of education?" https://medium.com/data-storytelling-corner/ai-tutors-vs-human-teachers-are-we-entering-a-new-era-of-education-9e70e2dc3904<br>(12) NORC, "Unlocking Hearts and Minds: The Transformative Power of AI-Enhanced High-Dose Tutoring." https://www.norc.org/research/library/unlocking-hearts-and-minds-transformative-power-of-ai-enhanced-high-dose-tutoring.html<br>(13) onlineprograms.education.uiowa.edu/blog/role-of-ai-in-modern-education<br>(14) norc.org/research/library/unlocking-hearts-and-minds-transformative-power-of-ai-enhanced-high-dose-tutoring.html<br>(15) medium.com/data-storytelling-corner/ai-tutors-vs-human-teachers-are-we-entering-a-new-era-of-education-9e70e2dc3904
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q3_1_a">
+                                    How persuasive is <strong>Output A</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_a_poor" name="q3_1_a" value="1">
+                                            <label class="form-check-label" for="q3_1_a_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_a_weak" name="q3_1_a" value="2">
+                                            <label class="form-check-label" for="q3_1_a_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_a_moderate" name="q3_1_a" value="3">
+                                            <label class="form-check-label" for="q3_1_a_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_a_strong" name="q3_1_a" value="4">
+                                            <label class="form-check-label" for="q3_1_a_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_a_compelling" name="q3_1_a" value="5">
+                                            <label class="form-check-label" for="q3_1_a_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_1_comment_a"> (Optional) Additional comments for <strong> Output A's For </strong> side:</label>
+                                <textarea class="form-control" id="q3_1_comment_a" name="q3_1_comment_a" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                                <hr class="my-3">
+                            
+                        
+                    </div>
+
+                    <!-- Right Side (Output B) -->
+                    <div class="col-6">
+                        <!-- Audio Player -->
+                        <h5 class="text-center mb-3">Output B - <strong>For</strong> Side </h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/rebuttal_for_b.mp3" class="w-100" id="audio_b_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>For</strong> Transcript B
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">Let's begin by ensuring we share a common understanding. We define AI tutors as tools that provide personalized learning experiences, and we envision classrooms as enriched learning environments. Our goal is to maximize educational outcomes for all students.<br><br>Now, let's address the concerns raised. The assertion that AI devalues human interaction misrepresents our position. We are advocating for the *thoughtful integration* of AI, not the complete replacement of teachers. In fact, AI can complement and enhance human interaction in the classroom. As the *2024 Educator AI Report* indicates, teachers are increasingly optimistic about AI, viewing it as a tool to enhance their teaching rather than replace them [6_17]. This shift allows educators to focus more on personalized instruction and student engagement [6_17].<br><br>Furthermore, the idea that AI tutors diminish socio-emotional learning presents a false choice. Academic achievement and socio-emotional development are not mutually exclusive. AI can actually free up teachers to focus on nurturing these crucial skills. By automating tasks like grading and progress tracking, AI empowers teachers to dedicate more time to meaningful interactions with their students [6_9].<br><br>The claim that AI tutors will inevitably perpetuate existing biases also warrants closer examination. We acknowledge the importance of addressing bias in AI systems. However, this is not an insurmountable problem. Carefully curated and continuously audited training data can mitigate bias and promote diverse perspectives.<br><br>Regarding concerns about inequality, we firmly believe that AI should serve to bridge, not widen, the educational gap. To ensure equitable access, we advocate for subsidized technology and internet access for schools and students in need.<br><br>The worry that AI will stunt socio-emotional development overlooks the reality of modern students' lives. They already engage extensively with technology. AI tutors simply offer a structured and educational environment for that engagement. Moreover, AI can provide personalized feedback, adapting to a student’s skillset and explaining concepts in a way that resonates with them [0_14]. For instance, AI tutors can provide instant feedback on writing, define words, or explain context, as well as adapt to a student’s skillset if the problems are too challenging [0_14].<br><br>Now, let's turn to the primary concern raised: data privacy. It's crucial to recognize that data privacy concerns are not unique to AI tutors. They exist with any technology that collects and uses student data. These concerns can be addressed through robust data governance policies and controlled environments. Schools should implement clear policies that define how student data is collected, stored, and used, aligning with laws like FERPA [6_12]. Schools should also partner with trusted vendors who demonstrate strong commitments to data privacy and security [6_12].<br><br>While the opposition focuses on hypothetical risks, it's important to consider the tangible benefits that AI tutors offer. AI systems analyze student performance to identify strengths and weaknesses, creating personalized learning paths [6_9]. AI can dramatically increase efficiency in educational settings [6_0]. Automated grading systems reduce the time teachers spend on administrative tasks, allowing them to focus more on instruction and direct student interaction [6_0]. The potential for personalized learning, improved student outcomes, and teacher empowerment outweighs the hypothetical risks of data breaches, especially when proactive measures are in place.<br><br>**Reference**<br>[0_14] Schultz, Brooke. "The New Teachers' Aides: AI Tutors." *Education Week*, February 14, 2025.<br><br>[6_0] "AI in K-12 Education: Pros, Cons, and Costs A Guide for School District Leaders." *EDspaces*, September 23, 2024.<br><br>[6_9] "Personalized Learning Platforms In 2025: AI In Education." *eLearning Industry*.<br><br>[6_12] Pava, Jairo. "Addressing AI Security Concerns in Education." *AI Roadmap for District Leaders*, Panorama Education.<br><br>[6_17] Hallowell, Michael. "Teachers’ Perceptions of AI in the Classroom." *Imagine Learning*, November 17, 2024.
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q3_1_b">
+                                    How persuasive is <strong>Output B</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_b_poor" name="q3_1_b" value="1">
+                                            <label class="form-check-label" for="q3_1_b_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_b_weak" name="q3_1_b" value="2">
+                                            <label class="form-check-label" for="q3_1_b_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_b_moderate" name="q3_1_b" value="3">
+                                            <label class="form-check-label" for="q3_1_b_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_b_strong" name="q3_1_b" value="4">
+                                            <label class="form-check-label" for="q3_1_b_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_b_compelling" name="q3_1_b" value="5">
+                                            <label class="form-check-label" for="q3_1_b_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_1_comment_b"> (Optional) Additional comments for <strong> Output B's For </strong> side:</label>
+                                <textarea class="form-control" id="q3_1_comment_b" name="q3_1_comment_b" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                                <hr class="my-3">
+                            
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                        Which output do you find more effective overall?<sup>*</sup>
+                    </label>
+                    <div class="row justify-content-center">
+                        <div class="col-12 offset-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3_1" value="-1" id="q3_1_slightly_a">
+                                <label class="form-check-label" for="q3_1_a"> Prefer Output A</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3_1" value="0" id="q3_1_equal">
+                                <label class="form-check-label" for="q3_1_equal">Both outputs are equally effective</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3_1" value="1" id="q3_1_slightly_b">
+                                <label class="form-check-label" for="q3_1_b">Prefer Output B</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr class="my-4">
+                
+                <div class="row">
+                    <!-- Left Side (Output A) -->
+                    <div class="col-6 border-right">
+                        <!-- Audio Player -->
+                        
+                        <h5 class="text-center mb-3">Output A - <strong>Against</strong> Side</h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/rebuttal_against_a.mp3" class="w-100" id="audio_a_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>Against</strong> - Transcript A
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you. Chairperson. A steam judges ladies and gentlemen. While the affirmative raises legitimate concerns about the state of political discourse on social media. They're proposed solution a complete ban on political advertising. Is a cure far worse than the disease. It infringes on fundamental rights suppresses vital voices and ultimately undermines the very democratic process it purports to protect. First the affirmative claims that banning political ads is a necessary check on misinformation. Arguing that free speech is not absolute. However they misrepresent the balance between free speech and its limitations. The supreme court has consistently held that restrictions on political speech are subject to the strictest scruton. Requiring a compelling government interest and narrowly tailored means. A blanket ban on political advertising fails this test it's a blunt instrument that silences legitimate voices alongside the purveyors of misinformation. Moreover the solution to misinformation is not censorship. But critical thinking media literacy and robust fact-checking initiatives. Tools that empower citizens to discern truth from false. Rather than shielding them from information altogether. As justice brandeis wrote in whitney v california. The remedy to be applied is more speech not enforced silence. Second the affirmative argues that a ban would curb the reach and impact of political misinformation. This argument ignores the realities of online communication. A ban on paid advertising will simply drive political content into the shadows of organic posts private groups and encrypted messaging app. Making it harder not easier to track encounter misinformation. Furthermore it disproportionately harms those who rely on paid advertising to reach a wider audience. Particularly grassroots movements and challengers who lack the organic reach of established figures. As andrew keen argues in the internet is not the answer. Attempts to control information online often backfire. Creating a whack-a-mole situation where censorship efforts are quickly circumvented. Third the affirmative contends that a ban would level the playing field by reducing the influence of wealthy donors. However this argument overlooks the significant advantages already enjoyed by incumbents and established part. Such as name recognition media access and fundraising networks. A ban on political advertising would further entrench these advantages. Silencing the voices of challengers and grassroots movements who rely on social media to reach voters and mobilize support. Moreover wealthy individuals and organizations would still find ways to influence the political discourse through other means such as funding issue ads that promote their agendas without explicitly endorsing candidates. The affirmative is trying to eliminate the advantages to wealth. But actually protecting that advantage. By limiting the speech of challengers. Finally we must consider the chilling effect such a ban would have on political disc. The fear of violating vaguely defined rules and facing censorship would deter individuals and organizations. From engaging in legitimate political debate. Stifling the free exchange of ideas that is essential for a healthy democracy. The affirmative is arguing for a more transparent process but creating a ban that will only further confuse the voters. In conclusion a ban on political advertising on social media. Is a misguided and dangerous policy that would undermine free speech. Limit political discourse and entrench the power of the political establishment. We urge you to reject this proposal and embrace policies that promote open debate media literacy. And a robust marketplace of ideas. It is the voters not social media platforms or government regulators.<br><br>**Reference**<br>[6] "Citizens United v. Federal Election Commission," Supreme Court of the United States.<br>[7] "ACLU Principles on Freedom of Speech and Association."<br>[8] "The Internet Is Not the Answer" by Andrew Keen.<br>[9] "Hacking the Electorate: How Campaigns Perceive Voters" by Nicco Mele.<br>[10] "Schenck v. United States," Supreme Court of the United States.<br>[11] "Free Speech for Me--But Not for Thee: How the American Left and Right Relentlessly Censor Each Other" by Nat Hentoff.<br>[12] "Network Propaganda: Manipulation, Disinformation, and Radicalization in American Politics" by Yochai Benkler, Robert Faris, and Hal Roberts.<br>[13] "Campaign Finance and Political Polarization" by Raymond J. La Raja.<br>[14] "Whitney v. California," Supreme Court of the United States.<br><br><br></affirmative_rebuttal>
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q3_2_a">
+                                    How persuasive is <strong>Output A</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_a_poor" name="q3_2_a" value="1">
+                                            <label class="form-check-label" for="q3_2_a_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_a_weak" name="q3_2_a" value="2">
+                                            <label class="form-check-label" for="q3_2_a_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_a_moderate" name="q3_2_a" value="3">
+                                            <label class="form-check-label" for="q3_2_a_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_a_strong" name="q3_2_a" value="4">
+                                            <label class="form-check-label" for="q3_2_a_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_a_compelling" name="q3_2_a" value="5">
+                                            <label class="form-check-label" for="q3_2_a_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_2_comment_a"> (Optional) Additional comments for <strong> Output A's Against </strong> side:</label>
+                                <textarea class="form-control" id="q3_2_comment_a" name="q3_2_comment_a" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                        
+                    </div>
+
+                    <!-- Right Side (Output B) -->
+                    <div class="col-6">
+                        <!-- Audio Player -->
+                        <h5 class="text-center mb-3">Output B - <strong>Against</strong> Side </h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/rebuttal_against_b.mp3" class="w-100" id="audio_b_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>Against</strong> Transcript B
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">We stand firm on the values of equity, empathy, and holistic development. The enthusiastic embrace of AI tutors poses a direct threat to these principles. The central question is not merely whether AI *can* do good, but whether its potential harms outweigh its purported benefits.<br><br>Let's be unequivocally clear: AI exacerbates existing inequalities. Unequal access to technology and resources means that affluent students will benefit disproportionately, further widening the achievement gap. The promise of democratized education rings hollow when many students lack basic internet access. As the National Telecommunications and Information Administration found in 2021, roughly one-third of U.S. households do not have broadband internet access. And even with access, biased data sets mean that marginalized students may receive instruction tailored to perpetuate societal biases, creating a self-fulfilling prophecy. As demonstrated in research by Akgun and Greenhow on algorithmic bias in educational software, existing power structures and biases are embedded into machine-learning models [1]. This directly undermines our commitment to equity, a core value we believe is essential to education.<br><br>You claim AI enhances, rather than replaces, human interaction. But this ignores the crucial nuances of human connection and the importance of empathy, a core value we believe is essential to education. Teachers provide mentorship, emotional support, and ethical guidance that AI simply cannot replicate. Education is not a mere transaction of information; it's about fostering empathy, critical thinking, and social-emotional skills. As the Children's Bureau reported in 2025, case studies of children with minimal human contact in early years showed a severe lack of emotional development due to the absence of love, language, and attention [2]. Can AI truly understand a child's frustration or offer genuine encouragement? This is why we believe in investing in well-trained teachers who can provide individualized attention and mentorship to every student.<br><br>The opponent claims that proper regulations mitigate data privacy risks. But let's be realistic. Educational institutions are already prime targets for cyberattacks. AI tutors introduce new risks with their continuous, granular data collection and predictive capabilities. Compliance doesn't guarantee security.<br><br>While AI may offer some access to education, it risks exacerbating existing inequalities, ultimately failing to democratize education effectively.<br><br>While AI tutors may automate some tasks, they cannot replace the nuanced human interaction necessary for developing socio-emotional skills, and over-reliance on them may negatively impact critical thinking. The focus on 'repetitive tasks' ignores the inherent socio-emotional learning embedded in those very interactions. As UNESCO reported in 2023, there is strong evidence of negative and harmful aspects in the use of digital technology in education and society, including the risk of distraction and lack of human contact [3]. This is why we believe in investing in well-trained teachers who can provide individualized attention and mentorship to every student.<br><br>Our opponents claim AI *enhances* personalized learning, but this is not always a given. It also risks creating echo chambers and reinforcing existing biases if the algorithms are trained on biased data.<br><br>The opponent claims that proper regulations mitigate data privacy risks. However, educational institutions are already prime targets for cyberattacks. In 2023 alone, US schools leaked 37.6 million records in 3,713 data breaches [4]. Adapting existing protocols is insufficient.<br><br>For these reasons, we stand firmly against the motion.<br><br>**Reference**<br>[1] Akgun, Selin, and Christine Greenhow. "Artificial intelligence in education: Addressing ethical challenges in K-12 settings." *PMC*, AI Ethics 2, no. 3 (September 22, 2021): 431–440.<br><br>[2] Children's Bureau. "Social Connection On Child Development." January 18, 2025.<br><br>[3] UNESCO. "Technology in education - GEM – Report 2023." 2023.<br><br>[4] "US schools leaked 37.6 million records in 3,713 data breaches." *Comparitech*, July 1, 2020.
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q3_2_b">
+                                    How persuasive is <strong>Output B</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_b_poor" name="q3_2_b" value="1">
+                                            <label class="form-check-label" for="q3_2_b_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_b_weak" name="q3_2_b" value="2">
+                                            <label class="form-check-label" for="q3_2_b_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_b_moderate" name="q3_2_b" value="3">
+                                            <label class="form-check-label" for="q3_2_b_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_b_strong" name="q3_2_b" value="4">
+                                            <label class="form-check-label" for="q3_2_b_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_b_compelling" name="q3_2_b" value="5">
+                                            <label class="form-check-label" for="q3_2_b_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_2_comment_b"> (Optional) Additional comments for <strong> Output B's Against </strong> side:</label>
+                                <textarea class="form-control" id="q3_2_comment_b" name="q3_2_comment_b" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                        Which output do you find more effective overall?<sup>*</sup>
+                    </label>
+                    <div class="row justify-content-center">
+                        <div class="col-12 offset-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3_2" value="-1" id="q3_2_slightly_a">
+                                <label class="form-check-label" for="q3_2_a"> Prefer Output A</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3_2" value="0" id="q3_2_equal">
+                                <label class="form-check-label" for="q3_2_equal">Both outputs are equally effective</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3_2" value="1" id="q3_2_slightly_b">
+                                <label class="form-check-label" for="q3_2_b">Prefer Output B</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr class="my-4">
+                
+
+                
+
+                <!-- Overall Comparison Question -->
+                
+            </div>
+            <div class="card-footer">
+                <b>End of Rebuttal Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_4">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                <div class="row">
+                    <!-- Left Side (Output A) -->
+                    <div class="col-6 border-right">
+                        <!-- Audio Player -->
+                        
+                        <h5 class="text-center mb-3">Output A - <strong>For</strong> Side</h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/closing_for_a.mp3" class="w-100" id="audio_a_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>For</strong> - Transcript A
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you chair person and a steam judges. In today's debate our discussion primarily revolved around ensuring equitable access to quality education. Nurturing socio-emotional development and safeguarding data privacy in the context of integrating ai tutors into the classroom. On the issue of equity and access the opposition claims that ai tutors will widen the educational divide. However we firmly believe that ai tutors while not a perfect solution can level the playing field. They can provide personalized learning experiences to students regardless of their socioeconomic status. We advocate for initiatives like subsidized internet access and device distribution programs to bridge the digital divide ensuring all students can benefit. Moreover. Strategies such as using diverse data sets for training ai models. And implementing bias detection mechanisms are crucial to mitigating algorithmic bias we acknowledge that inequalities exist within the current education system. Due to disparities in funding and resources. Ai tutors offer a potential avenue for addressing some of these inequalities and creating more opportunities. Regarding socio-emotional development the opposition suggests that ai tutors will hinder crucial skills. We agree that human empathy cannot be replicated. However teachers can leverage ai generated data to understand their students needs better and tailor their instruction accordingly. Ai tutors can also provide personalized feedback and support boosting student confidence and motivation. Finally the opposition raises concerns about data privacy. We acknowledge these concerns but emphasized that data privacy can be effectively managed through appropriate policies and safeguards. Existing regulations like gdpr and ferpa apply to ai tutors. Anonymization. Encryption and ethical guidelines can further protect student data. Ultimately this debate is about opportunity.<br><br>**Reference**<br>(1) NORC, "Unlocking Hearts and Minds: The Transformative Power of AI-Enhanced High-Dose Tutoring." https://www.norc.org/research/library/unlocking-hearts-and-minds-transformative-power-of-ai-enhanced-high-dose-tutoring.html
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q4_1_a">
+                                    How persuasive is <strong>Output A</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_a_poor" name="q4_1_a" value="1">
+                                            <label class="form-check-label" for="q4_1_a_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_a_weak" name="q4_1_a" value="2">
+                                            <label class="form-check-label" for="q4_1_a_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_a_moderate" name="q4_1_a" value="3">
+                                            <label class="form-check-label" for="q4_1_a_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_a_strong" name="q4_1_a" value="4">
+                                            <label class="form-check-label" for="q4_1_a_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_a_compelling" name="q4_1_a" value="5">
+                                            <label class="form-check-label" for="q4_1_a_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q4_1_comment_a"> (Optional) Additional comments for <strong> Output A's For </strong> side:</label>
+                                <textarea class="form-control" id="q4_1_comment_a" name="q4_1_comment_a" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                                <hr class="my-3">
+                            
+                        
+                    </div>
+
+                    <!-- Right Side (Output B) -->
+                    <div class="col-6">
+                        <!-- Audio Player -->
+                        <h5 class="text-center mb-3">Output B - <strong>For</strong> Side </h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/closing_for_b.mp3" class="w-100" id="audio_b_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>For</strong> Transcript B
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">Esteemed judges, the central question before us is: how do we optimize educational outcomes for all students? Our opponents suggest that AI tutors will worsen inequality and diminish the human aspect of education. However, let's examine the facts. Imagine a student in a resource-poor rural area. Wouldn't access to personalized AI tutoring dramatically improve their educational prospects? While the opposition worries about unequal access, AI, implemented strategically, *democratizes* education.<br><br>Consider the role of educators. Should teachers dedicate countless hours to repetitive tasks, or should they inspire and mentor students? AI supports teachers, allowing them to concentrate on their strengths: cultivating empathy and critical thinking. Our opponents argue that AI cannot replicate human connection, and we concur. However, AI is not intended to replace teachers; it is a powerful tool to amplify their impact.<br><br>Data privacy is a legitimate concern. But should we reject all technological advancements due to potential risks? Just as we regulate automobiles to ensure safety, we can enact strong data protection policies. According to *an article by the Brookings Institution*, policymakers are actively exploring frameworks to address these challenges [1]. These are manageable challenges, not insurmountable obstacles.<br><br>Ultimately, this is about equipping students and teachers with the most effective tools available. Embracing AI tutors is not about abandoning our values; it's about realizing them more effectively. For a more equitable, personalized, and effective education, we strongly urge you to support this motion.
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q4_1_b">
+                                    How persuasive is <strong>Output B</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_b_poor" name="q4_1_b" value="1">
+                                            <label class="form-check-label" for="q4_1_b_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_b_weak" name="q4_1_b" value="2">
+                                            <label class="form-check-label" for="q4_1_b_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_b_moderate" name="q4_1_b" value="3">
+                                            <label class="form-check-label" for="q4_1_b_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_b_strong" name="q4_1_b" value="4">
+                                            <label class="form-check-label" for="q4_1_b_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_b_compelling" name="q4_1_b" value="5">
+                                            <label class="form-check-label" for="q4_1_b_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q4_1_comment_b"> (Optional) Additional comments for <strong> Output B's For </strong> side:</label>
+                                <textarea class="form-control" id="q4_1_comment_b" name="q4_1_comment_b" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                                <hr class="my-3">
+                            
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                        Which output do you find more effective overall?<sup>*</sup>
+                    </label>
+                    <div class="row justify-content-center">
+                        <div class="col-12 offset-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4_1" value="-1" id="q4_1_slightly_a">
+                                <label class="form-check-label" for="q4_1_a"> Prefer Output A</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4_1" value="0" id="q4_1_equal">
+                                <label class="form-check-label" for="q4_1_equal">Both outputs are equally effective</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4_1" value="1" id="q4_1_slightly_b">
+                                <label class="form-check-label" for="q4_1_b">Prefer Output B</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr class="my-4">
+                
+                <div class="row">
+                    <!-- Left Side (Output A) -->
+                    <div class="col-6 border-right">
+                        <!-- Audio Player -->
+                        
+                        <h5 class="text-center mb-3">Output A - <strong>Against</strong> Side</h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/closing_against_a.mp3" class="w-100" id="audio_a_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>Against</strong> - Transcript A
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you chair person in a steamed judges. In today's debate our discussion primarily revolved around whether the integration of ai tutors into classrooms. Exacerbates inequalities. Hinders socio-emotional development and compromises student data privacy. The affirmative paints a rosy picture of democratized education. But this promise rings halo when millions of students lack basic internet access. Let's be clear. Ai tutors will exacerbate existing inequalities. Wealthier schools will invest in superior technology and dedicated staff. While disadvantaged schools will be left further behind. It's not about technology versus no technology. It's about ai tutors amplifying existing problems. Giving an unfair advantage to students with more resources. Furthermore these ai systems are trained on data and if that data reflects existing biases gender racial socioeconomic the ai tutor will perpetuate and amplifiers biases. Beyond equ. We must consider the crucial role of human connection in education. Our opponents claim that ai simply freeze up teachers time for more meaningful interactions. However human interaction is intrinsically valuable. Through a teacher's guidance and a classmates collaboration students develop empathy social skills and emotional intelligence. The repetitive tasks are opponents deem worthy of automation are opportunities for social emotional learning. We are potentially limiting our children's potential if we automate this crucial element of their development. Moreover implementing ai tutors raises serious concerns about data privacy. Are opponents claim that regulations can mitigate these risks. But let's be realistic. Educational institutions are already prime targets for cyberattacks. Compliance doesn't guarantee security. The risk is real and present. We believe that education should prioritize equity empathy and the development of well-rounded individuals.<br><br>**Reference**<br>(1) Akgun, S., & Greenhow, C. (2021). Artificial intelligence in education: Addressing ethical challenges in K-12 settings. *AI Ethics*, *2*(3), 431-440.<br>(2) Children's Bureau. (2025). *Social Connection On Child Development*.<br>(3) Mascellino, A. (2024). Data Breaches in US Schools Exposed 37.6M Records. *Infosecurity Magazine*.
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q4_2_a">
+                                    How persuasive is <strong>Output A</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_a_poor" name="q4_2_a" value="1">
+                                            <label class="form-check-label" for="q4_2_a_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_a_weak" name="q4_2_a" value="2">
+                                            <label class="form-check-label" for="q4_2_a_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_a_moderate" name="q4_2_a" value="3">
+                                            <label class="form-check-label" for="q4_2_a_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_a_strong" name="q4_2_a" value="4">
+                                            <label class="form-check-label" for="q4_2_a_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_a_compelling" name="q4_2_a" value="5">
+                                            <label class="form-check-label" for="q4_2_a_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q4_2_comment_a"> (Optional) Additional comments for <strong> Output A's Against </strong> side:</label>
+                                <textarea class="form-control" id="q4_2_comment_a" name="q4_2_comment_a" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                        
+                    </div>
+
+                    <!-- Right Side (Output B) -->
+                    <div class="col-6">
+                        <!-- Audio Player -->
+                        <h5 class="text-center mb-3">Output B - <strong>Against</strong> Side </h5>
+                            <div class="audio-section mb-4">
+                                <div class="audio-player mb-3">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case1_1/closing_against_b.mp3" class="w-100" id="audio_b_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+
+                                <!-- Transcript -->
+                                <details class="transcript-details mb-3">
+                                    <summary class="transcript-summary p-2 bg-light rounded">
+                                        <i class="fas fa-file-alt mr-2"></i>
+                                        (Optional) <strong>Against</strong> Transcript B
+                                    </summary>
+                                    <div class="transcript-content p-3 bg-white border rounded mt-2">We've arrived at the core of the debate: Do the touted advantages of AI tutors genuinely outweigh the significant threats they pose to fairness, emotional intelligence, and data security?<br><br>While our opponents highlight the potential for customized education and broader accessibility, we've presented a clear case that this vision is deeply flawed. AI tutors will worsen current disparities, favoring privileged students while neglecting those already marginalized. The idea of democratizing education becomes meaningless when many lack reliable internet access and encounter prejudiced algorithms. Even with subsidized access, biased data will continue to fuel AI algorithms, reinforcing societal prejudices.<br><br>Furthermore, AI tutors cannot replicate the essential human aspects of teaching. While proponents suggest AI enhances human interaction, we've demonstrated that it actually impedes the development of crucial socio-emotional abilities and ethical understanding.<br><br>Critically, our opponents have not adequately addressed the serious issues surrounding data privacy. Cyberattacks targeting educational institutions are on the rise, putting sensitive student information at risk. Given these realities, we must prioritize fairness, protect student well-being, and secure their private information.<br><br>Our aim is to cultivate an educational setting that encourages critical thought, empathy, and comprehensive growth. The indiscriminate implementation of AI tutors undermines these principles. We strongly urge you to reject this proposal and instead champion a future where every student benefits from an education that is genuinely fair, enriching, and centered on human interaction.<br><br>***
+                                    </div>
+                                </details>
+
+                                <!-- Rating Section -->
+                                <div class="form-group">
+                                <label for="q4_2_b">
+                                    How persuasive is <strong>Output B</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_b_poor" name="q4_2_b" value="1">
+                                            <label class="form-check-label" for="q4_2_b_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_b_weak" name="q4_2_b" value="2">
+                                            <label class="form-check-label" for="q4_2_b_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_b_moderate" name="q4_2_b" value="3">
+                                            <label class="form-check-label" for="q4_2_b_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_b_strong" name="q4_2_b" value="4">
+                                            <label class="form-check-label" for="q4_2_b_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_2_b_compelling" name="q4_2_b" value="5">
+                                            <label class="form-check-label" for="q4_2_b_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q4_2_comment_b"> (Optional) Additional comments for <strong> Output B's Against </strong> side:</label>
+                                <textarea class="form-control" id="q4_2_comment_b" name="q4_2_comment_b" rows="2"></textarea>
+                            </div>
+                            </div>
+                            
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                        Which output do you find more effective overall?<sup>*</sup>
+                    </label>
+                    <div class="row justify-content-center">
+                        <div class="col-12 offset-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4_2" value="-1" id="q4_2_slightly_a">
+                                <label class="form-check-label" for="q4_2_a"> Prefer Output A</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4_2" value="0" id="q4_2_equal">
+                                <label class="form-check-label" for="q4_2_equal">Both outputs are equally effective</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4_2" value="1" id="q4_2_slightly_b">
+                                <label class="form-check-label" for="q4_2_b">Prefer Output B</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <hr class="my-4">
+                
+
+                
+
+                <!-- Overall Comparison Question -->
+                
+            </div>
+            <div class="card-footer">
+                <b>End of Closing Stage Comparison</b>
+            </div>
+        </div>
+    
+
+    <!-- Additional Questions -->
+    
+        <div class="card form-group question" id="question_5">
+            <div class="card-header">
+                <b>(Optional) Question 5: Which factors were most crucial in your assessment?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" name="q5" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 1 / 2</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_6">
+            <div class="card-header">
+                <b>(Optional) Question 6: How long did you spend on this evaluation?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" name="q6" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 2 / 2</b>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="1_1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit Results" id="submitBtn">
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+</body>
+
+</html>
