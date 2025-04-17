@@ -63,7 +63,7 @@ def get_sanity_check_questions(data, side, stage):
             options.append("None of the above")
             answer = options.index(correct_answer)
             question = {
-                "title": f"Which claim is proposed by <strong>{side.capitalize()}</strong> side as one of its main claims during the opening statement?",
+                "title": f"Which claim is proposed by <strong>{side.capitalize()}</strong> side as one of its main claims during the opening statement? If multiple options apply, please choose the best one.",
                 "options": options,
                 "answer": answer,
                 "stage": stage,
