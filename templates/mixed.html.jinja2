@@ -1,71 +1,4 @@
-{% extends "base.html.jinja2" %}
-
-{% block heading %}
-    <div class="container">
-        <h1 class="text-center mb-4">Debate Output Comparison</h1>
-        <hr class="my-4">
-
-        <div class="mb-4">
-            <p class="lead">You'll be comparing two different debate outputs side by side. Please evaluate both versions and provide ratings for each.</p>
-        </div>
-
-        <div class="mb-4">
-            <h4>What to Expect:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
-                <li class="list-group-item">Share your initial opinion before listening.</li>
-                <li class="list-group-item">Evaluate how each side performs during the debate.</li>
-                <li class="list-group-item">Cast your final vote after listening.</li>
-                <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
-            </ul>
-        </div>
-
-        <div class="mb-4">
-            <h4>How to Vote:</h4>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
-                <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
-                <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
-            </ul>
-        </div>
-
-        <div class="mb-4">
-            <h4>Rating Guide:</h4>
-            <div class="card-group">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Poor (1)</h5>
-                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Weak (2)</h5>
-                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Moderate (3)</h5>
-                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Strong (4)</h5>
-                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining point.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Compelling (5)</h5>
-                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and deep audience connection.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+{% extends "hh.html.jinja2" %}
 
 {% block form_questions %}
     <input type="hidden" id="mode" name="mode" value="mixed">
@@ -326,69 +259,73 @@
 
                     {% if not loop.last %}
                        <div class="text-center">
-                           <button id="nextSideButton" class="btn btn-primary btn-lg button-next-side" type="button">Next Side</button>
+                           <button id="nextSideButton" class="btn btn-info btn-lg button-next-side" type="button">Continue →</button>
                        </div>
                     {% endif %}
 
                     <hr class="my-4">
                 {% endfor %}
 
-                {% if question.sanity_check|length > 0 %}
-                    {% set sc = question.sanity_check[-1] %}
-                    {% if sc.type == "text" %}
-                        <div class="form-group mt-3 mb-4">
-                            <label for="{{ question.name }}_sanity"> {{ sc.title }} <sup>*</sup> </label>
-                            <textarea class="form-control" id="{{ question.name }}_sanity" name="{{ question.name }}_sanity" rows="1"></textarea>
-                        </div>
-                    {% elif sc.type == "choice" %}
-                        <div class="form-group mt-3 mb-4">
-                            <label for="{{ question.name }}_sanity">{{ sc.title }} <sup>*</sup></label>
-                            <div class="row align-items-center">
-                                <div class="col-10 offset-1">
-                                    {% for option in sc.options %}
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" 
-                                                   id="{{ question.name }}_sanity_option_{{ loop.index0 }}"
-                                                   name="{{ question.name }}_sanity"
-                                                   value="{{ loop.index0 }}">
-                                            <label class="form-check-label" for="{{ question.name }}_sanity_option_{{ loop.index0 }}">
-                                                {{ option }}
-                                            </label>
-                                        </div>
-                                    {% endfor %}
+                <div id="sanity_check_questions" style="display: none;">
+                    {% if question.sanity_check|length > 0 %}
+                        {% set sc = question.sanity_check[-1] %}
+                        {% if sc.type == "text" %}
+                            <div class="form-group mt-3 mb-4">
+                                <label for="{{ question.name }}_sanity"> {{ sc.title }} <sup>*</sup> </label>
+                                <textarea class="form-control" id="{{ question.name }}_sanity" name="{{ question.name }}_sanity" rows="1"></textarea>
+                            </div>
+                        {% elif sc.type == "choice" %}
+                            <div class="form-group mt-3 mb-4">
+                                <label for="{{ question.name }}_sanity">{{ sc.title }} <sup>*</sup></label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        {% for option in sc.options %}
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="{{ question.name }}_sanity_option_{{ loop.index0 }}"
+                                                    name="{{ question.name }}_sanity"
+                                                    value="{{ loop.index0 }}">
+                                                <label class="form-check-label" for="{{ question.name }}_sanity_option_{{ loop.index0 }}">
+                                                    {{ option }}
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <input type="hidden" id="{{ question.name }}_sanity_answer" name="{{ question.name }}_sanity_answer" value="{{ sc.answer }}">
+                            <input type="hidden" id="{{ question.name }}_sanity_answer" name="{{ question.name }}_sanity_answer" value="{{ sc.answer }}">
+                        {% endif %}
                     {% endif %}
-                {% endif %}
+                </div>
 
                 <!-- Overall Comparison Question -->
-                <div class="form-group">
-                    <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;">
-                        {{ question.description }}<sup>*</sup>
-                    </label>
-                    <div class="row align-items-center">
-                        <div class="col-10 offset-1">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="{{ question.name }}_against_2" name="{{ question.name }}" value="-2">
-                                <label class="form-check-label" for="{{ question.name }}_against">Highly Against</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="{{ question.name }}_against_1" name="{{ question.name }}" value="-1">
-                                <label class="form-check-label" for="{{ question.name }}_tie">Slightly Against</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="{{ question.name }}_tie" name="{{ question.name }}" value="0">
-                                <label class="form-check-label" for="{{ question.name }}_tie">Neutral</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="{{ question.name }}_for_1" name="{{ question.name }}" value="1">
-                                <label class="form-check-label" for="{{ question.name }}_tie">Slightly Support</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="{{ question.name }}_for_2" name="{{ question.name }}" value="2">
-                                <label class="form-check-label" for="{{ question.name }}_for">Highly Support</label>
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;">
+                            {{ question.description }}<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="{{ question.name }}_against_2" name="{{ question.name }}" value="-2">
+                                    <label class="form-check-label" for="{{ question.name }}_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="{{ question.name }}_against_1" name="{{ question.name }}" value="-1">
+                                    <label class="form-check-label" for="{{ question.name }}_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="{{ question.name }}_tie" name="{{ question.name }}" value="0">
+                                    <label class="form-check-label" for="{{ question.name }}_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="{{ question.name }}_for_1" name="{{ question.name }}" value="1">
+                                    <label class="form-check-label" for="{{ question.name }}_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="{{ question.name }}_for_2" name="{{ question.name }}" value="2">
+                                    <label class="form-check-label" for="{{ question.name }}_for">Highly Support</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -450,8 +387,8 @@
             </div>
         </div>
     {% endfor %}
-    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
-    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
 {% endblock %} 
 
 
@@ -568,6 +505,8 @@
                     // Set up the click handler for the Other Side button
                     let currentAudioIndex = 0;
                     const otherSideBtn = question.querySelectorAll('.button-next-side');
+                    const sanityCheckDiv = question.querySelector('#sanity_check_questions');
+                    const overallComparisonDiv = question.querySelector('#overall_comparison_question');
                     otherSideBtn.forEach(button => {
                         button.addEventListener('click', function() {
                             currentAudioIndex = (currentAudioIndex + 1) % audioContainers.length;
@@ -575,6 +514,14 @@
                             // Show the next audio
                             audioContainers[currentAudioIndex].style.display = 'block';
                             button.style.display = 'none';
+
+                            // Show the sanity check questions
+                            sanityCheckDiv.style.display = 'block';
+
+                            // Show the overall comparison question
+                            // overallComparisonDiv.style.display = 'block';
+
+
                         });
                     });
                 }
