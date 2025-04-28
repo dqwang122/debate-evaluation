@@ -374,6 +374,9 @@ def main():
                     elif args.every_k == 1 and idx == 1:
                         redirect_url = None
                         add_consent = False
+                    else:
+                        redirect_url = None
+                        add_consent = args.consent
                 else:
                     redirect_url = None
                     add_consent = args.consent
