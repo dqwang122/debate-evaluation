@@ -10,6 +10,14 @@
             questions.forEach((question, i) => {
                 question.style.display = i === index ? 'block' : 'none';
             });
+
+            // Show submit button only when all questions are shown
+            const submitButtonContainer = document.getElementById('submitButtonContainer');
+            if (index === questions.length - 1) {
+                submitButtonContainer.style.display = 'block';
+            } else {
+                submitButtonContainer.style.display = 'none';
+            }
         }
 
         const audios = document.querySelectorAll('audio');
@@ -250,6 +258,10 @@
         </div>
     {% endfor %}
     
-    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
-    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
+{% endblock %}
+
+
+{% block navigation_buttons %}
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
 {% endblock %}

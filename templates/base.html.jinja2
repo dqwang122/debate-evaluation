@@ -41,7 +41,14 @@
             {% block form_questions %}{% endblock %}
             <input type="text" name="formid" value="{{ form_id }}" hidden>
             <input type="text" name="thank" value="Thanks" hidden>
-            <input class="btn btn-info btn-lg" type="submit" value="Submit✓" id="submitBtn">
+            <div class="button-row" style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                <div class="navigation-buttons">
+                    {% block navigation_buttons %}{% endblock %}
+                </div>
+                <div id="submitButtonContainer" style="display: none;">
+                    <input class="btn btn-info btn-lg" type="submit" value="Submit this✓" id="submitBtn">
+                </div>
+            </div>
             <p class="text-muted">
                 <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
             </p>
@@ -64,14 +71,23 @@
         crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-        window.addEventListener('beforeunload', function (e) {
+        // Define the beforeunload handler as a named function so it can be removed
+        function handleBeforeUnload(e) {
             if (!document.getElementById('submitBtn').disabled) {
                 // Cancel the event
                 e.preventDefault();
                 // Chrome requires returnValue to be set
                 e.returnValue = '';
             }
-        });
+        }
+
+        // Add the beforeunload event listener
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Function to disable the beforeunload warning
+        function disableBeforeUnload() {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        }
 
         function confirmSubmission() {
             return confirm('Are you sure you want to submit your results?');

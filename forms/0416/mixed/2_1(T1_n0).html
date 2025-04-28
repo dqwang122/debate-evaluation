@@ -132,8 +132,10 @@
     
 
 
+
+
     <div class="container" id="form_container">
-        <form id="theForm" action="https://script.google.com/macros/s/AKfycbxK1mGaCBuSe0j6xvplXCkDM7W0LwAYsoOPd7ICKAYv0klYOnFUE4yzGzTxLvBtT6bbkg/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbx3soqlvyNqvJUWpqUQc8wN4Hl7k5cs57awyATUshnXV7pTj4ADUF40OjmiISRZx4dc2g/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
         <input type="hidden" name="timestamp" id="timestamp">
             <div class="form-group">
                 <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
@@ -152,6 +154,18 @@
             
     <input type="hidden" id="mode" name="mode" value="mixed">
     <input type="hidden" id="version" name="version" value="0416">
+    <input type="hidden" id="redirect_url" name="redirect_url" value="/debate-evaluation/forms/0416/mixed/1_1(T1_n1).html">
+
+    <!-- Success Message -->
+    <div id="successMessage" class="alert alert-success" style="display: none;">
+        Your responses have been successfully submitted! Redirecting to the next questionnaire...
+    </div>
+
+    <!-- Redirect Message -->
+    <div id="redirectMessage" class="alert alert-info" style="display: none;">
+        <p>You will be automatically redirected to the next questionnaire in <span id="countdown">2</span> seconds...</p>
+        <p>If you are not redirected automatically, <a href="#" id="manualRedirect">click here</a>.</p>
+    </div>
 
     
         <div class="card form-group question" id="question_1">
@@ -159,7 +173,8 @@
             <div class="card-body">
                 
 
-                <div id="sanity_check_questions" style="display: none;">
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
                     
                 </div>
 
@@ -206,193 +221,194 @@
             <div class="card-header"><b>Question 2: Opening Stage</b></div>
             <div class="card-body">
                 
-                <div class="side-container">
-                    
-                        <div class="row">
-                            <!-- Left Side (Output A) -->
-                            <div class="col-6 border-right">
-                                <!-- Audio Player -->
-                                
-                                <h5 class="text-center mb-3">Output A - <strong>For</strong> Side</h5>
-                                    <div class="audio-section mb-4">
-                                        <div class="audio-player mb-3">
-                                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case2_1/opening_for_b.mp3" class="w-100" id="audio_a_1_For">
-                                                Your browser does not support the audio element.
-                                            </audio>
-                                        </div>
-
-                                        <!-- Transcript -->
-                                        <details class="transcript-details mb-3">
-                                            <summary class="transcript-summary p-2 bg-light rounded">
-                                                <i class="fas fa-file-alt mr-2"></i>
-                                                (Optional) <strong>For</strong> - Transcript A
-                                            </summary>
-                                            <div class="transcript-content p-3 bg-white border rounded mt-2">Good morning, everyone. We're here today to discuss the vital role labor unions play in fostering economic growth. Let's begin with a clear definition: labor unions are organizations of workers formed to protect and advance their collective interests through bargaining with employers.<br><br>To properly evaluate this debate, we propose judging the impact of labor unions based on three core pillars of a thriving economy: equitable wealth distribution, workforce stability, and innovation. We will demonstrate how unions are undeniably beneficial across these metrics.<br><br>First, labor unions demonstrably reduce income inequality, leading to a more equitable distribution of wealth and a healthier economy. Unions achieve this by securing better wages and benefits for workers. According to the Economic Policy Institute, workers covered by a union contract earn, on average, 10.2% more in wages than their nonunion counterparts with similar education, occupation, and experience [1]. This "union wage premium" directly addresses income disparities. Consider that, as revealed in a fact sheet by the Program on Race, Ethnicity and the Economy, income inequality was at its lowest point following World War II, coinciding with peak union membership in 1945 [2]. As union strength declined after 1979, income inequality worsened, reaching levels not seen since the Great Depression [2]. By narrowing the gap between high and low earners, unions promote social stability and increase the spending power of lower-income individuals, further driving economic growth as measured by GDP growth and consumer spending. It's a simple concept: when more people have more money, they spend more, stimulating the economy.<br><br>Second, unions are instrumental in creating a stable and productive workforce. They achieve this through comprehensive, union-negotiated benefits packages, including healthcare and retirement plans, which attract and retain skilled workers. In fact, over 90% of unionized workers have access to employer-sponsored health benefits, compared to just 68% of nonunion workers [3]. This difference is significant. Moreover, unions reduce employee turnover by increasing job satisfaction and insulating workers from retaliation when communicating discontent [4]. *WorkRise Network* indicates that unionized workers are less likely to leave their jobs, fostering stability crucial for investments in firm-specific human capital and training [4]. Consider the impact of union apprenticeship programs. A report indicates that apprentices are more likely to complete union programs with a 42% completion rate versus 22% for nonunion apprentices [5]. This stability translates directly into increased productivity and allows companies to plan for the future with confidence.<br><br>Finally, labor unions foster a culture of innovation by encouraging workers to share their ideas for improving products, processes, and services, leading to increased competitiveness and economic growth. By creating a safe and supportive environment for workers to express their ideas, unions help to unlock the collective intelligence of the workforce and drive innovation within organizations. While some might argue that unions can hinder business efficiency, the evidence suggests that the benefits of increased worker morale, stability, and innovation often outweigh these potential costs.<br><br>In conclusion, by promoting fair wages, securing comprehensive benefits, and fostering innovation, labor unions are a powerful engine for economic growth. We firmly believe that supporting labor unions is supporting a stronger and more prosperous economy for all.<br><br>**Reference**<br>[1] Banerjee, Asha, Margaret Poydock, Celine McNicholas, Ihna Mangundayao, and Ali Sait. "Unions are not only good for workers, they're good for communities and for democracy: High unionization levels are associated with positive outcomes across multiple indicators of economic, personal, and democratic well-being." *Economic Policy Institute*, December 2021.<br><br>[2] "Unions help reduce disparities and strengthen our democracy." *Program on Race, Ethnicity and the Economy (PREE)*, April 23, 2021.<br><br>[3] Banerjee, Asha, Margaret Poydock, Celine McNicholas, Ihna Mangundayao, and Ali Sait. "Unions are not only good for workers, they're good for communities and for democracy: High unionization levels are associated with positive outcomes across multiple indicators of economic, personal, and democratic well-being." *Economic Policy Institute*, December 2021.<br><br>[4] Bahn, Kate, Joe Peck. "How Unions Can Increase Firm Productivity and Strengthen Economic Growth." *WorkRise Network*, September 06, 2023.<br><br>[5] "Report touts benefits of union training vs. nonunion or college." *Lansing*, May 12, 2017.
-                                            </div>
-                                        </details>
-
-                                        <!-- Rating Section -->
-                                        <div class="form-group">
-                                        <label for="q2_1_a">
-                                            How persuasive is <strong>Output A</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
-                                        </label>
-                                        <div class="row align-items-center">
-                                            <div class="col-10 offset-1">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_a_poor" name="q2_1_a" value="1">
-                                                    <label class="form-check-label" for="q2_1_a_poor">
-                                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_a_weak" name="q2_1_a" value="2">
-                                                    <label class="form-check-label" for="q2_1_a_weak">
-                                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_a_moderate" name="q2_1_a" value="3">
-                                                    <label class="form-check-label" for="q2_1_a_moderate">
-                                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_a_strong" name="q2_1_a" value="4">
-                                                    <label class="form-check-label" for="q2_1_a_strong">
-                                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_a_compelling" name="q2_1_a" value="5">
-                                                    <label class="form-check-label" for="q2_1_a_compelling">
-                                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Comment Section -->
-                                    <div class="form-group mt-3 mb-4">
-                                        <label for="q2_1_comment_a"> (Optional) Additional comments for <strong> Output A's For </strong> side:</label>
-                                        <textarea class="form-control" id="q2_1_comment_a" name="q2_1_comment_a" rows="2"></textarea>
-                                    </div>
-                                    </div>
+                    <div class="side-container">
+                        
+                            <div class="row">
+                                <!-- Left Side (Output A) -->
+                                <div class="col-6 border-right">
+                                    <!-- Audio Player -->
                                     
-                                
+                                    <h5 class="text-center mb-3">Output A - <strong>For</strong> Side</h5>
+                                        <div class="audio-section mb-4">
+                                            <div class="audio-player mb-3">
+                                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case2_1/opening_for_b.mp3" class="w-100" id="audio_a_1_For">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+
+                                            <!-- Transcript -->
+                                            <details class="transcript-details mb-3">
+                                                <summary class="transcript-summary p-2 bg-light rounded">
+                                                    <i class="fas fa-file-alt mr-2"></i>
+                                                    (Optional) <strong>For</strong> - Transcript A
+                                                </summary>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">Good morning, everyone. We're here today to discuss the vital role labor unions play in fostering economic growth. Let's begin with a clear definition: labor unions are organizations of workers formed to protect and advance their collective interests through bargaining with employers.<br><br>To properly evaluate this debate, we propose judging the impact of labor unions based on three core pillars of a thriving economy: equitable wealth distribution, workforce stability, and innovation. We will demonstrate how unions are undeniably beneficial across these metrics.<br><br>First, labor unions demonstrably reduce income inequality, leading to a more equitable distribution of wealth and a healthier economy. Unions achieve this by securing better wages and benefits for workers. According to the Economic Policy Institute, workers covered by a union contract earn, on average, 10.2% more in wages than their nonunion counterparts with similar education, occupation, and experience . This "union wage premium" directly addresses income disparities. Consider that, as revealed in a fact sheet by the Program on Race, Ethnicity and the Economy, income inequality was at its lowest point following World War II, coinciding with peak union membership in 1945 . As union strength declined after 1979, income inequality worsened, reaching levels not seen since the Great Depression . By narrowing the gap between high and low earners, unions promote social stability and increase the spending power of lower-income individuals, further driving economic growth as measured by GDP growth and consumer spending. It's a simple concept: when more people have more money, they spend more, stimulating the economy.<br><br>Second, unions are instrumental in creating a stable and productive workforce. They achieve this through comprehensive, union-negotiated benefits packages, including healthcare and retirement plans, which attract and retain skilled workers. In fact, over 90% of unionized workers have access to employer-sponsored health benefits, compared to just 68% of nonunion workers . This difference is significant. Moreover, unions reduce employee turnover by increasing job satisfaction and insulating workers from retaliation when communicating discontent . *WorkRise Network* indicates that unionized workers are less likely to leave their jobs, fostering stability crucial for investments in firm-specific human capital and training . Consider the impact of union apprenticeship programs. A report indicates that apprentices are more likely to complete union programs with a 42% completion rate versus 22% for nonunion apprentices . This stability translates directly into increased productivity and allows companies to plan for the future with confidence.<br><br>Finally, labor unions foster a culture of innovation by encouraging workers to share their ideas for improving products, processes, and services, leading to increased competitiveness and economic growth. By creating a safe and supportive environment for workers to express their ideas, unions help to unlock the collective intelligence of the workforce and drive innovation within organizations. While some might argue that unions can hinder business efficiency, the evidence suggests that the benefits of increased worker morale, stability, and innovation often outweigh these potential costs.<br><br>In conclusion, by promoting fair wages, securing comprehensive benefits, and fostering innovation, labor unions are a powerful engine for economic growth. We firmly believe that supporting labor unions is supporting a stronger and more prosperous economy for all.<br><br>
+                                                </div>
+                                            </details>
+
+                                            <!-- Rating Section -->
+                                            <div class="form-group">
+                                            <label for="q2_1_a">
+                                                How persuasive is <strong>Output A</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                            </label>
+                                            <div class="row align-items-center">
+                                                <div class="col-10 offset-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_a_poor" name="q2_1_a" value="1">
+                                                        <label class="form-check-label" for="q2_1_a_poor">
+                                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_a_weak" name="q2_1_a" value="2">
+                                                        <label class="form-check-label" for="q2_1_a_weak">
+                                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_a_moderate" name="q2_1_a" value="3">
+                                                        <label class="form-check-label" for="q2_1_a_moderate">
+                                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_a_strong" name="q2_1_a" value="4">
+                                                        <label class="form-check-label" for="q2_1_a_strong">
+                                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_a_compelling" name="q2_1_a" value="5">
+                                                        <label class="form-check-label" for="q2_1_a_compelling">
+                                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Section -->
+                                        <div class="form-group mt-3 mb-4">
+                                            <label for="q2_1_comment_a"> (Optional) Additional comments for <strong> Output A's For </strong> side:</label>
+                                            <textarea class="form-control" id="q2_1_comment_a" name="q2_1_comment_a" rows="2"></textarea>
+                                        </div>
+                                        </div>
+                                        
+                                    
+                                </div>
+
+                                <!-- Right Side (Output B) -->
+                                <div class="col-6">
+                                    <!-- Audio Player -->
+                                    <h5 class="text-center mb-3">Output B - <strong>For</strong> Side </h5>
+                                        <div class="audio-section mb-4">
+                                            <div class="audio-player mb-3">
+                                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case2_1/opening_for_a.mp3" class="w-100" id="audio_b_1_For">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+
+                                            <!-- Transcript -->
+                                            <details class="transcript-details mb-3">
+                                                <summary class="transcript-summary p-2 bg-light rounded">
+                                                    <i class="fas fa-file-alt mr-2"></i>
+                                                    (Optional) <strong>For</strong> Transcript B
+                                                </summary>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that labor unions are beneficial to economic growth. We define "economic growth" as a sustained increase in a country's real gross domestic product  over a period of time, typically measured annually, reflecting an increase in the production of goods and services . We define "labor unions" as organizations of workers formed to promote and protect their members' interests through collective bargaining with employers regarding wages, benefits, and working conditions . Our judging criteria is maximizing long-term economic productivity; the side that demonstrates policies which lead to the greatest sustainable increase in a nation's overall productivity and prosperity should win the debate.<br><br>First, labor unions reduce income inequality, stimulating demand and economic growth. Higher union density correlates with lower income inequality and stronger economic growth . Unions promote fair wages and social policies, directly combating the harmful effects of inequality on economic expansion . Studies show that sectoral bargaining, often facilitated by unions, is particularly effective at closing pay gaps . By increasing wages for workers, unions boost consumer spending, enhancing overall consumer spending and stimulating economic growth . The increased purchasing power among union members fuels demand, leading to a more robust economy . Therefore, labor unions play a crucial role in fostering economic growth by mitigating income inequality and boosting consumer demand.<br><br>Second, labor unions increase worker productivity through collective bargaining and improved working conditions. Unionization enhances employee satisfaction and productivity through improved workplace policies and collaboration . When organizations engage in meaningful discussions with unions, policies that ensure employee satisfaction and safety often exceed regulatory standards . The collaborative dynamic fostered by unions enhances trust and improves morale, creating a more harmonious work environment . This encourages employer-union collaboration, leading to higher employee satisfaction and productivity, making it a win-win for both employers and employees . By improving workplace environments and fostering collaboration, labor unions drive productivity gains that contribute to overall economic growth.<br><br>Third, labor unions limit corporate risk-taking, promoting financial stability conducive to long-term economic growth. Labor unions can limit corporate risk-taking to protect their interests . Research indicates that unionization is associated with less risk-taking in corporate investments . By advocating for their members' interests, unions encourage more stable and sustainable corporate strategies, which in turn reduces the likelihood of financial crises . This stability fosters a more predictable economic environment, encouraging long-term investment and growth. Therefore, unions indirectly contribute to economic growth by promoting corporate financial responsibility and stability.<br><br>In conclusion, labor unions are beneficial to economic growth. They reduce income inequality, increase worker productivity, and limit corporate risk-taking, all of which contribute to a more stable and prosperous economy. For these reasons, we affirm the motion.<br><br>
+                                                </div>
+                                            </details>
+
+                                            <!-- Rating Section -->
+                                            <div class="form-group">
+                                            <label for="q2_1_b">
+                                                How persuasive is <strong>Output B</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                            </label>
+                                            <div class="row align-items-center">
+                                                <div class="col-10 offset-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_b_poor" name="q2_1_b" value="1">
+                                                        <label class="form-check-label" for="q2_1_b_poor">
+                                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_b_weak" name="q2_1_b" value="2">
+                                                        <label class="form-check-label" for="q2_1_b_weak">
+                                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_b_moderate" name="q2_1_b" value="3">
+                                                        <label class="form-check-label" for="q2_1_b_moderate">
+                                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_b_strong" name="q2_1_b" value="4">
+                                                        <label class="form-check-label" for="q2_1_b_strong">
+                                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q2_1_b_compelling" name="q2_1_b" value="5">
+                                                        <label class="form-check-label" for="q2_1_b_compelling">
+                                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Section -->
+                                        <div class="form-group mt-3 mb-4">
+                                            <label for="q2_1_comment_b"> (Optional) Additional comments for <strong> Output B's For </strong> side:</label>
+                                            <textarea class="form-control" id="q2_1_comment_b" name="q2_1_comment_b" rows="2"></textarea>
+                                        </div>
+                                        </div>
+                                        
+                                </div>
                             </div>
 
-                            <!-- Right Side (Output B) -->
-                            <div class="col-6">
-                                <!-- Audio Player -->
-                                <h5 class="text-center mb-3">Output B - <strong>For</strong> Side </h5>
-                                    <div class="audio-section mb-4">
-                                        <div class="audio-player mb-3">
-                                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0416/case2_1/opening_for_a.mp3" class="w-100" id="audio_b_1_For">
-                                                Your browser does not support the audio element.
-                                            </audio>
-                                        </div>
-
-                                        <!-- Transcript -->
-                                        <details class="transcript-details mb-3">
-                                            <summary class="transcript-summary p-2 bg-light rounded">
-                                                <i class="fas fa-file-alt mr-2"></i>
-                                                (Optional) <strong>For</strong> Transcript B
-                                            </summary>
-                                            <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that labor unions are beneficial to economic growth. We define "economic growth" as a sustained increase in a country's real gross domestic product (GDP) over a period of time, typically measured annually, reflecting an increase in the production of goods and services [13]. We define "labor unions" as organizations of workers formed to promote and protect their members' interests through collective bargaining with employers regarding wages, benefits, and working conditions [2]. Our judging criteria is maximizing long-term economic productivity; the side that demonstrates policies which lead to the greatest sustainable increase in a nation's overall productivity and prosperity should win the debate.<br><br>First, labor unions reduce income inequality, stimulating demand and economic growth. Higher union density correlates with lower income inequality and stronger economic growth [1]. Unions promote fair wages and social policies, directly combating the harmful effects of inequality on economic expansion [1]. Studies show that sectoral bargaining, often facilitated by unions, is particularly effective at closing pay gaps [3]. By increasing wages for workers, unions boost consumer spending, enhancing overall consumer spending and stimulating economic growth [4]. The increased purchasing power among union members fuels demand, leading to a more robust economy [4]. Therefore, labor unions play a crucial role in fostering economic growth by mitigating income inequality and boosting consumer demand.<br><br>Second, labor unions increase worker productivity through collective bargaining and improved working conditions. Unionization enhances employee satisfaction and productivity through improved workplace policies and collaboration [5, 6]. When organizations engage in meaningful discussions with unions, policies that ensure employee satisfaction and safety often exceed regulatory standards [5]. The collaborative dynamic fostered by unions enhances trust and improves morale, creating a more harmonious work environment [5]. This encourages employer-union collaboration, leading to higher employee satisfaction and productivity, making it a win-win for both employers and employees [5]. By improving workplace environments and fostering collaboration, labor unions drive productivity gains that contribute to overall economic growth.<br><br>Third, labor unions limit corporate risk-taking, promoting financial stability conducive to long-term economic growth. Labor unions can limit corporate risk-taking to protect their interests [9, 10]. Research indicates that unionization is associated with less risk-taking in corporate investments [7]. By advocating for their members' interests, unions encourage more stable and sustainable corporate strategies, which in turn reduces the likelihood of financial crises [9, 10]. This stability fosters a more predictable economic environment, encouraging long-term investment and growth. Therefore, unions indirectly contribute to economic growth by promoting corporate financial responsibility and stability.<br><br>In conclusion, labor unions are beneficial to economic growth. They reduce income inequality, increase worker productivity, and limit corporate risk-taking, all of which contribute to a more stable and prosperous economy. For these reasons, we affirm the motion.<br><br>**Reference**<br>(1) PMC, Higher union density correlates with lower income inequality and stronger economic growth. Unions promote fair wages and social policies. Economic studies show these trends.URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC9279886/<br>(2) Bureau of Labor Statistics<br>(3) Fordham ILJ, Sectoral bargaining is particularly effective at closing pay gaps. Not only does sectoral bargaining reduce economic inequality in society, but pay differences between genders and between white workers and workers ofURL: https://www.fordhamilj.org/iljonline/2024/11/25/comparing-labor-relations-how-models-of-unionization-differ-between-the-us-and-europe<br>(4) Sodaless Solutions, Unions often lead to higher wages for workers, which can boost consumer spending. Increased wages can improve purchasing power, thus enhancing overall consumer spending. This effect can stimulate economic growth.URL: https://www.sodalessolutions.com/navigating-unionization-challenges-opportunities-and-strategies-for-success/<br>(5) Sodaless Solutions, Unionization can enhance employee satisfaction and productivity through improved workplace policies and collaboration.URL: https://www.sodalessolutions.com/navigating-unionization-challenges-opportunities-and-strategies-for-success/<br>(6) Sodaless Solutions, These enhanced policies contribute to a safer and more equitable workplace, reducing turnover and boosting productivity.URL: https://www.sodalessolutions.com/navigating-unionization-challenges-opportunities-and-strategies-for-success/<br>(7) NYU Stern, Our firm-level examination of companies in the United States reveals that reliance on bank financing and unionization are both associated with less risk taking in corporate investments.URL: https://people.stern.nyu.edu/byeung/John%20Litov%20Yeung%20Corporate%20governance%20and%20risk%20taking%2006%2016%202007%20final.pdf<br>(8) cliffsnotes.com<br>(9) Labor unions can limit corporate risk-taking to protect their interests.URL: https://people.stern.nyu.edu/byeung/John%20Litov%20Yeung%20Corporate%20governance%20and%20risk%20taking%2006%2016%202007%20final.pdf<br>(10) ScienceDirect, Regarding real activities, unions can limit corporate risk-taking and curb overinvestment.URL: https://www.sciencedirect.com/science/article/abs/pii/S0929119921001127<br>(11) fiveable.me<br>(12) epi.org<br>(13) Investopedia
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="q2" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                        Which output do you find more effective overall?<sup>*</sup>
+                                    </label>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 offset-8">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q2_1" value="-1" id="q2_1_slightly_a">
+                                                <label class="form-check-label" for="q2_1_a"> Prefer Output A</label>
                                             </div>
-                                        </details>
-
-                                        <!-- Rating Section -->
-                                        <div class="form-group">
-                                        <label for="q2_1_b">
-                                            How persuasive is <strong>Output B</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
-                                        </label>
-                                        <div class="row align-items-center">
-                                            <div class="col-10 offset-1">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_b_poor" name="q2_1_b" value="1">
-                                                    <label class="form-check-label" for="q2_1_b_poor">
-                                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_b_weak" name="q2_1_b" value="2">
-                                                    <label class="form-check-label" for="q2_1_b_weak">
-                                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_b_moderate" name="q2_1_b" value="3">
-                                                    <label class="form-check-label" for="q2_1_b_moderate">
-                                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_b_strong" name="q2_1_b" value="4">
-                                                    <label class="form-check-label" for="q2_1_b_strong">
-                                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="q2_1_b_compelling" name="q2_1_b" value="5">
-                                                    <label class="form-check-label" for="q2_1_b_compelling">
-                                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
-                                                    </label>
-                                                </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q2_1" value="0" id="q2_1_equal">
+                                                <label class="form-check-label" for="q2_1_equal">Both outputs are equally effective</label>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Comment Section -->
-                                    <div class="form-group mt-3 mb-4">
-                                        <label for="q2_1_comment_b"> (Optional) Additional comments for <strong> Output B's For </strong> side:</label>
-                                        <textarea class="form-control" id="q2_1_comment_b" name="q2_1_comment_b" rows="2"></textarea>
-                                    </div>
-                                    </div>
-                                    
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group">
-                                <label for="q2" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
-                                    Which output do you find more effective overall?<sup>*</sup>
-                                </label>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 offset-8">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="q2_1" value="-1" id="q2_1_slightly_a">
-                                            <label class="form-check-label" for="q2_1_a"> Prefer Output A</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="q2_1" value="0" id="q2_1_equal">
-                                            <label class="form-check-label" for="q2_1_equal">Both outputs are equally effective</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="q2_1" value="1" id="q2_1_slightly_b">
-                                            <label class="form-check-label" for="q2_1_b">Prefer Output B</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q2_1" value="1" id="q2_1_slightly_b">
+                                                <label class="form-check-label" for="q2_1_b">Prefer Output B</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
 
-                    
-                </div>
+                        
+                    </div>
 
                     
 
                     <hr class="my-4">
                 
 
-                <div id="sanity_check_questions" style="display: none;">
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
                     
                         
                         
                             <div class="form-group mt-3 mb-4">
-                                <label for="q2_sanity">Which claim is proposed by <strong>Output A's</strong> <strong>For</strong> side as one of its main claims during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
+                                <label for="q2_sanity">Which claim is proposed by <strong>Output A's</strong> <strong>For</strong> side as its <strong>third</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
                                 <div class="row align-items-center">
                                     <div class="col-10 offset-1">
                                         
@@ -402,7 +418,7 @@
                                                     name="q2_sanity"
                                                     value="0">
                                                 <label class="form-check-label" for="q2_sanity_option_0">
-                                                    Labor unions, by advocating for higher wages, stimulate aggregate demand and consumer spending, driving economic growth.
+                                                    Labor unions can foster a culture of innovation by encouraging workers to share their ideas and suggestions for improving products, processes, and services, leading to increased competitiveness and economic growth.
                                                 </label>
                                             </div>
                                         
@@ -412,7 +428,7 @@
                                                     name="q2_sanity"
                                                     value="1">
                                                 <label class="form-check-label" for="q2_sanity_option_1">
-                                                    Labor unions reduce income inequality by securing fairer wages and benefits for workers, leading to a more equitable distribution of wealth and a healthier economy.
+                                                    Labor unions promote lifelong learning by providing workers with access to training and development opportunities throughout their careers, which enhances their skills and increases their productivity.
                                                 </label>
                                             </div>
                                         
@@ -422,7 +438,7 @@
                                                     name="q2_sanity"
                                                     value="2">
                                                 <label class="form-check-label" for="q2_sanity_option_2">
-                                                    Union-negotiated wage increases for lower-paid workers disproportionately benefit local economies by boosting spending at local businesses.
+                                                    Pattern bargaining, common in union negotiations, creates artificial wage convergence across different firms, regardless of their individual profitability.
                                                 </label>
                                             </div>
                                         
@@ -432,7 +448,7 @@
                                                     name="q2_sanity"
                                                     value="3">
                                                 <label class="form-check-label" for="q2_sanity_option_3">
-                                                    Unions can promote environmentally responsible practices within industries, leading to more sustainable production methods and long-term economic benefits.
+                                                    Unions can negotiate for provisions that incentivize apprenticeship programs, directly addressing skills shortages and fueling future economic expansion.
                                                 </label>
                                             </div>
                                         
@@ -449,7 +465,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="1">
+                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="0">
                         
                     
                 </div>
@@ -515,7 +531,7 @@
     
         <div class="card form-group question" id="question_4">
             <div class="card-header">
-                <b>(Optional) Question 6: How long did you spend on this evaluation?</b>
+                <b>(Optional) Question 6: How long did you spend on this whole evaluation process (including reading the motion, listening to the debate, and answering the questions)?</b>
             </div>
             <div class="card-body">
                 
@@ -530,12 +546,20 @@
             </div>
         </div>
     
-    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
-    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
 
             <input type="text" name="formid" value="2_1(T1_n0)" hidden>
             <input type="text" name="thank" value="Thanks" hidden>
-            <input class="btn btn-info btn-lg" type="submit" value="Submit✓" id="submitBtn">
+            <div class="button-row" style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                <div class="navigation-buttons">
+                    
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
+
+                </div>
+                <div id="submitButtonContainer" style="display: none;">
+                    <input class="btn btn-info btn-lg" type="submit" value="Submit All✓" id="submitBtn">
+                </div>
+            </div>
             <p class="text-muted">
                 <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
             </p>
@@ -558,14 +582,23 @@
         crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-        window.addEventListener('beforeunload', function (e) {
+        // Define the beforeunload handler as a named function so it can be removed
+        function handleBeforeUnload(e) {
             if (!document.getElementById('submitBtn').disabled) {
                 // Cancel the event
                 e.preventDefault();
                 // Chrome requires returnValue to be set
                 e.returnValue = '';
             }
-        });
+        }
+
+        // Add the beforeunload event listener
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Function to disable the beforeunload warning
+        function disableBeforeUnload() {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        }
 
         function confirmSubmission() {
             return confirm('Are you sure you want to submit your results?');
@@ -603,11 +636,113 @@
     </script>
 
     
+    
     <script>
+    // Function to handle consent acceptance
+    function acceptConsent() {
+        const checkboxes = document.querySelectorAll('#consentModal input[type="checkbox"]');
+        let allChecked = true;
 
+        checkboxes.forEach(checkbox => {
+            if (!checkbox.checked) {
+                allChecked = false;
+            }
+        });
+
+        if (allChecked) {
+            $('#consentModal').modal('hide');
+            // Additional logic for acceptance can be added here
+        } else {
+            alert('Please ensure all checkboxes are marked before proceeding.');
+        }
+    }
+
+    // Function to handle consent rejection
+    function rejectConsent() {
+        if (!confirm('You must accept the consent form to proceed. Click "OK" to stay on this page or "Cancel" to be redirected.')) {
+            window.location.href = '/debate-evaluation/thanks'; // Redirect to the "/thanks" page under the baseurl
+        }
+    }
+
+    // Show the consent modal on page load
+    $(document).ready(function() {
+        $('#consentModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+        $('#consentModal').modal('show');
+    });
+
+
+</script>
+
+    <script>
         // Call this function when the page loads
         document.addEventListener('DOMContentLoaded', function() {
             setupAudioSideNavigation();
+            
+            // Add form submission handler
+            document.getElementById('theForm').addEventListener('submit', function(e) {
+                const redirectUrl = document.getElementById('redirect_url').value;
+                if (redirectUrl) {
+                    // Show loading indicator
+                    const submitBtn = document.getElementById('submitBtn');
+                    submitBtn.disabled = true;
+                    submitBtn.value = 'Submitting...';
+                    
+                    // Submit the form first
+                    const form = this;
+                    const formData = new FormData(form);
+                    
+                    // Prevent the default form submission
+                    e.preventDefault();
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success message
+                            const successMessage = document.getElementById('successMessage');
+                            successMessage.style.display = 'block';
+                            
+                            // Disable the beforeunload warning
+                            disableBeforeUnload();
+                            
+                            // Show redirect message and start countdown
+                            const redirectMessage = document.getElementById('redirectMessage');
+                            const countdownElement = document.getElementById('countdown');
+                            redirectMessage.style.display = 'block';
+                            
+                            // Set up manual redirect link
+                            document.getElementById('manualRedirect').href = redirectUrl;
+                            
+                            // Start countdown
+                            let countdown = 2;
+                            const countdownInterval = setInterval(() => {
+                                countdown--;
+                                countdownElement.textContent = countdown;
+                                if (countdown <= 0) {
+                                    clearInterval(countdownInterval);
+                                    window.location.href = redirectUrl;
+                                }
+                            }, 1000);
+                        } else {
+                            // If submission failed, show error
+                            alert('Form submission failed. Please try again.');
+                            submitBtn.disabled = false;
+                            submitBtn.value = 'Submit All✓';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while submitting the form. Please try again.');
+                        submitBtn.disabled = false;
+                        submitBtn.value = 'Submit All✓';
+                    });
+                }
+            });
         });
 
         let currentQuestionIndex = 0;
@@ -618,6 +753,14 @@
             questions.forEach((question, i) => {
                 question.style.display = i <= index ? 'block' : 'none';
             });
+            
+            // Show submit button only when all questions are shown
+            const submitButtonContainer = document.getElementById('submitButtonContainer');
+            if (index === questions.length - 1) {
+                submitButtonContainer.style.display = 'block';
+            } else {
+                submitButtonContainer.style.display = 'none';
+            }
         }
 
         const audios = document.querySelectorAll('audio');

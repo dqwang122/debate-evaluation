@@ -1,0 +1,903 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+            <li class="list-group-item">The process will take about 1 hours and a $30 Amazon Gift Card will be sent as a gift for your participation.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>Rating Guide:</h4>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Poor (1)</h5>
+                    <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weak (2)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moderate (3)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Strong (4)</h5>
+                    <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Compelling (5)</h5>
+                    <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbxK1mGaCBuSe0j6xvplXCkDM7W0LwAYsoOPd7ICKAYv0klYOnFUE4yzGzTxLvBtT6bbkg/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: We Should Abolish The Debt Ceiling </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="expert2" >
+    <input type="hidden" id="mode" name="version" value="0412" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0412/case1_1/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">["In this debate, we shall argue that the debt ceiling, defined as the total amount of money the United States government is authorized to borrow to meet its existing legal obligations , should be abolished.<br><br>Our judging criteria is economic stability and predictability. We believe policies that minimize economic disruptions and promote consistent government operations are superior. Abolishing the debt ceiling directly promotes this standard by eliminating the recurring threat of default and the associated economic uncertainty that harms businesses and consumers .<br><br>First, abolishing the debt ceiling prevents manufactured economic crises. The debt ceiling is not a tool for fiscal discipline but a mechanism for political brinkmanship. It creates artificial economic crises by threatening default on existing obligations. As the Committee for a Responsible Federal Budget notes, brinkmanship around the debt ceiling raises borrowing costs and threatens economic stability . Failing to increase the debt limit would have catastrophic economic consequences, causing the government to default on its legal obligations, precipitating another financial crisis and threatening the jobs and savings of everyday Americans . Removing this self-inflicted wound on the economy promotes stability and predictability.<br><br>Second, abolishing the debt ceiling streamlines fiscal responsibility. The debt ceiling is a redundant mechanism . Congress already approves spending and taxation policies. The debt ceiling merely dictates whether the government can pay for the spending it has already authorized. The Government Accountability Office  recommends that Congress consider immediately replacing it with an approach that links debt decisions to spending and revenue decisions at the time they are made . Abolishing it streamlines fiscal responsibility by aligning spending decisions with the means to finance them, promoting a more transparent and efficient fiscal process.<br><br>Third, abolishing the debt ceiling enhances U.S. credibility in the global economy. The debt ceiling debates erode international confidence in the U.S. economy and its ability to meet its obligations . Eliminating the debt ceiling would send a message of stability and fiscal responsibility to global markets, strengthening the dollar and attracting foreign investment. As noted by multiple sources, the debt ceiling causes economic uncertainty and potentially raises interest rates . By removing this uncertainty, the U.S. signals its commitment to honoring its financial commitments.<br><br>In conclusion, abolishing the debt ceiling is essential for preventing manufactured economic crises, streamlining fiscal responsibility, and enhancing U.S. credibility. For these reasons, we strongly advocate for the abolition of the debt ceiling to foster economic stability and predictability.<br><br>**Reference**<br>(1) Amadeo, K. (2023, January 19). Debt Ceiling: Definition, History, and How It Works. Investopedia. Retrieved from https://www.investopedia.com/terms/d/debt-ceiling.asp<br>(2) NPR Staff. (2023, January 21). An economist's case for abolishing the debt ceiling. NPR. Retrieved from https://www.npr.org/2023/01/21/1150605281/an-economists-case-for-abolishing-the-debt-ceiling<br>(3) Gale, W. G. (2023, February 8). Why Congress needs to abolish the debt limit: Testimony before the House Budget Committee. Brookings. Retrieved from https://www.brookings.edu/articles/why-congress-needs-to-abolish-the-debt-limit-testimony-before-the-house-budget-committee/<br>(4) The Committee for a Responsible Federal Budget. (n.d.). Q&A: Everything You Should Know About The Debt Ceiling. Retrieved from https://www.crfb.org/papers/qa-everything-you-should-know-about-debt-ceiling<br>(5) U.S. Department of the Treasury. (n.d.). Debt Limit. Retrieved from https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service/debt-limit<br>(6) Government Accountability Office. (n.d.). Debt Limit: Comprehensive Analysis of Legal, Economic, and Budgetary Issues. Retrieved from https://www.gao.gov/products/gao-25-107089", "Imagine a household that approves a budget but then refuses to pay the bills. The debt ceiling is like that refusal, causing unnecessary financial stress and potential damage. Today, we stand firm that the United States should abolish the debt ceiling. To clarify, the debt ceiling is a legislative limit on the amount of national debt the Treasury can issue. It does *not* authorize new spending; rather, it allows the government to pay for obligations Congress has *already* approved.<br><br>Our judging criteria are simple: which side promotes greater economic stability and social welfare? We contend that abolishing the debt ceiling achieves both.<br><br>First, abolishing the debt ceiling reduces economic uncertainty by preventing artificial crises. The debt ceiling creates manufactured fiscal cliffs, disrupting markets and hindering investment. When the debt ceiling nears, political brinkmanship often ensues, unnerving investors and businesses. According to Moody's Analytics, a prolonged breach of the debt ceiling would spark a recession, kill 7 million jobs, spike the unemployment rate to almost 9 percent, erase trillions in household wealth and retirement savings, and shrink the U.S. economy by over 4 percent . Removing the debt ceiling will foster stability and encourage long-term economic growth.<br><br>Second, the debt ceiling disproportionately harms vulnerable populations by threatening social safety nets. Imagine seniors unsure if they will receive their Social Security checks on time, or families facing potential cuts to vital healthcare services. These are the human costs of debt ceiling brinkmanship. Debt ceiling crises often lead to calls for spending cuts. When the debt ceiling becomes a political tool, programs like Social Security and Medicare are held hostage. All Home CEO and Founder Tomiquia Moss stated that the debt ceiling agreement will likely reduce vital food assistance and housing support for more than 100,000 Californians . This creates immense anxiety for millions of Americans who rely on these vital services.<br><br>Third, the debt ceiling is a redundant mechanism because Congress already exercises control over federal spending. It is unnecessary and a potentially harmful political tool. Congress *already* approves all spending through the budget process. The debt ceiling simply limits the Treasury's ability to pay for those authorized expenditures. It's like approving a purchase but then refusing to pay the bill. The Republican tax cuts of 2017 raised the deficit by an estimated $1 trillion over the next decade, despite promises that the cuts would pay for themselves . This demonstrates how the debt ceiling has been used as a political bargaining chip. Throughout history, other developed nations, like Canada and Australia, have managed their finances without a debt ceiling, demonstrating its dispensability.<br><br>The 2011 debt ceiling crisis led to a credit downgrade of U.S. debt by Standard & Poor’s . The Budget Control Act  enacted in 2011 in response to the crisis included $917 billion in direct spending reductions over 10 years .<br><br>In conclusion, the debt ceiling is a dangerous and unnecessary relic. By abolishing it, we can promote economic stability, protect vulnerable populations, and streamline our government's financial processes. Contact your representatives and urge them to co-sponsor legislation to permanently abolish the debt ceiling. Tell them that the time for artificial crises and potential economic instability is over. We urge you to consider the evidence and vote in favor of abolishing the debt ceiling for a stronger and more secure future.<br><br>**Reference**<br>[1] Debt Ceiling Explainer | House Budget Committee Democrats. Published Time: 2025-01-17T12:29:37-05:00<br>[2] All Home All Home Statement: Debt ceiling agreement comes at the expense of low-income Americans Posted June 5, 2023<br>[3] 'Debt roulette' is an important political bargaining chip, finance expert says By Patrick Ercolano<br>[4] 2011 U.S. Debt Ceiling Crisis: Meaning and Outcome - Investopedia<br>[5] Reflecting on the Budget Control Act of 2011 and Its Relevance Now | Baker Institute"]</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0412/case1_1/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">["In this debate, we shall argue against the abolition of the debt ceiling. The debt ceiling is defined as the total amount of money that the United States government is allowed to borrow to meet its existing legal obligations, including Social Security and Medicare benefits, military salaries, interest on the national debt, tax refunds, and other payments . It is crucial to understand the debt ceiling as a limit on borrowing to fulfill *existing* obligations.<br><br>Our judging criteria is **fiscal prudence**. The optimal policy regarding the debt ceiling is the one that best ensures long-term fiscal prudence and economic stability for the United States. We define fiscal prudence as responsible management of government finances, characterized by sustainable debt levels, controlled spending, and avoidance of actions that could lead to economic crises. This is the most appropriate standard because it directly addresses the core concern surrounding the debt ceiling: the nation's financial health and stability.<br><br>First, abolishing the debt ceiling removes a critical mechanism for fiscal oversight and accountability. The debt ceiling, though often a point of political contention, forces Congress to periodically review and authorize government borrowing. This process provides a crucial opportunity for debate and scrutiny of government spending. Removing this mechanism eliminates a layer of oversight, potentially leading to unchecked spending and increased national debt. For example, in 1995, Republican members of Congress used the threat of refusing to allow an increase in the debt ceiling to negotiate increased government spending cuts . This demonstrates the debt ceiling's potential to curb excessive spending. Some analysts argue that by requiring legislative consent, the debt limit affords Congress some oversight authority and engenders fiscal accountability . The debt ceiling can therefore be a useful tool to remind everyone of the burden of debt to the economy .<br><br>Second, abolishing the debt ceiling creates the risk of unlimited government borrowing, leading to economic instability. Without a limit on borrowing, the government could potentially accumulate unsustainable levels of debt, leading to higher interest rates, inflation, and a potential economic crisis. Unlimited borrowing can also crowd out private investment and undermine long-term economic growth. As *The Economist* notes, the US federal government has spent $2 trillion, or 7.2% of GDP, more than it has raised in taxes recently, despite a strong economy . This level of borrowing, even with the debt ceiling in place, raises concerns about fiscal responsibility. Removing the debt ceiling could exacerbate this trend, potentially leading to higher interest rates and reduced government services .<br><br>Third, alternatives to abolishing the debt ceiling offer more effective and less risky approaches to fiscal management. Instead of completely removing the debt ceiling, there are alternative mechanisms that can improve fiscal responsibility, such as linking debt decisions to spending and revenue decisions or capping the debt-to-GDP ratio. These alternatives maintain a degree of fiscal control without the drastic risks associated with abolishing the debt ceiling entirely. The Government Accountability Office  has recommended that Congress consider replacing the current debt limit with an approach that links debt decisions to spending and revenue decisions at the time they are made . This approach could provide a more comprehensive and responsible framework for managing the national debt.<br><br>In conclusion, abolishing the debt ceiling poses significant risks to fiscal prudence and economic stability. It removes a vital mechanism for oversight, invites unlimited borrowing, and neglects more effective alternative solutions. We, therefore, stand firmly against the abolition of the debt ceiling.<br><br>**Reference**<br>(1) NPR. 2023. An economist’s case for abolishing the debt ceiling. URL: https://www.npr.org/2023/01/21/1150605281/an-economists-case-for-abolishing-the-debt-ceiling<br>(2) Council on Foreign Relations. What Happens When the U.S. Hits Its Debt Ceiling? URL: https://www.cfr.org/backgrounder/what-happens-when-us-hits-its-debt-ceiling<br>(3) Carey Business School, Johns Hopkins University. Newest debate over debt ceiling more hot air. URL: https://carey.jhu.edu/articles/newest-debate-over-debt-ceiling-more-hot-air<br>(4) MMBB. 2024. The Debt Ceiling: What Is It and Why It’s Important. URL: https://www.mmbb.org/resources/e-newsletter/2024/january/the-debt-ceiling-what-is-it-and-why-it-s-important<br>(5) Committee for a Responsible Federal Budget. Reforming the Debt Ceiling. URL: https://www.crfb.org/blogs/reforming-debt-ceiling<br>(6) The Economist. 2024. America's reckless borrowing is a danger to its economy and the world’s. URL: https://www.economist.com/leaders/2024/05/02/americas-reckless-borrowing-is-a-danger-to-its-economy-and-the-worlds<br>(7) Peter G. Peterson Foundation. How the Lack of Action on the Debt Ceiling Can Hurt the Economy. URL: https://www.pgpf.org/article/how-the-lack-of-action-on-the-debt-ceiling-can-hurt-the-economy/<br>(8) Investopedia. Debt Ceiling. URL: https://www.investopedia.com/terms/d/debt-ceiling.asp<br>(9) ASTHO. The Debt Ceiling, Fiscal Responsibility Act of 2023, and the FY25 and FY26 Federal Budgets. URL: https://www.astho.org/communications/blog/2025/debt-ceiling-fiscal-responsibility-act-2023-fy25-fy26-federal-budgets", 'Our opponents misunderstand the critical role the debt ceiling plays in maintaining fiscal responsibility. They define it as a limit on the national debt and argue it\'s a mere formality that should be abolished. We disagree. The debt ceiling is not simply about paying bills; it\'s about ensuring the bills themselves are reasonable and sustainable. While economic stability and social welfare are crucial, they depend on a foundation of fiscal responsibility.<br><br>Our disagreement centers on whether the debt ceiling is a destructive force or a necessary check on government overspending. Our opponents claim abolishing it reduces economic uncertainty, but this uncertainty is a vital consequence of fiscal prudence. It compels Congress to confront the ramifications of its spending decisions. It\'s like ignoring a nagging toothache. The pain is unpleasant, but it signals a deeper problem that requires attention. Similarly, the debt ceiling, with its potential for short-term economic disruption, forces us to address unsustainable spending habits. The alternative – unchecked borrowing – poses a far greater long-term threat. Just like ignoring a toothache leads to bigger problems, ignoring the debt ceiling leads to unsustainable debt and economic instability.<br><br>The claim that the debt ceiling harms vulnerable populations also misses the mark. Responsible budgeting, enforced by the debt ceiling, prioritizes essential programs, ensuring their long-term sustainability and protecting those who rely on them most. This ensures funding for essential programs such as social security, medicare, and other safety nets for vulnerable populations. Unrestrained spending might offer temporary relief, like a sugar rush, but it inevitably leads to long-term economic instability, disproportionately harming the most vulnerable.<br><br>Abolishing the debt ceiling invites fiscal irresponsibility, plain and simple. Without this crucial constraint, Congress could authorize spending without directly confronting the consequences, potentially leading to unsustainable debt levels. The debt ceiling forces necessary budgetary negotiations, prompting lawmakers to review and negotiate spending priorities. According to the Committee for a Responsible Federal Budget, most major deficit reduction agreements since 1980 have been accompanied by a debt ceiling increase . In fact, in December 2009, Congress approved a modest increase in the debt limit while negotiating statutory pay-as-you-go  and the establishment of the National Commission . This is not redundancy; it\'s accountability.<br><br>Furthermore, maintaining the debt ceiling bolsters global financial confidence, signaling that the U.S. is committed to fiscal discipline and responsible governance. Without an increase in the limit, worries about the government’s creditworthiness would ripple through global financial markets. Investors would likely demand a higher return on debt issued by the federal government. In turn, the government would have to pay more interest on its debt, which would create a further strain on future budgets . In 2011, S&P downgraded the credit rating on US debt from AAA to AA+ in response to the lack "effectiveness, stability, and predictability” from Congress in addressing the debt limit .<br><br>While many countries set ceilings on the amount of debt they can incur, they generally shy away from imposing a hard limit. Instead, most other countries simply have a debt ceiling that is tied to a percentage of their national GDP, which ensures that the limit raises as the country’s wealth does .<br><br>Therefore, we firmly believe that abolishing the debt ceiling would be a grave mistake, undermining our nation\'s long-term economic stability and fiscal health.<br><br>**Reference**<br>[1] Committee for a Responsible Federal Budget. "Debt Ceiling Q&A." January 7, 2025.<br>[2] Peterson Foundation. "How the Lack of Action on the Debt Ceiling Can Hurt the Economy."<br>[3] "Debt Ceiling Uncertainty: What Does it Mean for Money Markets?"<br>[4] Fleisher, Gabe. "Do other countries have debt ceilings?" January 31, 2023.']</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (We Should Abolish The Debt Ceiling) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0412/case1_1/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">['Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opponent\'s arguments contain three key flaws, relating to judging criteria, fiscal oversight, and the risk of unlimited borrowing.<br><br>First, the opposition argues for "fiscal prudence" as the primary judging criterion. However, we contend that this misses the forest for the trees. Economic stability and social welfare are *preconditions* for fiscal prudence. How can any nation be fiscally responsible amidst economic chaos or widespread social distress? Focusing solely on managing resources, as the opposition suggests, neglects the crucial outcomes of stability and well-being. Numerous economists, such as those at the Brookings Institute , emphasize that economic stability is vital for long-term fiscal health. We maintain our stance that the optimal policy promotes greater economic stability and social welfare, as these are the foundations upon which fiscal prudence can be built.<br><br>Second, the opposition claims that the debt ceiling is a critical mechanism for fiscal oversight, forcing Congress to review government spending. This argument ignores the fundamental reality that Congress *already* approves all spending through the budget process . The debt ceiling, therefore, is nothing more than a redundant second review of the same expenditures. It’s akin to approving a purchase and then refusing to pay the bill. This duplication not only wastes time and resources but also creates opportunities for political brinkmanship, as evidenced by the 2011 debt ceiling crisis that led to a credit downgrade of U.S. debt . Instead of ensuring fiscal responsibility, the debt ceiling has become a political tool that threatens economic stability. Many developed nations, like Canada and Australia, manage their finances effectively without a debt ceiling , demonstrating that budget process is the proper mechanism for fiscal oversight.<br><br>Third, the opposition warns that abolishing the debt ceiling creates the risk of unlimited government borrowing. This claim rests on the unsupported assumption that abolishing the debt ceiling *automatically* leads to fiscal irresponsibility. However, as Treasury.gov indicates, other effective mechanisms exist to prevent unlimited borrowing, including budget resolutions, congressional oversight, and public pressure . The debt ceiling itself has often *exacerbated* fiscal mismanagement by creating artificial deadlines and political brinkmanship , not the other way around. Furthermore, the opposition fails to acknowledge that several countries, such as New Zealand and Sweden, have successfully managed government borrowing without a debt ceiling . The issue at hand is not the *existence* of a debt ceiling, but the potential for it to trigger artificial crises and undermine economic stability.<br><br>**Reference**<br>(1) Brookings Institute. Why Congress Needs to Abolish the Debt Limit: Testimony Before the House Budget Committee.<br>(2) Debt Ceiling Explainer | House Budget Committee Democrats. Published Time: 2025-01-17T12:29:37-05:00<br>(3) 2011 U.S. Debt Ceiling Crisis: Meaning and Outcome - Investopedia<br>(4) The Conversation. U.S. debt ceiling: other countries don\'t have one – here\'s why<br>(5) U.S. Department of the Treasury. Debt Limit<br>(6) New Zealand Parliament. Debt Ceiling', 'They define the debt ceiling as the total amount of money the U.S. government is allowed to borrow. We agree, but let\'s be clear: this is about paying for obligations Congress *already* approved. Our debate centers on which approach truly fosters greater economic stability and social welfare for all Americans.<br><br>Now, let’s dismantle their argument that the debt ceiling provides fiscal oversight. It\'s like seeing the "check engine" light come on in your car, and instead of addressing the underlying issue, you ignore it, potentially causing a breakdown. Ignoring the debt ceiling, like ignoring that "check engine" light, leads to serious consequences, including market jitters and economic instability. The debt ceiling manufactures crises, it doesn\'t prevent them. The "discipline" they claim it imposes is performative, not responsible. These recurring "market jitters" are not a "small price"; they significantly impede economic growth. The debt ceiling crisis is not a genuine re-evaluation of fiscal policy, but a manufactured political spectacle that undermines economic stability. Remember the 2011 debt ceiling crisis? The brinksmanship led Standard & Poor’s to downgrade the U.S. credit rating for the first time .<br><br>We have demonstrated that the debt ceiling creates artificial crises. It damages the nation’s credit rating, leading to broad economic pain. According to AAF, debt ceiling impasses negatively affect the world’s view of the United States as a reliable partner and investors’ perceptions of Treasury securities as safe, stable investments . By removing the *threat* of artificial crises, we foster a more stable economic environment.<br><br>They also ignore that debt ceiling brinkmanship disproportionately harms vulnerable populations by creating uncertainty around Social Security, Medicare, and vital services. A recent study shows that a new debt ceiling deal includes fresh work reporting requirements for adults ages 50 to 54 who receive Supplemental Nutrition Assistance Program  benefits, and this change could result in almost 750,000 adults losing their federal food assistance . Their alternatives still carry risks of political gridlock!<br><br>Let\'s be clear: Congress *already* controls federal spending! The debt ceiling is therefore a redundant mechanism. As we\'ve seen, and as evidenced by the experiences of countries like Canada and Australia, sound fiscal management is possible *without* it. Why can\'t the U.S. follow suit?<br><br>The claim that the debt ceiling is needed to control spending is demonstrably false. The continuous increase in national debt occurs *despite* the existence of the debt ceiling, highlighting its ineffectiveness as a fiscal constraint. The \'safety valve\' they describe consistently harms consumer confidence and market stability. Their idea that the debt ceiling is a form of \'accountability\' is really a charade, fostering political games, not genuine fiscal discipline. Fitch Ratings has issued credit warnings for the United States, pointing to the "brinkmanship over the debt ceiling" and the "failure of the U.S. authorities to meaningfully tackle medium-term fiscal challenges" as signals of "downside risks to U.S. creditworthiness" .<br><br>The debt ceiling has never truly been about fiscal prudence. It has been used as a political tool. Don\'t let political games continue to jeopardize our economic future. Urge your representatives to support the abolition of the debt ceiling and promote a more stable and prosperous America.<br><br>**Reference**<br>[1] Why It Matters if the U.S. Credit Rating Is Downgraded—Again.<br>[2] The United States Breaches $36.1 Trillion Debt Ceiling - AAF.<br>[3] Debt ceiling deal: Some 750000 adults may lose SNAP ...<br>[4] Fitch Issues US Credit Warning over Debt Ceiling Delays.']</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0412/case1_1/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">['Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opposition’s rebuttals contain several flaws, specifically in their understanding of fiscal responsibility and the role of the debt ceiling. We will address their points concerning the "check engine" light analogy, the creation of artificial crises, the harm to vulnerable populations, the comparison to Canada and Australia, the continuous increase in national debt, and the 2011 downgrade.<br><br>First, they use the analogy of a "check engine" light to dismiss the debt ceiling, but this is a false analogy. The "check engine" light indicates an existing problem, while the debt ceiling *prevents* a future problem – unchecked government spending. Both sides acknowledge potential "market jitters," but we argue that these are a necessary and acceptable consequence of maintaining fiscal responsibility to ensure financial stability in the long term .<br><br>Second, the opposition claims the debt ceiling manufactures crises, but the potential for a crisis is a *feature*, not a bug. It forces Congress to confront the issue of spending and borrowing. They focus on short-term "market jitters" while ignoring the long-term consequences of unchecked debt. The debt ceiling provides a credible commitment to limit spending, preventing economic disaster .<br><br>Third, while we acknowledge the potential harm to vulnerable populations, we argue that long-term fiscal irresponsibility resulting from abolishing the debt ceiling would ultimately harm these populations *even more*. The debt ceiling is a mechanism to protect the long-term financial health of the country, which is essential for maintaining social safety nets .<br><br>Fourth, the opposition points to Canada and Australia as examples of sound fiscal management without a debt ceiling, but their economic and political situations are different from the U.S. Their fiscal management systems may not be directly applicable here, and we must consider the unique challenges facing the U.S. economy .<br><br>Fifth, the continuous increase in national debt *despite* the debt ceiling is a reason to maintain it, not abolish it. Eliminating the debt ceiling would remove the last remaining constraint on government spending. Unlimited borrowing can lead to higher interest rates, inflation, and economic instability, harming future generations .<br><br>Sixth, regarding the 2011 downgrade, while we acknowledge it, it was a *one-time* event triggered by a specific political situation of failing to pass the debt ceiling. This actually *proves* that the debt ceiling is a mechanism to drive fiscal decisions, ensuring that the government addresses its spending habits .<br><br>In conclusion, we maintain that abolishing the debt ceiling poses significant risks to fiscal prudence and economic stability. It removes a vital mechanism for oversight, invites unlimited borrowing, and neglects more effective alternative solutions. For these reasons, we stand firmly against the abolition of the debt ceiling.<br><br>**Reference**<br>(1) NPR. 2023. An economist’s case for abolishing the debt ceiling. URL: https://www.npr.org/2023/01/21/1150605281/an-economists-case-for-abolishing-the-debt-ceiling<br>(2) Council on Foreign Relations. What Happens When the U.S. Hits Its Debt Ceiling? URL: https://www.cfr.org/backgrounder/what-happens-when-us-hits-its-debt-ceiling<br>(3) Carey Business School, Johns Hopkins University. Newest debate over debt ceiling more hot air. URL: https://carey.jhu.edu/articles/newest-debate-over-debt-ceiling-more-hot-air<br>(4) MMBB. 2024. The Debt Ceiling: What Is It and Why It’s Important. URL: https://www.mmbb.org/resources/e-newsletter/2024/january/the-debt-ceiling-what-is-it-and-why-it-s-important<br>(5) Committee for a Responsible Federal Budget. Reforming the Debt Ceiling. URL: https://www.crfb.org/blogs/reforming-debt-ceiling<br>(6) The Economist. 2024. America\'s reckless borrowing is a danger to its economy and the world’s. URL: https://www.economist.com/leaders/2024/05/02/americas-reckless-borrowing-is-a-danger-to-its-economy-and-the-worlds<br>(7) Peter G. Peterson Foundation. How the Lack of Action on the Debt Ceiling Can Hurt the Economy. URL: https://www.pgpf.org/article/how-the-lack-of-action-on-the-debt-ceiling-can-hurt-the-economy/<br>(8) Investopedia. Debt Ceiling. URL: https://www.investopedia.com/terms/d/debt-ceiling.asp<br>(9) ASTHO. The Debt Ceiling, Fiscal Responsibility Act of 2023, and the FY25 and FY26 Federal Budgets. URL: https://www.astho.org/communications/blog/2025/debt-ceiling-fiscal-responsibility-act-2023-fy25-fy26-federal-budgets<br>(10) The US debt limit has important implications for economic and financial stability.URL: https://www.shs-conferences.org/articles/shsconf/pdf/2024/01/shsconf_icdeba2023_02028.pdf', 'Let\'s be clear: while the opposition frames this debate around economic stability and social welfare, the central issue is fiscal prudence. Fiscal prudence, the responsible management of government finances, is the bedrock upon which long-term economic stability and social welfare are built. A strong society requires a strong financial base, and fiscal prudence provides that foundation.<br><br>The opposition claims the debt ceiling "manufactures crises." However, the debt ceiling is a necessary mechanism that forces Congress to confront spending decisions. Prior to establishing the debt ceiling, Congress was required to approve each issuance of debt in a separate piece of legislation. According to the Committee for a Responsible Federal Budget, the debt ceiling was first enacted in 1917 through the Second Liberty Bond Act to simplify the process and enhance borrowing flexibility . Think of the debt ceiling as a financial check-up. It may be uncomfortable, forcing us to confront tough choices, but is it better to ignore warning signs and risk a complete financial collapse? The debt ceiling forces Congress to review borrowing, offering opportunities to scrutinize spending. Removing this oversight is akin to giving a teenager a credit card with no limit. What could possibly go wrong?<br><br>They argue that Congress already controls spending, but does it *really*? Look at the national debt! The debt ceiling forces a specific vote on debt, compelling representatives to confront the consequences of their choices. It\'s more than just political brinkmanship. As John Cochrane noted, the regular budget process is completely broken, and the debt ceiling is one deadline that forces some spending/tax compromises .<br><br>The opposition claims the debt ceiling undermines economic stability, but the opposite is true. Removing the debt ceiling creates the *real* risk of unlimited government borrowing. Imagine a car with no brakes! Unchecked borrowing leads to higher interest rates, inflation, and ultimately, economic disaster. According to a 2023 report from Moody’s Analytics, even a short-term breach of the federal debt limit could reduce gross domestic product and result in the loss of 2 million jobs . The debt ceiling is a safety valve, reminding everyone of the dangers of reckless spending.<br><br>They point out that the national debt rises *despite* the debt ceiling. The solution is to *strengthen* the tool, not discard it. The Committee for a Responsible Federal Budget suggests linking changes in the debt limit to achieving responsible fiscal targets, so that Congress would not need to increase the debt ceiling if fiscal targets are met . Like anything, the debt ceiling can be improved.<br><br>Finally, they argue the debt ceiling harms vulnerable populations. No one wants to see Social Security or Medicare threatened. However, is the solution to remove all fiscal controls? Responsible negotiations, not reckless borrowing, are the way to protect those who need it most. By ensuring fiscal prudence, essential social programs are sustainable and protected from long-term budget cuts. Removing the ceiling grants unlimited borrowing power, incentivizing more spending in the long run, which will affect everyone, including the vulnerable. As Stanford Silverman notes, higher borrowing costs would increase the cost of financing public debt, leading to a decrease in public investment, affecting everything from infrastructure projects to social welfare programs .<br><br>Vote against abolishing the debt ceiling.<br><br>**Reference**<br>[1] Committee for a Responsible Federal Budget. Debt Ceiling Q&A. 2025.<br><br>[2] Does the Debt Ceiling Do More Harm than Good?.<br><br>[3] Debt Ceiling Update: What\'s at Stake. 2023.<br><br>[4] Silverman, Stanford. True Threat of Debt Default for America.']</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (We Should Abolish The Debt Ceiling) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0412/case1_1/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">['Thank you, chairperson, and esteemed judges. In today\'s debate, our discussion primarily revolved around the efficacy of the debt ceiling as a tool for fiscal oversight and its impact on economic stability and social welfare.<br><br>First, on the issue of fiscal oversight, we’ve decisively won this battleground. The negative clings to the idea that the debt ceiling is a crucial check on spending. But we\'ve proven it\'s a *redundant* mechanism. Congress *already* controls spending through the budget process . The debt ceiling is like approving a purchase and then refusing to pay the bill – absurd and economically damaging.<br><br>They claim the *potential* for a crisis is a *feature*. We say that\'s like arguing a car crash is a good thing because it forces you to check your insurance! The 2011 downgrade, triggered by debt ceiling brinkmanship, wasn\'t just a "one-time event." It was a stark warning of the real-world consequences of playing political games with our nation\'s creditworthiness . And let\'s not forget credit warnings from Fitch Ratings echoing the same concerns . The debt ceiling doesn\'t *prevent* economic disaster, it *invites* it! Studies show that the debt continues to rise *despite* the debt ceiling, proving its ineffectiveness .<br><br>Second, we must consider the devastating impact on vulnerable populations. The negative argues long-term fiscal irresponsibility would hurt these populations even more. But we\'ve shown the debt ceiling causes *immediate and direct* harm. Research indicates that the recent debt ceiling deal could strip almost 750,000 adults of their SNAP benefits . This isn\'t hypothetical. It\'s happening *now*, because of the debt ceiling.<br><br>Finally, the negative dismisses the examples of Canada and Australia. They claim their situations are "different." But the underlying principle remains the same: a debt ceiling is not *necessary* for sound fiscal management.<br><br>**Reference**<br>(1) Debt Ceiling Explainer | House Budget Committee Democrats. Published Time: 2025-01-17T12:29:37-05:00<br>(2) All Home All Home Statement: Debt ceiling agreement comes at the expense of low-income Americans Posted June 5, 2023<br>(3) \'Debt roulette\' is an important political bargaining chip, finance expert says By Patrick Ercolano<br>(4) Fitch Issues US Credit Warning over Debt Ceiling Delays.', 'Esteemed judges, we stand before you today having demonstrated that this debate centers on economic stability and the well-being of our society. Our opponents argue that the debt ceiling fosters fiscal responsibility, but we have proven it manufactures artificial crises, undermining our economy and global reputation.<br><br>Recall the 2011 downgrade of the U.S. credit rating. This was not an isolated incident but a consequence of a flawed system. Sticking to the debt ceiling does not prevent economic instability; it invites it. The benefits of eliminating this unnecessary obstacle are significant.<br><br>We have shown that the burden of debt ceiling brinkmanship falls disproportionately on vulnerable populations. Essential programs like Social Security and Medicare are jeopardized, causing widespread anxiety. Their approach risks the well-being of our most vulnerable citizens for political gain.<br><br>Our opponents have failed to recognize that Congress already possesses the authority to control spending. The debt ceiling is, therefore, a superfluous political instrument. We presented a clear contrast by referencing Canada and Australia, nations that function perfectly well without such a constraint.<br><br>The evidence is clear. The debt ceiling is not a safeguard; it is a self-imposed wound. It does not promote fiscal discipline; it promotes political dysfunction. It does not protect vulnerable populations; it holds them hostage.<br><br>They offer a system susceptible to crises that harms the most vulnerable. We offer a path toward stability and security. By abolishing the debt ceiling, we choose a future where the government can fulfill its obligations without manufactured crises. Vote for economic stability, vote for social welfare, vote to abolish the debt ceiling.']</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0412/case1_1/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">["Thank you chair person and esteemed judges in today's debate our discussion primarily revolved around the role of the debt ceiling in ensuring fiscal responsibility. Its impact on vulnerable populations and its necessity in addition to the existing budget process. The opposition argues that the debt ceiling is a redundant mechanism that manufactures crises. However we maintain that it provides a crucial layer of oversight forcing congress to confront spending and borrowing. The affirmative uses a check engine light analogy but the debt ceiling is preventive. Addressing future problems of unchecked spending. While acknowledging potential market jitters these are a necessary part of financial stability. The 2011 downgrade while negative demonstrates the debt ceilings power to drive fiscal decisions. Abolishing the debt ceiling would lead to more frequent and severe economic instability. Regarding vulnerable populations while short-term impacts exists long-term fiscal irresponsibility poses a greater threat. The debt ceiling ensures the financial health needed to maintain social safety nets. The opposition focuses on isolated incidents while we look at the big picture the affirmative claims that debt ceiling is redundant because congress already control spending. However the budget process focuses on allocation while the debt ceiling forces consideration of the level of debt and its consequences. The debt ceiling provides a periodic check. Prompting re-evaluation of fiscal priorities the us is economic and political situation differs greatly from canada and australia. The core of this debate is fiscal responsibility true social welfare depends on a sound fiscal policy.<br><br>**Reference**<br>(1) NPR. 2023. An economist’s case for abolishing the debt ceiling.<br>(2) Council on Foreign Relations. What Happens When the U.S. Hits Its Debt Ceiling?<br>(3) Carey Business School, Johns Hopkins University. Newest debate over debt ceiling more hot air.<br>(4) MMBB. 2024. The Debt Ceiling: What Is It and Why It’s Important.<br>(5) Committee for a Responsible Federal Budget. Reforming the Debt Ceiling.<br>(6) The Economist. 2024. America's reckless borrowing is a danger to its economy and the world’s.<br>(7) Peter G. Peterson Foundation. How the Lack of Action on the Debt Ceiling Can Hurt the Economy.<br>(8) Investopedia. Debt Ceiling.<br>(9) ASTHO. The Debt Ceiling, Fiscal Responsibility Act of 2023, and the FY25 and FY26 Federal Budgets.<br>(10) The US debt limit has important implications for economic and financial stability.<br><br><br>```", "Esteemed judges, this debate boils down to a fundamental choice: responsible stability versus the illusion of stability. Our opponents argue that the debt ceiling manufactures artificial crises, focusing solely on fleeting market reactions while conveniently ignoring the looming catastrophe of unchecked government spending. What happens when the government operates without constraints? Chaos.<br><br>They further contend that the debt ceiling is redundant, that Congress already manages spending. But let's be honest, how effective has that been? The ever-increasing national debt screams the need for a firm limit. The debt ceiling provides precisely that.<br><br>We have demonstrated that the debt ceiling compels accountability. It forces Congress to confront its spending habits directly. It acts as a crucial financial restraint, curbing reckless expenditures. While our opponents claim to champion vulnerable populations, fiscal irresponsibility ultimately harms them the most. How can we sustain vital social programs without fiscal accountability?<br><br>We acknowledge potential short-term market anxieties, but these are dwarfed by the long-term security the debt ceiling provides. Eliminating the debt ceiling invites unrestrained borrowing, stifling private investment and destabilizing our economy. Imagine the consequences of unlimited spending. As individuals, you understand the burden of unchecked debt; now, consider that burden on a national scale.<br><br>Vote against abolishing the debt ceiling. Vote for fiscal responsibility. Vote for long-term financial stability. Vote to safeguard our nation's future. The choice is clear: oppose this reckless proposition."]</div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion (We Should Abolish The Debt Ceiling) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 2 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: How long did you spend on this evaluation?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 2 </b></div>
+        </div>
+    
+    
+
+            <input type="text" name="formid" value="1_1" hidden>
+            <input type="text" name="thank" value="Thanks" hidden>
+            <div class="button-row" style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                <div class="navigation-buttons">
+                    
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
+
+                </div>
+                <div id="submitButtonContainer" style="display: none;">
+                    <input class="btn btn-info btn-lg" type="submit" value="Submit All✓" id="submitBtn">
+                </div>
+            </div>
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        });
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+
+            // Show submit button only when all questions are shown
+            const submitButtonContainer = document.getElementById('submitButtonContainer');
+            if (index === questions.length - 1) {
+                submitButtonContainer.style.display = 'block';
+            } else {
+                submitButtonContainer.style.display = 'none';
+            }
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>

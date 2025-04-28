@@ -7,11 +7,12 @@ import json
 import random
 import argparse
 
+from utils import remove_citation
 from jinja2 import FileSystemLoader, Environment
 
 DEFAULT_TEMPLATE_PATH = "./templates"
 DEFAULT_S3_BUCKET = "https://debaterecords.s3.amazonaws.com"
-DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbxK1mGaCBuSe0j6xvplXCkDM7W0LwAYsoOPd7ICKAYv0klYOnFUE4yzGzTxLvBtT6bbkg/exec"
+DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbx3soqlvyNqvJUWpqUQc8wN4Hl7k5cs57awyATUshnXV7pTj4ADUF40OjmiISRZx4dc2g/exec"
 SAVE_ROOT = "forms"
 
 QLIST = [
@@ -22,7 +23,7 @@ QLIST = [
     # "How do you track the debate flow during the listening?",
     # "Based on this debate between two AI systems, what specific improvements would strengthen their debate performance?",
     "Which factors were most crucial in your assessment?",
-    "How long did you spend on this evaluation?",
+    "How long did you spend on this whole evaluation process (including reading the motion, listening to the debate, and answering the questions)?",
 ]
 
 def get_options():
@@ -33,6 +34,8 @@ def get_options():
     parser.add_argument("--pair_stage", default="rebuttal_for", help="The stage to pair the form. all means all stages and sides")
     parser.add_argument("--every_k", default=1, type=int, help="The number of head-to-head comparisons.")
     parser.add_argument("--early_stop", action="store_true", help="Early stop the form.")
+    parser.add_argument("--consent", action="store_true", default=False, help="Add consent form.")
+    parser.add_argument("--redirect", action="store_true", default=False, help="Redirect to the next form after submission.")
     args = parser.parse_args()
     return args
 
@@ -45,27 +48,41 @@ def check_and_save(name, html):
     print(f"Saved {name}")
 
 
+def get_next_form_id(cases, idx):
+    motion_id = cases[idx]["case_id"].split("_")[0]
+    for i in range(2, len(cases)):
+        next_idx = (idx + i) % len(cases)
+        if cases[next_idx]["case_id"].split("_")[0] != motion_id:
+            return cases[next_idx]["case_id"]
+    return None
+
 def get_sanity_check_questions(data, side, stage):
     if "debate_thoughts" not in data:
         return {}
     if stage == "opening":
+        oppo_side = "against" if side == "for" else "for"
         context = [p for p in data["debate_thoughts"][side] if p["mode"] == "choose_main_claims"]
+        oppo_context = [p for p in data["debate_thoughts"][oppo_side] if p["mode"] == "choose_main_claims"]
         if len(context) == 0:
             return {}
         else:
             candidates = context[0]["ranked_claims"]
             correct = context[0]["selected_claims"]
             incorrect = [o for o in candidates if o not in correct]
+            oppo_candidates = oppo_context[0]["ranked_claims"]
             correct_answer = random.choice(correct)
-            incorrect_answer = random.sample(incorrect, 3)
+            incorrect_answer = random.sample(incorrect, 2) + random.sample(oppo_candidates, 1)
             options = [correct_answer] + incorrect_answer
             random.shuffle(options)
             options.append("None of the above")
             answer = options.index(correct_answer)
+            order = correct.index(correct_answer)
+            order = "first" if order == 0 else "second" if order == 1 else "third" if order == 2 else "None of the above"
             question = {
-                "title": f"Which claim is proposed by <strong>{side.capitalize()}</strong> side as one of its main claims during the opening statement? If multiple options apply, please choose the best one.",
+                "title": f"Which claim is proposed by <strong>{side.capitalize()}</strong> side as its <strong>{order}</strong> main claim during the opening statement? If multiple options apply, please choose the best one.",
                 "options": options,
                 "answer": answer,
+                "order": order,
                 "stage": stage,
                 "side": side,
                 "type": "choice",
@@ -111,10 +128,11 @@ def load_case(version, mode):
                 side = p["side"]
                 text = p["content"].replace("\n", "<br>").replace("\\", "")
                 sanity_check_question = get_sanity_check_questions(data, side, stage)
+                content, reference = remove_citation(text)
                 if len(data_list) == 1:
-                    c["transcript"][stage][side] = text
+                    c["transcript"][stage][side] = content
                 else:
-                    c["transcript"][stage][side].append(text)
+                    c["transcript"][stage][side].append(content)
                 
                 if len(sanity_check_question) > 0:
                     c["sanity_check_questions"][stage][side].append(sanity_check_question)
@@ -122,7 +140,7 @@ def load_case(version, mode):
     return cases
     
 
-def create_form(version, id, motion, questions, addition_questions=None, target="expert"):
+def create_form(version, id, motion, questions, addition_questions=None, target="expert", add_consent=False, redirect_url=None):
     loader = FileSystemLoader(searchpath=DEFAULT_TEMPLATE_PATH)
     env = Environment(loader=loader)
     if target == "expert":
@@ -140,7 +158,6 @@ def create_form(version, id, motion, questions, addition_questions=None, target=
     else:
         raise ValueError(f"Unknown target: {target}")
 
-
     html = template.render(
         page_title="Debate Pairwise Comparison",
         type="pair",
@@ -149,7 +166,9 @@ def create_form(version, id, motion, questions, addition_questions=None, target=
         form_id=id,
         motion=motion,
         questions=questions,
-        addition_questions=addition_questions 
+        addition_questions=addition_questions,
+        consent_form=add_consent,
+        redirect_url=redirect_url
     )
 
     return html
@@ -237,7 +256,6 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
                     ["Against", f"{audio_root}/{stage}_against_{against_model}.mp3"],
                 ]
                 question["transcript"] = [c["transcript"][stage]["for"][for_idx], c["transcript"][stage]["against"][against_idx]]
-        
         else:
             question["audio_paths"] = [
                 ["For", f"{audio_root}/{stage}_for.mp3"],
@@ -271,9 +289,6 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
                         question["sanity_check"].append(sanity_check)
 
 
-
-
-
         questions.append(question)
         qid += 1
 
@@ -294,7 +309,7 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
                             questions[i]["sanity_check"] = questions[i]["sanity_check"][:-1]
 
 
-    print([q["sanity_check"] for q in questions if "sanity_check" in q])
+    # print([q["sanity_check"] for q in questions if "sanity_check" in q])
 
     addition_questions = []
     for q in QLIST:
@@ -309,6 +324,7 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
 
 def main():
     args = get_options()
+    print(args)
 
     save_dir = f"{SAVE_ROOT}/{args.version}/{args.target}"
     if not os.path.exists(save_dir):
@@ -319,7 +335,7 @@ def main():
 
     print("Generating ...")
     cases = load_case(args.version, args.mode)
-    for c in cases:
+    for i, c in enumerate(cases):
         motion = c["name"].replace("_", " ").title()
         pair_stage = args.pair_stage if "pair_stage" not in c else c["pair_stage"]
         if pair_stage == "all":
@@ -343,15 +359,32 @@ def main():
         
         if args.target in ["mixed", "expr"]:
             ori_case_id = c["case_id"]
+            next_case_id = get_next_form_id(cases, i)
             for idx, h2h in enumerate(head_to_head):
                 name_all = f"T{args.every_k}_n{idx}"
                 new_case_id = f"{ori_case_id}({name_all})"
                 questions, addition_questions = create_question_form(args, c, motion, h2h, assigned_stance)
+                if args.redirect:
+                    if args.every_k == 1 and idx == 0 and next_case_id is not None:
+                        next_form_id = f"{next_case_id}(T{args.every_k}_n{idx+1})"
+                        redirect_url = f"/debate-evaluation/forms/{args.version}/{args.target}/{next_form_id}.html"
+                        add_consent = args.consent
+                        print(f"Current case id is {ori_case_id}, Next case id: {next_case_id}")
+                        print(f"Redirect to {redirect_url}")
+                    elif args.every_k == 1 and idx == 1:
+                        redirect_url = None
+                        add_consent = False
+                else:
+                    redirect_url = None
+                    add_consent = args.consent
+                
                 html = create_form(args.version, new_case_id, 
                                                 motion=motion, 
                                                 questions=questions, 
                                                 addition_questions=addition_questions,
-                                                target=args.target)
+                                                target=args.target, 
+                                                add_consent=add_consent, 
+                                                redirect_url=redirect_url)
                 check_and_save(f"{save_dir}/{new_case_id}.html", html)
         else:
             questions, addition_questions= create_question_form(args, c, motion, head_to_head, assigned_stance)
@@ -359,7 +392,7 @@ def main():
                                                     motion=motion, 
                                                     questions=questions, 
                                                     addition_questions=addition_questions,
-                                                    target=args.target)
+                                                    target=args.target, add_consent=args.consent)
 
             check_and_save(f"{save_dir}/{c['case_id']}.html", html)
 
