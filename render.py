@@ -44,6 +44,7 @@ def get_options():
     parser.add_argument("--early_stop", action="store_true", help="Early stop the form.")
     parser.add_argument("--consent", action="store_true", default=False, help="Add consent form.")
     parser.add_argument("--redirect", action="store_true", default=False, help="Redirect to the next form after submission.")
+    parser.add_argument("--code", default=None, type=str, help="The prolific code to be added to the form.")
     args = parser.parse_args()
     return args
 
@@ -148,7 +149,7 @@ def load_case(version, mode):
     return cases
     
 
-def create_form(version, id, motion, questions, addition_questions=None, target="expert", add_consent=False, redirect_url=None):
+def create_form(version, id, motion, questions, addition_questions=None, target="expert", add_consent=False, redirect_url=None, prolific_code=None):
     loader = FileSystemLoader(searchpath=DEFAULT_TEMPLATE_PATH)
     env = Environment(loader=loader)
     if target == "expert":
@@ -176,7 +177,8 @@ def create_form(version, id, motion, questions, addition_questions=None, target=
         questions=questions,
         addition_questions=addition_questions,
         consent_form=add_consent,
-        redirect_url=redirect_url
+        redirect_url=redirect_url,
+        prolific_code=prolific_code
     )
 
     return html
@@ -395,7 +397,8 @@ def main():
                                                 addition_questions=addition_questions,
                                                 target=args.target, 
                                                 add_consent=add_consent, 
-                                                redirect_url=redirect_url)
+                                                redirect_url=redirect_url,
+                                                prolific_code=args.code)
                 check_and_save(f"{save_dir}/{new_case_id}.html", html)
         else:
             questions, addition_questions= create_question_form(args, c, motion, head_to_head, assigned_stance)
