@@ -156,15 +156,39 @@
     <input type="hidden" id="version" name="version" value="0427">
     <input type="hidden" id="redirect_url" name="redirect_url" value="">
 
-    <!-- Success Message -->
-    <div id="successMessage" class="alert alert-success" style="display: none;">
-        Your responses have been successfully submitted! Redirecting to the next questionnaire...
+    <!-- Success Message Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your responses have been successfully submitted! Redirecting to the next questionnaire...
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Redirect Message -->
-    <div id="redirectMessage" class="alert alert-info" style="display: none;">
-        <p>You will be automatically redirected to the next questionnaire in <span id="countdown">2</span> seconds...</p>
-        <p>If you are not redirected automatically, <a href="#" id="manualRedirect">click here</a>.</p>
+    <!-- Redirect Message Modal -->
+    <div class="modal fade" id="redirectModal" tabindex="-1" role="dialog" aria-labelledby="redirectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="redirectModalLabel">Redirecting...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You will be automatically redirected to the next questionnaire in <span id="countdown">5</span> seconds...</p>
+                    <p>If you are not redirected automatically, <a href="#" id="manualRedirect">click here</a>.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     
@@ -241,7 +265,7 @@
                                     <i class="fas fa-file-alt mr-2"></i>
                                     (Optional) <strong> For </strong> - Transcript
                                 </summary>
-                                <div class="transcript-content p-3 bg-white border rounded mt-2">The central question today is whether labor unions are beneficial to economic growth. We stand firmly on the affirmative. Let's begin by defining our terms. "Labor unions" are legally recognized organizations representing workers, advocating for their rights and interests through collective bargaining. "Beneficial to economic growth" means contributing positively to the increase in a nation's capacity to produce goods and services, indicated by metrics like GDP growth, job creation, and improved living standards. The judging criterion should be which side presents the most compelling case for maximizing long-term, sustainable economic prosperity for all members of society.<br><br>Labor unions are not just good for workers; they are good for the entire economy. First, labor unions foster a more equitable distribution of wealth, stimulating consumer demand and driving economic expansion. Unions play a crucial role in ensuring that economic growth translates into tangible benefits for workers, who are also consumers. By advocating for higher wages, unions empower working families to increase their purchasing power. This increased consumer demand fuels economic expansion, creating a virtuous cycle of growth and prosperity. According to the *U.S. Department of the Treasury*, increased unionization has the potential to reverse the stark increase in inequality seen over the last half-century. Think of it like this: unions ensure that the rising tide lifts all boats.<br><br>Furthermore, unions act as a countervailing power to corporate dominance, fostering a more competitive marketplace and preventing monopolistic practices that stifle innovation. Unions serve as a vital check on the power of large corporations, preventing them from engaging in anti-competitive practices that stifle innovation and harm consumers. By negotiating for fair wages and working conditions, unions level the playing field and ensure that workers receive a fair share of the profits they help generate. This increased competition fosters innovation and drives economic growth. In fact, *Forbes* reported in 2023 that companies achieve the best returns on investments in new technology when they merge implementation with complementary changes in work processes, employee training, and worker input, highlighting the collaborative role unions can play in fostering innovation. In essence, labor unions prevent large corporations from hoarding all the wealth, which limits competition.<br><br>Finally, consider that union-negotiated benefits, such as healthcare and retirement plans, reduce the burden on public social safety nets, freeing up resources for other essential public services. The comprehensive benefits packages negotiated by unions significantly reduce the strain on public social safety nets. When workers have access to affordable healthcare and secure retirement savings, they are less likely to rely on government assistance programs. This frees up public resources that can be redirected towards other essential services, such as education, infrastructure, and research and development, all of which contribute to long-term economic growth. Data from the Bureau of Labor Statistics in 2020, indicates that 91 percent of union workers had access to a retirement plan compared to only 65 percent of nonunion workers.<br><br>Therefore, I urge you to consider the evidence: unions drive demand, promote competition, and strengthen our social safety net. For these reasons, we firmly believe that labor unions are not a drag on the economy, but essential engines of prosperity. We call on you to support policies that strengthen unions and recognize the value of collective bargaining for the benefit of all.<br><br></div>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Let's begin by establishing a shared understanding. When we refer to "labor unions," specifically unions like the AFL-CIO, we're talking about organizations that represent workers, advocating for improved wages, better working conditions, and enhanced overall well-being. "Economic growth," in this context, signifies a sustained increase in a nation's production of goods and services, leading to higher standards of living for its citizens.<br><br>To fairly evaluate the benefits of labor unions, we propose a primary judging criterion: overall societal benefit. This encompasses not only the direct economic effects of unions but also their broader impact on workers' lives, the well-being of communities, and the equitable distribution of economic gains.<br><br>First, unions foster a more competitive marketplace by acting as a countervailing force to corporate dominance. Without unions, large corporations often dictate terms, potentially leading to monopolies that stifle innovation and harm consumers. Unions level the playing field, ensuring that businesses compete on merit, with better products, services, and working conditions. As the *U.S. Department of the Treasury* pointed out in their report on *Labor Unions and the U.S. Economy*, nonunionized firms in competition with unionized workplaces may choose to raise wages, change hiring practices, or improve their workplace environment to attract workers . This competition ultimately benefits consumers and drives economic growth.<br><br>Second, union-negotiated benefits, particularly healthcare and retirement plans, reduce the strain on public social safety nets. When workers have access to robust employer-sponsored benefits, they are less likely to rely on government assistance programs. It's like having a reliable private insurance policy that reduces the demand on public healthcare. According to *2020 data from the Bureau of Labor Statistics*, 91 percent of union workers had access to a retirement plan compared to only 65 percent of nonunion workers . These employer contributions go into trust funds run by trustees selected by the union and the employers. By reducing the reliance on public funds for social safety nets, resources can be redirected towards education, infrastructure, and other essential services that benefit everyone, further stimulating economic growth.<br><br>Third, unions make critical investments in skills training through apprenticeship programs, equipping workers with valuable expertise for high-demand jobs. These programs ensure that the workforce possesses the skills necessary to thrive in a rapidly evolving economy. *Forbes* reported that companies achieve the best returns on investments in new technology when they merge implementation with complementary changes in work processes, employee training, and worker input . Moreover, unions actively promote diversity and inclusion in these programs. For example, *a study* found that registered apprenticeship programs conducted in partnership with a union register more Black, Latino and women workers than their non-union equivalents . By investing in human capital and promoting inclusivity, unions directly contribute to long-term economic growth and shared prosperity.<br><br>While some may argue that unions can sometimes resist innovation or protect underperforming workers, the evidence clearly demonstrates that their positive contributions to competition, reduced public burden, and skills training far outweigh these concerns. Unions are not relics of the past; they are vital engines for a more equitable and prosperous future. Therefore, we firmly believe that labor unions are indeed beneficial to economic growth.<br><br></div>
                             </details>
 
                             <!-- Rating Section -->
@@ -322,7 +346,7 @@
                                                     <i class="fas fa-file-alt mr-2"></i>
                                                     (Optional) <strong>Against</strong> - Transcript A
                                                 </summary>
-                                                <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that labor unions are not beneficial to economic growth. We define "economic growth" as a sustained increase in a country's real Gross Domestic Product  over a period of time, indicating an expansion in the production of goods and services . We define "labor unions" as organized associations of workers formed to protect and promote their common interests through collective bargaining with employers .<br><br>Our judging criteria is maximizing economic efficiency. The debate should be judged on which side presents a system that best promotes efficient resource allocation, leading to increased productivity, competitiveness, and overall economic prosperity. We argue that labor unions create inefficiencies that hinder economic growth.<br><br>First, labor unions increase labor costs, reducing competitiveness. By demanding higher wages and benefits, labor unions increase the cost of labor for businesses. This leads to reduced profitability and decreased competitiveness in both domestic and international markets. Studies show that higher labor costs directly impact a company's ability to compete, especially in industries where labor is a significant portion of overall expenses. Ultimately, this can result in fewer jobs and slower business expansion, hindering overall economic progress. Evidence indicates that companies in highly unionized sectors often struggle to maintain competitive pricing, leading to decreased market share and slower growth .<br><br>Second, labor unions can lead to inflation. Union-negotiated wage increases can contribute to inflationary pressures if businesses pass these higher labor costs onto consumers through increased prices. Historically, significant wage increases by unions have sometimes led to higher inflation rates . This reduces purchasing power and destabilizes the economy, hindering long-term sustainable economic growth. When wages rise faster than productivity, businesses tend to increase prices to maintain profitability, causing a general increase in the price level across the economy .<br><br>Third, labor unions can reduce profits and competitiveness. The search results show unions hinder economic growth by reducing profits and competitiveness . Labor unions can reduce competitiveness by increasing costs for businesses through higher wages and benefits. This can make companies less attractive to investors and customers. Reduced competitiveness may lead to fewer jobs and slower economic growth.<br><br>In conclusion, labor unions, while advocating for workers' rights, impede economic growth by increasing labor costs, contributing to inflation, and reducing overall competitiveness. Therefore, we stand in firm opposition to the resolution.<br><br>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate we shall argue that labor unions are not beneficial to economic growth. We define economic growth as an increase in the production of goods and services in an economy over a period of time. Typically measured by gross domestic product growth. We define a labor union as an organized association of workers. Often in a trade or profession. Form to protect and further their rights and interests are judging criteria is net positive contribution to gdp grow. The side that demonstrates the greatest positive net impact on gdp growth should win this debate. We can tend that labor unions on balance hinder rather than help economic growth. First labor unions increase labor costs reducing investment and hiring. Increase wages and benefits negotiated by unions raise production costs for businesses leading to decreased profitability. This in turn reduces investment in capital and hiring. Hindering economic expansion. When businesses face higher labor costs they have less capital available to invest in expansion? Innovation and job creation. Studies show that increased labor costs can lead to a significant reduction in investment. For example research indicates that every 1% increase in union wages leads to a 3% decrease in investment. This reduction in investment directly undermines economic growth by slowing down capital accumulation and technological progress. A recent study by harvard business review indicated that companies facing unionization saw a 10 to 15% reduction in capital investment compared to their non-union counterparts. The natural result is stifled innovation reduced competitiveness and slower gdp growth. Second labor unions reduce competitiveness. By increasing costs through higher wages and benefits and sometimes imposing restrictive work rules. Labor unions make unionized businesses less competitive compared to non-unionized businesses. Both domestically and internationally. This reduced competitiveness leads to decreased market share lower sales and ultimately slower economic growth. Businesses operating under union contracts often face significantly higher labor costs making it difficult to compete with companies that are not unionized or that operate in countries with lower labor costs. A study by the national association of manufacturers found that unionized manufacturing firms have labor costs that are on average 20% higher. The non-unionized fir. This cost disadvantage leads to a decline in production exports and overall economic activity. For example the economic policy institute found that states with higher union membership tend to have lower rates of manufacturing job growth. Third labor unions can contribute to inflation. Wage increases secured by labor unions can lead to inflationary pressures as businesses raise prices to cover the higher labor costs. This inflation can a road purchasing power and destabilize the economy. When unions negotiate wage increases that exceed productivity gains businesses are often forced to pass these costs on to consumers in the form of higher prices? This contributes to inflationary pressures reducing consumer purchasing power and dampening economic growth. Research by the federal reserve bank of st louis found a positive correlation between union wage increases and inflation rates particularly in sectors with strong union presence five. A study by the bureau of labor statistics indicated that industries with high unionization rates experienced higher rates of price increases compared to industries with low unionization rates. In conclusion labor unions hinder economic growth by increasing labor costs. Reducing competitiveness and contributing to inflation. For these reasons we strongly negate the resolution.<br><br>
                                                 </div>
                                             </details>
 
@@ -394,7 +418,7 @@
                                                     <i class="fas fa-file-alt mr-2"></i>
                                                     (Optional) <strong>Against</strong> Transcript B
                                                 </summary>
-                                                <div class="transcript-content p-3 bg-white border rounded mt-2">The central question of this debate is whether labor unions genuinely fuel economic growth. While we acknowledge their role in representing workers' interests through collective bargaining, we challenge the notion that they are inherently "beneficial." The affirmative's definition of "beneficial to economic growth," narrowly focusing on GDP, job creation, and living standards, overlooks critical factors like long-term sustainability, efficient resource allocation, and overall economic freedom. Therefore, we propose a more comprehensive judging criterion: which side presents the most convincing case for fostering sustainable economic prosperity while maximizing individual liberty and minimizing market distortions?<br><br>The affirmative argues that unions foster equitable wealth distribution, boosting consumer demand. However, artificially inflated wages, driven by union bargaining power, distort labor markets. According to *a study by the American Action Forum *, an increase in union membership is associated with a decline in state real GDP growth rate, job growth rate, average weekly earnings growth rate, and total wage earnings growth rate. Businesses become less competitive, investments in job creation are discouraged, and costs are often passed on to consumers through higher prices, reducing overall purchasing power. The supposed "equitable distribution" is achieved through market manipulation, not genuine value creation. This ultimately hinders long-term economic expansion.<br><br>Next, the affirmative posits that unions act as a countervailing force against corporate dominance, fostering competition. But this ignores the reality of union power itself, which can lead to market distortions. Union-negotiated work rules, such as seniority-based promotions and restrictions on job assignments, hinder efficiency and productivity. As highlighted in *a Payscale article in 2024*, the necessity for both parties to dedicate work time to negotiations sometimes adversely affects productivity. Companies are prevented from adapting to changing market conditions, and innovation is stifled.<br><br>Finally, they claim that union-negotiated benefits reduce the burden on public social safety nets. While union workers may have better benefits, this creates a two-tiered system, potentially fostering resentment and inequality. Moreover, underfunded union pension plans can require government bailouts, burdening taxpayers and impacting economic stability. For example, *in 2022, taxpayers were hit with $36 billion in federal funds provided to the Teamsters Union's Central States Pension Fund*, according to a report.<br><br>Consider this: union wage premiums distort labor markets, hindering productivity. According to *the Economic Policy Institute*, unionized workers' earnings exceed those of comparable nonunion workers by about 15%, a phenomenon known as the "union wage premium." Strikes and disruptions significantly harm economic activity. *Oxford Economics analysts* estimate that a strike could cost the economy $4.5 billion to $7.5 billion, or a 0.1 percent hit to U.S. annualized gross domestic product, every week. And union pension funds can create financial risks for governments and taxpayers.<br><br>Therefore, we urge you to consider a more holistic perspective. Labor unions, while advocating for their members, can inadvertently impede the very economic growth they claim to support. We must prioritize policies that foster a dynamic, competitive, and sustainable economy for all, not just a select few.<br><br>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">Alright, let's dive right into this debate! I'm here to demonstrate that, contrary to popular belief, labor unions actually hinder economic growth. I'll start by addressing the definitions and judging criteria my opponent will likely present, highlighting their critical oversights. Then, I'll outline three key ways unions negatively impact the economy: distorting labor markets through wage premiums, causing disruptions through strikes, and creating financial risks with pension funds. This directly challenges claims about competition, social safety nets, and skills training.<br><br>First, let's talk definitions. My opponent will likely define unions as simply advocating for workers, ignoring their potential for rent-seeking and market distortion. Similarly, their definition of "economic growth" likely overlooks negative consequences like environmental damage or inequality. Their judging criterion of "overall societal benefit" is too vague. We propose **sustainable economic growth**: economic growth that meets present needs without compromising future generations. This is more appropriate because focusing solely on current benefit ignores long-term consequences.<br><br>Now, let's examine how unions impede economic growth. First, union wage premiums distort labor markets. Artificially inflated wages, driven by union power, increase costs for businesses and reduce their competitiveness. It's like putting lead in the gas tank; it slows everything down. According to *a 2023 report by the U.S. Department of the Treasury*, evidence points to a union wage premium of around 10 to 15 percent . This distortion prevents efficient allocation of labor, hindering economic productivity. In fact, *the American business magazine Fool Wealth found in 2023* that the average effect of a union win at a workplace is to decrease the market value of the affected business by 10 to 14% .<br><br>Second, strikes and other union-related disruptions significantly harm economic activity. When workers walk off the job, production halts, sales plummet, and investment dries up. Work stoppages disrupt the flow of goods and services, negatively affecting the economy and eroding investor confidence. *Analysts at Oxford Economics estimated in 2023* that a strike could cost the economy $4.5 billion to $7.5 billion, or a 0.1 percent hit to U.S. annualized gross domestic product, every week .<br><br>Finally, union pension funds can create major financial risks. If these funds aren't managed responsibly, they can become underfunded, requiring government bailouts and burdening taxpayers. This impacts economic stability. For example, *in 2022, taxpayers provided $36 billion in federal funds to the Teamsters Union's Central States Pension Fund* .<br><br>My opponent claims unions foster competition, but their power can itself distort markets. They say unions reduce the strain on social safety nets, but they merely shift the burden and create new inefficiencies. They also argue unions invest in skills training, but their apprenticeship programs often create barriers to entry. Therefore, we must support policies that promote free markets and encourage businesses to invest in non-unionized environments.<br><br>In short, labor unions are not the economic saviors my opponent suggests. They distort markets, disrupt activity, and create financial risks, hindering sustainable economic growth.<br><br>
                                                 </div>
                                             </details>
 
@@ -488,7 +512,7 @@
                         
                         
                             <div class="form-group mt-3 mb-4">
-                                <label for="q2_sanity">Which claim is proposed by <strong>Output B's</strong> <strong>Against</strong> side as its <strong>first</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
+                                <label for="q2_sanity">Which claim is proposed by <strong>Output B's</strong> <strong>Against</strong> side as its <strong>second</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
                                 <div class="row align-items-center">
                                     <div class="col-10 offset-1">
                                         
@@ -498,7 +522,7 @@
                                                     name="q2_sanity"
                                                     value="0">
                                                 <label class="form-check-label" for="q2_sanity_option_0">
-                                                    Union wage premiums distort labor markets, leading to inefficient resource allocation and hindering overall economic productivity.
+                                                    Telemedicine removes barriers to healthcare for those who struggle to access in-person care.
                                                 </label>
                                             </div>
                                         
@@ -508,7 +532,7 @@
                                                     name="q2_sanity"
                                                     value="1">
                                                 <label class="form-check-label" for="q2_sanity_option_1">
-                                                    Union negotiations can delay or prevent necessary business restructuring, hindering a company's ability to adapt to changing economic conditions.
+                                                    Unionized workplaces experience lower employee turnover rates, reducing recruitment and training costs for businesses and improving overall productivity.
                                                 </label>
                                             </div>
                                         
@@ -518,7 +542,7 @@
                                                     name="q2_sanity"
                                                     value="2">
                                                 <label class="form-check-label" for="q2_sanity_option_2">
-                                                    Unionization in the public sector can lead to unsustainable government spending and higher taxes.
+                                                    Strikes and other union-related disruptions can significantly harm economic activity, leading to lost production, reduced sales, and decreased investment.
                                                 </label>
                                             </div>
                                         
@@ -528,7 +552,7 @@
                                                     name="q2_sanity"
                                                     value="3">
                                                 <label class="form-check-label" for="q2_sanity_option_3">
-                                                    Labor unions foster a more equitable distribution of wealth, stimulating consumer demand and driving economic expansion.
+                                                    Union-negotiated healthcare benefits can increase healthcare costs for everyone, contributing to a less efficient healthcare system.
                                                 </label>
                                             </div>
                                         
@@ -545,7 +569,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="0">
+                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="2">
                         
                     
                 </div>
@@ -783,31 +807,32 @@
                     })
                     .then(response => {
                         if (response.ok) {
-                            // Show success message
-                            const successMessage = document.getElementById('successMessage');
-                            successMessage.style.display = 'block';
+                            // Show success modal
+                            $('#successModal').modal('show');
                             
                             // Disable the beforeunload warning
                             disableBeforeUnload();
                             
-                            // Show redirect message and start countdown
-                            const redirectMessage = document.getElementById('redirectMessage');
-                            const countdownElement = document.getElementById('countdown');
-                            redirectMessage.style.display = 'block';
-                            
-                            // Set up manual redirect link
-                            document.getElementById('manualRedirect').href = redirectUrl;
-                            
-                            // Start countdown
-                            let countdown = 2;
-                            const countdownInterval = setInterval(() => {
-                                countdown--;
-                                countdownElement.textContent = countdown;
-                                if (countdown <= 0) {
-                                    clearInterval(countdownInterval);
-                                    window.location.href = redirectUrl;
-                                }
-                            }, 1000);
+                            // Show redirect modal after a short delay
+                            setTimeout(() => {
+                                $('#successModal').modal('hide');
+                                $('#redirectModal').modal('show');
+                                
+                                // Set up manual redirect link
+                                document.getElementById('manualRedirect').href = redirectUrl;
+                                
+                                // Start countdown
+                                let countdown = 5;
+                                const countdownInterval = setInterval(() => {
+                                    countdown--;
+                                    document.getElementById('countdown').textContent = countdown;
+                                    if (countdown <= 0) {
+                                        clearInterval(countdownInterval);
+                                        $('#redirectModal').modal('hide');
+                                        window.location.href = redirectUrl;
+                                    }
+                                }, 1000);
+                            }, 2000);
                         } else {
                             // If submission failed, show error
                             alert('Form submission failed. Please try again.');

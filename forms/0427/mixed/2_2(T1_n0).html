@@ -272,15 +272,39 @@
     <input type="hidden" id="version" name="version" value="0427">
     <input type="hidden" id="redirect_url" name="redirect_url" value="/debate-evaluation/forms/0427/mixed/3_1(T1_n1).html">
 
-    <!-- Success Message -->
-    <div id="successMessage" class="alert alert-success" style="display: none;">
-        Your responses have been successfully submitted! Redirecting to the next questionnaire...
+    <!-- Success Message Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your responses have been successfully submitted! Redirecting to the next questionnaire...
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Redirect Message -->
-    <div id="redirectMessage" class="alert alert-info" style="display: none;">
-        <p>You will be automatically redirected to the next questionnaire in <span id="countdown">2</span> seconds...</p>
-        <p>If you are not redirected automatically, <a href="#" id="manualRedirect">click here</a>.</p>
+    <!-- Redirect Message Modal -->
+    <div class="modal fade" id="redirectModal" tabindex="-1" role="dialog" aria-labelledby="redirectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="redirectModalLabel">Redirecting...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You will be automatically redirected to the next questionnaire in <span id="countdown">5</span> seconds...</p>
+                    <p>If you are not redirected automatically, <a href="#" id="manualRedirect">click here</a>.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     
@@ -524,7 +548,7 @@
                         
                         
                             <div class="form-group mt-3 mb-4">
-                                <label for="q2_sanity">Which claim is proposed by <strong>Output A's</strong> <strong>For</strong> side as its <strong>third</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
+                                <label for="q2_sanity">Which claim is proposed by <strong>Output A's</strong> <strong>For</strong> side as its <strong>second</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
                                 <div class="row align-items-center">
                                     <div class="col-10 offset-1">
                                         
@@ -534,7 +558,7 @@
                                                     name="q2_sanity"
                                                     value="0">
                                                 <label class="form-check-label" for="q2_sanity_option_0">
-                                                    A mandatory financial literacy course can be perceived as an attempt to shift responsibility for financial well-being from institutions to individuals.
+                                                    The curriculum for financial literacy is inherently dynamic and requires frequent updates to stay relevant in a rapidly changing economic landscape, creating logistical and financial burdens.
                                                 </label>
                                             </div>
                                         
@@ -544,7 +568,7 @@
                                                     name="q2_sanity"
                                                     value="1">
                                                 <label class="form-check-label" for="q2_sanity_option_1">
-                                                    Requiring financial literacy in schools promotes responsible investing and reduces the risk of individuals falling prey to investment scams and fraudulent schemes.
+                                                    Implementing financial literacy education prepares students to make informed decisions about insurance, protecting them from financial loss due to unexpected events.
                                                 </label>
                                             </div>
                                         
@@ -554,7 +578,7 @@
                                                     name="q2_sanity"
                                                     value="2">
                                                 <label class="form-check-label" for="q2_sanity_option_2">
-                                                    Implementing financial literacy education prepares students to make informed decisions about insurance, protecting them from financial loss due to unexpected events.
+                                                    Space exploration subsidies drive innovation that improves life on Earth.
                                                 </label>
                                             </div>
                                         
@@ -564,7 +588,7 @@
                                                     name="q2_sanity"
                                                     value="3">
                                                 <label class="form-check-label" for="q2_sanity_option_3">
-                                                    Implementing financial literacy education will stimulate economic growth by fostering entrepreneurship and encouraging responsible investment in the economy.
+                                                    By promoting informed financial decision-making, financial literacy education reduces reliance on high-cost alternative financial services like payday loans and check-cashing services.
                                                 </label>
                                             </div>
                                         
@@ -581,7 +605,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="1">
+                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="3">
                         
                     
                 </div>
@@ -819,31 +843,32 @@
                     })
                     .then(response => {
                         if (response.ok) {
-                            // Show success message
-                            const successMessage = document.getElementById('successMessage');
-                            successMessage.style.display = 'block';
+                            // Show success modal
+                            $('#successModal').modal('show');
                             
                             // Disable the beforeunload warning
                             disableBeforeUnload();
                             
-                            // Show redirect message and start countdown
-                            const redirectMessage = document.getElementById('redirectMessage');
-                            const countdownElement = document.getElementById('countdown');
-                            redirectMessage.style.display = 'block';
-                            
-                            // Set up manual redirect link
-                            document.getElementById('manualRedirect').href = redirectUrl;
-                            
-                            // Start countdown
-                            let countdown = 2;
-                            const countdownInterval = setInterval(() => {
-                                countdown--;
-                                countdownElement.textContent = countdown;
-                                if (countdown <= 0) {
-                                    clearInterval(countdownInterval);
-                                    window.location.href = redirectUrl;
-                                }
-                            }, 1000);
+                            // Show redirect modal after a short delay
+                            setTimeout(() => {
+                                $('#successModal').modal('hide');
+                                $('#redirectModal').modal('show');
+                                
+                                // Set up manual redirect link
+                                document.getElementById('manualRedirect').href = redirectUrl;
+                                
+                                // Start countdown
+                                let countdown = 5;
+                                const countdownInterval = setInterval(() => {
+                                    countdown--;
+                                    document.getElementById('countdown').textContent = countdown;
+                                    if (countdown <= 0) {
+                                        clearInterval(countdownInterval);
+                                        $('#redirectModal').modal('hide');
+                                        window.location.href = redirectUrl;
+                                    }
+                                }, 1000);
+                            }, 2000);
                         } else {
                             // If submission failed, show error
                             alert('Form submission failed. Please try again.');

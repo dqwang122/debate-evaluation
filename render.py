@@ -26,6 +26,14 @@ QLIST = [
     "How long did you spend on this whole evaluation process (including reading the motion, listening to the debate, and answering the questions)?",
 ]
 
+IRRELEVANT_CLAIMS = [
+    "Without carbon capture, we can't remove the excess carbon already warming our planet",
+    "Effective Altruism's metrics-driven approach overlooks crucial local contexts that determine real impact",
+    "Telemedicine removes barriers to healthcare for those who struggle to access in-person care.",
+    "Space exploration subsidies drive innovation that improves life on Earth.",
+    "Universal preschool creates equal educational opportunities that shape lifetime success."
+]
+
 def get_options():
     parser = argparse.ArgumentParser(description="Create the debate evaluation form.")
     parser.add_argument("--mode", default="pair", choices=["single", "pair"], help="The type of form to create.")
@@ -71,8 +79,8 @@ def get_sanity_check_questions(data, side, stage):
             incorrect = [o for o in candidates if o not in correct]
             oppo_candidates = oppo_context[0]["ranked_claims"]
             correct_answer = random.choice(correct)
-            incorrect_answer = random.sample(incorrect, 2) + random.sample(oppo_candidates, 1)
-            options = [correct_answer] + incorrect_answer
+            incorrect_answers = random.sample(incorrect, 1) + random.sample(oppo_candidates, 1) + random.sample(IRRELEVANT_CLAIMS, 1)
+            options = [correct_answer] + incorrect_answers
             random.shuffle(options)
             options.append("None of the above")
             answer = options.index(correct_answer)
