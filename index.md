@@ -26,7 +26,7 @@ Here are several examples for expert debaters:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0427/expert" and file.extname == ".html" %}
+    {% if file.path contains "forms/0507/expert" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
@@ -37,7 +37,7 @@ Here are several examples for full pairwise comparison:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0427/comparison" and file.extname == ".html" %}
+    {% if file.path contains "forms/0507/comparison" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
@@ -48,19 +48,19 @@ Here are several examples for stage-wise comparison:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0427/mixed" and file.extname == ".html" %}
+    {% if file.path contains "forms/0507/mixed" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
 
 
-Here are several examples for common audience:
+<!-- Here are several examples for common audience:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0427/common" and file.extname == ".html" %}
+    {% if file.path contains "forms/0507/common" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
-</ul>
+</ul> -->
