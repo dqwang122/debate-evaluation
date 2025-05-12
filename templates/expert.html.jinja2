@@ -177,8 +177,41 @@
                     {% endif %}
                 {% endfor %}
             
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    {% if question.sanity_check|length > 0 %}
+                        {% set sc = question.sanity_check[-1] %}
+                        {% if sc.type == "text" %}
+                            <div class="form-group mt-3 mb-4">
+                                <label for="{{ question.name }}_sanity"> {{ sc.title }} <sup>*</sup> </label>
+                                <textarea class="form-control" id="{{ question.name }}_sanity" name="{{ question.name }}_sanity" rows="1"></textarea>
+                            </div>
+                        {% elif sc.type == "choice" %}
+                            <div class="form-group mt-3 mb-4">
+                                <label for="{{ question.name }}_sanity">{{ sc.title }} <sup>*</sup></label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        {% for option in sc.options %}
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="{{ question.name }}_sanity_option_{{ loop.index0 }}"
+                                                    name="{{ question.name }}_sanity"
+                                                    value="{{ loop.index0 }}">
+                                                <label class="form-check-label" for="{{ question.name }}_sanity_option_{{ loop.index0 }}">
+                                                    {{ option }}
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="{{ question.name }}_sanity_answer" name="{{ question.name }}_sanity_answer" value="{{ sc.answer }}">
+                        {% endif %}
+                    {% endif %}
+                </div>
 
                 <hr class="my-4">
+                <!-- Overall Comparison Question -->
                 <div class="form-group">
                     <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;">
                         {{ question.description }}<sup>*</sup>

@@ -67,6 +67,7 @@ def get_next_form_id(cases, idx):
 
 def get_sanity_check_questions(data, side, stage):
     if "debate_thoughts" not in data:
+        print(f"no debate thoughts for {side} side in {stage}")
         return {}
     if stage == "opening":
         oppo_side = "against" if side == "for" else "for"
@@ -130,13 +131,17 @@ def load_case(version, mode):
             c["sanity_check_questions"][stage] = {"for": [], "against": []}
 
         # may have multiple transcripts (output a and b)
+        c["config"] = []
         for data in data_list:
+            c["config"].append(data["config"])
             process = data["debate_process"]
             for p in process:
                 stage = p["stage"]
                 side = p["side"]
                 text = p["content"].replace("\n", "<br>").replace("\\", "")
+                print(f"stage: {stage}, side: {side}, get sanity check question")
                 sanity_check_question = get_sanity_check_questions(data, side, stage)
+                print(f"sanity check question: {sanity_check_question}")
                 content, reference = remove_citation(text)
                 if len(data_list) == 1:
                     c["transcript"][stage][side] = content
@@ -288,7 +293,7 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
                         else:
                             if (side == "for" and for_model == "b") or (side == "against" and against_model == "b"):
                                 question["sanity_check"].append(sanity_check)
-            else:
+            elif args.target == "comparison":
                 for side in ["for", "against"]:
                     if len(c["sanity_check_questions"][stage][side]) > 0:
                         sanity_check = copy.deepcopy(c["sanity_check_questions"][stage][side][-1])
@@ -297,7 +302,11 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
                         else:
                             sanity_check["title"] = sanity_check["title"].replace("by", f"by <strong>Output B's</strong>")
                         question["sanity_check"].append(sanity_check)
-
+            elif args.target == "common":
+                test_side = "for" if assigned_stance["for"] == "b" else "against"
+                if len(c["sanity_check_questions"][stage][test_side]) > 0:
+                    sanity_check = copy.deepcopy(c["sanity_check_questions"][stage][test_side][-1])
+                    question["sanity_check"].append(sanity_check)
 
         questions.append(question)
         qid += 1
@@ -319,7 +328,7 @@ def create_question_form(args, case, motion, head_to_head=None, assigned_stance=
                             questions[i]["sanity_check"] = questions[i]["sanity_check"][:-1]
 
 
-    # print([q["sanity_check"] for q in questions if "sanity_check" in q])
+    print([q["sanity_check"] for q in questions if "sanity_check" in q])
 
     addition_questions = []
     for q in QLIST:
@@ -364,7 +373,9 @@ def main():
         if "assigned_stance" in c:
             assigned_stance = c["assigned_stance"]
         else:
-            assigned_stance = {"for": "b", "against": "a"}  # a is baseline, b is test
+            # assigned_stance = {"for": "b", "against": "a"}  # a is baseline, b is test
+            config = c["config"][0]
+            assigned_stance = {debater["side"]: "a" if debater["type"] == "baseline" else "b" for debater in config["debater"]}
         
         
         if args.target in ["mixed", "expr"]:
@@ -406,7 +417,7 @@ def main():
                                                     motion=motion, 
                                                     questions=questions, 
                                                     addition_questions=addition_questions,
-                                                    target=args.target, add_consent=args.consent)
+                                                    target=args.target, add_consent=args.consent, prolific_code=args.code)
 
             check_and_save(f"{save_dir}/{c['case_id']}.html", html)
 

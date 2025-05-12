@@ -2,45 +2,6 @@
 
 {% block scripts %}
     <script>
-        // Function to handle consent acceptance
-        function acceptConsent() {
-            const checkboxes = document.querySelectorAll('#consentModal input[type="checkbox"]');
-            let allChecked = true;
-
-            checkboxes.forEach(checkbox => {
-                if (!checkbox.checked) {
-                    allChecked = false;
-                }
-            });
-
-            if (allChecked) {
-                $('#consentModal').modal('hide');
-                // Additional logic for acceptance can be added here
-            } else {
-                alert('Please ensure all checkboxes are marked before proceeding.');
-            }
-        }
-
-        // Function to handle consent rejection
-        function rejectConsent() {
-            if (!confirm('You must accept the consent form to proceed. Click "OK" to stay on this page or "Cancel" to be redirected.')) {
-                window.location.href = '/debate-evaluation/thanks'; // Redirect to the "/thanks" page under the baseurl
-            }
-        }
-
-        // Show the consent modal on page load
-        $(document).ready(function() {
-            $('#consentModal').modal({
-                backdrop: 'static',
-                keyboard: false
-            });
-            $('#consentModal').modal('show');
-        });
-
-
-    </script>
-
-    <script>
         let currentQuestionIndex = 0;
         const questions = document.querySelectorAll('.question');
         const nextPageButton = document.getElementById('nextPageButton');
@@ -49,6 +10,14 @@
             questions.forEach((question, i) => {
                 question.style.display = i === index ? 'block' : 'none';
             });
+
+            // Show submit button only when all questions are shown
+            const submitButtonContainer = document.getElementById('submitButtonContainer');
+            if (index === questions.length - 1) {
+                submitButtonContainer.style.display = 'block';
+            } else {
+                submitButtonContainer.style.display = 'none';
+            }
         }
 
         const audios = document.querySelectorAll('audio');
@@ -127,7 +96,7 @@
 {% endblock %}
 
 {% block form_questions %}
-    <input type="hidden" id="mode" name="mode" value="common" >
+    <input type="hidden" id="mode" name="mode" value="common2" >
     <input type="hidden" id="mode" name="version" value="{{ version }}" >
 
     {% for question in questions %}
@@ -208,8 +177,41 @@
                     {% endif %}
                 {% endfor %}
             
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    {% if question.sanity_check|length > 0 %}
+                        {% set sc = question.sanity_check[-1] %}
+                        {% if sc.type == "text" %}
+                            <div class="form-group mt-3 mb-4">
+                                <label for="{{ question.name }}_sanity"> {{ sc.title }} <sup>*</sup> </label>
+                                <textarea class="form-control" id="{{ question.name }}_sanity" name="{{ question.name }}_sanity" rows="1"></textarea>
+                            </div>
+                        {% elif sc.type == "choice" %}
+                            <div class="form-group mt-3 mb-4">
+                                <label for="{{ question.name }}_sanity">{{ sc.title }} <sup>*</sup></label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        {% for option in sc.options %}
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="{{ question.name }}_sanity_option_{{ loop.index0 }}"
+                                                    name="{{ question.name }}_sanity"
+                                                    value="{{ loop.index0 }}">
+                                                <label class="form-check-label" for="{{ question.name }}_sanity_option_{{ loop.index0 }}">
+                                                    {{ option }}
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="{{ question.name }}_sanity_answer" name="{{ question.name }}_sanity_answer" value="{{ sc.answer }}">
+                        {% endif %}
+                    {% endif %}
+                </div>
 
                 <hr class="my-4">
+                <!-- Overall Comparison Question -->
                 <div class="form-group">
                     <label for="{{ question.name }}" style="font-weight: bold; font-size: 1.1em;">
                         {{ question.description }}<sup>*</sup>
@@ -289,129 +291,12 @@
         </div>
     {% endfor %}
     
-    <button id="previousPageButton" class="btn btn-secondary btn-lg" type="button">Previous Question</button>
-    <button id="nextPageButton" class="btn btn-primary btn-lg" type="button">Next Question</button>
 {% endblock %}
 
 
-
-{% block consent_form %}
-<div id="consentModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="consentModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document"  style="max-width: 800px;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title w-100 text-center" id="consentModalLabel">Consent Form</h4>
-            </div>
-            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
-                <div class="consent-form">
-                <h5>Study Title: Designing LLM-based Agents for Competitive Debate</h5>
-                <div>
-                    <p><strong>ID #</strong>: STUDY2024_00000359 </p>
-                    <p><strong>Principal Investigator:</strong> Dr. Fei Fang</p>
-                    <p>Software and Societal Systems Department (S3D), Carnegie Mellon University </br>
-                    5000 Forbes Ave, Pittsburgh, PA 15213 </br>
-                    (412) 268-2000, feifang@cmu.edu </br>
-                    <p><strong>Other Investigator(s):</strong> Danqing Wang, PhD student </p>
-                </div>
-
-                <hr class="my-4">
-                <div>
-                    <h6>Purpose of this Study</h6>
-                    <p>Competitive debate involves critical thinking, clear and persuasive expression, conflict resolving, and the organization of reliable evidence. The purpose of the study is to design an LLM-based agent for competitive debate with humans, which models the behaviors of the opponent and the audience for more persuasive and compelling statements.</p>
-                </div>
-
-                <div>
-                    <h6>Summary</h6>
-                    <p>You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side. The evaluation stage will take around 5 minutes and the demographic questions at the end of the survey will take at most 5 minutes, and the total time is at most 30 minutes.</p>
-                    <p>This human evaluation would provide valuable insights into the current state of AI debating capabilities, highlight areas for improvement, and help identify ways to enhance AI systems to more closely emulate human-level performance in complex argumentative tasks.</p>
-                </div>
-
-                <div>
-                    <h6>Participant Requirements</h6>
-                    <p>Participation in this study is limited to individuals who:</p>
-                    <ul>
-                        <li>Age 18 and older</li>
-                        <li>Have the ability to sign the consent form electronically</li>
-                        <li>Have access to the Internet</li>
-                        <li>Have a high school degree</li>
-                        <li>Should be located in US</li>
-                        <li>Must be fluent in written and spoken English</li>
-                    </ul>
-                    <p>A signed consent form is required for participation.</p>
-                </div>
-
-                <div>
-                    <h6>Risks</h6>
-                    <p>We confirm that the risk to participants is minimal, no greater than normal life. Several potential risks on Breach of Confidentiality should be considered: Participants will need to provide their name to sign the consent form and their email address to receive the compensation. They will also need to answer demographic questions at the end of the survey.</p>
-                </div>
-
-                <div>
-                    <h6>Benefits</h6>
-                    <p>Your involvement will contribute valuable information that could enhance the design and functionality of AI systems in constructing persuasive arguments and engaging in coherent debates. This could indirectly benefit the broader community by improving AI's ability to reason, articulate complex ideas, and respond dynamically in various contexts. The insights gained may also advance our understanding of human argumentation and decision-making processes.</p>
-                </div>
-
-                <div>
-                    <h6>Compensation & Costs</h6>
-                    <p>You will receive <strong>$10 for compensation after you complete the questionnaire</strong>. There will be no cost to you if you participate in this study.</p>
-                </div>
-
-                <div>
-                    <h6>Future Use of Information</h6>
-                    <p>In the future, once we have removed all identifiable information from your data, we may use the data for our future research studies, or we may distribute the data to other investigators for their research studies. We would do this without getting additional informed consent from you (or your legally authorized representative). Sharing of data with other researchers will only be done in such a manner that you will not be identified.</p>
-                </div>
-
-                <div>
-                    <h6>Confidentiality</h6>
-                    <p>The study will collect your research data through your use of Google Forms. These companies are not owned by CMU. These companies will have access to the research data that you produce and any identifiable information that you share with them while using their products. Please note that Carnegie Mellon does not control the Terms and Conditions of the companies or how they will use or protect any information that they collect.</p>
-                    <p><strong>Payment Confidentiality:</strong> Payment methods, especially those facilitated by third-party vendors (such as Visa, Venmo, Amazon, PayPal), may require that the researchers and/or the vendor collect and use personal information (such as your first and last name, email addresses, phone numbers, banking information) provided by you in order for your payment to be processed. As with any payment transaction, there is the risk of a breach of confidentiality from the third-party vendor. All personal information collected by the researcher will be held as strictly confidential and stored in a password-protected digital file, or in a locked file cabinet, until payments are processed and reconciled. This information will be destroyed at the earliest acceptable time. Personal information held by the third-party vendor will be held according to their terms of use policy.</p>
-                </div>
-
-                <div>
-                    <h6>Data Storage and Access</h6>
-                    <p>All study data will be securely stored at CMU, accessible only to the research team. Audio recordings will be transcribed and then deleted from third-party services. Personal identifiers will not be published or disseminated.</p>
-                </div>
-
-                <div>
-                    <h6>Rights</h6>
-                    <p>Your participation is voluntary. <strong>You are free to stop your participation at any point. Refusal to participate or withdrawal of your consent or discontinued participation in the study will not result in any penalty or loss of benefits or rights to which you might otherwise be entitled.</strong> The Principal Investigator may at his/her discretion remove you from the study for any of a number of reasons. In such an event, you will not suffer any penalty or loss of benefits or rights which you might otherwise be entitled.</p>
-                </div>
-
-                <div>
-                    <h6>Right to Ask Questions & Contact Information</h6>
-                    <p>If you have any questions about this study, you should feel free to ask them now. If you have questions later, desire additional information, or wish to withdraw your participation please contact the Principal Investigator by mail, phone or e-mail in accordance with the contact information listed on the first page of this consent.</p>
-                    <p>If you have questions pertaining to your rights as a research participant; or to report concerns to this study, you should contact the Office of Research Integrity and Compliance at Carnegie Mellon University. Email: irb-review@andrew.cmu.edu. Phone: 412-268-4721.</p>
-                </div>
-
-                <div>
-                    <h6>Voluntary Consent Confirmation</h6>
-                    <div>
-                        <p><input type="checkbox"> I confirm I am over 18 years old and in the United States</p>
-                        <p><input type="checkbox"> I confirm I have a high school degree</p>
-                        <p><input type="checkbox"> I have read and understood this consent form</p>
-                        <p><input type="checkbox"> I agree to participate in the study</p>
-                        <p><input type="checkbox"> I agree to be contacted by the study team in the future for a follow-up study</p>
-                    </div>
-
-                    <p>By clicking "Accept" below, you agree that the above information has been explained to you and all your current questions have been answered. You are encouraged to ask questions about any aspect of this research study during the course of the study and in the future. By signing this form, you agree to participate in this research study. </p>
-
-                </div>
-
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="rejectConsent()">Reject</button>
-                <button type="button" class="btn btn-primary" onclick="acceptConsent()">Accept</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    .consent-form {
-        font-size: 14px; /* Adjust the font size as needed */
-    }
-</style>
-
+{% block navigation_buttons %}
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
 {% endblock %}
 
 
