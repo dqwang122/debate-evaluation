@@ -22,22 +22,22 @@ The debaters are AI agents or humans. These debates are divided into three stage
 </ul> -->
 
 
-Here are several examples for expert debaters:
+<!-- Here are several examples for expert debaters:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0508/expert" and file.extname == ".html" %}
+    {% if file.path contains "forms/0511/expert" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
-</ul>
+</ul> -->
 
 
 Here are several examples for full pairwise comparison:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0507/comparison" and file.extname == ".html" %}
+    {% if file.path contains "forms/0510/comparison" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
@@ -48,7 +48,7 @@ Here are several examples for stage-wise comparison:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0507/mixed" and file.extname == ".html" %}
+    {% if file.path contains "forms/0510/mixed" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
@@ -59,7 +59,7 @@ Here are several examples for common audience:
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains "forms/0508/common" and file.extname == ".html" %}
+    {% if file.path contains "forms/0511/common" and file.extname == ".html" %}
       <li><a href="{{ site.baseurl }}/{{ file.path }}">Case {{ file.name | split: '.html' | first }}</a></li>
     {% endif %}
   {% endfor %}
