@@ -1,0 +1,1313 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="container">
+            
+<div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead text-center">You'll be evaluating a debate where two sides discuss a topic. Your opinion matters - you'll vote how persuasive each side is in each stage. We will use your feedback to improve the debate quality.</p>
+    </div>
+
+    <div class="mb-5 card shadow">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">What to Expect:</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-hourglass-start fa-3x text-primary"></i>
+                        <h5 class="mt-2">Debate Structure</h5>
+                    </div>
+                    <p>The full debate includes:</p>
+                    <ul>
+                        <li><strong>Opening:</strong> 4 min audio per side</li>
+                        <li><strong>Rebuttal:</strong> 4 min audio per side</li>
+                        <li><strong>Closing:</strong> 2 min audio per side</li>
+                    </ul>
+                    <p>You'll evaluate a portion of this debate.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-tasks fa-3x text-primary"></i>
+                        <h5 class="mt-2">Your Evaluation Tasks</h5>
+                    </div>
+                    <p>For each stage, you'll:</p>
+                    <ul>
+                        <li>Rate the persuasiveness of each side's statements</li>
+                        <li>Update your position after hearing each argument</li>
+                        <li>Provide optional feedback</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-random fa-3x text-primary"></i>
+                        <h5 class="mt-2">Final Comparison</h5>
+                    </div>
+                    <p>In the final stage:</p>
+                    <ul>
+                        <li>You'll see <strong>two versions</strong> of each side's closing statement</li>
+                        <li>Rate each version independently</li>
+                        <li>Select which version you found more persuasive</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="alert alert-success">
+                <strong>Important:</strong> Before beginning, you'll vote for the side you initially support. After each stage, you'll have the opportunity to reconsider and update your position based on the arguments presented.
+                <hr>
+                <strong>Note:</strong> Throughout the evaluation, you'll encounter <strong>attention check questions</strong> to ensure data quality. Participants who demonstrate thoughtful engagement will receive compensation as agreed. If you're unable to commit to providing quality responses, you may exit the survey at any time without penalty.
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-5 card shadow">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Rating Guide for Persuasiveness:</h4>
+        </div>
+        <div class="card-body p-0">
+            <div class="card-group">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-danger">1</div>
+                        <h5 class="card-title">Poor</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-warning">2</div>
+                        <h5 class="card-title">Weak</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-info">3</div>
+                        <h5 class="card-title">Moderate</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-primary">4</div>
+                        <h5 class="card-title">Strong</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-success">5</div>
+                        <h5 class="card-title">Compelling</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+        </div>
+    </div>
+
+    
+
+    <div id="consentModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="consentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document"  style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100 text-center" id="consentModalLabel">Consent Form</h4>
+            </div>
+            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                <div class="consent-form">
+                <h5>Study Title: Designing LLM-based Agents for Competitive Debate</h5>
+                <div>
+                    <p><strong>ID #</strong>: STUDY2024_00000359 </p>
+                    <p><strong>Principal Investigator:</strong> Dr. Fei Fang</p>
+                    <p>Software and Societal Systems Department (S3D), Carnegie Mellon University </br>
+                    5000 Forbes Ave, Pittsburgh, PA 15213 </br>
+                    (412) 268-2000, feifang@cmu.edu </br>
+                    <p><strong>Other Investigator(s):</strong> Danqing Wang, PhD student </p>
+                </div>
+
+                <hr class="my-4">
+                <div>
+                    <h6>Purpose of this Study</h6>
+                    <p>Competitive debate involves critical thinking, clear and persuasive expression, conflict resolving, and the organization of reliable evidence. The purpose of the study is to design an LLM-based agent for competitive debate with humans, which models the behaviors of the opponent and the audience for more persuasive and compelling statements.</p>
+                </div>
+
+                <div>
+                    <h6>Summary</h6>
+                    <p>You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side. The evaluation stage will take around 5 minutes and the demographic questions at the end of the survey will take at most 5 minutes, and the total time is at most 30 minutes.</p>
+                    <p>This human evaluation would provide valuable insights into the current state of AI debating capabilities, highlight areas for improvement, and help identify ways to enhance AI systems to more closely emulate human-level performance in complex argumentative tasks.</p>
+                </div>
+
+                <div>
+                    <h6>Participant Requirements</h6>
+                    <p>Participation in this study is limited to individuals who:</p>
+                    <ul>
+                        <li>Age 18 and older</li>
+                        <li>Have the ability to sign the consent form electronically</li>
+                        <li>Have access to the Internet</li>
+                        <li>Have a high school degree</li>
+                        <li>Should be located in US</li>
+                        <li>Must be fluent in written and spoken English</li>
+                    </ul>
+                    <p>A signed consent form is required for participation.</p>
+                </div>
+
+                <div>
+                    <h6>Risks</h6>
+                    <p>We confirm that the risk to participants is minimal, no greater than normal life. Several potential risks on Breach of Confidentiality should be considered: Participants will need to provide their name to sign the consent form and their email address to receive the compensation. They will also need to answer demographic questions at the end of the survey.</p>
+                </div>
+
+                <div>
+                    <h6>Benefits</h6>
+                    <p>Your involvement will contribute valuable information that could enhance the design and functionality of AI systems in constructing persuasive arguments and engaging in coherent debates. This could indirectly benefit the broader community by improving AI's ability to reason, articulate complex ideas, and respond dynamically in various contexts. The insights gained may also advance our understanding of human argumentation and decision-making processes.</p>
+                </div>
+
+                <div>
+                    <h6>Compensation & Costs</h6>
+                    <p>You will receive <strong>$10 for compensation after you complete the questionnaire</strong>. There will be no cost to you if you participate in this study.</p>
+                </div>
+
+                <div>
+                    <h6>Future Use of Information</h6>
+                    <p>In the future, once we have removed all identifiable information from your data, we may use the data for our future research studies, or we may distribute the data to other investigators for their research studies. We would do this without getting additional informed consent from you (or your legally authorized representative). Sharing of data with other researchers will only be done in such a manner that you will not be identified.</p>
+                </div>
+
+                <div>
+                    <h6>Confidentiality</h6>
+                    <p>The study will collect your research data through your use of Google Forms. These companies are not owned by CMU. These companies will have access to the research data that you produce and any identifiable information that you share with them while using their products. Please note that Carnegie Mellon does not control the Terms and Conditions of the companies or how they will use or protect any information that they collect.</p>
+                    <p><strong>Payment Confidentiality:</strong> Payment methods, especially those facilitated by third-party vendors (such as Visa, Venmo, Amazon, PayPal), may require that the researchers and/or the vendor collect and use personal information (such as your first and last name, email addresses, phone numbers, banking information) provided by you in order for your payment to be processed. As with any payment transaction, there is the risk of a breach of confidentiality from the third-party vendor. All personal information collected by the researcher will be held as strictly confidential and stored in a password-protected digital file, or in a locked file cabinet, until payments are processed and reconciled. This information will be destroyed at the earliest acceptable time. Personal information held by the third-party vendor will be held according to their terms of use policy.</p>
+                </div>
+
+                <div>
+                    <h6>Data Storage and Access</h6>
+                    <p>All study data will be securely stored at CMU, accessible only to the research team. Audio recordings will be transcribed and then deleted from third-party services. Personal identifiers will not be published or disseminated.</p>
+                </div>
+
+                <div>
+                    <h6>Rights</h6>
+                    <p>Your participation is voluntary. <strong>You are free to stop your participation at any point. Refusal to participate or withdrawal of your consent or discontinued participation in the study will not result in any penalty or loss of benefits or rights to which you might otherwise be entitled.</strong> The Principal Investigator may at his/her discretion remove you from the study for any of a number of reasons. In such an event, you will not suffer any penalty or loss of benefits or rights which you might otherwise be entitled.</p>
+                </div>
+
+                <div>
+                    <h6>Right to Ask Questions & Contact Information</h6>
+                    <p>If you have any questions about this study, you should feel free to ask them now. If you have questions later, desire additional information, or wish to withdraw your participation please contact the Principal Investigator by mail, phone or e-mail in accordance with the contact information listed on the first page of this consent.</p>
+                    <p>If you have questions pertaining to your rights as a research participant; or to report concerns to this study, you should contact the Office of Research Integrity and Compliance at Carnegie Mellon University. Email: irb-review@andrew.cmu.edu. Phone: 412-268-4721.</p>
+                </div>
+
+                <div>
+                    <h6>Voluntary Consent Confirmation</h6>
+                    <div>
+                        <p><input type="checkbox"> I confirm I am over 18 years old and in the United States</p>
+                        <p><input type="checkbox"> I confirm I have a high school degree</p>
+                        <p><input type="checkbox"> I have read and understood this consent form</p>
+                        <p><input type="checkbox"> I agree to participate in the study</p>
+                    </div>
+
+                    <p>By clicking "Accept" below, you agree that the above information has been explained to you and all your current questions have been answered. You are encouraged to ask questions about any aspect of this research study during the course of the study and in the future. By signing this form, you agree to participate in this research study. </p>
+
+                </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="rejectConsent()">Reject</button>
+                <button type="button" class="btn btn-primary" onclick="acceptConsent()">Accept</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <style>
+        .consent-form {
+            font-size: 14px; /* Adjust the font size as needed */
+        }
+    </style>
+
+
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbx3soqlvyNqvJUWpqUQc8wN4Hl7k5cs57awyATUshnXV7pTj4ADUF40OjmiISRZx4dc2g/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: If Health Care Is A Scarce Resource, Government Should Step In To Ration Care, Deciding Whose Life Is Worth Saving </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="mixed">
+    <input type="hidden" id="version" name="version" value="0510">
+    <input type="hidden" id="redirect_url" name="redirect_url" value="">
+
+    <!-- Success Message Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your responses have been successfully submitted! Redirecting to the next questionnaire...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redirect Message Modal -->
+    <div class="modal fade" id="redirectModal" tabindex="-1" role="dialog" aria-labelledby="redirectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="redirectModalLabel">Redirecting...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You will be automatically redirected to the next questionnaire in <span id="countdown">5</span> seconds...</p>
+                    <p>If you are not redirected automatically, <a href="#" id="manualRedirect">click here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card form-group question" id="question_1">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                            Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                    <label class="form-check-label" for="q1_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                    <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                    <label class="form-check-label" for="q1_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                    <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                    <label class="form-check-label" for="q1_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Pre-Vote Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_2">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> For Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case10_1/opening_for_b.mp3" class="w-100" id="audio_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> For </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Imagine a hospital during a pandemic. Beds are full, ventilators are scarce, and doctors face an impossible choice: who gets treated first? This is the reality of healthcare scarcity. Today, we argue that when resources are limited, the government *must* step in to ration care—not to play God, but to save as many lives as possible, as fairly as possible.  <br><br>First, let’s define our terms. Rationing means allocating limited healthcare based on clear, objective criteria—like urgency, likelihood of survival, or medical need. Think of organ transplant lists: not everyone gets a liver, but the system ensures those who do are chosen fairly. Without rationing, chaos reigns. The wealthy jump the line, the system collapses, and more people die.  <br><br>Our judging standard is simple: **save the most lives while ensuring no group is unfairly left behind**. This isn’t about cold calculations; it’s about making heartbreaking choices with clarity and compassion.  <br><br>Now, to our key points.  <br><br>**First, rationing ensures fair distribution**. Without it, wealth decides who lives. Research from *PMC in 2017* shows that government rationing prevents wealthy monopolization by establishing equitable access for all, regardless of income. During COVID, the CDC found hospitals with clear triage protocols reduced mortality by 22%—that’s 22% fewer deaths than hospitals relying on ad-hoc decisions. Everyone had a shot, not just those with connections or cash.  <br><br>**Second, rationing keeps the system running**. Hospitals can’t treat infinite patients. Oregon’s Medicaid prioritization model, in place since 1994, demonstrates how rationing dialysis treatments fairly prevents systemic overload. By prioritizing the most critical cases—like trauma victims over elective surgeries—we prevent collapse. Imagine a traffic light: without rules, gridlock kills everyone. Rationing is that traffic light for healthcare.  <br><br>**Third, rationing removes bias**. Doctors are human. Under stress, they might favor the young over the elderly, or friends over strangers. According to *a 2021 study in Nature*, centralized systems like Sweden’s citizen health councils ensure transparency and objectivity by using data-driven algorithms. Sweden’s councils cut decision times by 30%—faster than private insurers—proving that bureaucracy doesn’t have to mean delays. Kidney transplants follow strict protocols—no room for favoritism.  <br><br>Critics say rationing is cruel. But the alternative—letting the system fail—is crueler. Rationing isn’t denying care; it’s how we fund 90% of pediatric cancer treatments instead of letting 1% buy experimental drugs. When Rwanda faced COVID vaccine shortages, they prioritized health workers *and* elders, saving 5,000 lives by ensuring equitable access. Rationing isn’t perfect, but it’s the best way to save lives *and* uphold justice.  <br><br>And let’s be clear: rationing criteria are audited by disability advocates—no one is deemed ‘less worthy.’ This isn’t about picking winners and losers; it’s about creating a system where life-saving isn’t auctioned to the highest bidder.  <br><br>In closing: scarcity forces hard choices. The question isn’t *if* we ration—it’s *who decides*. Should it be wallets, or wisdom? The government must make these decisions—not to decide who’s *worth* saving, but to ensure *as many as possible* are saved. Fairly. Efficiently. Humanely. Demand a system where every life has a fighting chance.  <br><br><br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q2_1">
+                                    How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                            <label class="form-check-label" for="q2_1_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                            <label class="form-check-label" for="q2_1_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                            <label class="form-check-label" for="q2_1_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                            <label class="form-check-label" for="q2_1_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                            <label class="form-check-label" for="q2_1_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                                <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+                       <div class="text-center">
+                           <button id="nextSideButton" class="btn btn-info btn-lg button-next-side" type="button">Proceed to next side →</button>
+                       </div>
+                    
+
+                    <hr class="my-4">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> Against Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case10_1/opening_against_a.mp3" class="w-100" id="audio_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> Against </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that when healthcare is a scarce resource, the government should not step in to ration care or decide whose life is worth saving.  <br>Our judging criteria is whether government-led rationing is ethically justifiable and practically viable, prioritizing fairness, patient rights, and systemic effectiveness over centralized control.  <br><br>First, government rationing violates fundamental ethical principles. Centralized decisions about whose life is prioritized inherently discriminate against vulnerable groups, such as the elderly, disabled, or racial minorities. Studies show that age-based rationing disproportionately burdens older populations, while disability-based triage protocols during COVID-19 violated the Americans with Disabilities Act  . Ethical frameworks like the "Four Principles" approach  condemn such practices, as they undermine respect for persons and societal morale . When governments impose value judgments on lives, they erode trust in healthcare systems and perpetuate systemic inequities.  <br><br>Second, government rationing is inefficient and prone to failure. Centralized systems lack the flexibility to adapt to individual needs, often leading to wasted resources and unmet demand. For example, the UK’s National Health Service  faces chronic backlogs, with 7.6 million patients awaiting treatment as of 2023 . Similarly, U.S. Medicaid gaps leave low-income populations without consistent access to care . Research indicates that bureaucratic decision-making slows responses to scarcity, whereas decentralized systems  adjust more dynamically to local needs . Inefficiencies in government allocation prove it is ill-equipped to manage scarcity.  <br><br>Third, superior alternatives to government rationing exist. Market-based solutions, such as tiered pricing and private insurance, can allocate resources efficiently while preserving patient choice. For instance, Germany’s multi-payer system achieves universal coverage with shorter wait times than single-payer systems . Ethical frameworks like shared decision-making—where doctors and patients collaborate on care priorities—also offer a fairer approach. Studies of "prior consent" models  show they balance autonomy with resource constraints better than top-down rationing . These alternatives align with our standard’s emphasis on fairness and effectiveness without state overreach.  <br><br>In conclusion, government rationing of healthcare is ethically indefensible and practically flawed. It discriminates against vulnerable groups, fails to address scarcity efficiently, and is outperformed by market-based and patient-centered alternatives.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q2_2">
+                                    How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                            <label class="form-check-label" for="q2_2_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                            <label class="form-check-label" for="q2_2_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                            <label class="form-check-label" for="q2_2_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                            <label class="form-check-label" for="q2_2_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                            <label class="form-check-label" for="q2_2_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                                <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                        
+                        
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_sanity">Which claim is proposed by <strong>For</strong> side as its <strong>second</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_0"
+                                                    name="q2_sanity"
+                                                    value="0">
+                                                <label class="form-check-label" for="q2_sanity_option_0">
+                                                    Deciding whose life is worth saving is morally wrong and beyond any government's authority.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_1"
+                                                    name="q2_sanity"
+                                                    value="1">
+                                                <label class="form-check-label" for="q2_sanity_option_1">
+                                                    It prevents the healthcare system from being overwhelmed by prioritizing cases.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_2"
+                                                    name="q2_sanity"
+                                                    value="2">
+                                                <label class="form-check-label" for="q2_sanity_option_2">
+                                                    Space exploration subsidies drive innovation that improves life on Earth.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_3"
+                                                    name="q2_sanity"
+                                                    value="3">
+                                                <label class="form-check-label" for="q2_sanity_option_3">
+                                                    It ensures that healthcare resources are used where they can have the most impact.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_4"
+                                                    name="q2_sanity"
+                                                    value="4">
+                                                <label class="form-check-label" for="q2_sanity_option_4">
+                                                    None of the above
+                                                </label>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="1">
+                        
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                            After listening to the two statements in Opening stage, please choose your attitude towards the given motion (If Health Care Is A Scarce Resource, Government Should Step In To Ration Care, Deciding Whose Life Is Worth Saving) now<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                    <label class="form-check-label" for="q2_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                    <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                    <label class="form-check-label" for="q2_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                    <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                    <label class="form-check-label" for="q2_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Opening Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_3">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> For Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case10_1/rebuttal_for_b.mp3" class="w-100" id="audio_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> For </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Let’s set the record straight. The opponent claims government rationing is unethical and inefficient—but their arguments crumble under scrutiny. We’ll dismantle their objections point by point, proving that structured rationing ensures fairness, removes bias, and sustains healthcare systems when resources are scarce.  <br><br>First, on equitable access: The opponent argues rationing discriminates, but this ignores the safeguards built into structured systems. Research from *The Lancet* in 2022 demonstrated that during COVID, government-mandated triage protocols saved more vulnerable lives than ad-hoc decisions by hospitals. The CDC’s 2021 report confirmed these protocols protected elderly and disabled patients without violating the ADA—in fact, they enforced it. Without government intervention, wealth decides who lives. Is that ethical? A 22% drop in mortality under structured rationing systems, as documented by *The Lancet*, proves fairness works. When the alternative is a free-for-all where the wealthy buy their way to the front, rationing isn’t just ethical—it’s necessary.  <br><br>Second, on bias removal: The opponent praises Germany’s market-based system, but they overlook a critical fact. Germany’s insurers use cost-effectiveness thresholds—just like the UK’s NICE—to limit coverage for low-value treatments. This is rationing by another name. Meanwhile, Sweden’s data-driven councils cut wait times by 30%, outperforming private insurers’ averages. Kidney transplants follow strict, transparent protocols; no CEO’s nephew jumps the line. According to a 2023 study in *Frontiers in Public Health*, algorithms reduce human bias in healthcare decisions by 40% compared to subjective human judgment. Benjamin Karney, a social psychology professor at UCLA, whose research on decision-making biases is widely cited, has shown that under stress, humans default to familiarity, not fairness. This is why structured systems outperform ad-hoc ones.  <br><br>Third, on system functionality: The opponent points to NHS backlogs as proof rationing fails, but this is a misdiagnosis. The backlogs stem from austerity and underfunding, not rationing itself. Oregon’s Medicaid model, as reported by *Health Affairs* in 2021, prevented system collapse by prioritizing dialysis patients—a clear example of rationing working as intended. No system is perfect, but chaos—where the rich hoard ventilators during a pandemic—is far worse.  <br><br>Now, let’s address the opponent’s alternatives. Tiered pricing? That’s just a euphemism for letting the wealthy buy survival. "Shared decision-making" sounds noble, but as *JAMA* revealed in 2020, ER doctors under stress default to familiar patients, not fairness. When time is scarce, you can’t consult 100 patients at once. Market-based "solutions" created America’s 30 million uninsured—rationing fixes what markets broke.  <br><br>The bottom line is this: In scarcity, someone decides. Should it be wallets—or wisdom? Government rationing isn’t cold; it’s the only way to ensure your grandma gets the same shot as a billionaire’s. Demand a system where no family begs for care while billionaires buy their way to the front. Act now. The stakes are too high to leave healthcare to the whims of the market. We choose fairness. We choose lives over profits.  <br><br><br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q3_1">
+                                    How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                            <label class="form-check-label" for="q3_1_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                            <label class="form-check-label" for="q3_1_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                            <label class="form-check-label" for="q3_1_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                            <label class="form-check-label" for="q3_1_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                            <label class="form-check-label" for="q3_1_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                                <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+                       <div class="text-center">
+                           <button id="nextSideButton" class="btn btn-info btn-lg button-next-side" type="button">Proceed to next side →</button>
+                       </div>
+                    
+
+                    <hr class="my-4">
+                
+                    <div class="side-container">
+                        
+                            <div class="row">
+                                <!-- Left Side (Output A) -->
+                                <div class="col-6 border-right">
+                                    <!-- Audio Player -->
+                                    
+                                    <h5 class="text-center mb-3">Output A - <strong>Against</strong> Side</h5>
+                                        <div class="audio-section mb-4">
+                                            <div class="audio-player mb-3">
+                                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case10_1/rebuttal_against_a.mp3" class="w-100" id="audio_a_2_Against">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+
+                                            <!-- Transcript -->
+                                            <details class="transcript-details mb-3">
+                                                <summary class="transcript-summary p-2 bg-light rounded">
+                                                    <i class="fas fa-file-alt mr-2"></i>
+                                                    (Optional) <strong>Against</strong> - Transcript A
+                                                </summary>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the affirmative's rebuttal contains several critical flaws in their defense of government rationing. We will demonstrate how their arguments fail on ethical, practical, and systemic grounds while offering superior alternatives that preserve both lives and liberty.<br><br>First, on ethical violations. The affirmative cites *The Lancet* to claim government rationing protects vulnerable groups, but this ignores overwhelming evidence of discrimination. The Disability Rights Education & Defense Fund  documented systematic ADA violations during COVID-19 when ventilator allocation protocols deprioritized disabled patients. Similarly, Beauchamp & Childress' principles of biomedical ethics  show that centralized rationing violates autonomy by removing individual decision-making from doctors and patients. When New York implemented crisis standards in 2020, hospitals reported 37% longer decision times for marginalized patients - proof that algorithmic "fairness" often entrenches bias . Their system doesn't eliminate discrimination; it institutionalizes it.<br><br>Second, regarding inefficiency. The affirmative blames NHS backlogs on underfunding, but NHS Digital data  proves rationing exacerbates shortages. While Oregon's Medicaid model prioritized dialysis patients, *Health Affairs*  shows it still left 23% of low-income residents without consistent care. Contrast this with Germany's hybrid system , where private insurers working within public frameworks reduced specialist wait times by 40% compared to the UK. Centralized rationing creates bottlenecks; decentralized adaptation saves lives.<br><br>Third, on alternatives. The affirmative dismisses tiered pricing as "wealth deciding," yet Germany's income-based subsidies  achieve 99% coverage without government life-or-death decisions. Their claim that "shared decision-making fails under stress" ignores UCLA research  showing stress actually increases reliance on ethical frameworks when protocols are established beforehand. Our HMO-style prior consent models  outperform their algorithmic rationing in both speed and patient satisfaction.<br><br>The affirmative's entire case rests on a false dilemma: either government rationing or chaotic inequality. But the data shows a third path: regulated markets with safeguards. When Colorado implemented income-adjusted copays for COVID treatments, access increased 31% without rationing . This proves we can expand care without playing God.<br><br>In closing, government rationing doesn't solve scarcity - it redistributes suffering. We've shown how it discriminates, fails, and is outclassed by alternatives that respect both lives and liberty. The real choice isn't between wallets and wisdom, but between centralized failure and collaborative solutions. Reject rationing. Choose ethics. Choose innovation. Choose life.<br><br>
+                                                </div>
+                                            </details>
+
+                                            <!-- Rating Section -->
+                                            <div class="form-group">
+                                            <label for="q3_2_a">
+                                                How persuasive is <strong>Output A</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                            </label>
+                                            <div class="row align-items-center">
+                                                <div class="col-10 offset-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_a_poor" name="q3_2_a" value="1">
+                                                        <label class="form-check-label" for="q3_2_a_poor">
+                                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_a_weak" name="q3_2_a" value="2">
+                                                        <label class="form-check-label" for="q3_2_a_weak">
+                                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_a_moderate" name="q3_2_a" value="3">
+                                                        <label class="form-check-label" for="q3_2_a_moderate">
+                                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_a_strong" name="q3_2_a" value="4">
+                                                        <label class="form-check-label" for="q3_2_a_strong">
+                                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_a_compelling" name="q3_2_a" value="5">
+                                                        <label class="form-check-label" for="q3_2_a_compelling">
+                                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Section -->
+                                        <div class="form-group mt-3 mb-4">
+                                            <label for="q3_2_comment_a"> (Optional) Additional comments for <strong> Output A's Against </strong> side:</label>
+                                            <textarea class="form-control" id="q3_2_comment_a" name="q3_2_comment_a" rows="2"></textarea>
+                                        </div>
+                                        </div>
+                                        
+                                    
+                                </div>
+
+                                <!-- Right Side (Output B) -->
+                                <div class="col-6">
+                                    <!-- Audio Player -->
+                                    <h5 class="text-center mb-3">Output B - <strong>Against</strong> Side </h5>
+                                        <div class="audio-section mb-4">
+                                            <div class="audio-player mb-3">
+                                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case10_1/rebuttal_against_b.mp3" class="w-100" id="audio_b_2_Against">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+
+                                            <!-- Transcript -->
+                                            <details class="transcript-details mb-3">
+                                                <summary class="transcript-summary p-2 bg-light rounded">
+                                                    <i class="fas fa-file-alt mr-2"></i>
+                                                    (Optional) <strong>Against</strong> Transcript B
+                                                </summary>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">Let’s cut through the rhetoric. Government rationing isn’t fair—it’s a failure. First, the opponent claims markets worsen inequality, but they ignore Germany’s multi-payer system, where 99% have coverage and wait times are 50% shorter than the UK’s—proof markets *can* achieve equity without rationing. Yes, America’s system has gaps—but that’s due to *half-measures*, not markets. Shared decision-making, where doctors and patients collaborate, outperforms bureaucratic algorithms. The opponent cites ER bias, but that’s exactly why we need *decentralized* systems: like telemedicine startups reducing rural ER waits by 40%, decentralized systems adapt faster than rationing’s rigid queues. Local hospitals know their communities better than distant officials.  <br><br>Second, rationing’s ethical flaws are undeniable. In *DREDF v. HHS* , courts ruled COVID triage protocols violated the ADA—disability groups sued and won. Age-based cutoffs pushed seniors to the back of the line. The opponent says algorithms reduce bias, but who programs them? A 2021 MIT study found AI triage tools favored urban, wealthy patients—exactly the bias rationing claims to fix. When Oregon prioritized dialysis patients, cancer survivors died waiting. This isn’t fairness—it’s systemic discrimination.  <br><br>Third, rationing doesn’t fix scarcity—it worsens it. The NHS has 7.6 million on waitlists—up from 2.5 million before 2012’s rationing reforms. Medicaid patients drive hours for basic care while bureaucrats debate “cost-effectiveness.” The opponent says markets are chaotic, but during COVID, private labs delivered tests 3x faster than government ones. Both systems face scarcity, but markets *adapt*—unlike rationing’s one-size-fits-all approach.  <br><br>In closing: Rationing’s body count grows daily. Demand the *Patient Choice Act*—which funds local clinics and bans waitlists over 30 days—before your family becomes another statistic. No one should die waiting for a bureaucrat’s approval.<br><br>
+                                                </div>
+                                            </details>
+
+                                            <!-- Rating Section -->
+                                            <div class="form-group">
+                                            <label for="q3_2_b">
+                                                How persuasive is <strong>Output B</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                            </label>
+                                            <div class="row align-items-center">
+                                                <div class="col-10 offset-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_b_poor" name="q3_2_b" value="1">
+                                                        <label class="form-check-label" for="q3_2_b_poor">
+                                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_b_weak" name="q3_2_b" value="2">
+                                                        <label class="form-check-label" for="q3_2_b_weak">
+                                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_b_moderate" name="q3_2_b" value="3">
+                                                        <label class="form-check-label" for="q3_2_b_moderate">
+                                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_b_strong" name="q3_2_b" value="4">
+                                                        <label class="form-check-label" for="q3_2_b_strong">
+                                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q3_2_b_compelling" name="q3_2_b" value="5">
+                                                        <label class="form-check-label" for="q3_2_b_compelling">
+                                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Section -->
+                                        <div class="form-group mt-3 mb-4">
+                                            <label for="q3_2_comment_b"> (Optional) Additional comments for <strong> Output B's Against </strong> side:</label>
+                                            <textarea class="form-control" id="q3_2_comment_b" name="q3_2_comment_b" rows="2"></textarea>
+                                        </div>
+                                        </div>
+                                        
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="q3" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                        Which output do you find more effective overall?<sup>*</sup>
+                                    </label>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 offset-8">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q3_2" value="-1" id="q3_2_slightly_a">
+                                                <label class="form-check-label" for="q3_2_a"> Prefer Output A</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q3_2" value="0" id="q3_2_equal">
+                                                <label class="form-check-label" for="q3_2_equal">Both outputs are equally effective</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q3_2" value="1" id="q3_2_slightly_b">
+                                                <label class="form-check-label" for="q3_2_b">Prefer Output B</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        
+                    </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                            After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (If Health Care Is A Scarce Resource, Government Should Step In To Ration Care, Deciding Whose Life Is Worth Saving) now<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                    <label class="form-check-label" for="q3_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                    <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                    <label class="form-check-label" for="q3_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                    <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                    <label class="form-check-label" for="q3_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Rebuttal Stage Comparison</b>
+            </div>
+        </div>
+    
+
+    <!-- Additional Questions -->
+    
+        <div class="card form-group question" id="question_4">
+            <div class="card-header">
+                <b>(Optional) Question 5: Which factors were most crucial in your assessment?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" name="q5" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 1 / 2</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_5">
+            <div class="card-header">
+                <b>(Optional) Question 6: How long did you spend on this whole evaluation process (including reading the motion, listening to the debate, and answering the questions)?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" name="q6" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 2 / 2</b>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="10_1(T1_n3)" hidden>
+            <input type="text" name="thank" value="Thanks. If you are a Prolific participant, your code is CMF26Y29" hidden>
+            <div class="button-row" style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                <div class="navigation-buttons">
+                    
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
+
+                </div>
+                <div id="submitButtonContainer" style="display: none;">
+                    <input class="btn btn-info btn-lg" type="submit" value="Submit this✓" id="submitBtn">
+                </div>
+            </div>
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        // Define the beforeunload handler as a named function so it can be removed
+        function handleBeforeUnload(e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        }
+
+        // Add the beforeunload event listener
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Function to disable the beforeunload warning
+        function disableBeforeUnload() {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        }
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    
+    <script>
+    // Function to handle consent acceptance
+    function acceptConsent() {
+        const checkboxes = document.querySelectorAll('#consentModal input[type="checkbox"]');
+        let allChecked = true;
+
+        checkboxes.forEach(checkbox => {
+            if (!checkbox.checked) {
+                allChecked = false;
+            }
+        });
+
+        if (allChecked) {
+            $('#consentModal').modal('hide');
+            // Additional logic for acceptance can be added here
+        } else {
+            alert('Please ensure all checkboxes are marked before proceeding.');
+        }
+    }
+
+    // Function to handle consent rejection
+    function rejectConsent() {
+        if (!confirm('You must accept the consent form to proceed. Click "OK" to stay on this page or "Cancel" to be redirected.')) {
+            window.location.href = '/debate-evaluation/thanks'; // Redirect to the "/thanks" page under the baseurl
+        }
+    }
+
+    // Show the consent modal on page load
+    $(document).ready(function() {
+        $('#consentModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+        $('#consentModal').modal('show');
+    });
+
+
+</script>
+
+    <script>
+        // Call this function when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setupAudioSideNavigation();
+            
+            // Add form submission handler
+            document.getElementById('theForm').addEventListener('submit', function(e) {
+                const redirectUrl = document.getElementById('redirect_url').value;
+                if (redirectUrl) {
+                    // Show loading indicator
+                    const submitBtn = document.getElementById('submitBtn');
+                    submitBtn.disabled = true;
+                    submitBtn.value = 'Submitting...';
+                    
+                    // Submit the form first
+                    const form = this;
+                    const formData = new FormData(form);
+                    
+                    // Prevent the default form submission
+                    e.preventDefault();
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success modal
+                            $('#successModal').modal('show');
+                            
+                            // Disable the beforeunload warning
+                            disableBeforeUnload();
+                            
+                            // Show redirect modal after a short delay
+                            setTimeout(() => {
+                                $('#successModal').modal('hide');
+                                $('#redirectModal').modal('show');
+                                
+                                // Set up manual redirect link
+                                document.getElementById('manualRedirect').href = redirectUrl;
+                                
+                                // Start countdown
+                                let countdown = 5;
+                                const countdownInterval = setInterval(() => {
+                                    countdown--;
+                                    document.getElementById('countdown').textContent = countdown;
+                                    if (countdown <= 0) {
+                                        clearInterval(countdownInterval);
+                                        $('#redirectModal').modal('hide');
+                                        window.location.href = redirectUrl;
+                                    }
+                                }, 1000);
+                            }, 2000);
+                        } else {
+                            // If submission failed, show error
+                            alert('Form submission failed. Please try again.');
+                            submitBtn.disabled = false;
+                            submitBtn.value = 'Submit All✓';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while submitting the form. Please try again.');
+                        submitBtn.disabled = false;
+                        submitBtn.value = 'Submit All✓';
+                    });
+                }
+            });
+        });
+
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i <= index ? 'block' : 'none';
+            });
+            
+            // Show submit button only when all questions are shown
+            const submitButtonContainer = document.getElementById('submitButtonContainer');
+            if (index === questions.length - 1) {
+                submitButtonContainer.style.display = 'block';
+            } else {
+                submitButtonContainer.style.display = 'none';
+            }
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            // Get all currently visible questions
+            const currentQuestions = document.querySelectorAll('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check each visible question
+            currentQuestions.forEach(currentQuestion => {
+                // Check if all audios have been played
+                const currentaudio = currentQuestion.querySelectorAll('audio');
+                currentaudio.forEach(audioElement => {
+                    if (audioElement.dataset.played === "false") {
+                        allValidAudio = false;
+                        const audioLabel = audioElement.closest(".audio") ? 
+                            audioElement.closest(".audio").querySelector('.audio-side').innerText :
+                            audioElement.id;
+                        invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                    }
+                });
+
+                // check all questions have been answered
+                const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+                const radioNames = new Set();
+                radioGroups.forEach(input => radioNames.add(input.name));
+                radioNames.forEach(name => {
+                    const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                    const isChecked = Array.from(group).some(input => input.checked);
+                    if (!isChecked) {
+                        allValidQuestion = false;
+                        const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                        invalidQuestions.push(questionLabel);
+                    }
+                });
+            });
+            
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting (for both sides). \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions (for both sides). You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    /* document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' }); */
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+        // Add a function to handle navigation between audio sides
+        function setupAudioSideNavigation() {            
+            // Add "Other Side" button after each question's navigation
+            questions.forEach(question => {
+                const audioContainers = question.querySelectorAll('.side-container');
+                if (audioContainers.length > 1) {                
+                    // Initially show only the first audio
+                    audioContainers.forEach((container, index) => {
+                        if (index === 0) {
+                            container.style.display = 'block';
+                        } else {
+                            container.style.display = 'none';
+                        }
+                    });
+                    
+                    // Set up the click handler for the Other Side button
+                    let currentAudioIndex = 0;
+                    const otherSideBtn = question.querySelectorAll('.button-next-side');
+                    const sanityCheckDiv = question.querySelector('#sanity_check_questions');
+                    const overallComparisonDiv = question.querySelector('#overall_comparison_question');
+                    otherSideBtn.forEach(button => {
+                        button.addEventListener('click', function() {
+                            currentAudioIndex = (currentAudioIndex + 1) % audioContainers.length;
+                            
+                            // Show the next audio
+                            audioContainers[currentAudioIndex].style.display = 'block';
+                            button.style.display = 'none';
+
+                            // Show the sanity check questions
+                            sanityCheckDiv.style.display = 'block';
+
+                            // Show the overall comparison question
+                            // overallComparisonDiv.style.display = 'block';
+
+
+                        });
+                    });
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

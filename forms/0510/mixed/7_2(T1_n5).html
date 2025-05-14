@@ -1,0 +1,1526 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="container">
+            
+<div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead text-center">You'll be evaluating a debate where two sides discuss a topic. Your opinion matters - you'll vote how persuasive each side is in each stage. We will use your feedback to improve the debate quality.</p>
+    </div>
+
+    <div class="mb-5 card shadow">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">What to Expect:</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-hourglass-start fa-3x text-primary"></i>
+                        <h5 class="mt-2">Debate Structure</h5>
+                    </div>
+                    <p>The full debate includes:</p>
+                    <ul>
+                        <li><strong>Opening:</strong> 4 min audio per side</li>
+                        <li><strong>Rebuttal:</strong> 4 min audio per side</li>
+                        <li><strong>Closing:</strong> 2 min audio per side</li>
+                    </ul>
+                    <p>You'll evaluate a portion of this debate.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-tasks fa-3x text-primary"></i>
+                        <h5 class="mt-2">Your Evaluation Tasks</h5>
+                    </div>
+                    <p>For each stage, you'll:</p>
+                    <ul>
+                        <li>Rate the persuasiveness of each side's statements</li>
+                        <li>Update your position after hearing each argument</li>
+                        <li>Provide optional feedback</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-random fa-3x text-primary"></i>
+                        <h5 class="mt-2">Final Comparison</h5>
+                    </div>
+                    <p>In the final stage:</p>
+                    <ul>
+                        <li>You'll see <strong>two versions</strong> of each side's closing statement</li>
+                        <li>Rate each version independently</li>
+                        <li>Select which version you found more persuasive</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="alert alert-success">
+                <strong>Important:</strong> Before beginning, you'll vote for the side you initially support. After each stage, you'll have the opportunity to reconsider and update your position based on the arguments presented.
+                <hr>
+                <strong>Note:</strong> Throughout the evaluation, you'll encounter <strong>attention check questions</strong> to ensure data quality. Participants who demonstrate thoughtful engagement will receive compensation as agreed. If you're unable to commit to providing quality responses, you may exit the survey at any time without penalty.
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-5 card shadow">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Rating Guide for Persuasiveness:</h4>
+        </div>
+        <div class="card-body p-0">
+            <div class="card-group">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-danger">1</div>
+                        <h5 class="card-title">Poor</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-warning">2</div>
+                        <h5 class="card-title">Weak</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-info">3</div>
+                        <h5 class="card-title">Moderate</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-primary">4</div>
+                        <h5 class="card-title">Strong</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-success">5</div>
+                        <h5 class="card-title">Compelling</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+        </div>
+    </div>
+
+    
+
+    <div id="consentModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="consentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document"  style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100 text-center" id="consentModalLabel">Consent Form</h4>
+            </div>
+            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                <div class="consent-form">
+                <h5>Study Title: Designing LLM-based Agents for Competitive Debate</h5>
+                <div>
+                    <p><strong>ID #</strong>: STUDY2024_00000359 </p>
+                    <p><strong>Principal Investigator:</strong> Dr. Fei Fang</p>
+                    <p>Software and Societal Systems Department (S3D), Carnegie Mellon University </br>
+                    5000 Forbes Ave, Pittsburgh, PA 15213 </br>
+                    (412) 268-2000, feifang@cmu.edu </br>
+                    <p><strong>Other Investigator(s):</strong> Danqing Wang, PhD student </p>
+                </div>
+
+                <hr class="my-4">
+                <div>
+                    <h6>Purpose of this Study</h6>
+                    <p>Competitive debate involves critical thinking, clear and persuasive expression, conflict resolving, and the organization of reliable evidence. The purpose of the study is to design an LLM-based agent for competitive debate with humans, which models the behaviors of the opponent and the audience for more persuasive and compelling statements.</p>
+                </div>
+
+                <div>
+                    <h6>Summary</h6>
+                    <p>You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side. The evaluation stage will take around 5 minutes and the demographic questions at the end of the survey will take at most 5 minutes, and the total time is at most 30 minutes.</p>
+                    <p>This human evaluation would provide valuable insights into the current state of AI debating capabilities, highlight areas for improvement, and help identify ways to enhance AI systems to more closely emulate human-level performance in complex argumentative tasks.</p>
+                </div>
+
+                <div>
+                    <h6>Participant Requirements</h6>
+                    <p>Participation in this study is limited to individuals who:</p>
+                    <ul>
+                        <li>Age 18 and older</li>
+                        <li>Have the ability to sign the consent form electronically</li>
+                        <li>Have access to the Internet</li>
+                        <li>Have a high school degree</li>
+                        <li>Should be located in US</li>
+                        <li>Must be fluent in written and spoken English</li>
+                    </ul>
+                    <p>A signed consent form is required for participation.</p>
+                </div>
+
+                <div>
+                    <h6>Risks</h6>
+                    <p>We confirm that the risk to participants is minimal, no greater than normal life. Several potential risks on Breach of Confidentiality should be considered: Participants will need to provide their name to sign the consent form and their email address to receive the compensation. They will also need to answer demographic questions at the end of the survey.</p>
+                </div>
+
+                <div>
+                    <h6>Benefits</h6>
+                    <p>Your involvement will contribute valuable information that could enhance the design and functionality of AI systems in constructing persuasive arguments and engaging in coherent debates. This could indirectly benefit the broader community by improving AI's ability to reason, articulate complex ideas, and respond dynamically in various contexts. The insights gained may also advance our understanding of human argumentation and decision-making processes.</p>
+                </div>
+
+                <div>
+                    <h6>Compensation & Costs</h6>
+                    <p>You will receive <strong>$10 for compensation after you complete the questionnaire</strong>. There will be no cost to you if you participate in this study.</p>
+                </div>
+
+                <div>
+                    <h6>Future Use of Information</h6>
+                    <p>In the future, once we have removed all identifiable information from your data, we may use the data for our future research studies, or we may distribute the data to other investigators for their research studies. We would do this without getting additional informed consent from you (or your legally authorized representative). Sharing of data with other researchers will only be done in such a manner that you will not be identified.</p>
+                </div>
+
+                <div>
+                    <h6>Confidentiality</h6>
+                    <p>The study will collect your research data through your use of Google Forms. These companies are not owned by CMU. These companies will have access to the research data that you produce and any identifiable information that you share with them while using their products. Please note that Carnegie Mellon does not control the Terms and Conditions of the companies or how they will use or protect any information that they collect.</p>
+                    <p><strong>Payment Confidentiality:</strong> Payment methods, especially those facilitated by third-party vendors (such as Visa, Venmo, Amazon, PayPal), may require that the researchers and/or the vendor collect and use personal information (such as your first and last name, email addresses, phone numbers, banking information) provided by you in order for your payment to be processed. As with any payment transaction, there is the risk of a breach of confidentiality from the third-party vendor. All personal information collected by the researcher will be held as strictly confidential and stored in a password-protected digital file, or in a locked file cabinet, until payments are processed and reconciled. This information will be destroyed at the earliest acceptable time. Personal information held by the third-party vendor will be held according to their terms of use policy.</p>
+                </div>
+
+                <div>
+                    <h6>Data Storage and Access</h6>
+                    <p>All study data will be securely stored at CMU, accessible only to the research team. Audio recordings will be transcribed and then deleted from third-party services. Personal identifiers will not be published or disseminated.</p>
+                </div>
+
+                <div>
+                    <h6>Rights</h6>
+                    <p>Your participation is voluntary. <strong>You are free to stop your participation at any point. Refusal to participate or withdrawal of your consent or discontinued participation in the study will not result in any penalty or loss of benefits or rights to which you might otherwise be entitled.</strong> The Principal Investigator may at his/her discretion remove you from the study for any of a number of reasons. In such an event, you will not suffer any penalty or loss of benefits or rights which you might otherwise be entitled.</p>
+                </div>
+
+                <div>
+                    <h6>Right to Ask Questions & Contact Information</h6>
+                    <p>If you have any questions about this study, you should feel free to ask them now. If you have questions later, desire additional information, or wish to withdraw your participation please contact the Principal Investigator by mail, phone or e-mail in accordance with the contact information listed on the first page of this consent.</p>
+                    <p>If you have questions pertaining to your rights as a research participant; or to report concerns to this study, you should contact the Office of Research Integrity and Compliance at Carnegie Mellon University. Email: irb-review@andrew.cmu.edu. Phone: 412-268-4721.</p>
+                </div>
+
+                <div>
+                    <h6>Voluntary Consent Confirmation</h6>
+                    <div>
+                        <p><input type="checkbox"> I confirm I am over 18 years old and in the United States</p>
+                        <p><input type="checkbox"> I confirm I have a high school degree</p>
+                        <p><input type="checkbox"> I have read and understood this consent form</p>
+                        <p><input type="checkbox"> I agree to participate in the study</p>
+                    </div>
+
+                    <p>By clicking "Accept" below, you agree that the above information has been explained to you and all your current questions have been answered. You are encouraged to ask questions about any aspect of this research study during the course of the study and in the future. By signing this form, you agree to participate in this research study. </p>
+
+                </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="rejectConsent()">Reject</button>
+                <button type="button" class="btn btn-primary" onclick="acceptConsent()">Accept</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <style>
+        .consent-form {
+            font-size: 14px; /* Adjust the font size as needed */
+        }
+    </style>
+
+
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbx3soqlvyNqvJUWpqUQc8wN4Hl7k5cs57awyATUshnXV7pTj4ADUF40OjmiISRZx4dc2g/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Dating Expenses Should Be Shared Equally Between Partners </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="mixed">
+    <input type="hidden" id="version" name="version" value="0510">
+    <input type="hidden" id="redirect_url" name="redirect_url" value="">
+
+    <!-- Success Message Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your responses have been successfully submitted! Redirecting to the next questionnaire...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redirect Message Modal -->
+    <div class="modal fade" id="redirectModal" tabindex="-1" role="dialog" aria-labelledby="redirectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="redirectModalLabel">Redirecting...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You will be automatically redirected to the next questionnaire in <span id="countdown">5</span> seconds...</p>
+                    <p>If you are not redirected automatically, <a href="#" id="manualRedirect">click here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card form-group question" id="question_1">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                            Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                    <label class="form-check-label" for="q1_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                    <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                    <label class="form-check-label" for="q1_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                    <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                    <label class="form-check-label" for="q1_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Pre-Vote Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_2">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> For Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case7_2/opening_for_a.mp3" class="w-100" id="audio_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> For </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that dating expenses should be shared equally between partners. We define "dating expenses" as costs incurred during courtship activities, such as meals, entertainment, transportation, and gifts. "Shared equally" means a fair distribution where both partners contribute proportionally or alternately to these expenses, ensuring neither bears an undue financial burden.<br><br>Our judging criteria is whether equal sharing of dating expenses promotes fairness, reduces financial stress, and enhances relationship satisfaction. This standard is appropriate because it aligns with modern values of gender equality and financial partnership in relationships. <br><br>First, equal sharing of dating expenses promotes financial equity and reduces resentment. Studies show that couples who split costs equally report higher relationship satisfaction, with 75% of Gen Z and millennials believing dating costs should be shared . This prevents one partner from feeling exploited, as financial fairness eliminates power imbalances. For example, research indicates that participants who pooled finances reported 23% higher satisfaction than those who didn't . By distributing costs fairly, couples foster mutual respect—a cornerstone of healthy relationships.<br><br>Second, equal expense sharing aligns with modern gender equality norms. Feminist economic theory emphasizes that financial parity challenges outdated provider-dependent dynamics . Surveys reveal that wealthier daters are 40% more likely to advocate splitting costs, reflecting progressive values . This shift is evident in couples like Kristen Bell and Dax Shepard, who thrive with flexible but equitable financial arrangements . When both partners contribute equally, it reinforces their status as equals—a principle increasingly prioritized in contemporary relationships.<br><br>Third, shared financial responsibility encourages transparency and teamwork. Financial coaches note that couples who discuss expenses openly have 30% lower conflict rates . Research from Chapman University confirms that aligned financial goals correlate with long-term stability . By jointly managing dating costs early, partners develop communication skills critical for future milestones like homeownership or childcare. This proactive approach builds trust, as evidenced by the 85% of satisfied couples who report "excellent" financial communication .<br><br>In conclusion, equal sharing of dating expenses creates fairer, more satisfying relationships by aligning with modern equality norms, reducing resentment, and fostering financial teamwork.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q2_1">
+                                    How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                            <label class="form-check-label" for="q2_1_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                            <label class="form-check-label" for="q2_1_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                            <label class="form-check-label" for="q2_1_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                            <label class="form-check-label" for="q2_1_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                            <label class="form-check-label" for="q2_1_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                                <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+                       <div class="text-center">
+                           <button id="nextSideButton" class="btn btn-info btn-lg button-next-side" type="button">Proceed to next side →</button>
+                       </div>
+                    
+
+                    <hr class="my-4">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> Against Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case7_2/opening_against_b.mp3" class="w-100" id="audio_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> Against </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Ladies and gentlemen, today we oppose the rigid expectation that dating expenses must be shared equally. While our opponents argue for proportional contributions, their framework reduces fairness to mere arithmetic, ignoring the emotional and relational realities that define meaningful partnerships. True equity isn’t about splitting bills—it’s about adapting to individual circumstances and fostering genuine connection.  <br><br>First, equal sharing becomes unjust when incomes are unequal. Research from *ABC News in 2023* confirms that splitting costs 50/50 when one partner earns significantly more creates financial strain and resentment, not fairness. Consider a teacher dating a CEO: forcing the teacher to match the CEO’s spending power would drain their savings and create unnecessary stress. According to financial educator Lacey Filipich, interviewed by *ABC News*, fairness in relationships requires flexibility, not rigid formulas. A proportional approach—where each contributes a similar percentage of their income—ensures both partners feel like equal participants without sacrificing financial stability.  <br><br>While opponents claim equal sharing ensures transparency, *N26’s 2023 research* proves flexibility fosters better communication. Couples who openly discuss and adapt their financial systems—whether through proportional splits, alternating payments, or other methods—report higher satisfaction than those who rigidly divide costs. Transparency isn’t about identical contributions; it’s about honest dialogue.  <br><br>Second, dating should prioritize emotional bonds over transactional calculations. A 2023 study in the *Journal of Social and Personal Relationships* found that couples who fixate on splitting every expense report lower relationship satisfaction, as it replaces spontaneity and generosity with bureaucratic accounting. Romance thrives on small gestures—a surprise coffee, a handwritten note—not on keeping score. When couples focus on "who paid last," they risk reducing their relationship to a ledger. According to Stanford’s 2023 study *Financial Dynamics in Intimate Relationships* , relationships built on mutual support, not financial tit-for-tat, report higher levels of trust and intimacy.  <br><br>Even celebrity ‘equitable’ arrangements often rely on proportional contributions—take Kristen Bell and Dax Shepard, who adjust for income disparities, proving our point. Their approach acknowledges that fairness isn’t about equal dollars but equal effort and respect.  <br><br>Third, traditional roles and personal preferences deserve respect. While our opponents cite surveys showing younger generations favor equal sharing, this ignores the diversity of cultural and individual values. *A 2019 Bank of America study* found that 36% of Americans still believe men should pay for dates, reflecting enduring norms for many couples. Forcing equal contributions dismisses these preferences, whether it’s a man who takes pride in treating his partner or a woman who contributes through non-monetary support like emotional labor. Equality means honoring these choices, not imposing a single model.  <br><br>In conclusion, dating isn’t a spreadsheet. Insisting on equal expenses ignores income disparities, stifles emotional connection, and invalidates personal preferences. Let’s champion a model of fairness that adapts to real lives—one where love, not arithmetic, sets the rules. We urge couples to discuss systems like income-based ratios or alternating dates—tools that honor both fairness and love. Thank you.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q2_2">
+                                    How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                            <label class="form-check-label" for="q2_2_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                            <label class="form-check-label" for="q2_2_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                            <label class="form-check-label" for="q2_2_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                            <label class="form-check-label" for="q2_2_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                            <label class="form-check-label" for="q2_2_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                                <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                        
+                        
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_sanity">Which claim is proposed by <strong>Against</strong> side as its <strong>second</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_0"
+                                                    name="q2_sanity"
+                                                    value="0">
+                                                <label class="form-check-label" for="q2_sanity_option_0">
+                                                    Dating should be about connection, not financial transactions.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_1"
+                                                    name="q2_sanity"
+                                                    value="1">
+                                                <label class="form-check-label" for="q2_sanity_option_1">
+                                                    Universal preschool creates equal educational opportunities that shape lifetime success.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_2"
+                                                    name="q2_sanity"
+                                                    value="2">
+                                                <label class="form-check-label" for="q2_sanity_option_2">
+                                                    Sharing dating expenses equally promotes fairness in relationships.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_3"
+                                                    name="q2_sanity"
+                                                    value="3">
+                                                <label class="form-check-label" for="q2_sanity_option_3">
+                                                    Not all dates have equal cost, making equal sharing complicated.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_4"
+                                                    name="q2_sanity"
+                                                    value="4">
+                                                <label class="form-check-label" for="q2_sanity_option_4">
+                                                    None of the above
+                                                </label>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="0">
+                        
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                            After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Dating Expenses Should Be Shared Equally Between Partners) now<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                    <label class="form-check-label" for="q2_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                    <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                    <label class="form-check-label" for="q2_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                    <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                    <label class="form-check-label" for="q2_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Opening Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_3">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> For Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case7_2/rebuttal_for_a.mp3" class="w-100" id="audio_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> For </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges and respected opponents, while the negative team presents thoughtful concerns about rigid financial divisions in dating, their arguments largely misinterpret our position and overlook the flexibility already embedded in our model of equal sharing. We'll address three key flaws in their case:  their misrepresentation of "equal" as inflexible 50/50 splits,  their false dichotomy between financial fairness and emotional connection, and  their reliance on outdated norms that contradict modern relationship dynamics.<br><br>**First**, the negative team argues that equal sharing becomes unjust with income disparities, citing ABC News . But this attacks a straw man—our opening statement explicitly defines "equal" as proportional or alternate contributions, not rigid 50/50 splits. Their own example of Kristen Bell and Dax Shepard  aligns perfectly with our model: they adjust contributions based on circumstances while maintaining equity. Studies confirm that proportional splits—where each partner contributes a similar percentage of their income—are precisely what 75% of Gen Z and millennials endorse . By conflating "equal" with "identical," the negative team ignores our nuanced approach to fairness.<br><br>**Second**, the negative claims that financial transparency stifles romance, referencing a 2023 study about couples fixating on expenses . This is a false dichotomy. Financial teamwork doesn’t eliminate spontaneity; it creates a foundation for generosity to flourish without resentment. Research shows that couples with aligned financial goals report 23% higher satisfaction precisely because they avoid power imbalances . For instance, alternating payments  allows one partner to treat the other without creating debt dynamics. The negative’s own N26 citation  praises "flexible systems," which is exactly what our proportional model provides—proving their argument actually supports our side.<br><br>**Third**, their appeal to tradition—citing a 2019 Bank of America study —is statistically and culturally outdated. Only 36% of Americans in that survey endorsed male-provider norms, while contemporary data shows younger generations overwhelmingly prefer shared costs . More critically, their argument contradicts their own emphasis on flexibility: why privilege one tradition  over others? True equity respects all preferences, including those of women who reject financial dependence. Feminist economic theory  demonstrates how proportional sharing dismantles gendered power imbalances, fostering mutual respect—a goal both teams claim to value.<br><br>In closing, the negative team’s concerns about rigidity and romance are already resolved by our proportional model, while their tradition-based objections ignore modern evidence. Equal sharing, as we define it, is the Goldilocks principle: flexible enough to accommodate income disparities, structured enough to prevent resentment, and progressive enough to honor all partners’ agency. Let’s not confuse arithmetic with equity—fairness isn’t about counting dollars, but ensuring both voices count equally.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q3_1">
+                                    How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                            <label class="form-check-label" for="q3_1_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                            <label class="form-check-label" for="q3_1_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                            <label class="form-check-label" for="q3_1_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                            <label class="form-check-label" for="q3_1_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                            <label class="form-check-label" for="q3_1_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                                <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+                       <div class="text-center">
+                           <button id="nextSideButton" class="btn btn-info btn-lg button-next-side" type="button">Proceed to next side →</button>
+                       </div>
+                    
+
+                    <hr class="my-4">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> Against Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case7_2/rebuttal_against_b.mp3" class="w-100" id="audio_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> Against </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Let’s dismantle the opponent’s flawed arguments with three critical rebuttals, each exposing the impracticality and rigidity of their "equal sharing" model.  <br><br>**First**, on income inequality: The opposition claims “equal sharing” means proportionality, but the reality is far messier. *Forbes*  found that 60% of couples default to 50/50 splits without discussion, often leading to resentment when incomes differ dramatically. Their own Gensurvey proves this—while 75% endorse “shared costs,” nowhere does it mandate proportional splits. This is a classic straw man fallacy: they conflate ideal proportionality with the common reality of rigid 50/50 splits. Research from *Psychology Today*  confirms that financial strain from unequal burdens creates a vicious cycle of resentment and relationship dissatisfaction. Imagine a teacher paying half of a CEO’s expensive date—fairness collapses under such rigidity. Their Kristen Bell example is the exception, not the rule. Even Bell and Shepard’s ‘equity’ relies on *explicit* income adjustments—something their 75% survey never mandates. Flexibility exists in theory, but without proactive income-based ratios, equal sharing becomes an equal burden.  <br><br>**Second**, on emotional connection: They argue financial teamwork fosters romance, but this confuses correlation with causation. Your study’s 23% boost comes from *communication*, not payment parity—proof that splitting bills isn’t the magic ingredient. The 23% satisfaction boost their study cites stems from open dialogue, not equal payments—a distinction their side conveniently ignores. Take my friends Jake and Mia: they alternate payments based on who chooses the activity, creating organic generosity. Forcing equal splits would turn their dates into accounting exercises. According to Benjamin Karney, a social psychology professor at UCLA, whose extensive research published in the *Annual Review of Psychology* reveals that couples with aligned goals thrive because they prioritize connection over transactional splits. Rigid payment structures undermine the very intimacy they claim to foster.  <br><br>**Third**, on respecting preferences: They dismiss traditions like men paying, citing only 36% support. But feminism champions choice—whether a woman prefers equal shares or traditional gestures. Their model excludes the latter, violating its own principle of agency. *PubMed*  found that 90% of men pay for first dates—a preference their model dismisses, despite claiming to respect choice. This reflects enduring cultural norms that their rigid framework ignores. True equality means respecting all choices, not imposing one model. By framing equality as only shared costs, they commit a false dilemma: why can’t equality include traditional gestures too? Financial experts at *American business magazine Forbes* have found that couples with large income gaps face unique challenges that can’t be solved with simplistic 50/50 approaches.  <br><br>In closing, the opposition’s “flexible equality” is a myth in practice. Real fairness adapts to incomes, nurtures connection through organic generosity, and honors diverse preferences. We urge couples to define fairness on their terms—through income ratios, organic generosity, or tradition—rejecting one-size-fits-all rules. Try a monthly ‘money date’ to discuss systems that work for *your* incomes and values—because love isn’t one-size-fits-all. Let’s not replace old norms with new rigid ones. Thank you.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q3_2">
+                                    How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                            <label class="form-check-label" for="q3_2_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                            <label class="form-check-label" for="q3_2_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                            <label class="form-check-label" for="q3_2_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                            <label class="form-check-label" for="q3_2_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                            <label class="form-check-label" for="q3_2_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                                <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                            After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (Dating Expenses Should Be Shared Equally Between Partners) now<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                    <label class="form-check-label" for="q3_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                    <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                    <label class="form-check-label" for="q3_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                    <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                    <label class="form-check-label" for="q3_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Rebuttal Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_4">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> For Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case7_2/closing_for_a.mp3" class="w-100" id="audio_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> For </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges. Today's debate centered on whether dating expenses should be shared equally between partners, with three key battlegrounds emerging: the definition of equitable sharing, the balance between financial fairness and emotional connection, and the accommodation of diverse preferences.<br><br>**On the definition of equal sharing**, our opponents mischaracterized our position as advocating rigid 50/50 splits. This is a straw man fallacy. We explicitly defined "equal" as proportional or alternate contributions—precisely the flexibility they claim to champion. Their own Forbes citation  about couples defaulting to 50/50 actually supports our case: structured equity prevents the very resentment they fear. Studies confirm that proportional models—where a teacher might pay 20% while a CEO contributes 80% of their respective incomes—are what 75% of Gen Z and millennials endorse . By conflating equality with uniformity, the negative team ignored our nuanced solution to income disparities.<br><br>**Regarding financial fairness and emotional connection**, the negative argued that financial teamwork stifles romance. Yet their Jake/Mia example of alternating payments ironically aligns with our model. Research shows that structured systems enable generosity by eliminating scorekeeping anxiety . The 23% higher satisfaction our study cited stems from transparency—which proportional sharing fosters—not from transactional rigidity . Their UCLA citation  about connection thriving without financial fixation actually reinforces our point: equitable systems free couples to focus on intimacy by preempting resentment.<br><br>**On respecting preferences**, the negative appealed to traditions like men paying for first dates . But true equity accommodates all choices—including traditional ones—<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q4_1">
+                                    How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                            <label class="form-check-label" for="q4_1_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                            <label class="form-check-label" for="q4_1_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                            <label class="form-check-label" for="q4_1_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                            <label class="form-check-label" for="q4_1_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                            <label class="form-check-label" for="q4_1_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                                <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+                       <div class="text-center">
+                           <button id="nextSideButton" class="btn btn-info btn-lg button-next-side" type="button">Proceed to next side →</button>
+                       </div>
+                    
+
+                    <hr class="my-4">
+                
+                    <div class="side-container">
+                        
+                            <div class="row">
+                                <!-- Left Side (Output A) -->
+                                <div class="col-6 border-right">
+                                    <!-- Audio Player -->
+                                    
+                                    <h5 class="text-center mb-3">Output A - <strong>Against</strong> Side</h5>
+                                        <div class="audio-section mb-4">
+                                            <div class="audio-player mb-3">
+                                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case7_2/closing_against_b.mp3" class="w-100" id="audio_a_2_Against">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+
+                                            <!-- Transcript -->
+                                            <details class="transcript-details mb-3">
+                                                <summary class="transcript-summary p-2 bg-light rounded">
+                                                    <i class="fas fa-file-alt mr-2"></i>
+                                                    (Optional) <strong>Against</strong> - Transcript A
+                                                </summary>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">Let’s resolve this debate with three undeniable truths.  <br><br>First, income inequality demands flexibility. The opposition’s "proportional" model collapses in practice—*Forbes* reports that 60% of couples default to rigid 50/50 splits, exacerbating financial strain for lower-earners. Their theory ignores reality. Our solution—income-based ratios—works: a teacher contributing 20% while a CEO covers 80% aligns fairness with actual means. Research from *UCLA’s Benjamin Karney*, a leading social psychologist, confirms that financial stress harms relationships when rigid splits ignore income disparities. Flexibility preserves harmony.  <br><br>Second, love thrives on connection, not transactions. They claim "structured equity" fosters intimacy, but *a 2023 study in the Journal of Social and Personal Relationships* proves relationship satisfaction stems from communication, not bill-splitting. Couples who prioritize emotional bonds over financial rigidity, as *Stanford psychology scholars* found, report higher long-term happiness. Forcing equal shares reduces romance to accounting.  <br><br>Third, true equality respects all choices. The opposition dismisses traditions like men paying for first dates, yet *PubMed* data shows 90% of men still do so. Feminism means championing agency—whether a woman prefers equal splits or traditional gestures. Their rigid model excludes millions who value cultural norms.  <br><br>Love defies arithmetic. Fairness adapts to incomes, nurtures generosity, and honors diverse values. Reject one-size-fits-all rules. Choose flexibility. Thank you.  <br><br>
+                                                </div>
+                                            </details>
+
+                                            <!-- Rating Section -->
+                                            <div class="form-group">
+                                            <label for="q4_2_a">
+                                                How persuasive is <strong>Output A</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                            </label>
+                                            <div class="row align-items-center">
+                                                <div class="col-10 offset-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_a_poor" name="q4_2_a" value="1">
+                                                        <label class="form-check-label" for="q4_2_a_poor">
+                                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_a_weak" name="q4_2_a" value="2">
+                                                        <label class="form-check-label" for="q4_2_a_weak">
+                                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_a_moderate" name="q4_2_a" value="3">
+                                                        <label class="form-check-label" for="q4_2_a_moderate">
+                                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_a_strong" name="q4_2_a" value="4">
+                                                        <label class="form-check-label" for="q4_2_a_strong">
+                                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_a_compelling" name="q4_2_a" value="5">
+                                                        <label class="form-check-label" for="q4_2_a_compelling">
+                                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Section -->
+                                        <div class="form-group mt-3 mb-4">
+                                            <label for="q4_2_comment_a"> (Optional) Additional comments for <strong> Output A's Against </strong> side:</label>
+                                            <textarea class="form-control" id="q4_2_comment_a" name="q4_2_comment_a" rows="2"></textarea>
+                                        </div>
+                                        </div>
+                                        
+                                    
+                                </div>
+
+                                <!-- Right Side (Output B) -->
+                                <div class="col-6">
+                                    <!-- Audio Player -->
+                                    <h5 class="text-center mb-3">Output B - <strong>Against</strong> Side </h5>
+                                        <div class="audio-section mb-4">
+                                            <div class="audio-player mb-3">
+                                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case7_2/closing_against_a.mp3" class="w-100" id="audio_b_2_Against">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+
+                                            <!-- Transcript -->
+                                            <details class="transcript-details mb-3">
+                                                <summary class="transcript-summary p-2 bg-light rounded">
+                                                    <i class="fas fa-file-alt mr-2"></i>
+                                                    (Optional) <strong>Against</strong> Transcript B
+                                                </summary>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges. Today’s debate has centered on whether dating expenses should be shared equally, and our team has demonstrated why rigid equality fails in practice, while flexibility fosters fairness and connection.  <br><br>**First, on the definition of "equal sharing":** The affirmative claims their model is flexible, yet *Forbes*  reveals that 60% of couples default to rigid 50/50 splits without discussion—proving their ideal of proportionality is theoretical, not practiced. Their own survey data  shows no mandate for income-based adjustments, leaving lower earners strained. A teacher shouldn’t drain savings to match a CEO’s spending; fairness requires proactive ratios, not hopeful assumptions.  <br><br>**Second, on emotional connection:** The affirmative conflates financial transparency with romance, citing a 23% satisfaction boost from communication . But as UCLA’s Karney  clarifies, it’s dialogue—not equal payments—that strengthens bonds. Forcing splits turns dates into accounting exercises, undermining the spontaneity that fuels intimacy . Love thrives when generosity is organic, not dictated by spreadsheets.  <br><br>**Third, on respecting preferences:** The affirmative dismisses traditions like men paying, yet *PubMed*  finds 90% of men still cover first dates. True equity honors all choices—whether a woman prefers shared costs or a partner takes pride in treating. Their model excludes these preferences, violating their own principle of agency.  <br><br>In closing, dating isn’t a one-size-fits-all equation. The affirmative’s rigid "equality" ignores real-world defaults, stifles connection, and dismisses diversity. We champion fairness that adapts—through income ratios, turn-taking, or tradition—because love’s currency is respect, not arithmetic. Let couples define equity on their terms. Thank you.<br><br>
+                                                </div>
+                                            </details>
+
+                                            <!-- Rating Section -->
+                                            <div class="form-group">
+                                            <label for="q4_2_b">
+                                                How persuasive is <strong>Output B</strong> in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                            </label>
+                                            <div class="row align-items-center">
+                                                <div class="col-10 offset-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_b_poor" name="q4_2_b" value="1">
+                                                        <label class="form-check-label" for="q4_2_b_poor">
+                                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_b_weak" name="q4_2_b" value="2">
+                                                        <label class="form-check-label" for="q4_2_b_weak">
+                                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_b_moderate" name="q4_2_b" value="3">
+                                                        <label class="form-check-label" for="q4_2_b_moderate">
+                                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_b_strong" name="q4_2_b" value="4">
+                                                        <label class="form-check-label" for="q4_2_b_strong">
+                                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_2_b_compelling" name="q4_2_b" value="5">
+                                                        <label class="form-check-label" for="q4_2_b_compelling">
+                                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Section -->
+                                        <div class="form-group mt-3 mb-4">
+                                            <label for="q4_2_comment_b"> (Optional) Additional comments for <strong> Output B's Against </strong> side:</label>
+                                            <textarea class="form-control" id="q4_2_comment_b" name="q4_2_comment_b" rows="2"></textarea>
+                                        </div>
+                                        </div>
+                                        
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="q4" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                        Which output do you find more effective overall?<sup>*</sup>
+                                    </label>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 offset-8">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q4_2" value="-1" id="q4_2_slightly_a">
+                                                <label class="form-check-label" for="q4_2_a"> Prefer Output A</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q4_2" value="0" id="q4_2_equal">
+                                                <label class="form-check-label" for="q4_2_equal">Both outputs are equally effective</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q4_2" value="1" id="q4_2_slightly_b">
+                                                <label class="form-check-label" for="q4_2_b">Prefer Output B</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        
+                    </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                        
+                        
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q4_sanity"> Which is the main battlefield / conflict / question mentioned by <strong>Output A's</strong> <strong>Against</strong> side in its closing statement? <sup>*</sup> </label>
+                                <textarea class="form-control" id="q4_sanity" name="q4_sanity" rows="1"></textarea>
+                            </div>
+                        
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                            After listening to the two statements in Closing stage, please choose your attitude towards the given motion (Dating Expenses Should Be Shared Equally Between Partners) now<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                    <label class="form-check-label" for="q4_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                    <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                    <label class="form-check-label" for="q4_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                    <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                    <label class="form-check-label" for="q4_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Closing Stage Comparison</b>
+            </div>
+        </div>
+    
+
+    <!-- Additional Questions -->
+    
+        <div class="card form-group question" id="question_5">
+            <div class="card-header">
+                <b>(Optional) Question 5: Which factors were most crucial in your assessment?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" name="q5" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 1 / 2</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_6">
+            <div class="card-header">
+                <b>(Optional) Question 6: How long did you spend on this whole evaluation process (including reading the motion, listening to the debate, and answering the questions)?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" name="q6" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 2 / 2</b>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="7_2(T1_n5)" hidden>
+            <input type="text" name="thank" value="Thanks. If you are a Prolific participant, your code is CMF26Y29" hidden>
+            <div class="button-row" style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                <div class="navigation-buttons">
+                    
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
+
+                </div>
+                <div id="submitButtonContainer" style="display: none;">
+                    <input class="btn btn-info btn-lg" type="submit" value="Submit this✓" id="submitBtn">
+                </div>
+            </div>
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        // Define the beforeunload handler as a named function so it can be removed
+        function handleBeforeUnload(e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        }
+
+        // Add the beforeunload event listener
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Function to disable the beforeunload warning
+        function disableBeforeUnload() {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        }
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    
+    <script>
+    // Function to handle consent acceptance
+    function acceptConsent() {
+        const checkboxes = document.querySelectorAll('#consentModal input[type="checkbox"]');
+        let allChecked = true;
+
+        checkboxes.forEach(checkbox => {
+            if (!checkbox.checked) {
+                allChecked = false;
+            }
+        });
+
+        if (allChecked) {
+            $('#consentModal').modal('hide');
+            // Additional logic for acceptance can be added here
+        } else {
+            alert('Please ensure all checkboxes are marked before proceeding.');
+        }
+    }
+
+    // Function to handle consent rejection
+    function rejectConsent() {
+        if (!confirm('You must accept the consent form to proceed. Click "OK" to stay on this page or "Cancel" to be redirected.')) {
+            window.location.href = '/debate-evaluation/thanks'; // Redirect to the "/thanks" page under the baseurl
+        }
+    }
+
+    // Show the consent modal on page load
+    $(document).ready(function() {
+        $('#consentModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+        $('#consentModal').modal('show');
+    });
+
+
+</script>
+
+    <script>
+        // Call this function when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setupAudioSideNavigation();
+            
+            // Add form submission handler
+            document.getElementById('theForm').addEventListener('submit', function(e) {
+                const redirectUrl = document.getElementById('redirect_url').value;
+                if (redirectUrl) {
+                    // Show loading indicator
+                    const submitBtn = document.getElementById('submitBtn');
+                    submitBtn.disabled = true;
+                    submitBtn.value = 'Submitting...';
+                    
+                    // Submit the form first
+                    const form = this;
+                    const formData = new FormData(form);
+                    
+                    // Prevent the default form submission
+                    e.preventDefault();
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success modal
+                            $('#successModal').modal('show');
+                            
+                            // Disable the beforeunload warning
+                            disableBeforeUnload();
+                            
+                            // Show redirect modal after a short delay
+                            setTimeout(() => {
+                                $('#successModal').modal('hide');
+                                $('#redirectModal').modal('show');
+                                
+                                // Set up manual redirect link
+                                document.getElementById('manualRedirect').href = redirectUrl;
+                                
+                                // Start countdown
+                                let countdown = 5;
+                                const countdownInterval = setInterval(() => {
+                                    countdown--;
+                                    document.getElementById('countdown').textContent = countdown;
+                                    if (countdown <= 0) {
+                                        clearInterval(countdownInterval);
+                                        $('#redirectModal').modal('hide');
+                                        window.location.href = redirectUrl;
+                                    }
+                                }, 1000);
+                            }, 2000);
+                        } else {
+                            // If submission failed, show error
+                            alert('Form submission failed. Please try again.');
+                            submitBtn.disabled = false;
+                            submitBtn.value = 'Submit All✓';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while submitting the form. Please try again.');
+                        submitBtn.disabled = false;
+                        submitBtn.value = 'Submit All✓';
+                    });
+                }
+            });
+        });
+
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i <= index ? 'block' : 'none';
+            });
+            
+            // Show submit button only when all questions are shown
+            const submitButtonContainer = document.getElementById('submitButtonContainer');
+            if (index === questions.length - 1) {
+                submitButtonContainer.style.display = 'block';
+            } else {
+                submitButtonContainer.style.display = 'none';
+            }
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            // Get all currently visible questions
+            const currentQuestions = document.querySelectorAll('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check each visible question
+            currentQuestions.forEach(currentQuestion => {
+                // Check if all audios have been played
+                const currentaudio = currentQuestion.querySelectorAll('audio');
+                currentaudio.forEach(audioElement => {
+                    if (audioElement.dataset.played === "false") {
+                        allValidAudio = false;
+                        const audioLabel = audioElement.closest(".audio") ? 
+                            audioElement.closest(".audio").querySelector('.audio-side').innerText :
+                            audioElement.id;
+                        invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                    }
+                });
+
+                // check all questions have been answered
+                const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+                const radioNames = new Set();
+                radioGroups.forEach(input => radioNames.add(input.name));
+                radioNames.forEach(name => {
+                    const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                    const isChecked = Array.from(group).some(input => input.checked);
+                    if (!isChecked) {
+                        allValidQuestion = false;
+                        const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                        invalidQuestions.push(questionLabel);
+                    }
+                });
+            });
+            
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting (for both sides). \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions (for both sides). You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    /* document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' }); */
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+        // Add a function to handle navigation between audio sides
+        function setupAudioSideNavigation() {            
+            // Add "Other Side" button after each question's navigation
+            questions.forEach(question => {
+                const audioContainers = question.querySelectorAll('.side-container');
+                if (audioContainers.length > 1) {                
+                    // Initially show only the first audio
+                    audioContainers.forEach((container, index) => {
+                        if (index === 0) {
+                            container.style.display = 'block';
+                        } else {
+                            container.style.display = 'none';
+                        }
+                    });
+                    
+                    // Set up the click handler for the Other Side button
+                    let currentAudioIndex = 0;
+                    const otherSideBtn = question.querySelectorAll('.button-next-side');
+                    const sanityCheckDiv = question.querySelector('#sanity_check_questions');
+                    const overallComparisonDiv = question.querySelector('#overall_comparison_question');
+                    otherSideBtn.forEach(button => {
+                        button.addEventListener('click', function() {
+                            currentAudioIndex = (currentAudioIndex + 1) % audioContainers.length;
+                            
+                            // Show the next audio
+                            audioContainers[currentAudioIndex].style.display = 'block';
+                            button.style.display = 'none';
+
+                            // Show the sanity check questions
+                            sanityCheckDiv.style.display = 'block';
+
+                            // Show the overall comparison question
+                            // overallComparisonDiv.style.display = 'block';
+
+
+                        });
+                    });
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

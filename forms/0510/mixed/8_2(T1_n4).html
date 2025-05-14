@@ -1,0 +1,1446 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="container">
+            
+<div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead text-center">You'll be evaluating a debate where two sides discuss a topic. Your opinion matters - you'll vote how persuasive each side is in each stage. We will use your feedback to improve the debate quality.</p>
+    </div>
+
+    <div class="mb-5 card shadow">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">What to Expect:</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-hourglass-start fa-3x text-primary"></i>
+                        <h5 class="mt-2">Debate Structure</h5>
+                    </div>
+                    <p>The full debate includes:</p>
+                    <ul>
+                        <li><strong>Opening:</strong> 4 min audio per side</li>
+                        <li><strong>Rebuttal:</strong> 4 min audio per side</li>
+                        <li><strong>Closing:</strong> 2 min audio per side</li>
+                    </ul>
+                    <p>You'll evaluate a portion of this debate.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-tasks fa-3x text-primary"></i>
+                        <h5 class="mt-2">Your Evaluation Tasks</h5>
+                    </div>
+                    <p>For each stage, you'll:</p>
+                    <ul>
+                        <li>Rate the persuasiveness of each side's statements</li>
+                        <li>Update your position after hearing each argument</li>
+                        <li>Provide optional feedback</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center mb-3">
+                        <i class="fa fa-random fa-3x text-primary"></i>
+                        <h5 class="mt-2">Final Comparison</h5>
+                    </div>
+                    <p>In the final stage:</p>
+                    <ul>
+                        <li>You'll see <strong>two versions</strong> of each side's closing statement</li>
+                        <li>Rate each version independently</li>
+                        <li>Select which version you found more persuasive</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="alert alert-success">
+                <strong>Important:</strong> Before beginning, you'll vote for the side you initially support. After each stage, you'll have the opportunity to reconsider and update your position based on the arguments presented.
+                <hr>
+                <strong>Note:</strong> Throughout the evaluation, you'll encounter <strong>attention check questions</strong> to ensure data quality. Participants who demonstrate thoughtful engagement will receive compensation as agreed. If you're unable to commit to providing quality responses, you may exit the survey at any time without penalty.
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-5 card shadow">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Rating Guide for Persuasiveness:</h4>
+        </div>
+        <div class="card-body p-0">
+            <div class="card-group">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-danger">1</div>
+                        <h5 class="card-title">Poor</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-warning">2</div>
+                        <h5 class="card-title">Weak</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-info">3</div>
+                        <h5 class="card-title">Moderate</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-primary">4</div>
+                        <h5 class="card-title">Strong</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-success">5</div>
+                        <h5 class="card-title">Compelling</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+        </div>
+    </div>
+
+    
+
+    <div id="consentModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="consentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document"  style="max-width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100 text-center" id="consentModalLabel">Consent Form</h4>
+            </div>
+            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                <div class="consent-form">
+                <h5>Study Title: Designing LLM-based Agents for Competitive Debate</h5>
+                <div>
+                    <p><strong>ID #</strong>: STUDY2024_00000359 </p>
+                    <p><strong>Principal Investigator:</strong> Dr. Fei Fang</p>
+                    <p>Software and Societal Systems Department (S3D), Carnegie Mellon University </br>
+                    5000 Forbes Ave, Pittsburgh, PA 15213 </br>
+                    (412) 268-2000, feifang@cmu.edu </br>
+                    <p><strong>Other Investigator(s):</strong> Danqing Wang, PhD student </p>
+                </div>
+
+                <hr class="my-4">
+                <div>
+                    <h6>Purpose of this Study</h6>
+                    <p>Competitive debate involves critical thinking, clear and persuasive expression, conflict resolving, and the organization of reliable evidence. The purpose of the study is to design an LLM-based agent for competitive debate with humans, which models the behaviors of the opponent and the audience for more persuasive and compelling statements.</p>
+                </div>
+
+                <div>
+                    <h6>Summary</h6>
+                    <p>You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side. The evaluation stage will take around 5 minutes and the demographic questions at the end of the survey will take at most 5 minutes, and the total time is at most 30 minutes.</p>
+                    <p>This human evaluation would provide valuable insights into the current state of AI debating capabilities, highlight areas for improvement, and help identify ways to enhance AI systems to more closely emulate human-level performance in complex argumentative tasks.</p>
+                </div>
+
+                <div>
+                    <h6>Participant Requirements</h6>
+                    <p>Participation in this study is limited to individuals who:</p>
+                    <ul>
+                        <li>Age 18 and older</li>
+                        <li>Have the ability to sign the consent form electronically</li>
+                        <li>Have access to the Internet</li>
+                        <li>Have a high school degree</li>
+                        <li>Should be located in US</li>
+                        <li>Must be fluent in written and spoken English</li>
+                    </ul>
+                    <p>A signed consent form is required for participation.</p>
+                </div>
+
+                <div>
+                    <h6>Risks</h6>
+                    <p>We confirm that the risk to participants is minimal, no greater than normal life. Several potential risks on Breach of Confidentiality should be considered: Participants will need to provide their name to sign the consent form and their email address to receive the compensation. They will also need to answer demographic questions at the end of the survey.</p>
+                </div>
+
+                <div>
+                    <h6>Benefits</h6>
+                    <p>Your involvement will contribute valuable information that could enhance the design and functionality of AI systems in constructing persuasive arguments and engaging in coherent debates. This could indirectly benefit the broader community by improving AI's ability to reason, articulate complex ideas, and respond dynamically in various contexts. The insights gained may also advance our understanding of human argumentation and decision-making processes.</p>
+                </div>
+
+                <div>
+                    <h6>Compensation & Costs</h6>
+                    <p>You will receive <strong>$10 for compensation after you complete the questionnaire</strong>. There will be no cost to you if you participate in this study.</p>
+                </div>
+
+                <div>
+                    <h6>Future Use of Information</h6>
+                    <p>In the future, once we have removed all identifiable information from your data, we may use the data for our future research studies, or we may distribute the data to other investigators for their research studies. We would do this without getting additional informed consent from you (or your legally authorized representative). Sharing of data with other researchers will only be done in such a manner that you will not be identified.</p>
+                </div>
+
+                <div>
+                    <h6>Confidentiality</h6>
+                    <p>The study will collect your research data through your use of Google Forms. These companies are not owned by CMU. These companies will have access to the research data that you produce and any identifiable information that you share with them while using their products. Please note that Carnegie Mellon does not control the Terms and Conditions of the companies or how they will use or protect any information that they collect.</p>
+                    <p><strong>Payment Confidentiality:</strong> Payment methods, especially those facilitated by third-party vendors (such as Visa, Venmo, Amazon, PayPal), may require that the researchers and/or the vendor collect and use personal information (such as your first and last name, email addresses, phone numbers, banking information) provided by you in order for your payment to be processed. As with any payment transaction, there is the risk of a breach of confidentiality from the third-party vendor. All personal information collected by the researcher will be held as strictly confidential and stored in a password-protected digital file, or in a locked file cabinet, until payments are processed and reconciled. This information will be destroyed at the earliest acceptable time. Personal information held by the third-party vendor will be held according to their terms of use policy.</p>
+                </div>
+
+                <div>
+                    <h6>Data Storage and Access</h6>
+                    <p>All study data will be securely stored at CMU, accessible only to the research team. Audio recordings will be transcribed and then deleted from third-party services. Personal identifiers will not be published or disseminated.</p>
+                </div>
+
+                <div>
+                    <h6>Rights</h6>
+                    <p>Your participation is voluntary. <strong>You are free to stop your participation at any point. Refusal to participate or withdrawal of your consent or discontinued participation in the study will not result in any penalty or loss of benefits or rights to which you might otherwise be entitled.</strong> The Principal Investigator may at his/her discretion remove you from the study for any of a number of reasons. In such an event, you will not suffer any penalty or loss of benefits or rights which you might otherwise be entitled.</p>
+                </div>
+
+                <div>
+                    <h6>Right to Ask Questions & Contact Information</h6>
+                    <p>If you have any questions about this study, you should feel free to ask them now. If you have questions later, desire additional information, or wish to withdraw your participation please contact the Principal Investigator by mail, phone or e-mail in accordance with the contact information listed on the first page of this consent.</p>
+                    <p>If you have questions pertaining to your rights as a research participant; or to report concerns to this study, you should contact the Office of Research Integrity and Compliance at Carnegie Mellon University. Email: irb-review@andrew.cmu.edu. Phone: 412-268-4721.</p>
+                </div>
+
+                <div>
+                    <h6>Voluntary Consent Confirmation</h6>
+                    <div>
+                        <p><input type="checkbox"> I confirm I am over 18 years old and in the United States</p>
+                        <p><input type="checkbox"> I confirm I have a high school degree</p>
+                        <p><input type="checkbox"> I have read and understood this consent form</p>
+                        <p><input type="checkbox"> I agree to participate in the study</p>
+                    </div>
+
+                    <p>By clicking "Accept" below, you agree that the above information has been explained to you and all your current questions have been answered. You are encouraged to ask questions about any aspect of this research study during the course of the study and in the future. By signing this form, you agree to participate in this research study. </p>
+
+                </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="rejectConsent()">Reject</button>
+                <button type="button" class="btn btn-primary" onclick="acceptConsent()">Accept</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <style>
+        .consent-form {
+            font-size: 14px; /* Adjust the font size as needed */
+        }
+    </style>
+
+
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbx3soqlvyNqvJUWpqUQc8wN4Hl7k5cs57awyATUshnXV7pTj4ADUF40OjmiISRZx4dc2g/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Mandatory Wage Transparency Laws Should Be Implemented To Address The Gender Wage Gap </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="mixed">
+    <input type="hidden" id="version" name="version" value="0510">
+    <input type="hidden" id="redirect_url" name="redirect_url" value="">
+
+    <!-- Success Message Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your responses have been successfully submitted! Redirecting to the next questionnaire...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redirect Message Modal -->
+    <div class="modal fade" id="redirectModal" tabindex="-1" role="dialog" aria-labelledby="redirectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="redirectModalLabel">Redirecting...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You will be automatically redirected to the next questionnaire in <span id="countdown">5</span> seconds...</p>
+                    <p>If you are not redirected automatically, <a href="#" id="manualRedirect">click here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card form-group question" id="question_1">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                            Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                    <label class="form-check-label" for="q1_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                    <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                    <label class="form-check-label" for="q1_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                    <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                    <label class="form-check-label" for="q1_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Pre-Vote Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_2">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> For Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case8_2/opening_for_a.mp3" class="w-100" id="audio_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> For </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that mandatory wage transparency laws should be implemented to address the gender wage gap. Wage transparency laws require employers to disclose salary ranges or individual pay data, making pay inequities visible and actionable. The gender wage gap refers to the persistent disparity in earnings between men and women, which these laws aim to eliminate.<br><br>Our judging criteria is the effectiveness of wage transparency laws in reducing the gender wage gap while promoting fairness and accountability in compensation practices. This standard directly measures whether the policy achieves its intended goal of pay equity through systemic change.<br><br>First, mandatory wage transparency laws significantly reduce the gender wage gap by exposing pay disparities and empowering women to negotiate fairer wages. Research shows that when salary data is transparent, women can identify and challenge unfair pay practices. For example, Denmark’s pay transparency law reduced the gender pay gap by 13% , while Canada saw a 20-40% reduction among university faculty after implementing similar policies . Studies also indicate that transparency reduces unconscious bias in compensation decisions, as employers are held accountable for equitable pay structures . This demonstrates that transparency is not just theoretical—it produces measurable improvements in pay equity.<br><br>Second, wage transparency improves workplace morale, productivity, and economic outcomes by fostering trust and reducing turnover. Companies like Salesforce and Patagonia, which adopted pay transparency, reported higher employee satisfaction and retention . Research from Deloitte highlights that transparent pay practices reduce recruitment costs and attract top talent, benefiting both employees and employers . When workers trust that they are paid fairly, they are more engaged and productive, creating a positive feedback loop for businesses and the broader economy . Thus, transparency isn’t just about fairness—it’s a strategic advantage.<br><br>Third, transparency laws create systemic accountability by forcing employers to audit and rectify pay inequities proactively. Countries like Iceland and Germany mandate pay audits and impose penalties for non-compliance, leading to sustained reductions in wage gaps . Legal studies confirm that transparency combined with enforcement mechanisms  is far more effective than relying on individual complaints . For instance, Ontario’s Pay Transparency Act reduced the gender wage gap by 41 cents per hour in private-sector jobs, showing how structured policies drive change . This proves that transparency laws don’t just reveal inequities—they compel action.<br><br>In conclusion, mandatory wage transparency laws are a proven, multifaceted solution to the gender wage gap. They empower women, improve workplace dynamics, and enforce accountability, making them indispensable for achieving pay equity.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q2_1">
+                                    How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                            <label class="form-check-label" for="q2_1_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                            <label class="form-check-label" for="q2_1_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                            <label class="form-check-label" for="q2_1_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                            <label class="form-check-label" for="q2_1_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                            <label class="form-check-label" for="q2_1_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                                <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+                       <div class="text-center">
+                           <button id="nextSideButton" class="btn btn-info btn-lg button-next-side" type="button">Proceed to next side →</button>
+                       </div>
+                    
+
+                    <hr class="my-4">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> Against Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case8_2/opening_against_b.mp3" class="w-100" id="audio_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> Against </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Ladies and gentlemen, while the goal of closing the gender wage gap is noble, mandatory wage transparency laws are a flawed solution. Let’s break down why.  <br><br>First, the opponent oversimplifies the wage gap. They claim transparency alone fixes disparities, but the gap isn’t just about pay secrecy—it’s about career choices, hours worked, and societal norms. Research from the *International Labour Organization * in 2023 highlights occupational segregation as a key driver of the wage gap, with discriminatory hiring practices and childcare policies playing significant roles. For example, women often choose lower-paying fields like education over tech, and they’re more likely to work part-time for caregiving. Transparency doesn’t address these deeper issues. It’s like putting a bandage on a broken bone. Denmark’s 13% reduction sounds impressive, but OECD data shows childcare access expanded during this period, suggesting other systemic reforms played a role. Without tackling root causes, transparency just makes inequities visible without fixing them.  <br><br>Second, these laws invade privacy and harm workplaces. A 2022 Gartner survey found that 40% of employees in transparent companies reported increased tension over pay disparities. For every success story like Salesforce, there’s a real-world counterexample: in 2023, a UK firm scrapped transparency after employee lawsuits over privacy breaches. Imagine your salary posted publicly—would you feel trusted, or scrutinized? As *TIME* reported in 2023, 60% of employees in transparent firms admitted jealousy over pay disparities, especially when differences stem from merit, not bias. Privacy matters. Employees shouldn’t have to justify their paychecks to coworkers.  <br><br>Finally, there are better solutions. Norway’s mentorship initiative, for instance, boosted women in STEM by 30% in just five years, proving targeted interventions work. Instead of forcing transparency, let’s invest in education and mentorship to guide women into higher-paying fields. Teach negotiation skills early. Subsidize childcare like Denmark’s model, which tackles the gap at its root by enabling women to pursue full-time careers. These measures address the gap’s structural causes, rather than just exposing it.  <br><br>Mandatory transparency is a well-intentioned mistake. It ignores complexity, risks privacy, and distracts from real solutions. Let’s not settle for visibility—let’s demand actual change by supporting policies like childcare subsidies and mentorship programs that address the gap where it starts.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q2_2">
+                                    How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                            <label class="form-check-label" for="q2_2_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                            <label class="form-check-label" for="q2_2_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                            <label class="form-check-label" for="q2_2_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                            <label class="form-check-label" for="q2_2_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                            <label class="form-check-label" for="q2_2_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                                <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                        
+                        
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_sanity">Which claim is proposed by <strong>Against</strong> side as its <strong>third</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_0"
+                                                    name="q2_sanity"
+                                                    value="0">
+                                                <label class="form-check-label" for="q2_sanity_option_0">
+                                                    Public wage data empowers employees to advocate for equal pay.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_1"
+                                                    name="q2_sanity"
+                                                    value="1">
+                                                <label class="form-check-label" for="q2_sanity_option_1">
+                                                    The focus should be on education and career choice, not just pay transparency.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_2"
+                                                    name="q2_sanity"
+                                                    value="2">
+                                                <label class="form-check-label" for="q2_sanity_option_2">
+                                                    The gender wage gap is a symptom of broader societal issues, not just pay secrecy.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_3"
+                                                    name="q2_sanity"
+                                                    value="3">
+                                                <label class="form-check-label" for="q2_sanity_option_3">
+                                                    Space exploration subsidies drive innovation that improves life on Earth.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_4"
+                                                    name="q2_sanity"
+                                                    value="4">
+                                                <label class="form-check-label" for="q2_sanity_option_4">
+                                                    None of the above
+                                                </label>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="1">
+                        
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                            After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Mandatory Wage Transparency Laws Should Be Implemented To Address The Gender Wage Gap) now<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                    <label class="form-check-label" for="q2_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                    <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                    <label class="form-check-label" for="q2_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                    <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                    <label class="form-check-label" for="q2_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Opening Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_3">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> For Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case8_2/rebuttal_for_a.mp3" class="w-100" id="audio_1_For">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> For </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, while the opposition raises thoughtful concerns about wage transparency laws, their arguments contain several critical flaws that we must address. Their claims about occupational segregation, privacy harms, and alternative solutions all fail to undermine the proven effectiveness of mandatory wage transparency in closing the gender pay gap.<br><br>First, the opposition argues that wage gaps stem primarily from career choices and hours worked rather than pay secrecy. While occupational segregation is indeed a factor, this doesn't negate transparency's value. Studies show that even within the same occupations, women earn less than men for equal work. Research from SHRM  demonstrates that pay transparency reduces these intra-occupation gaps by an average of 20-40%, as seen in Canadian universities where faculty salaries became more equitable after transparency policies. Moreover, Ontario's Pay Transparency Act reduced the gender wage gap by 41 cents per hour across all private-sector jobs , proving transparency works regardless of occupational choice. The opposition's claim is like saying we shouldn't fix a leaky roof because the foundation also needs work - we can and must address both.<br><br>Second, the opposition exaggerates privacy concerns while ignoring established safeguards. While they cite a Gartner survey about workplace tension , they omit that this tension often leads to productive pay adjustments. Companies like Salesforce have implemented tiered transparency systems that disclose salary ranges rather than individual pay, maintaining privacy while ensuring fairness . Deloitte's research  confirms that when implemented properly, transparency actually builds trust - 78% of employees in transparent companies report higher job satisfaction. The alternative - keeping pay secret - only perpetuates the very discrimination we're trying to eliminate.<br><br>Third, the opposition's proposed alternatives, while valuable, cannot replace transparency. They mention Norway's mentorship programs, but how would women know they need to negotiate if pay remains secret? Iceland's success  actually proves our point - they combined childcare subsidies with rigorous pay audits, reducing their gap to just 4%. The World Bank  confirms that transparency policies are most effective when paired with enforcement mechanisms like Germany's fines for non-compliance. This shows transparency isn't just about visibility - it creates the accountability needed for real change.<br><br>Finally, the opposition fundamentally misunderstands how discrimination operates. Their argument assumes that if we just fix occupational segregation and childcare, pay inequity will disappear. But research shows that even in female-dominated fields like nursing, women earn less than male counterparts . Without transparency, this discrimination remains invisible and unchallenged. As the OECD reports , transparency laws don't just reveal gaps - they force employers to justify and correct them.<br><br>In conclusion, while the opposition raises valid concerns about complex societal factors, they fail to provide any mechanism to detect and correct pay discrimination. Wage transparency is the essential first step that makes all other solutions possible. It works within occupations, respects privacy through smart implementation, and creates the accountability needed for lasting change. The evidence from Denmark to Ontario proves transparency isn't just theoretical - it's the practical, proven solution we need to close the gender pay gap.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q3_1">
+                                    How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                            <label class="form-check-label" for="q3_1_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                            <label class="form-check-label" for="q3_1_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                            <label class="form-check-label" for="q3_1_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                            <label class="form-check-label" for="q3_1_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                            <label class="form-check-label" for="q3_1_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                                <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+                       <div class="text-center">
+                           <button id="nextSideButton" class="btn btn-info btn-lg button-next-side" type="button">Proceed to next side →</button>
+                       </div>
+                    
+
+                    <hr class="my-4">
+                
+                    <div class="side-container">
+                        
+                            <!-- Audio Player -->
+                            <div class="row align-items-center mb-2 audio">
+                                <div class="col-2 text-left audio-side">
+                                    <strong> Against Side </strong> 
+                                </div>
+                                <div class="col-9">
+                                    <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case8_2/rebuttal_against_b.mp3" class="w-100" id="audio_2_Against">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+
+                            <!-- Transcript -->
+                            <details class="transcript-details mb-3">
+                                <summary class="transcript-summary p-2 bg-light rounded">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    (Optional) <strong> Against </strong> - Transcript
+                                </summary>
+                                <div class="transcript-content p-3 bg-white border rounded mt-2">Mandatory wage transparency laws are a misguided solution to the gender wage gap because they fail to address its root causes while creating new workplace tensions. The opponent’s arguments crumble under scrutiny when we examine the evidence and highlight superior alternatives. Let’s dismantle their flawed logic point by point.  <br><br>First, transparency laws treat symptoms, not the disease. The opponent cites Denmark’s 13% reduction in the wage gap, but this coincided with massive childcare reforms—proving systemic support, not just transparency, drives change. According to Claudia Goldin, a Nobel Prize-winning economist and Harvard professor whose research was published in the *Annual Review of Economics* in 2023, the wage gap persists due to factors like "greedy jobs" that penalize women for caregiving responsibilities, not pay secrecy. Her work shows the gap emerges after childbirth, not from lack of salary disclosures. The International Labour Organization confirms 60% of the gap stems from occupational segregation—women clustering in lower-paid fields like teaching instead of tech. Transparency doesn’t magically make nursing pay equal to engineering. This is like blaming a fever for an infection—you’re masking the real problem.  <br><br>Second, the opponent dismisses proven alternatives that actually work. Norway’s mentorship programs boosted women in STEM by 30%—without invasive salary disclosures. Iceland’s success came from combining childcare with audits, not audits alone. Why copy half their solution? Sweden’s subsidized childcare alone cut the gap by 17%, as reported by the *McKinsey Global Institute* in their 2023 research, led by senior partners Anu Madgavkar and Kweilin Ellingrud. Their findings highlight how career flexibility and caregiving support close gaps more effectively than transparency. We could fund apprenticeships to guide women into trades or demand Sweden-style childcare subsidies now—policies that address the gap where it starts. Transparency alone is a band-aid; these are real cures.  <br><br>Third, privacy harms persist despite tiered systems. *Forbes* reporting in 2023 revealed that Salesforce’s tiered transparency still led to lawsuits when managers leaked individual salaries. Deloitte’s *2023 Global Pay Transparency Report* shows 22% of employees in transparent firms reported pay-related stress—that’s 1 in 5 unhappy workers, a higher stress level than during company mergers. The Australian HR Institute’s *2023 Workplace Complaints Survey* found a 35% rise in pay-related complaints after transparency mandates, doubling pre-policy complaint rates. Privacy isn’t just about tiers; it’s about dignity.  <br><br>The wage gap is complex, but transparency laws are simplistic. Let’s demand comprehensive solutions—mentorship, childcare, and education—that tackle the gap where it starts, without sacrificing privacy or workplace harmony.<br><br></div>
+                            </details>
+
+                            <!-- Rating Section -->
+                            <div class="form-group">
+                                <label for="q3_2">
+                                    How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                            <label class="form-check-label" for="q3_2_poor">
+                                                <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                            <label class="form-check-label" for="q3_2_weak">
+                                                <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                            <label class="form-check-label" for="q3_2_moderate">
+                                                <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                            <label class="form-check-label" for="q3_2_strong">
+                                                <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                            <label class="form-check-label" for="q3_2_compelling">
+                                                <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comment Section -->
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                                <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                            </div>
+                        
+                    </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                            After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (Mandatory Wage Transparency Laws Should Be Implemented To Address The Gender Wage Gap) now<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                    <label class="form-check-label" for="q3_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                    <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                    <label class="form-check-label" for="q3_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                    <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                    <label class="form-check-label" for="q3_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Rebuttal Stage Comparison</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_4">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <div class="side-container">
+                        
+                            <div class="row">
+                                <!-- Left Side (Output A) -->
+                                <div class="col-6 border-right">
+                                    <!-- Audio Player -->
+                                    
+                                    <h5 class="text-center mb-3">Output A - <strong>For</strong> Side</h5>
+                                        <div class="audio-section mb-4">
+                                            <div class="audio-player mb-3">
+                                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case8_2/closing_for_a.mp3" class="w-100" id="audio_a_1_For">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+
+                                            <!-- Transcript -->
+                                            <details class="transcript-details mb-3">
+                                                <summary class="transcript-summary p-2 bg-light rounded">
+                                                    <i class="fas fa-file-alt mr-2"></i>
+                                                    (Optional) <strong>For</strong> - Transcript A
+                                                </summary>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges. Today's debate has centered on whether mandatory wage transparency laws can effectively address the gender wage gap. Our opponents have raised concerns about structural causes and privacy, but their arguments fail to undermine the overwhelming evidence that transparency is both necessary and effective.<br><br>On the core issue of effectiveness, the opposition claims transparency only treats symptoms like pay secrecy while ignoring root causes such as occupational segregation. This is a false dichotomy. Studies show that even within the same occupations—after accounting for career choices—women earn less than men for equal work . Transparency exposes these hidden inequities, as seen in Canada where university faculty pay gaps shrank by 20-40% after disclosure policies . The International Labour Organization confirms that 40% of the wage gap remains unexplained by occupation or hours worked , proving discrimination persists in ways only transparency can reveal. This isn’t about choosing between solutions; it’s about ensuring we can measure progress toward fairness.<br><br>Regarding alternatives, mentorship and childcare subsidies are valuable but incomplete. Norway’s STEM success relied on women knowing they were underpaid—data that transparency provides. Iceland’s 4% gender gap, the world’s lowest, came from combining childcare with rigorous pay audits . McKinsey research shows such combined approaches achieve twice the impact of standalone policies . Transparency doesn’t replace these measures; it makes them actionable.<br><br>On privacy, the opposition misrepresents the evidence. While initial adjustments may cause tension, Deloitte’s data shows 78% of employees ultimately report higher satisfaction in transparent workplaces . Tiered systems—like Salesforce’s salary ranges—balance privacy with accountability.<br><br>
+                                                </div>
+                                            </details>
+
+                                            <!-- Rating Section -->
+                                            <div class="form-group">
+                                            <label for="q4_1_a">
+                                                How persuasive is <strong>Output A</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                            </label>
+                                            <div class="row align-items-center">
+                                                <div class="col-10 offset-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_a_poor" name="q4_1_a" value="1">
+                                                        <label class="form-check-label" for="q4_1_a_poor">
+                                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_a_weak" name="q4_1_a" value="2">
+                                                        <label class="form-check-label" for="q4_1_a_weak">
+                                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_a_moderate" name="q4_1_a" value="3">
+                                                        <label class="form-check-label" for="q4_1_a_moderate">
+                                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_a_strong" name="q4_1_a" value="4">
+                                                        <label class="form-check-label" for="q4_1_a_strong">
+                                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_a_compelling" name="q4_1_a" value="5">
+                                                        <label class="form-check-label" for="q4_1_a_compelling">
+                                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Section -->
+                                        <div class="form-group mt-3 mb-4">
+                                            <label for="q4_1_comment_a"> (Optional) Additional comments for <strong> Output A's For </strong> side:</label>
+                                            <textarea class="form-control" id="q4_1_comment_a" name="q4_1_comment_a" rows="2"></textarea>
+                                        </div>
+                                        </div>
+                                        
+                                    
+                                </div>
+
+                                <!-- Right Side (Output B) -->
+                                <div class="col-6">
+                                    <!-- Audio Player -->
+                                    <h5 class="text-center mb-3">Output B - <strong>For</strong> Side </h5>
+                                        <div class="audio-section mb-4">
+                                            <div class="audio-player mb-3">
+                                                <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0510/case8_2/closing_for_b.mp3" class="w-100" id="audio_b_1_For">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+
+                                            <!-- Transcript -->
+                                            <details class="transcript-details mb-3">
+                                                <summary class="transcript-summary p-2 bg-light rounded">
+                                                    <i class="fas fa-file-alt mr-2"></i>
+                                                    (Optional) <strong>For</strong> Transcript B
+                                                </summary>
+                                                <div class="transcript-content p-3 bg-white border rounded mt-2">Ladies and gentlemen, the evidence is undeniable: mandatory wage transparency laws are the most powerful solution to close the gender pay gap. Let’s examine why. First, transparency delivers measurable results. Research from the *Society for Human Resource Management  in 2022* proves that when salaries are disclosed, pay gaps for the same roles shrink by 20-40%. Ontario’s transparency law directly increased women’s hourly wages by 41 cents—this isn’t speculation; it’s documented progress. The opponent dismisses this as a "band-aid," but transparency doesn’t just expose disparities—it forces employers to correct them.  <br><br>Second, privacy concerns are easily managed. Tiered systems, like Norway’s, protect confidentiality while ensuring fairness. A *2021 PayScale study* found 78% of employees in transparent companies report higher job satisfaction, and lawsuits—like the rare cases at Salesforce—are outliers. Secrecy, not transparency, is the real danger—it enables discrimination to thrive unchecked.  <br><br>Third, transparency amplifies other solutions. According to *Iceland’s Ministry of Welfare in 2023*, pairing wage audits with childcare policies reduced their gap to just 4%. The opponent’s false choice between transparency and other measures ignores this synergy. Transparency ensures women *know* they’re underpaid, empowering them to demand fair treatment while broader policies address systemic barriers.  <br><br>This isn’t about perfection—it’s about progress. Transparency is the flashlight that illuminates inequality so we can build bridges to fairness. Vote for accountability. Vote for justice. Vote for wage transparency laws.
+                                                </div>
+                                            </details>
+
+                                            <!-- Rating Section -->
+                                            <div class="form-group">
+                                            <label for="q4_1_b">
+                                                How persuasive is <strong>Output B</strong> in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                                            </label>
+                                            <div class="row align-items-center">
+                                                <div class="col-10 offset-1">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_b_poor" name="q4_1_b" value="1">
+                                                        <label class="form-check-label" for="q4_1_b_poor">
+                                                            <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_b_weak" name="q4_1_b" value="2">
+                                                        <label class="form-check-label" for="q4_1_b_weak">
+                                                            <strong>Weak</strong>: Reasonable statements with at least one noticeable weaknesses. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_b_moderate" name="q4_1_b" value="3">
+                                                        <label class="form-check-label" for="q4_1_b_moderate">
+                                                            <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_b_strong" name="q4_1_b" value="4">
+                                                        <label class="form-check-label" for="q4_1_b_strong">
+                                                            <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="q4_1_b_compelling" name="q4_1_b" value="5">
+                                                        <label class="form-check-label" for="q4_1_b_compelling">
+                                                            <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Section -->
+                                        <div class="form-group mt-3 mb-4">
+                                            <label for="q4_1_comment_b"> (Optional) Additional comments for <strong> Output B's For </strong> side:</label>
+                                            <textarea class="form-control" id="q4_1_comment_b" name="q4_1_comment_b" rows="2"></textarea>
+                                        </div>
+                                        </div>
+                                        
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="q4" style="font-weight: bold; font-size: 1.1em;" class="col-12 offset-4">
+                                        Which output do you find more effective overall?<sup>*</sup>
+                                    </label>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 offset-8">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q4_1" value="-1" id="q4_1_slightly_a">
+                                                <label class="form-check-label" for="q4_1_a"> Prefer Output A</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q4_1" value="0" id="q4_1_equal">
+                                                <label class="form-check-label" for="q4_1_equal">Both outputs are equally effective</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="q4_1" value="1" id="q4_1_slightly_b">
+                                                <label class="form-check-label" for="q4_1_b">Prefer Output B</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        
+                    </div>
+
+                    
+
+                    <hr class="my-4">
+                
+
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                        
+                        
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q4_sanity"> Which is the main battlefield / conflict / question mentioned by <strong>Output B's</strong> <strong>For</strong> side in its closing statement? <sup>*</sup> </label>
+                                <textarea class="form-control" id="q4_sanity" name="q4_sanity" rows="1"></textarea>
+                            </div>
+                        
+                    
+                </div>
+
+                <!-- Overall Comparison Question -->
+                <div id="overall_comparison_question" style="display: block;">
+                    <div class="form-group">
+                        <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                            After listening to the two statements in Closing stage, please choose your attitude towards the given motion (Mandatory Wage Transparency Laws Should Be Implemented To Address The Gender Wage Gap) now<sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                    <label class="form-check-label" for="q4_against">Highly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                    <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                    <label class="form-check-label" for="q4_tie">Neutral</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                    <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                    <label class="form-check-label" for="q4_for">Highly Support</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <b>End of Closing Stage Comparison</b>
+            </div>
+        </div>
+    
+
+    <!-- Additional Questions -->
+    
+        <div class="card form-group question" id="question_5">
+            <div class="card-header">
+                <b>(Optional) Question 5: Which factors were most crucial in your assessment?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" name="q5" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 1 / 2</b>
+            </div>
+        </div>
+    
+        <div class="card form-group question" id="question_6">
+            <div class="card-header">
+                <b>(Optional) Question 6: How long did you spend on this whole evaluation process (including reading the motion, listening to the debate, and answering the questions)?</b>
+            </div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" name="q6" rows="3"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer">
+                <b>Additional Question 2 / 2</b>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="8_2(T1_n4)" hidden>
+            <input type="text" name="thank" value="Thanks. If you are a Prolific participant, your code is CMF26Y29" hidden>
+            <div class="button-row" style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                <div class="navigation-buttons">
+                    
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
+
+                </div>
+                <div id="submitButtonContainer" style="display: none;">
+                    <input class="btn btn-info btn-lg" type="submit" value="Submit this✓" id="submitBtn">
+                </div>
+            </div>
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        // Define the beforeunload handler as a named function so it can be removed
+        function handleBeforeUnload(e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        }
+
+        // Add the beforeunload event listener
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Function to disable the beforeunload warning
+        function disableBeforeUnload() {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        }
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    
+    <script>
+    // Function to handle consent acceptance
+    function acceptConsent() {
+        const checkboxes = document.querySelectorAll('#consentModal input[type="checkbox"]');
+        let allChecked = true;
+
+        checkboxes.forEach(checkbox => {
+            if (!checkbox.checked) {
+                allChecked = false;
+            }
+        });
+
+        if (allChecked) {
+            $('#consentModal').modal('hide');
+            // Additional logic for acceptance can be added here
+        } else {
+            alert('Please ensure all checkboxes are marked before proceeding.');
+        }
+    }
+
+    // Function to handle consent rejection
+    function rejectConsent() {
+        if (!confirm('You must accept the consent form to proceed. Click "OK" to stay on this page or "Cancel" to be redirected.')) {
+            window.location.href = '/debate-evaluation/thanks'; // Redirect to the "/thanks" page under the baseurl
+        }
+    }
+
+    // Show the consent modal on page load
+    $(document).ready(function() {
+        $('#consentModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+        $('#consentModal').modal('show');
+    });
+
+
+</script>
+
+    <script>
+        // Call this function when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setupAudioSideNavigation();
+            
+            // Add form submission handler
+            document.getElementById('theForm').addEventListener('submit', function(e) {
+                const redirectUrl = document.getElementById('redirect_url').value;
+                if (redirectUrl) {
+                    // Show loading indicator
+                    const submitBtn = document.getElementById('submitBtn');
+                    submitBtn.disabled = true;
+                    submitBtn.value = 'Submitting...';
+                    
+                    // Submit the form first
+                    const form = this;
+                    const formData = new FormData(form);
+                    
+                    // Prevent the default form submission
+                    e.preventDefault();
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success modal
+                            $('#successModal').modal('show');
+                            
+                            // Disable the beforeunload warning
+                            disableBeforeUnload();
+                            
+                            // Show redirect modal after a short delay
+                            setTimeout(() => {
+                                $('#successModal').modal('hide');
+                                $('#redirectModal').modal('show');
+                                
+                                // Set up manual redirect link
+                                document.getElementById('manualRedirect').href = redirectUrl;
+                                
+                                // Start countdown
+                                let countdown = 5;
+                                const countdownInterval = setInterval(() => {
+                                    countdown--;
+                                    document.getElementById('countdown').textContent = countdown;
+                                    if (countdown <= 0) {
+                                        clearInterval(countdownInterval);
+                                        $('#redirectModal').modal('hide');
+                                        window.location.href = redirectUrl;
+                                    }
+                                }, 1000);
+                            }, 2000);
+                        } else {
+                            // If submission failed, show error
+                            alert('Form submission failed. Please try again.');
+                            submitBtn.disabled = false;
+                            submitBtn.value = 'Submit All✓';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while submitting the form. Please try again.');
+                        submitBtn.disabled = false;
+                        submitBtn.value = 'Submit All✓';
+                    });
+                }
+            });
+        });
+
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i <= index ? 'block' : 'none';
+            });
+            
+            // Show submit button only when all questions are shown
+            const submitButtonContainer = document.getElementById('submitButtonContainer');
+            if (index === questions.length - 1) {
+                submitButtonContainer.style.display = 'block';
+            } else {
+                submitButtonContainer.style.display = 'none';
+            }
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            // Get all currently visible questions
+            const currentQuestions = document.querySelectorAll('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check each visible question
+            currentQuestions.forEach(currentQuestion => {
+                // Check if all audios have been played
+                const currentaudio = currentQuestion.querySelectorAll('audio');
+                currentaudio.forEach(audioElement => {
+                    if (audioElement.dataset.played === "false") {
+                        allValidAudio = false;
+                        const audioLabel = audioElement.closest(".audio") ? 
+                            audioElement.closest(".audio").querySelector('.audio-side').innerText :
+                            audioElement.id;
+                        invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                    }
+                });
+
+                // check all questions have been answered
+                const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+                const radioNames = new Set();
+                radioGroups.forEach(input => radioNames.add(input.name));
+                radioNames.forEach(name => {
+                    const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                    const isChecked = Array.from(group).some(input => input.checked);
+                    if (!isChecked) {
+                        allValidQuestion = false;
+                        const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                        invalidQuestions.push(questionLabel);
+                    }
+                });
+            });
+            
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting (for both sides). \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions (for both sides). You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    /* document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' }); */
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+        // Add a function to handle navigation between audio sides
+        function setupAudioSideNavigation() {            
+            // Add "Other Side" button after each question's navigation
+            questions.forEach(question => {
+                const audioContainers = question.querySelectorAll('.side-container');
+                if (audioContainers.length > 1) {                
+                    // Initially show only the first audio
+                    audioContainers.forEach((container, index) => {
+                        if (index === 0) {
+                            container.style.display = 'block';
+                        } else {
+                            container.style.display = 'none';
+                        }
+                    });
+                    
+                    // Set up the click handler for the Other Side button
+                    let currentAudioIndex = 0;
+                    const otherSideBtn = question.querySelectorAll('.button-next-side');
+                    const sanityCheckDiv = question.querySelector('#sanity_check_questions');
+                    const overallComparisonDiv = question.querySelector('#overall_comparison_question');
+                    otherSideBtn.forEach(button => {
+                        button.addEventListener('click', function() {
+                            currentAudioIndex = (currentAudioIndex + 1) % audioContainers.length;
+                            
+                            // Show the next audio
+                            audioContainers[currentAudioIndex].style.display = 'block';
+                            button.style.display = 'none';
+
+                            // Show the sanity check questions
+                            sanityCheckDiv.style.display = 'block';
+
+                            // Show the overall comparison question
+                            // overallComparisonDiv.style.display = 'block';
+
+
+                        });
+                    });
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

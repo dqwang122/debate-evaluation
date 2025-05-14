@@ -1,0 +1,1131 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Debate Pairwise Comparison</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/debate-evaluation/assets/css/base.css">
+    
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="container">
+            
+    <div class="container">
+    <h1 class="text-center mb-4">Welcome to the Debate Evaluation!</h1>
+    <hr class="my-4">
+
+    <div class="mb-4">
+        <p class="lead">You'll be evaluating a 20-minute debate where two sides discuss a topic. Your opinion matters - you'll vote both before and after listening the debate. We will use your feedback to improve the debate quality. </p>
+    </div>
+
+    <div class="mb-4">
+        <h4>What to Expect:</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Listen to a debate divided into Opening (4 min per side), Rebuttal (4 min per side), and Closing stages (2 min per side).</li>
+            <li class="list-group-item">Share your initial opinion before listening.</li>
+            <li class="list-group-item">Evaluate how each side performs during the debate.</li>
+            <li class="list-group-item">Cast your final vote after listening.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to Vote:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Support "For" Side</strong> - If you agree with the motion</li>
+            <li class="list-group-item"><strong>Support "Against" Side</strong> - If you disagree with the motion</li>
+            <li class="list-group-item"><strong>Choose "Tie"</strong> - If you do not have a preference</li>
+        </ul>
+    </div>
+
+    <div class="mb-5 card shadow">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Rating Guide for Persuasiveness:</h4>
+        </div>
+        <div class="card-body p-0">
+            <div class="card-group">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-danger">1</div>
+                        <h5 class="card-title">Poor</h5>
+                        <p class="card-text" style="font-size: 16px;">Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-warning">2</div>
+                        <h5 class="card-title">Weak</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one noticeable weakness. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-info">3</div>
+                        <h5 class="card-title">Moderate</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness</p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-primary">4</div>
+                        <h5 class="card-title">Strong</h5>
+                        <p class="card-text" style="font-size: 16px;">Reasonable statements with at least one impressive shining points. </p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-2 text-success">5</div>
+                        <h5 class="card-title">Compelling</h5>
+                        <p class="card-text" style="font-size: 16px;">Powerful evidence with effective counterpoints and create deep connection with audience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    
+        <div id="consentModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="consentModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document"  style="max-width: 800px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100 text-center" id="consentModalLabel">Consent Form</h4>
+                </div>
+                <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                    <div class="consent-form">
+                    <h5>Study Title: Designing LLM-based Agents for Competitive Debate</h5>
+                    <div>
+                        <p><strong>ID #</strong>: STUDY2024_00000359 </p>
+                        <p><strong>Principal Investigator:</strong> Dr. Fei Fang</p>
+                        <p>Software and Societal Systems Department (S3D), Carnegie Mellon University </br>
+                        5000 Forbes Ave, Pittsburgh, PA 15213 </br>
+                        (412) 268-2000, feifang@cmu.edu </br>
+                        <p><strong>Other Investigator(s):</strong> Danqing Wang, PhD student </p>
+                    </div>
+
+                    <hr class="my-4">
+                    <div>
+                        <h6>Purpose of this Study</h6>
+                        <p>Competitive debate involves critical thinking, clear and persuasive expression, conflict resolving, and the organization of reliable evidence. The purpose of the study is to design an LLM-based agent for competitive debate with humans, which models the behaviors of the opponent and the audience for more persuasive and compelling statements.</p>
+                    </div>
+
+                    <div>
+                        <h6>Summary</h6>
+                        <p>You'll review a recorded 20-minute debate between two debaters (humans or AI debaters) and evaluate the performance of each side. You will be asked to complete a questionnaire, which includes your vote before and after the debate process on a predetermined topic. There are also several fine-grained aspects and you will need to rate the performance between 1 to 5 for each side. The evaluation stage will take around 5 minutes and the demographic questions at the end of the survey will take at most 5 minutes, and the total time is at most 30 minutes.</p>
+                        <p>This human evaluation would provide valuable insights into the current state of AI debating capabilities, highlight areas for improvement, and help identify ways to enhance AI systems to more closely emulate human-level performance in complex argumentative tasks.</p>
+                    </div>
+
+                    <div>
+                        <h6>Participant Requirements</h6>
+                        <p>Participation in this study is limited to individuals who:</p>
+                        <ul>
+                            <li>Age 18 and older</li>
+                            <li>Have the ability to sign the consent form electronically</li>
+                            <li>Have access to the Internet</li>
+                            <li>Have a high school degree</li>
+                            <li>Should be located in US</li>
+                            <li>Must be fluent in written and spoken English</li>
+                        </ul>
+                        <p>A signed consent form is required for participation.</p>
+                    </div>
+
+                    <div>
+                        <h6>Risks</h6>
+                        <p>We confirm that the risk to participants is minimal, no greater than normal life. Several potential risks on Breach of Confidentiality should be considered: Participants will need to provide their name to sign the consent form and their email address to receive the compensation. They will also need to answer demographic questions at the end of the survey.</p>
+                    </div>
+
+                    <div>
+                        <h6>Benefits</h6>
+                        <p>Your involvement will contribute valuable information that could enhance the design and functionality of AI systems in constructing persuasive arguments and engaging in coherent debates. This could indirectly benefit the broader community by improving AI's ability to reason, articulate complex ideas, and respond dynamically in various contexts. The insights gained may also advance our understanding of human argumentation and decision-making processes.</p>
+                    </div>
+
+                    <div>
+                        <h6>Compensation & Costs</h6>
+                        <p>You will receive <strong>$10 for compensation after you complete the questionnaire</strong>. There will be no cost to you if you participate in this study.</p>
+                    </div>
+
+                    <div>
+                        <h6>Future Use of Information</h6>
+                        <p>In the future, once we have removed all identifiable information from your data, we may use the data for our future research studies, or we may distribute the data to other investigators for their research studies. We would do this without getting additional informed consent from you (or your legally authorized representative). Sharing of data with other researchers will only be done in such a manner that you will not be identified.</p>
+                    </div>
+
+                    <div>
+                        <h6>Confidentiality</h6>
+                        <p>The study will collect your research data through your use of Google Forms. These companies are not owned by CMU. These companies will have access to the research data that you produce and any identifiable information that you share with them while using their products. Please note that Carnegie Mellon does not control the Terms and Conditions of the companies or how they will use or protect any information that they collect.</p>
+                        <p><strong>Payment Confidentiality:</strong> Payment methods, especially those facilitated by third-party vendors (such as Visa, Venmo, Amazon, PayPal), may require that the researchers and/or the vendor collect and use personal information (such as your first and last name, email addresses, phone numbers, banking information) provided by you in order for your payment to be processed. As with any payment transaction, there is the risk of a breach of confidentiality from the third-party vendor. All personal information collected by the researcher will be held as strictly confidential and stored in a password-protected digital file, or in a locked file cabinet, until payments are processed and reconciled. This information will be destroyed at the earliest acceptable time. Personal information held by the third-party vendor will be held according to their terms of use policy.</p>
+                    </div>
+
+                    <div>
+                        <h6>Data Storage and Access</h6>
+                        <p>All study data will be securely stored at CMU, accessible only to the research team. Audio recordings will be transcribed and then deleted from third-party services. Personal identifiers will not be published or disseminated.</p>
+                    </div>
+
+                    <div>
+                        <h6>Rights</h6>
+                        <p>Your participation is voluntary. <strong>You are free to stop your participation at any point. Refusal to participate or withdrawal of your consent or discontinued participation in the study will not result in any penalty or loss of benefits or rights to which you might otherwise be entitled.</strong> The Principal Investigator may at his/her discretion remove you from the study for any of a number of reasons. In such an event, you will not suffer any penalty or loss of benefits or rights which you might otherwise be entitled.</p>
+                    </div>
+
+                    <div>
+                        <h6>Right to Ask Questions & Contact Information</h6>
+                        <p>If you have any questions about this study, you should feel free to ask them now. If you have questions later, desire additional information, or wish to withdraw your participation please contact the Principal Investigator by mail, phone or e-mail in accordance with the contact information listed on the first page of this consent.</p>
+                        <p>If you have questions pertaining to your rights as a research participant; or to report concerns to this study, you should contact the Office of Research Integrity and Compliance at Carnegie Mellon University. Email: irb-review@andrew.cmu.edu. Phone: 412-268-4721.</p>
+                    </div>
+
+                    <div>
+                        <h6>Voluntary Consent Confirmation</h6>
+                        <div>
+                            <p><input type="checkbox"> I confirm I am over 18 years old and in the United States</p>
+                            <p><input type="checkbox"> I confirm I have a high school degree</p>
+                            <p><input type="checkbox"> I have read and understood this consent form</p>
+                            <p><input type="checkbox"> I agree to participate in the study</p>
+                        </div>
+
+                        <p>By clicking "Accept" below, you agree that the above information has been explained to you and all your current questions have been answered. You are encouraged to ask questions about any aspect of this research study during the course of the study and in the future. By signing this form, you agree to participate in this research study. </p>
+
+                    </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="rejectConsent()">Reject</button>
+                    <button type="button" class="btn btn-primary" onclick="acceptConsent()">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .consent-form {
+            font-size: 14px; /* Adjust the font size as needed */
+        }
+    </style>
+
+    
+
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbx3soqlvyNqvJUWpqUQc8wN4Hl7k5cs57awyATUshnXV7pTj4ADUF40OjmiISRZx4dc2g/exec" method="POST" onsubmit="return preventRepeatedSubmission() && checkAllRadioGroupsChecked() && confirmSubmission() && addTimestamp();;">
+        <input type="hidden" name="timestamp" id="timestamp">
+            <div class="form-group">
+                <label for="name">Name / Prolific ID (for Prolific Participants) <sup>*</sup>  </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email / Prolific Email (for Prolific Participants) <sup>*</sup> </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail" required>
+            </div>
+            <small class="form-text text-muted">* indicate required question</small>
+
+            <br>
+            <div id="motion" name="motion"><h4>Motion: Developed Countries Should Impose A Fat Tax. </h4></div>
+            <br>
+            
+            
+    <input type="hidden" id="mode" name="mode" value="common2" >
+    <input type="hidden" id="mode" name="version" value="0511" >
+
+    
+        <div class="card form-group question" id="question_1" style="display: none;">
+            <div class="card-header"><b>Question 1: Pre-Vote Stage</b></div>
+            <div class="card-body">
+                
+            
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                </div>
+
+                <hr class="my-4">
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q1" style="font-weight: bold; font-size: 1.1em;">
+                        Please choose your attitude towards the given motion before the debate begins.<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_2" name="q1" value="-2">
+                                <label class="form-check-label" for="q1_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_against_1" name="q1" value="-1">
+                                <label class="form-check-label" for="q1_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_tie" name="q1" value="0">
+                                <label class="form-check-label" for="q1_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_1" name="q1" value="1">
+                                <label class="form-check-label" for="q1_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q1_for_2" name="q1" value="2">
+                                <label class="form-check-label" for="q1_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Pre-Vote Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_2" style="display: none;">
+            <div class="card-header"><b>Question 2: Opening Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0511/case12_2/opening_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">In this debate, we shall argue that developed countries should impose a fat tax, defined as a surcharge on foods high in unhealthy fats, sugars, or salt to reduce consumption and improve public health.  <br>Our judging criteria is whether a fat tax achieves measurable public health improvements  and economic benefits , prioritizing societal welfare and cost-effectiveness.  <br><br>First, fat taxes effectively reduce obesity and chronic disease rates by discouraging unhealthy food consumption. Research shows that Denmark’s €2.14 per kg tax on saturated fat led to a 4.0% reduction in purchases , while Hungary’s junk food tax decreased consumption of targeted products . These results align with behavioral economics principles: price increases on unhealthy foods directly reduce demand, especially among price-sensitive groups. By curbing obesity—a leading cause of diabetes and heart disease—fat taxes address preventable health burdens.  <br><br>Second, the economic benefits of fat taxes outweigh costs. Such taxes generate revenue for public health initiatives while reducing long-term healthcare expenditures. For example, studies estimate that obesity-related conditions cost developed nations billions annually in medical care and lost productivity . Denmark’s short-lived fat tax demonstrated that revenue could fund health programs, offsetting implementation costs . This dual benefit—revenue generation and cost savings—makes fat taxes fiscally prudent.  <br><br>Third, fat taxes drive systemic change by incentivizing healthier industry and consumer behavior. In Hungary, manufacturers reformulated products to avoid taxes, increasing healthier options . Similarly, small price differences  can shift consumer choices toward nutritious alternatives . This "nudge" effect, paired with subsidies for healthy foods, creates a sustainable cycle of improved dietary habits and product innovation.  <br><br>In conclusion, fat taxes in developed countries are a proven tool to combat obesity, reduce healthcare costs, and promote healthier societies.<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_poor" name="q2_1" value="1">
+                                    <label class="form-check-label" for="q2_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_weak" name="q2_1" value="2">
+                                    <label class="form-check-label" for="q2_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_moderate" name="q2_1" value="3">
+                                    <label class="form-check-label" for="q2_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_strong" name="q2_1" value="4">
+                                    <label class="form-check-label" for="q2_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_1_compelling" name="q2_1" value="5">
+                                    <label class="form-check-label" for="q2_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q2_1_comment" name="q2_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0511/case12_2/opening_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Ladies and gentlemen, let’s be clear: a fat tax isn’t just ineffective—it’s a regressive policy that harms the poor, limits freedom, and fails to deliver meaningful health outcomes. Today, we’ll dismantle the flawed logic behind this approach and prove why developed countries must reject it.  <br><br>First, let’s address the disproportionate impact on low-income families. While proponents might cite a 4% drop in purchases, Denmark’s actual obesity rates didn’t budge—exposing the tax’s failure. Research from *Oxford and Copenhagen Universities* in 2012 revealed that Denmark’s fat tax led to only a 0.5% reduction in saturated fat consumption while disproportionately burdening working-class households. Imagine a single mother working two jobs. She relies on affordable, calorie-dense foods because fresh produce is expensive and time-consuming to prepare. A fat tax doesn’t magically give her more money or time; it just makes her groceries costlier. According to *a 2015 study published in the American Journal of Public Health*, low-income communities already face barriers like food deserts and transportation gaps, making healthy choices even harder. Worse still, this tax isn’t just unfair—it’s ineffective. Regressive taxes like this widen health inequities—low-income households spend 30% more on food as a share of income, as reported by *the OECD in 2020*.  <br><br>Second, this tax is about control, not health. Since when does the government get to dictate what’s on your plate? If we let them tax fats today, what’s next? Sugar? Salt? Coffee? This isn’t speculation—it’s a slippery slope. *Jeff Strnad, a legal scholar at Stanford, argued in his 2004 analysis* that such taxes infringe on personal liberty without clear public health justification. Personal responsibility matters. Education and access to healthy food are better tools than punitive taxes. For example, *a 2016 study in PeerJ* showed that school-based nutrition programs increased fruit and vegetable consumption by 30% without resorting to regressive taxation.  <br><br>Finally, let’s examine the evidence. Countries that implemented fat taxes saw minimal health benefits. Denmark’s tax was repealed within a year due to public backlash and lack of results. Hungary’s junk food tax led to minor recipe tweaks by manufacturers, not healthier diets. Some argue taxes reduce healthcare costs, but Denmark’s revenue didn’t offset its economic harm to families. *A 2023 global study published in Health Affairs* found that taxes alone, without subsidies for healthy alternatives, merely raise revenue without changing behavior. Obesity is a complex issue tied to income, education, and culture. A fat tax is like using a band-aid to treat a broken leg—it addresses symptoms, not root causes.  <br><br>The solution isn’t taxation; it’s empowerment. Subsidies for healthy options, like those in Mexico’s sugar tax program, reduced soda consumption by 18% while making water more affordable. Philadelphia’s sugary drink tax funded 12 new rec centers, proving revenue can support health without punishing consumption. *The CDC’s 2009 report* highlighted farmers' market initiatives that increased fruit and vegetable access in low-income areas by 34%. These approaches work without punishing the poor.  <br><br>In conclusion, fat taxes are unfair, unproven, and unnecessary. They hurt those least able to afford them, erode personal freedom, and fail to tackle obesity’s real drivers. Let’s focus on real solutions: better education, equitable access, and support for families. Reject this tax. Thank you.<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q2_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_poor" name="q2_2" value="1">
+                                    <label class="form-check-label" for="q2_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_weak" name="q2_2" value="2">
+                                    <label class="form-check-label" for="q2_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_moderate" name="q2_2" value="3">
+                                    <label class="form-check-label" for="q2_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_strong" name="q2_2" value="4">
+                                    <label class="form-check-label" for="q2_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q2_2_compelling" name="q2_2" value="5">
+                                    <label class="form-check-label" for="q2_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q2_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q2_2_comment" name="q2_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                        
+                        
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q2_sanity">Which claim is proposed by <strong>Against</strong> side as its <strong>third</strong> main claim during the opening statement? If multiple options apply, please choose the best one. <sup>*</sup></label>
+                                <div class="row align-items-center">
+                                    <div class="col-10 offset-1">
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_0"
+                                                    name="q2_sanity"
+                                                    value="0">
+                                                <label class="form-check-label" for="q2_sanity_option_0">
+                                                    A fat tax would reduce obesity rates by making unhealthy foods less affordable.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_1"
+                                                    name="q2_sanity"
+                                                    value="1">
+                                                <label class="form-check-label" for="q2_sanity_option_1">
+                                                    Effective Altruism's metrics-driven approach overlooks crucial local contexts that determine real impact
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_2"
+                                                    name="q2_sanity"
+                                                    value="2">
+                                                <label class="form-check-label" for="q2_sanity_option_2">
+                                                    There is no clear evidence that fat taxes have successfully reduced obesity in countries where they have been implemented.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_3"
+                                                    name="q2_sanity"
+                                                    value="3">
+                                                <label class="form-check-label" for="q2_sanity_option_3">
+                                                    Taxing food is a regressive policy that disproportionately affects the poor.
+                                                </label>
+                                            </div>
+                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" 
+                                                    id="q2_sanity_option_4"
+                                                    name="q2_sanity"
+                                                    value="4">
+                                                <label class="form-check-label" for="q2_sanity_option_4">
+                                                    None of the above
+                                                </label>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="q2_sanity_answer" name="q2_sanity_answer" value="2">
+                        
+                    
+                </div>
+
+                <hr class="my-4">
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q2" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Opening stage, please choose your attitude towards the given motion (Developed Countries Should Impose A Fat Tax.) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_2" name="q2" value="-2">
+                                <label class="form-check-label" for="q2_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_against_1" name="q2" value="-1">
+                                <label class="form-check-label" for="q2_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_tie" name="q2" value="0">
+                                <label class="form-check-label" for="q2_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_1" name="q2" value="1">
+                                <label class="form-check-label" for="q2_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_for_2" name="q2" value="2">
+                                <label class="form-check-label" for="q2_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Opening Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_3" style="display: none;">
+            <div class="card-header"><b>Question 3: Rebuttal Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0511/case12_2/rebuttal_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson. Esteemed judges, ladies and gentlemen, the opposition's arguments contain several critical flaws regarding regressivity, effectiveness, freedom concerns, and alternative solutions. We will systematically address each of these misconceptions.<br><br>First, while the opposition claims fat taxes disproportionately burden low-income households, this ignores two key realities. All consumption taxes—including sales taxes on essentials—are inherently regressive, yet societies accept them when benefits outweigh costs . More importantly, Denmark’s short-lived tax generated revenue that could have subsidized healthy foods for vulnerable groups if maintained—a model proven effective in Mexico’s sugar tax program . The opposition’s cited 0.5% fat reduction in Denmark also misrepresents the data: the 4% purchase decline we cited  is the first step toward long-term health improvements, as behavioral changes precede epidemiological outcomes.<br><br>Second, the opposition dismisses fat taxes as ineffective despite concrete evidence. Hungary’s junk food tax—which they reductively call "minor tweaks"—actually spurred manufacturers to reformulate 40% of products to meet healthier standards . This aligns with our argument that taxes drive systemic change. The opposition even contradicts itself by praising Philadelphia’s sugary drink tax for funding rec centers—precisely the type of revenue reinvestment our side advocates. Their claim that taxes alone fail ignores our proposal’s emphasis on combining taxes with subsidies, as seen in Mexico’s 18% soda consumption drop .<br><br>Third, the slippery slope argument is a textbook logical fallacy. Governments already regulate unhealthy products  without descending into totalitarianism. Norway has taxed sugar and fat for decades without expanding to coffee or salt . This fear-mongering distracts from the policy’s proven public health benefits.<br><br>Finally, the opposition’s alternatives—education and subsidies—are complementary, not mutually exclusive. Research shows taxes paired with education are 30% more effective than either alone . Their false dilemma ignores our integrated approach. Moreover, education programs they praise  require funding—exactly what fat tax revenue provides.<br><br>In summary, the opposition’s equity concerns are addressable through revenue reinvestment, their effectiveness critiques ignore empirical data, their freedom arguments rely on fallacies, and their alternatives strengthen—rather than replace—our proposal. Fat taxes remain the most evidence-based tool to improve health and equity when properly designed.<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_poor" name="q3_1" value="1">
+                                    <label class="form-check-label" for="q3_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_weak" name="q3_1" value="2">
+                                    <label class="form-check-label" for="q3_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_moderate" name="q3_1" value="3">
+                                    <label class="form-check-label" for="q3_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_strong" name="q3_1" value="4">
+                                    <label class="form-check-label" for="q3_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_1_compelling" name="q3_1" value="5">
+                                    <label class="form-check-label" for="q3_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q3_1_comment" name="q3_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0511/case12_2/rebuttal_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Let’s cut through the spin. The opposition insists fat taxes work, but the evidence proves they fail on every front—effectiveness, fairness, and liberty.  <br><br>First, fat taxes don’t reduce obesity. The opposition touts Hungary’s 40% product reformulation, but research from *Health Affairs* in 2016 found no change in actual vegetable consumption—proving it’s a loophole, not progress. When companies tweak a snack’s salt content to avoid taxes, that doesn’t make it healthy. Denmark’s fat tax was scrapped after just 12 months because, despite a 4% drop in purchases, obesity rates didn’t budge. According to a *Cochrane Review* in 2021, which analyzed 50 studies on food taxation, there’s zero evidence that fat taxes reduce calorie intake or obesity. Even if we ignore their failure, these taxes are still unfair—here’s why.  <br><br>Second, fat taxes disproportionately harm low-income families. A 2016 study in *Prague Economic Papers* confirmed that fat taxes are highly regressive, with low-income households spending 30% of their income on food—a burden that jumps to 35% under these taxes. The opposition claims reinvestment offsets this, but Denmark’s tax lasted barely a year—far too short to fund anything. Mexico’s sugar tax subsidies reached only 15% of low-income communities . When a single mom pays more for milk, she can’t wait for hypothetical future subsidies. This isn’t equity; it’s exploitation.  <br><br>OECD data from 2022 shows that low-income families already spend 30% of their income on food—fat taxes push that to 35%, squeezing budgets further. The opposition’s reinvestment argument collapses under scrutiny. Take Brazil’s veggie subsidies, which cost $20 million but cut childhood obesity by 12%—without taxing staples. That’s a real solution, not a regressive tax disguised as progress.  <br><br>Finally, fat taxes infringe on personal liberty. The opposition dismisses the slippery slope, but history proves otherwise. When New York banned large sodas, it wasn’t about health—it was control. Norway’s sugar tax hasn’t expanded yet, but once governments tax one “unhealthy” choice, what stops them from taxing the next? According to *PMC* in 2020, policies should enhance freedom, not restrict it. Education empowers; taxation punishes.  <br><br>The opposition’s plan taxes the poor, ignores evidence, and risks liberty. Real solutions exist: Brazil’s veggie subsidies cut childhood obesity by 12%—without taxing staples. Fund nutrition education. Subsidize healthy foods in food deserts. But don’t disguise a grocery tax as progress. Reject this policy—demand solutions that actually work.<br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q3_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_poor" name="q3_2" value="1">
+                                    <label class="form-check-label" for="q3_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_weak" name="q3_2" value="2">
+                                    <label class="form-check-label" for="q3_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_moderate" name="q3_2" value="3">
+                                    <label class="form-check-label" for="q3_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_strong" name="q3_2" value="4">
+                                    <label class="form-check-label" for="q3_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q3_2_compelling" name="q3_2" value="5">
+                                    <label class="form-check-label" for="q3_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q3_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q3_2_comment" name="q3_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                </div>
+
+                <hr class="my-4">
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q3" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Rebuttal stage, please choose your attitude towards the given motion (Developed Countries Should Impose A Fat Tax.) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_2" name="q3" value="-2">
+                                <label class="form-check-label" for="q3_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_against_1" name="q3" value="-1">
+                                <label class="form-check-label" for="q3_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_tie" name="q3" value="0">
+                                <label class="form-check-label" for="q3_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_1" name="q3" value="1">
+                                <label class="form-check-label" for="q3_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q3_for_2" name="q3" value="2">
+                                <label class="form-check-label" for="q3_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Rebuttal Stage</b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_4" style="display: none;">
+            <div class="card-header"><b>Question 4: Closing Stage</b></div>
+            <div class="card-body">
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> For Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0511/case12_2/closing_for.mp3" class="w-100" id="audio_1_For">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> For </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Thank you, chairperson, and esteemed judges. Today’s debate hinges on whether fat taxes in developed countries can deliver measurable public health improvements and economic benefits. Let’s revisit the core issues where our team has demonstrated clear superiority.<br><br>**On Effectiveness**, the opposition claims fat taxes fail to reduce obesity, citing Denmark’s repeal and Hungary’s reformulation as mere "loopholes." This misrepresents the evidence. Behavioral economics shows that price signals drive immediate consumption changes—Denmark’s 4% drop in purchases  and Hungary’s 40% product reformulation  are critical first steps. Long-term health outcomes require sustained policy, not abandonment after one year. The opposition’s *Cochrane Review* critique ignores that Brazil’s praised subsidies also needed years to show results. <br><br>**On Equity**, we’ve proven that regressivity is addressable. While low-income households spend more on food, revenue reinvestment—like Mexico’s 18% soda consumption drop from subsidized water —offsets burdens. The opposition’s OECD data on food expenditure ignores that sales taxes on essentials  are similarly regressive yet accepted. Our model channels revenue directly into health programs, as Philadelphia did with rec centers funded by sugary drink taxes.<br><br>**On Liberty**, the slippery slope argument collapses under scrutiny. Norway’s decades-old sugar tax  hasn’t expanded to coffee or salt, proving targeted health measures don’t erode freedom. Like seatbelt laws, fat taxes balance individual choice with societal costs—obesity’s $200B/year healthcare burden  limits others’ access to affordable care.<br><br>**On Alternatives**, the opposition’s subsidy-only approach is incomplete. Research shows taxes paired with subsidies are 30% more effective <br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_1">
+                            How persuasive are these arguments in supporting <strong>For</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_poor" name="q4_1" value="1">
+                                    <label class="form-check-label" for="q4_1_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_weak" name="q4_1" value="2">
+                                    <label class="form-check-label" for="q4_1_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_moderate" name="q4_1" value="3">
+                                    <label class="form-check-label" for="q4_1_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_strong" name="q4_1" value="4">
+                                    <label class="form-check-label" for="q4_1_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_1_compelling" name="q4_1" value="5">
+                                    <label class="form-check-label" for="q4_1_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_1_comment"> (Optional) Additional comments for <strong> For </strong> side:</label>
+                        <textarea class="form-control" id="q4_1_comment" name="q4_1_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                    <hr class="my-4">
+                    
+                
+                    <!-- Audio Player -->
+                    <div class="row align-items-center mb-2 audio">
+                        <div class="col-2 text-left audio-side">
+                            <strong> Against Side </strong> 
+                        </div>
+                        <div class="col-9">
+                            <audio controls src="https://debaterecords.s3.amazonaws.com/audio_0511/case12_2/closing_against.mp3" class="w-100" id="audio_2_Against">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Transcript -->
+                    <details class="transcript-details mb-3">
+                        <summary class="transcript-summary p-2 bg-light rounded">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            (Optional) <strong> Against </strong> - Transcript
+                        </summary>
+                        <div class="transcript-content p-3 bg-white border rounded mt-2">Ladies and gentlemen, the case against fat taxes is undeniable: they are ineffective, unfair, and unnecessary. Let’s examine the facts. First, fat taxes simply don’t work. Denmark repealed its fat tax after just one year because it failed to reduce obesity, and Hungary’s tax led to reformulation loopholes that undermined its purpose. According to the *Cochrane Review*’s 2023 analysis of 50 studies, there is zero evidence that fat taxes reduce calorie intake or obesity rates. A minor drop in purchases is meaningless when health outcomes remain unchanged.  <br><br>Second, this tax disproportionately harms low-income families. Research from the *Prague Economic Papers* in 2022 demonstrates that such taxes force struggling households to spend 35% of their income on food—up from 30%. The opposition’s claim that revenue can be reinvested is hollow; Denmark’s short-lived tax proves otherwise. Contrast this with Brazil’s vegetable subsidy program, which reduced childhood obesity by 12% without taxing staples.  <br><br>Third, fat taxes threaten personal freedom. New York’s soda ban wasn’t about health—it was about control. Once governments tax one "unhealthy" choice, where does it stop? As highlighted by *PMC* in 2023, policies should empower, not restrict, individuals.  <br><br>Finally, better solutions exist. Brazil’s subsidies, school nutrition programs, and farmers’ markets in food deserts all address obesity without punishing the poor.  <br><br>The opposition’s plan ignores the evidence, harms vulnerable populations, and risks liberty. We’ve presented real solutions that work. Reject the fat tax. Demand policies that *actually* help. Thank you.  <br><br></div>
+                    </details>
+
+                    <!-- Rating Section -->
+                    <div class="form-group">
+                        <label for="q4_2">
+                            How persuasive are these arguments in supporting <strong>Against</strong> side? Rate the performance based on the following principle. <sup>*</sup>
+                        </label>
+                        <div class="row align-items-center">
+                            <div class="col-10 offset-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_poor" name="q4_2" value="1">
+                                    <label class="form-check-label" for="q4_2_poor">
+                                        <strong>Poor</strong>: Limited evidence with poor organization or fundamental logic flaws. Disengage with no audience awareness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_weak" name="q4_2" value="2">
+                                    <label class="form-check-label" for="q4_2_weak">
+                                        <strong>Weak</strong>: Reasonable statements with at least one noticeable weakness. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_moderate" name="q4_2" value="3">
+                                    <label class="form-check-label" for="q4_2_moderate">
+                                        <strong>Moderate</strong>: Reasonable statements, which provide on-topic evidence with logical flow and balanced emotional tone showing basic audience awareness
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_strong" name="q4_2" value="4">
+                                    <label class="form-check-label" for="q4_2_strong">
+                                        <strong>Strong</strong>: Reasonable statements with at least one impressive shining points. 
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="q4_2_compelling" name="q4_2" value="5">
+                                    <label class="form-check-label" for="q4_2_compelling">
+                                        <strong>Compelling</strong>: Powerful evidence with effective counterpoints and create deep connection with audience.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Section -->
+                    <div class="form-group mt-3 mb-4">
+                        <label for="q4_2_comment"> (Optional) Additional comments for <strong> Against </strong> side:</label>
+                        <textarea class="form-control" id="q4_2_comment" name="q4_2_comment" rows="2"></textarea>
+                    </div>
+
+                    
+                
+            
+                <!-- Sanity Check Questions -->
+                <div id="sanity_check_questions" style="display: block;">
+                    
+                        
+                        
+                            <div class="form-group mt-3 mb-4">
+                                <label for="q4_sanity"> Which is the main battlefield / conflict / question mentioned by <strong>Against</strong> side in its closing statement? <sup>*</sup> </label>
+                                <textarea class="form-control" id="q4_sanity" name="q4_sanity" rows="1"></textarea>
+                            </div>
+                        
+                    
+                </div>
+
+                <hr class="my-4">
+                <!-- Overall Comparison Question -->
+                <div class="form-group">
+                    <label for="q4" style="font-weight: bold; font-size: 1.1em;">
+                        After listening to the two statements in Closing stage, please choose your attitude towards the given motion (Developed Countries Should Impose A Fat Tax.) now<sup>*</sup>
+                    </label>
+                    <div class="row align-items-center">
+                        <div class="col-10 offset-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_2" name="q4" value="-2">
+                                <label class="form-check-label" for="q4_against">Highly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_against_1" name="q4" value="-1">
+                                <label class="form-check-label" for="q4_tie">Slightly Against</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_tie" name="q4" value="0">
+                                <label class="form-check-label" for="q4_tie">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_1" name="q4" value="1">
+                                <label class="form-check-label" for="q4_tie">Slightly Support</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_for_2" name="q4" value="2">
+                                <label class="form-check-label" for="q4_for">Highly Support</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><b>End of Closing Stage</b></div>
+        </div>
+    
+
+    
+        <div class="card form-group question" id="question_5" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 5: Which factors were most crucial in your assessment?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q5"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q5"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 1 / 2 </b></div>
+        </div>
+    
+        <div class="card form-group question" id="question_6" style="display: none;">
+            <div class="card-header"><b>(Optional) Question 6: How long did you spend on this whole evaluation process (including reading the motion, listening to the debate, and answering the questions)?</b></div>
+            <div class="card-body">
+                
+                    <div class="form-group">
+                        <label for="q6"></label>
+                        <textarea class="form-control" type="text" inputmode="text" row="2" name="q6"></textarea>
+                    </div>
+                
+            </div>
+            <div class="card-footer"><b>Optional Questions 2 / 2 </b></div>
+        </div>
+    
+    
+
+            <input type="text" name="formid" value="12_2" hidden>
+            <input type="text" name="thank" value="Thanks. If you are a Prolific participant, your code is CA4QQG9C" hidden>
+            <div class="button-row" style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                <div class="navigation-buttons">
+                    
+    <button id="previousPageButton" class="btn btn-info btn-lg" type="button">← Go Back</button>
+    <button id="nextPageButton" class="btn btn-info btn-lg" type="button">Continue →</button>
+
+                </div>
+                <div id="submitButtonContainer" style="display: none;">
+                    <input class="btn btn-info btn-lg" type="submit" value="Submit this✓" id="submitBtn">
+                </div>
+            </div>
+            <p class="text-muted">
+                <small>If you find that you can't submit the results, please check back to see if you have filled in your name and if you have answered every required question with <sup>*</sup>. Thank you.</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; CMU Debate Team</p>
+    </div>
+
+    <!-- Replace the jQuery slim version with the full version -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" 
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" 
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        // Define the beforeunload handler as a named function so it can be removed
+        function handleBeforeUnload(e) {
+            if (!document.getElementById('submitBtn').disabled) {
+                // Cancel the event
+                e.preventDefault();
+                // Chrome requires returnValue to be set
+                e.returnValue = '';
+            }
+        }
+
+        // Add the beforeunload event listener
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Function to disable the beforeunload warning
+        function disableBeforeUnload() {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        }
+
+        function confirmSubmission() {
+            return confirm('Are you sure you want to submit your results?');
+        }
+
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 50);
+            return true;
+        };
+        function addTimestamp() {
+            // Get current timestamp in milliseconds
+            const currentTimestamp = Date.now();
+            const dateObject = new Date(currentTimestamp);
+            const readableTimestamp = dateObject.toISOString().replace("T", " ").substring(0, 19);
+
+            // Set the value of the hidden input field to the current timestamp
+            document.getElementById("timestamp").value = readableTimestamp;
+            return true;
+        }
+        function checkAllRadioGroupsChecked() {
+            const radioGroups = document.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            for (let name of radioNames) {
+                const group = document.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    alert('Please ensure you have voted for all required questions by selecting an option in each group. You can use `Previous Question` to check your answers.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    
+    <script>
+        let currentQuestionIndex = 0;
+        const questions = document.querySelectorAll('.question');
+        const nextPageButton = document.getElementById('nextPageButton');
+
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.style.display = i === index ? 'block' : 'none';
+            });
+
+            // Show submit button only when all questions are shown
+            const submitButtonContainer = document.getElementById('submitButtonContainer');
+            if (index === questions.length - 1) {
+                submitButtonContainer.style.display = 'block';
+            } else {
+                submitButtonContainer.style.display = 'none';
+            }
+        }
+
+        const audios = document.querySelectorAll('audio');
+        audios.forEach((function(audioElement) {
+            audioElement.dataset.played = "false"; // Initial state
+
+            // audioElement.addEventListener('play', function() {
+            audioElement.addEventListener('ended', function() {
+                console.log('Audio has played:', this.src);
+                this.dataset.played = "true"; // Mark as played
+                
+            });
+        }));
+
+        nextPageButton.addEventListener('click', function() {
+            const currentQuestion = document.querySelector('.question[style*="display: block"]');
+            
+            let allValidAudio = true;
+            let allValidQuestion = true;
+            let invalidAudios = [];
+            let invalidQuestions = [];
+
+            // Check if all audios have been played
+            const currentaudio = currentQuestion.querySelectorAll('audio');
+            currentaudio.forEach(audioElement => {
+                if (audioElement.dataset.played === "false") {
+                    allValidAudio = false;
+                    const audioLabel = audioElement.closest(".audio").querySelector('.audio-side').innerText
+                    invalidAudios.push(audioLabel + ' (Audio not played to the end)');
+                }
+            });
+
+
+            // check all questions have been answered
+            const radioGroups = currentQuestion.querySelectorAll('.form-check-input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(input => radioNames.add(input.name));
+            radioNames.forEach(name => {
+                const group = currentQuestion.querySelectorAll(`input[name="${name}"]`);
+                const isChecked = Array.from(group).some(input => input.checked);
+                if (!isChecked) {
+                    allValidQuestion = false;
+                    const questionLabel = group[0].closest('.form-group').querySelector('label').innerText;
+                    invalidQuestions.push(questionLabel);
+                }
+            });
+
+            if (!allValidAudio) {
+                alert('Please listen to the following audio before voting. \n => ' + invalidAudios.join('\n => '));
+            } else if (!allValidQuestion) {
+                alert('Please vote for the following questions. You need to choose one most suitable option. \n => ' + invalidQuestions.join('\n => '));
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                    document.getElementById('form_container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('You have completed all questions. Remember to click "Submit Results" to upload the results. If success, it will show "Thanks" after submission.');
+                }
+            }
+        });
+
+        previousPageButton.addEventListener('click', function() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                alert('This is the first question.');
+            }
+        });
+
+        // Initialize the first question
+        showQuestion(currentQuestionIndex);
+
+    </script>
+
+</body>
+
+</html>
