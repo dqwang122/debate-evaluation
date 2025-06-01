@@ -241,41 +241,40 @@
 
 {% block scripts %}
     <script>
-    // Function to handle consent acceptance
-    function acceptConsent() {
-        const checkboxes = document.querySelectorAll('#consentModal input[type="checkbox"]');
-        let allChecked = true;
+        // Function to handle consent acceptance
+        function acceptConsent() {
+            const checkboxes = document.querySelectorAll('#consentModal input[type="checkbox"]');
+            let allChecked = true;
 
-        checkboxes.forEach(checkbox => {
-            if (!checkbox.checked) {
-                allChecked = false;
+            checkboxes.forEach(checkbox => {
+                if (!checkbox.checked) {
+                    allChecked = false;
+                }
+            });
+
+            if (allChecked) {
+                $('#consentModal').modal('hide');
+                // Additional logic for acceptance can be added here
+            } else {
+                alert('Please ensure all checkboxes are marked before proceeding.');
             }
+        }
+
+        // Function to handle consent rejection
+        function rejectConsent() {
+            if (!confirm('You must accept the consent form to proceed. Click "OK" to stay on this page or "Cancel" to be redirected.')) {
+                window.location.href = '/debate-evaluation/thanks'; // Redirect to the "/thanks" page under the baseurl
+            }
+        }
+
+        // Show the consent modal on page load
+        $(document).ready(function() {
+            $('#consentModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            $('#consentModal').modal('show');
         });
 
-        if (allChecked) {
-            $('#consentModal').modal('hide');
-            // Additional logic for acceptance can be added here
-        } else {
-            alert('Please ensure all checkboxes are marked before proceeding.');
-        }
-    }
-
-    // Function to handle consent rejection
-    function rejectConsent() {
-        if (!confirm('You must accept the consent form to proceed. Click "OK" to stay on this page or "Cancel" to be redirected.')) {
-            window.location.href = '/debate-evaluation/thanks'; // Redirect to the "/thanks" page under the baseurl
-        }
-    }
-
-    // Show the consent modal on page load
-    $(document).ready(function() {
-        $('#consentModal').modal({
-            backdrop: 'static',
-            keyboard: false
-        });
-        $('#consentModal').modal('show');
-    });
-
-
-</script>
+    </script>
 {% endblock %}
